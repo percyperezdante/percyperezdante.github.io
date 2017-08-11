@@ -299,7 +299,7 @@ table.pyhltable td { vertical-align: top; padding-top: 0; padding-bottom: 0; }
 
 table.pyhltable td.code { padding-left: .75em; padding-right: 0; }
 
-.highlight.pygments .lineno, table.pyhltable td:not(.code) { color: #999; padding-left: 0; padding-right: .5em; border-right: 1px solid #dddddd; }
+.highlight.pygments .lineno, table.pyhltable td:not(.code) { color: #999; padding-left: 0; padding-right: .5em; border-right: 1px solid #000000; }
 
 .highlight.pygments .lineno { display: inline-block; margin-right: .25em; }
 
