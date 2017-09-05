@@ -13,41 +13,25 @@
       <guid isPermaLink="false">blog/2017/about.html</guid>
       	<description>
 	&lt;br&gt;
-&lt;div style=&quot;float:left;&quot;&gt;
+&lt;div style=&quot;float: left;&quot;&gt;
 &lt;img style=&quot;float: left;&quot; src=&quot;cruiseamsterdam.jpg&quot; &gt;
 &lt;/div&gt;
 &lt;br&gt;
-&lt;br&gt;
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&lt;br/&gt;&amp;nbsp;&amp;nbsp;&lt;br/&gt;&amp;nbsp;&amp;nbsp;&lt;br/&gt;&amp;nbsp;&amp;nbsp;&lt;/p&gt;
 &lt;h3&gt;&lt;span style=&quot;color:red&quot;&gt;Current Activities&lt;/span&gt;&lt;/h3&gt;
-&lt;h4&gt;I am a PhD student in the &lt;a href=&quot;http://alexandervoss.de/&quot;&gt;School of Computer Science&lt;/a&gt; at the &lt;a href=&quot;https://www.st-andrews.ac.uk/&quot;&gt;University of St Andrews&lt;/a&gt;, and member of the &lt;a href=&quot;http://srg.cs.st-andrews.ac.uk/&quot;&gt;System Research Group&lt;/a&gt;.&lt;/h4&gt;
-&lt;h4&gt;My research topic is focus on nMANET, which is an intend to whether an alternative future internet architecture such as Name Data based Networking protocol can be applied in Mobila Ad-hoc networks. Additionally, nMANET was proposed as an alternative network communication architecture to solve the limitations of MANETs in emergency scenarios. I am designing, implementing and testing &lt;a href=&quot;https://sites.google.com/site/meshawaremobilenetworking/&quot;&gt;JNFD&lt;/a&gt;, which is the prototype of nMANET, to be functional in Andriod and Linux base mobile devices.&lt;/h4&gt;
-&lt;h4&gt;I am working in my researh topic under the supervision of &lt;a href=&quot;http://alexandervoss.de/&quot;&gt;Dr. Alexander Voss&lt;/a&gt; and &lt;a href=&quot;https://ishbel.host.cs.st-andrews.ac.uk/&quot;&gt;Dr. Ishbel Duncan&lt;/a&gt;&lt;/h4&gt;
-&lt;h3&gt;&lt;span style=&quot;color:red&quot;&gt;My daily tools and programing languages&lt;/span&gt;&lt;/h3&gt;
-&lt;h4&gt;I am more familiar with the following open source software, which I use in my daily life.&lt;/h4&gt;
-&lt;h5&gt;1. Programing: Java, Advanced Unix Shell Scriptin, Python, R.&lt;/h5&gt;
-&lt;h5&gt;2. IDE: Vim + NERDTree + ctags, Android Studio, Eclipse, Intellij.&lt;/h5&gt;
-&lt;h5&gt;3. Version Controlling: Bitbucket, Github.&lt;/h5&gt;
-&lt;h5&gt;4. Operating Sytems: Debian, Ubuntu, Kali, Android.&lt;/h5&gt;
-&lt;h3&gt;&lt;span style=&quot;color:red&quot;&gt;Past hand-on experience&lt;/span&gt;&lt;/h3&gt;
-&lt;h4&gt;In previous years I had been involved in the following projects&lt;/h4&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Social networks and mobile gaming&lt;br/&gt;--&amp;gt; Data analysis using Hadoop, EC2, Mapreduce.&lt;/p&gt;
-  &lt;p&gt;Bank Investment&lt;br/&gt;--&amp;gt; Development and maintenance of equities and post-trading platforms.&lt;/p&gt;
-  &lt;p&gt;Data Centers&lt;br/&gt;--&amp;gt; Operation and maintenance of Linux base severs in a distrubuted fashion.&lt;/p&gt;
-  &lt;p&gt;Automation&lt;br/&gt;--&amp;gt; Automation of billing data adquisition from telephony switcheses.&lt;br/&gt;--&amp;gt; Automation of provisioning of long distance commmunication services. &lt;/p&gt;
-  &lt;p&gt;GSM Mobile communication&lt;br/&gt;--&amp;gt; Provisioning and commisioning of Radio Base Station RBS 884 Micro&lt;br/&gt;--&amp;gt; Operation and maintenance of GSM switches, microwave and radio base stations.&lt;/p&gt;
-  &lt;p&gt;Software Development&lt;br/&gt;--&amp;gt; Mainly using Java, advanced Unix shell scripting and Python.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;&lt;span style=&quot;color:red&quot;&gt;Global areas of interest&lt;/span&gt;&lt;/h3&gt;
-&lt;h4&gt;Additionally to deploy backend services I am interested in areas such as: mobile big data, data distribution, social data analysis, wireless and wired networks, mobile cloud computing, and power saving techniques.&lt;/h4&gt;
+&lt;h4&gt;I am a PhD student in the &lt;a href=&quot;http://alexandervoss.de/&quot;&gt;School of Computer Science&lt;/a&gt; at the &lt;a href=&quot;https://www.st-andrews.ac.uk/&quot;&gt;University of St Andrews&lt;/a&gt;, and member of the &lt;a href=&quot;http://srg.cs.st-andrews.ac.uk/&quot;&gt;System Research Group&lt;/a&gt;. My research topic is focus on &lt;a href=&quot;&quot;&gt;nMANET&lt;/a&gt;, which is an approach that intends to offer an alternative to solve the limitations of Mobile Ad-hoc Networks in emergency scenarios such as earthquakes and social riots. nMANET research intends to show whether future internet architecture such as &lt;a href=&quot;http://named-data.net/&quot;&gt;Name Data based Networking&lt;/a&gt; protocol can be applied in Mobila Ad-hoc networks. To achieve this, I am designing, implementing and testing &lt;a href=&quot;https://sites.google.com/site/meshawaremobilenetworking/&quot;&gt;JNFD&lt;/a&gt;, which is the prototype of nMANET, to be functional in Andriod and Linux base mobile devices. The &lt;a href=&quot;&quot;&gt;source code&lt;/a&gt; of JNFD is open source and it has been tested in real mobile devices such as MotoE, MotoG, and Samsumg Note4, and through simulators such as &lt;a href=&quot;https://github.com/intrig-unicamp/mininet-wifi&quot;&gt;Mininet-Wifi&lt;/a&gt;.&lt;/h4&gt;
 &lt;br&gt;
+&lt;h4&gt;nMANET research projec is supervised by &lt;a href=&quot;http://alexandervoss.de/&quot;&gt;Dr. Alexander Voss&lt;/a&gt; and &lt;a href=&quot;https://ishbel.host.cs.st-andrews.ac.uk/&quot;&gt;Dr. Ishbel Duncan&lt;/a&gt;.&lt;/h4&gt;
+&lt;h3&gt;&lt;span style=&quot;color:red&quot;&gt;Areas of interest&lt;/span&gt;&lt;/h3&gt;
+&lt;h4&gt;One of my main interests is to be involved in backend projecs for Unix based platforms, such as minimal Debian/Ubuntu and Android, and build and deploy systems and services by utilising programming languages such as Java, C/C++, Unix Shell Scripting and Python. Additionally, I am interested to have direct contact and control of the infrastructure, such as servers and smartphones.&lt;/h4&gt;
+&lt;br&gt;
+&lt;h4&gt;In daily basis, I use i3 as my main windows manager, I usually open a terminator terminal and interact most of the time through the console or through command lines for most of operations such as Vim editing, search in Internet, play on/off line music. If you are interested visit &lt;a href=&quot;&quot;&gt;my tools&lt;/a&gt; for more details. I have participated in &lt;a href=&quot;&quot;&gt;projects&lt;/a&gt; in areas such as robile and long distance telecommunication, cloud and data center infrastructure for mobile gaming platforms, development for post trading platfoms in stock markets, and big data infrastucture and analysis. Some personal and academic code are available in the &lt;a href=&quot;&quot;&gt;repository link&lt;/a&gt; for your consideration. However, I am also interested in to be involved in areas such as: mobile big data, decentralised data distribution, social data analysis, wireless and wired networks, mobile cloud computing, embeded systems, and power saving techniques.&lt;/h4&gt;
 &lt;br&gt;
 &lt;h3&gt;&lt;span style=&quot;color:red&quot;&gt;Contact:&lt;/span&gt;&lt;/h3&gt;
-&lt;h5&gt;School of Computer Science, University of St Andrews.&lt;/h5&gt;
-&lt;h5&gt;Jack Cole Building, North Haugh&lt;/h5&gt;
-&lt;h5&gt;St Andrews KY169SX&lt;/h5&gt;
-&lt;h5&gt;pdpa (at) st-andrews dot ac dot uk&lt;/h5&gt;
+&lt;h4&gt;School of Computer Science, University of St Andrews.&lt;/h4&gt;
+&lt;h4&gt;Jack Cole Building, North Haugh&lt;/h4&gt;
+&lt;h4&gt;St Andrews KY169SX&lt;/h4&gt;
+&lt;h4&gt;pdpa (at) st-andrews dot ac dot uk&lt;/h4&gt;
 	</description>
     </item>
 
