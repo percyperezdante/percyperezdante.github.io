@@ -19,16 +19,13 @@
 &lt;h5&gt;St Andrews KY169SX&lt;/h5&gt;
 &lt;h5&gt;pdpa (at) st-andrews dot ac dot uk&lt;/h5&gt;
 &lt;h5&gt;&lt;a href=&quot;https://linkedin.com/in/percy-perez-27143740&quot;&gt;Linkedin profile&lt;/a&gt;&lt;/h5&gt;
+&lt;h5&gt;&lt;a href=&quot;https://bitbucket.org/percyperezd/&quot;&gt;Bitbucket repository (10)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5&gt;&lt;a href=&quot;https://github.com/percyperezdante&quot;&gt;Github repository(2)&lt;/a&gt;&lt;/h5&gt;
 &lt;br&gt;
 &lt;h3&gt;&lt;span style=&quot;color:red&quot;&gt;Current Activities&lt;/span&gt;&lt;/h3&gt;
 &lt;h5&gt;I am a PhD student in the &lt;a href=&quot;http://cs.st-andrews.ac.uk/&quot;&gt;School of Computer Science&lt;/a&gt; at the &lt;a href=&quot;https://www.st-andrews.ac.uk/&quot;&gt;University of St Andrews&lt;/a&gt;, and member of the &lt;a href=&quot;http://srg.cs.st-andrews.ac.uk/&quot;&gt;System Research Group&lt;/a&gt;. My current research topic is focus on &lt;a href=&quot;research.html&quot;&gt;nMANET&lt;/a&gt;, which is an approach that intends to offer an alternative to solve the limitations of Mobile Ad-hoc Networks in emergency scenarios such as earthquakes and social riots. nMANET research intends to show whether future Internet architectures such as &lt;a href=&quot;http://named-data.net/&quot;&gt;Name Data based Networking&lt;/a&gt; protocol can be applied in Mobila Ad-hoc networks. To achieve this, I am designing, implementing and testing &lt;a href=&quot;projects.html&quot;&gt;JNFD&lt;/a&gt;, which is the prototype of nMANET, and that is functional in Andriod and Linux base mobile devices. The source code) of JNFD is open source and it has been tested in smartphones such as MotoE, MotoG, and Samsumg Note4, and also in laptops and through JNFD simulators such as &lt;a href=&quot;projects.html&quot;&gt;Mini-JNFD&lt;/a&gt;.&lt;/h5&gt;
 &lt;br&gt;
 &lt;h5&gt;nMANET research projec is supervised by &lt;a href=&quot;http://alexandervoss.de/&quot;&gt;Dr. Alexander Voss&lt;/a&gt; and &lt;a href=&quot;https://ishbel.host.cs.st-andrews.ac.uk/&quot;&gt;Dr. Ishbel Duncan&lt;/a&gt;.&lt;/h5&gt;
-&lt;br&gt;
-&lt;div style=&quot;float: left;&quot;&gt;
-&lt;img style=&quot;float: left;&quot; src=&quot;cruiseamsterdam.jpg&quot; &gt;
-&lt;/div&gt;
-&lt;br&gt;
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&lt;/p&gt;
 &lt;h3&gt;&lt;span style=&quot;color:red&quot;&gt;Areas of interest&lt;/span&gt;&lt;/h3&gt;
 &lt;h5&gt;One of my main interests is to be involved in backend projecs for Unix based platforms, such as minimal Debian/Ubuntu and Android, and build and deploy systems and services by utilising programming languages such as Java, C/C++, Unix Shell Scripting and Python. At &lt;a href=&quot;projects.html&quot;&gt;project&lt;/a&gt; level, I am interested to be involved in projects such as automation, devops infrastructure, mobile big data, decentralised data distribution, social data analysis, wireless and wired networkng, mobile cloud computing, embedded systems, and power saving techniques.&lt;/h5&gt;
