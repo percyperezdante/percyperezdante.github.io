@@ -22,6 +22,18 @@ This page presents suggestions on how to install tools of interest. It is ordere
 
 
 
+## P
+- [Packer](https://github.com/hashicorp/packer/blob/master/.github/CONTRIBUTING.md#setting-up-go-to-work-on-packer)
+
+        $ git clone https://github.com/hashicorp/packer.git
+        $ cd packer
+        $ go build -o bin/packer .     # <-- This will create ./bin/packer executable file
+        $ ./bin/packer version
+        $ sudo ln -s `pwd`/bin/packer /usr/local/bin/packer  # <-- Optional 
+        $ packer --help
+
+        
+
 ## Z
 
 
