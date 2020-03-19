@@ -14,6 +14,9 @@ The steps to build and publish are as follow:
 3. Build the static and public files using hugo
 4. Copy the content of the public folder to the root of this repository.
 
+### NOTE:
+To modify the content of the website you need to modify the content of the directory named as "source".
+
 In other words:
 
 ```bash

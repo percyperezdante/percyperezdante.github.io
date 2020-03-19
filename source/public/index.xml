@@ -6,10 +6,21 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Mar 2020 23:11:52 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2020 16:25:40 +0000</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Installation</title>
+      <link>http://example.org/tools/installation/</link>
+      <pubDate>Thu, 19 Mar 2020 16:25:40 +0000</pubDate>
+      
+      <guid>http://example.org/tools/installation/</guid>
+      <description>This page presents suggestions on how to install tools of interest. It is ordered alphabetically.
+A G   GO
+ $ git clone https://github.com/golang/go.git $ cd go $ ./all.bash # &amp;lt;-- This should generate ../bin/go file. $ cd .. $ export GOPATH=`pwd` # &amp;lt;-- Add this to your profile such as ~/.bashrc $ cd bin $ export GOBIN=`pwd` # &amp;lt;-- Add this to your profile such as ~/.bashrc $ go version    Z </description>
+    </item>
     
     <item>
       <title>NManet</title>

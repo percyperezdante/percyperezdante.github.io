@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Tags :: Home</title>
+    <title>Installation :: Home</title>
 
     
     <link href="/css/nucleus.css?1584636785" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/tools/installation/">
     <nav id="sidebar" class="">
 
 
@@ -210,7 +210,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/tools/" title="Tools" class="dd-item 
-        
+        parent
         
         
         ">
@@ -236,7 +236,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/tools/installation/" title="Installation" class="dd-item ">
+      <li data-nav-id="/tools/installation/" title="Installation" class="dd-item active">
         <a href="/tools/installation/">
         Installation
         
@@ -458,7 +458,13 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            <a href='/'>Home</a> > Tags
+            
+            
+          
+          
+            <a href='/'>Home</a> > <a href='/tools/'>Tools</a> > Installation
+          
+         
           
          
           
@@ -469,7 +475,13 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#a">A</a></li>
+    <li><a href="#g">G</a></li>
+    <li><a href="#z">Z</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -485,7 +497,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
           
             <h1>
               
-              Tags
+              Installation
             </h1>
           
 
@@ -493,15 +505,27 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
-
-
-
+<p>This page presents suggestions on how to install tools of interest. It is ordered alphabetically.</p>
+<h2 id="a">A</h2>
+<h2 id="g">G</h2>
 <ul>
-	
+<li>
+<p><a href="https://golang.org/doc/install/source">GO</a></p>
+<pre><code>  $ git clone https://github.com/golang/go.git
+  $ cd go
+  $ ./all.bash    # &lt;-- This should generate ../bin/go file.
+  $ cd ..
+  $ export GOPATH=`pwd`  # &lt;-- Add this to your profile such as ~/.bashrc 
+  $ cd bin
+  $ export GOBIN=`pwd`   # &lt;-- Add this to your profile such as ~/.bashrc 
+  $ go version
+</code></pre>
+</li>
 </ul>
+<h2 id="z">Z</h2>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -619,6 +643,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                    
                 
                 
 
@@ -631,6 +656,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
                     
                 
                 
@@ -650,6 +676,9 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -751,8 +780,10 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 	 
 	 
 		
+			<a class="nav nav-prev" href="/tools/" title="Tools"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/projects/" title="Projects" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/reproducibility/" title="Reproducibility" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -782,3 +813,4 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
   </body>
 </html>
+
