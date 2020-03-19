@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://example.org/projects/</loc>
+    <lastmod>2020-03-15T17:31:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/devops/</loc>
+    <lastmod>2020-03-15T17:43:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/sre/</loc>
+    <lastmod>2020-03-15T17:42:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/notes/</loc>
+    <lastmod>2020-03-17T16:45:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tools/</loc>
+    <lastmod>2020-03-15T17:34:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/reproducibility/</loc>
+    <lastmod>2020-03-15T17:42:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/teaching/</loc>
+    <lastmod>2020-03-15T17:33:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/research/</loc>
+    <lastmod>2020-03-15T17:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/blog/</loc>
+    <lastmod>2020-03-15T17:34:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/funding/</loc>
+    <lastmod>2020-03-18T23:11:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2020-03-18T23:11:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/</loc>
+  </url>
+  
+</urlset>

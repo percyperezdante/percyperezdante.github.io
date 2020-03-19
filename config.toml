@@ -1,0 +1,10 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Home"
+theme = "hugo-theme-learn"
+
+[params]
+themeVariant = "percy"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]

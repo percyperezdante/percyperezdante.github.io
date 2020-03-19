@@ -1,0 +1,48 @@
+this space lists the tools I normally use in daily basis. It aims to become a self-record of tips and suggestions from my own experience and friends. These tools are used in development and operations on some previous projects. It contains suggestions about installation, configuration and operation, including some usefull tricks I develop and also the ones I found on Internet.
+Terminal consoles
+
+    Terminator
+
+        Helpful features of Terminator include its easy way to arrange windows in a grid. You can easy split your terminal in smaller vertical or horizontal windows. It allows to create tabs and move between them and nested terminals are easy through the plenty of keyboard base shortcuts, which can be customised if required. Terminator also allows you to personilise your terminal layout, which means you can utilise your own persona layout on each ocasion. Finally, it allows to group terminals in order to simultaneously type commands.
+
+Editors
+
+    Vim
+
+        It is a well known editor that allows you to add your own keyboard shortcuts using VimScript. A basic example of VimScript is qilquiri which in Aymara language means writer.
+
+Multimedia
+
+    Terminal base online youtube mpsyt
+
+        Mpsyt utilises youtube-dl and allows you to search, listen only, watch youtube videos in a similar way as in a normal web browser, all from your console.
+
+    Terminal base offline music player mocp
+
+        Mocp is very easy to operate console base music player. It can play a wide range of file formats.
+
+Retrieval information
+
+    Text base web browser w3m
+
+        If you are familiar with Vim, this text base browser for console terminals can be easy to learn and specially to automate retrieval applications from Internet.
+
+Dictionaries
+
+    Console base translator trans
+
+        Trans is helpful to translate words betweeb different languages. I am using it for english, spanish and german word translations.
+
+Time management
+
+    Google calendar console client gcalcli
+
+    It helps you to list, add and modify your scheduled activities direct from and to your google calendar account.
+
+Windows manager
+
+    Tailing windows manager i3
+
+        From my perspective, by tailing windows, the space in the screen is utilised more efficiently, and it helped me to focus on the windows I am working on.
+
+
