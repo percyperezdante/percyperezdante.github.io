@@ -1,7 +1,6 @@
 ---
 title: "Building Images"
 date: 2020-03-17T17:49:45Z
-draft: true
 ---
 
 

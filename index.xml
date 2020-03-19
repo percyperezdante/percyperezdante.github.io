@@ -11,5 +11,25 @@
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>NManet</title>
+      <link>http://example.org/research/nmanet/</link>
+      <pubDate>Wed, 18 Mar 2020 22:51:27 +0000</pubDate>
+      
+      <guid>http://example.org/research/nmanet/</guid>
+      <description>Very brief overview NDN for MANETs approach, represented as nMANET, aims to offer an alternative perspective on how the characteristics of NDN can be utilised to solve the limitations of MANETs. nMANET has its roots in Named Data Network NDN, an instance of Content Centric Networks CCN. In contrast with traditional TCP/IP networks, CCN enables content addressing instead of host based communication, and secures the content instead of securing the communication channel between hosts.</description>
+    </item>
+    
+    <item>
+      <title>Building Images</title>
+      <link>http://example.org/devops/images/</link>
+      <pubDate>Tue, 17 Mar 2020 17:49:45 +0000</pubDate>
+      
+      <guid>http://example.org/devops/images/</guid>
+      <description>This page presents a set of templates to build images through tools such as packer. The content of these templates is the result of a combination of available resources online.
+Packer This sections present cases about how to build linux-base images. More details in the Ajayu github repository.
+ Oracle Linux 6.10 using a DVD .iso file.  </description>
+    </item>
+    
   </channel>
 </rss>

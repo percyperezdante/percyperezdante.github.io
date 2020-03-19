@@ -1,4 +1,4 @@
 #!/bin/bash
 
-hugo
+hugo -D
 cp -r public/* ../

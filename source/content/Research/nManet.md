@@ -1,7 +1,6 @@
 ---
 title: "NManet"
 date: 2020-03-18T22:51:27Z
-draft: true
 ---
 
 ### Very brief overview
