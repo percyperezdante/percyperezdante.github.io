@@ -1,4 +1,4 @@
 #!/bin/bash
 
 hugo
-cp -r public/* docs/
+cp -r public/* ../
