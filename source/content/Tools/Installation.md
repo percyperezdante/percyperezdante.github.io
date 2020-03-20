@@ -32,6 +32,17 @@ This page presents suggestions on how to install tools of interest. It is ordere
         $ sudo ln -s `pwd`/bin/packer /usr/local/bin/packer  # <-- Optional 
         $ packer --help
 
+## V
+- [Vi File Manager](https://github.com/vifm/vifm.git)
+
+        $ mkdir temp
+        $ cd temp
+        $ git clone https://github.com/vifm/vifm.git
+        $ cd vifm
+        $ dpkg -l | grep libncursesw5-dev  # <-- be sure you have this package
+        $ ./configure
+        $ sudo make install
+        $ vifm .  # <-- Enjoy vi File Manager
         
 
 ## Z
