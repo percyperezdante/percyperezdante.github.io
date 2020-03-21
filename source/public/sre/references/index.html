@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Blog :: Home</title>
+    <title>References :: Home</title>
 
     
     <link href="/css/nucleus.css?1584795062" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/blog/">
+  <body class="" data-url="/sre/references/">
     <nav id="sidebar" class="">
 
 
@@ -162,7 +162,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/sre/" title="SRE" class="dd-item 
-        
+        parent
         
         
         ">
@@ -188,7 +188,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/sre/references/" title="References" class="dd-item ">
+      <li data-nav-id="/sre/references/" title="References" class="dd-item active">
         <a href="/sre/references/">
         References
         
@@ -399,8 +399,8 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/blog/" title="Blog" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/blog/">
@@ -477,6 +477,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -487,7 +489,13 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            <a href='/'>Home</a> > Blog
+            
+            
+          
+          
+            <a href='/'>Home</a> > <a href='/sre/'>SRE</a> > References
+          
+         
           
          
           
@@ -496,6 +504,23 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#papers">Papers</a></li>
+        <li><a href="#online-resources">Online resources</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -503,35 +528,66 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              References
+            </h1>
           
 
         
 
 
 
-
-	<h1 id="blog">Blog</h1>
-<p>This blog is empty for now, but I am planning to write one blog about:</p>
+<p>This page present a list of references related to SRE.</p>
+<h3 id="books">Books</h3>
+<ol>
+<li>
+<p>Beyer, B., Jones, C., Petoff, J. and Murphy, N.R., 2016. Site Reliability Engineering: How Google Runs Production Systems. &quot; O&rsquo;Reilly Media, Inc.&quot;.</p>
 <ul>
-<li>Cooking rice.</li>
-<li>Share my life location.</li>
-<li>Books I read</li>
+<li>A online available version can be read from <a href="https://landing.google.com/sre/sre-book/toc/index.html">here.</a></li>
 </ul>
-<p>Hope it come soon.</p>
+</li>
+<li>
+<p>Beyer, B., Murphy, N.R., Rensin, D.K., Kawahara, K. and Thorne, S., 2018. The site reliability workbook: Practical ways to implement SRE. &quot; O&rsquo;Reilly Media, Inc.&quot;.</p>
+<ul>
+<li>Online version of this book can be found in <a href="https://landing.google.com/sre/workbook/toc/">here.</a></li>
+</ul>
+</li>
+<li>
+<p>Jennifer P., JC van W.,Preston Y., Jessie Y., Jesus C., and Myk T.,2020. Training Site Reliability Engineers. &ldquo;O&rsquo;Reilly Media, Inc.&quot;.</p>
+<ul>
+<li>Online version available at <a href="https://static.googleusercontent.com/media/landing.google.com/en//sre/static/pdf/training-sre.pdf">here.</a></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="papers">Papers</h3>
+<ol>
+<li>
+<p>Sloss, B.T., Nukala, S. and Rau, V., 2019. Metrics that matter. Communications of the ACM, 62(4), pp.88-88.</p>
+<ul>
+<li>Online read in <a href="https://dl.acm.org/doi/pdf/10.1145/3303874">here.</a></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="online-resources">Online resources</h3>
+<ol>
+<li>
+<p>Unknown author, unkown year, SLO Workshop Google Cloud, <a href="https://www.usenix.org/sites/default/files/conference/protected-files/srecon18emea_slides_fong-jones.pdf">https://www.usenix.org/sites/default/files/conference/protected-files/srecon18emea_slides_fong-jones.pdf</a>.</p>
+</li>
+<li>
+<p>Google Cloud, unkown year, Site Reliability Engineering: Measuring and Managing Reliability, Coursera online courses. <a href="https://www.coursera.org/learn/site-reliability-engineering-slos/home/info">https://www.coursera.org/learn/site-reliability-engineering-slos/home/info</a></p>
+</li>
+</ol>
 
 
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -614,6 +670,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                    
                 
                 
 
@@ -626,6 +683,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
                     
                 
                 
@@ -646,69 +704,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -758,6 +755,21 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -775,8 +787,53 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -798,10 +855,10 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 	 
 	 
 		
-			<a class="nav nav-prev" href="/research/nmanet/" title="NManet"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/sre/" title="SRE"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/funding/" title="Funding" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/notes/" title="Notes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -831,3 +888,4 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
   </body>
 </html>
+

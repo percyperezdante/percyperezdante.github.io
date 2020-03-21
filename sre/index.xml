@@ -11,5 +11,16 @@
 	<atom:link href="http://example.org/sre/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>References</title>
+      <link>http://example.org/sre/references/</link>
+      <pubDate>Sat, 21 Mar 2020 12:00:04 +0000</pubDate>
+      
+      <guid>http://example.org/sre/references/</guid>
+      <description>This page present a list of references related to SRE.
+Books   Beyer, B., Jones, C., Petoff, J. and Murphy, N.R., 2016. Site Reliability Engineering: How Google Runs Production Systems. &amp;quot; O&amp;rsquo;Reilly Media, Inc.&amp;quot;.
+ A online available version can be read from here.    Beyer, B., Murphy, N.R., Rensin, D.K., Kawahara, K. and Thorne, S., 2018. The site reliability workbook: Practical ways to implement SRE. &amp;quot; O&amp;rsquo;Reilly Media, Inc.</description>
+    </item>
+    
   </channel>
 </rss>

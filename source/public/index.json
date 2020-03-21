@@ -18,7 +18,7 @@
 	"title": "SRE",
 	"tags": [],
 	"description": "",
-	"content": "Site Reliability Engineering This is a topic that I am trying to implement on a development environment. It is at its initial steps but I expect fill this page with books, papers or articles.\n"
+	"content": "Site Reliability Engineering This page is in its initial stage. I am trying to collect and read references which can be found at references.\n"
 },
 {
 	"uri": "http://example.org/notes/",
@@ -75,6 +75,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Welcome My name is Percy, and this site has a minimal content about my interests, activities, and notes I recorded for myself or for people with similar interests.\nContact percyperezdante [at] gmail (dot) com\nGithub, Linkedin, Twitter: @percyperezd\nInterests My main interests include to develop, experiment and test new technologies related to:\n nMANET Reproducibility Teaching Automation Continuous Integration and Continuous Delivery Site Reliability Engineering DevOps Software Development Enginering Cloud computing Distributed systems Security  NOTE: nMANET is an approach that intends to offer an alternative to solve the limitations of Mobile Ad-hoc Networks in emergency scenarios such as earthquakes and social riots.\nnMANET intends to show whether future Internet architectures such as Name Data based Networking protocol can be applied in Mobila Ad-hoc networks. To achieve this, I am designing, implementing and testing JNFD, which is the prototype of nMANET, and that is functional in Andriod and Linux base mobile devices. The source code of JNFD is open source and it has been tested in smartphones such as MotoE, MotoG, and Samsumg Note4, and also in laptops and through JNFD simulators such as Mini-JNFD.\nActivities   Sports. I like to play football and basketball, but also I often swim. I currenly swiming for the Diabetes UK charity, swim22. We formed a great team of colleges who are willing to swim approximatelly 230 Km all together. As a team we would love to have your contributions if possible of course.\n  Devops days Edinburgh 2020. I am member of the organizers for the 2020 Devops days in Edinburgh. Devops days happen here in Edinburhg once a year and is an international conference that include technical talks about software development, IT infrastructure operations, and a mix of them.\n  Notes This section contains a set of basic tutorials I wrote for my students. They are simple notes I took from books and online resources. These notes are grouped in the following categories.\n  Minimal infrastructure\n  Software Development\n  Infrastrucuture as a code\n  Devops \u0026amp; SRE\n  "
+},
+{
+	"uri": "http://example.org/sre/references/",
+	"title": "References",
+	"tags": [],
+	"description": "",
+	"content": "This page present a list of references related to SRE.\nBooks   Beyer, B., Jones, C., Petoff, J. and Murphy, N.R., 2016. Site Reliability Engineering: How Google Runs Production Systems. \u0026quot; O\u0026rsquo;Reilly Media, Inc.\u0026quot;.\n A online available version can be read from here.    Beyer, B., Murphy, N.R., Rensin, D.K., Kawahara, K. and Thorne, S., 2018. The site reliability workbook: Practical ways to implement SRE. \u0026quot; O\u0026rsquo;Reilly Media, Inc.\u0026quot;.\n Online version of this book can be found in here.    Jennifer P., JC van W.,Preston Y., Jessie Y., Jesus C., and Myk T.,2020. Training Site Reliability Engineers. \u0026ldquo;O\u0026rsquo;Reilly Media, Inc.\u0026quot;.\n Online version available at here.     Papers   Sloss, B.T., Nukala, S. and Rau, V., 2019. Metrics that matter. Communications of the ACM, 62(4), pp.88-88.\n Online read in here.     Online resources   Unknown author, unkown year, SLO Workshop Google Cloud, https://www.usenix.org/sites/default/files/conference/protected-files/srecon18emea_slides_fong-jones.pdf.\n  Google Cloud, unkown year, Site Reliability Engineering: Measuring and Managing Reliability, Coursera online courses. https://www.coursera.org/learn/site-reliability-engineering-slos/home/info\n  "
 },
 {
 	"uri": "http://example.org/tools/installation/",
