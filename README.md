@@ -33,7 +33,7 @@ $ git push origin master
 
 Now wait for a couple of minutes and the modifications should be updated in the site.
 
-### QUEUE
+### MY QUEUE
 
 The following are topics I would like to include somewhere in this website.
 
@@ -79,7 +79,13 @@ The following are topics I would like to include somewhere in this website.
 
     - https://medium.com/rungo/everything-you-need-to-know-about-packages-in-go-b8bac62b74cc
 
+8. Coursera courses:
 
+    - Concurrency in go
+    - Site Reliability Engineering: Measuring and Managing Reliability
+    - Security and Privacy in TOR Network
+    - The Raspberry Pi Platform and Python Programming for the Raspberry Pi
+    - Mathematical Foundations for Cryptography
 
 
 
