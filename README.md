@@ -33,6 +33,52 @@ $ git push origin master
 
 Now wait for a couple of minutes and the modifications should be updated in the site.
 
+### QUEUE
+
+The following are topics I would like to include somewhere in this website.
+
+1. How useful is Jsonnet?
+
+    - https://jsonnet.org/learning/tutorial.html
+
+2. How to build Jenkins plugins?
+
+    - https://www.baeldung.com/jenkins-custom-plugin
+    - https://jenkins.io/doc/developer/plugin-development/build-process/
+    - https://jenkins.io/doc/developer/tutorial/prepare/
+
+
+3.  Oreally Books I need to complete to read.
+    
+    - The packer book by James Turnbul
+    - Network Programming with Go: Essential Skills for Using and Securing Networks by Jan Newmarch
+    - Black Hat Go by Dan Kottmann, Chris Patten, Tom Steele
+    - Packt series:
+        - Building RESTful APIs with Go by Bartlomiej Walczak
+        - Advanced Infrastructure Penetration Testing by Chiheb Chebbi
+        - Practical Web Penetration Testing by  Gus Khawaja
+        - Learn Website Hacking / Penetration Testing From Scratch  by Zaid Sabih
+        - Learn Network Hacking From Scratch (WiFi and Wired) by Zaid Sabih 
+        - Hands-on Concurrency with Go Leo Tindall
+        - Building RESTful Web services with Go by Naren Yellavula
+
+
+4. Compare Java-base and Go-base RESTFUL clients.
+
+    - https://docs.couchbase.com/sync-gateway/current/rest-api-client.html
+
+5. How OverlayFS works in Docker?
+
+    - https://docs.docker.com/storage/storagedriver/overlayfs-driver/
+
+6. What is good about Axios?
+
+    - https://www.npmjs.com/package/axios
+
+7. Keep reading and learning GO.
+
+    - https://medium.com/rungo/everything-you-need-to-know-about-packages-in-go-b8bac62b74cc
+
 
 
 
