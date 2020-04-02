@@ -1,5 +1,3 @@
-# How to build this site.
-
 # About this repository
 
 This is a very basic and simple site that was built using [Hugo](https://gohugo.io/) and [Grav](https://learn.getgrav.org/16). The theme I used is called [Hugo learn theme](https://learn.netlify.com/en/).  I decide to use these technologies due to my interest in goland and [markdowns](https://learn.netlify.com/en/cont/markdown/), but also my curiosity to know how Hugo and Grav works.
