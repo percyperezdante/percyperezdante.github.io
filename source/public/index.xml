@@ -6,10 +6,46 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Mar 2020 12:00:04 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2020 23:02:43 +0100</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SRE MMR Week4</title>
+      <link>http://example.org/sre/online/sre-mmr-week4/</link>
+      <pubDate>Thu, 02 Apr 2020 23:02:43 +0100</pubDate>
+      
+      <guid>http://example.org/sre/online/sre-mmr-week4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SRE MMR Week3</title>
+      <link>http://example.org/sre/online/sre-mmr-week3/</link>
+      <pubDate>Thu, 02 Apr 2020 23:02:40 +0100</pubDate>
+      
+      <guid>http://example.org/sre/online/sre-mmr-week3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SRE MMR Week2</title>
+      <link>http://example.org/sre/online/sre-mmr-week2/</link>
+      <pubDate>Thu, 02 Apr 2020 23:02:38 +0100</pubDate>
+      
+      <guid>http://example.org/sre/online/sre-mmr-week2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SRE MMR Week1</title>
+      <link>http://example.org/sre/online/sre-mmr-week1/</link>
+      <pubDate>Thu, 02 Apr 2020 22:54:36 +0100</pubDate>
+      
+      <guid>http://example.org/sre/online/sre-mmr-week1/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>References</title>

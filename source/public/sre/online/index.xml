@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Online resources on Home</title>
+    <link>http://example.org/sre/online/</link>
+    <description>Recent content in Online resources on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Apr 2020 22:30:43 +0100</lastBuildDate>
+    
+	<atom:link href="http://example.org/sre/online/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SRE MMR Week4</title>
+      <link>http://example.org/sre/online/sre-mmr-week4/</link>
+      <pubDate>Thu, 02 Apr 2020 23:02:43 +0100</pubDate>
+      
+      <guid>http://example.org/sre/online/sre-mmr-week4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SRE MMR Week3</title>
+      <link>http://example.org/sre/online/sre-mmr-week3/</link>
+      <pubDate>Thu, 02 Apr 2020 23:02:40 +0100</pubDate>
+      
+      <guid>http://example.org/sre/online/sre-mmr-week3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SRE MMR Week2</title>
+      <link>http://example.org/sre/online/sre-mmr-week2/</link>
+      <pubDate>Thu, 02 Apr 2020 23:02:38 +0100</pubDate>
+      
+      <guid>http://example.org/sre/online/sre-mmr-week2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SRE MMR Week1</title>
+      <link>http://example.org/sre/online/sre-mmr-week1/</link>
+      <pubDate>Thu, 02 Apr 2020 22:54:36 +0100</pubDate>
+      
+      <guid>http://example.org/sre/online/sre-mmr-week1/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -33,6 +33,17 @@ $ git push origin master
 
 Now wait for a couple of minutes and the modifications should be updated in the site.
 
+# How to add a new section and page.
+
+```bash
+$ cd source
+$ hugo new --kind chapter  <NAME_NEW_SECTION>/_index.md   # <-- note it is "_index.md" no "index.md"
+$ hugo new <SECTION_NAME>/<PAGE_NAME>.md        # <--Add a new page inside section
+```
+**NOTE**
+When you edit a page remember to remove "draft:true" or replace true by false.
+
+
 ### MY QUEUE
 
 The following are topics I would like to include somewhere in this website.
@@ -88,5 +99,6 @@ The following are topics I would like to include somewhere in this website.
     - Mathematical Foundations for Cryptography
 
 
+9. Tmux self config 
 
-
+    - https://github.com/gpakosz/.tmux
