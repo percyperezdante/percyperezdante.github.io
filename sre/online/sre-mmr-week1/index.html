@@ -12,20 +12,20 @@
     <title>SRE MMR Week1 :: Home</title>
 
     
-    <link href="/css/nucleus.css?1585865987" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1585865987" rel="stylesheet">
-    <link href="/css/hybrid.css?1585865987" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1585865987" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1585865987" rel="stylesheet">
-    <link href="/css/auto-complete.css?1585865987" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1585865987" rel="stylesheet">
-    <link href="/css/theme.css?1585865987" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1585865987" rel="stylesheet">
+    <link href="/css/nucleus.css?1586179016" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1586179016" rel="stylesheet">
+    <link href="/css/hybrid.css?1586179016" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1586179016" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1586179016" rel="stylesheet">
+    <link href="/css/auto-complete.css?1586179016" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1586179016" rel="stylesheet">
+    <link href="/css/theme.css?1586179016" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1586179016" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1585865987" rel="stylesheet">
+      <link href="/css/theme-percy.css?1586179016" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1585865987"></script>
+    <script src="/js/jquery-3.3.1.min.js?1586179016"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1585865987"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1585865987"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1586179016"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1586179016"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1585865987"></script>
+<script type="text/javascript" src="/js/search.js?1586179016"></script>
 
     
   </div>
@@ -634,7 +634,40 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#how-does-sre-differ-from-devops">How does SRE differ from Devops?</a></li>
+        <li><a href="#who-are-cres">Who are CREs?</a></li>
+        <li><a href="#how-can-they-help-you-be-more-reliable">How can they help you be more reliable?</a></li>
+        <li><a href="#why-are-slos-important-for-your-organization">Why Are SLOs Important for Your Organization?</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#promises-promises-slos-vs-slas-happiness-test">Promises, Promises. SLOs vs SLAs. Happiness Test.</a></li>
+        <li><a href="#how-do-we-measure-reliability-edge-cases">How Do We Measure Reliability? Edge Cases</a></li>
+        <li><a href="#how-reliable-should-a-service-be-setting-targets-for-reliability-iterate">How Reliable Should a Service Be? Setting Targets for Reliability. Iterate!</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction-1">Introduction</a></li>
+        <li><a href="#when-do-we-need-to-make-a-service-more-reliable-error-budgets">When Do We Need to Make a Service More Reliable? Error Budgets.</a></li>
+        <li><a href="#trading-off-reliability-against-features">Trading off Reliability Against Features</a></li>
+        <li><a href="#how-do-we-make-a-service-more-reliable">How Do We Make a Service More Reliable?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -658,6 +691,39 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
+<h1 id="introduction-to-sre">Introduction to SRE</h1>
+<h3 id="how-does-sre-differ-from-devops">How does SRE differ from Devops?</h3>
+<p>Devops and SRE point to similar goals, which is break down organizational barriers to deliver software features faster.</p>
+<p>Traditionally, developers are responsable for features and operations for stability. Developers want to move faster to release new features and operations want to move slow to keep all service stable. As a commong results, tension between teams appears during realease times. Devops and SRE practices aim to break downs this tensions.</p>
+<p>In general, Devops approach include the following areas:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Reduce</span> <span style="color:#a6e22e">organizational</span> <span style="color:#a6e22e">silos</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Break</span> <span style="color:#a6e22e">down</span> <span style="color:#a6e22e">tension</span> <span style="color:#a6e22e">promotes</span> <span style="color:#a6e22e">collaboration</span> <span style="color:#a6e22e">between</span> <span style="color:#a6e22e">teams</span>.
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Accept</span> <span style="color:#a6e22e">failure</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">normal</span>
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Implement</span> <span style="color:#a6e22e">gradual</span> <span style="color:#a6e22e">change</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Small</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">incremental</span> <span style="color:#a6e22e">changes</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">easy</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">review</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">maintain</span>.
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Leverage</span> <span style="color:#a6e22e">tooling</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">automation</span>
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Measure</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">much</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span> 
+</code></pre></div><p>On the other side, SRE appraoch to same areas are as following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Reduce</span> <span style="color:#a6e22e">organizational</span> <span style="color:#a6e22e">silos</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Operation</span> <span style="color:#a6e22e">responsability</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">release</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">production</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">shared</span> <span style="color:#a6e22e">with</span> <span style="color:#a6e22e">developers</span>.
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Accept</span> <span style="color:#a6e22e">failure</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">normal</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Blameless</span> <span style="color:#a6e22e">postmordem</span>. <span style="color:#a6e22e">Failure</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">expected</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">it</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">hold</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">an</span> <span style="color:#a6e22e">error</span> <span style="color:#a6e22e">budget</span>.
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Implement</span> <span style="color:#a6e22e">gradual</span> <span style="color:#a6e22e">change</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Small</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">incremental</span> <span style="color:#a6e22e">release</span>, <span style="color:#a6e22e">such</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">Canary</span> <span style="color:#a6e22e">releases</span>.
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Leverage</span> <span style="color:#a6e22e">tooling</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">automation</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span>  <span style="color:#a6e22e">Measure</span> <span style="color:#a6e22e">toil</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">automate</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">minimise</span> <span style="color:#a6e22e">manual</span> <span style="color:#a6e22e">intervention</span>.
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Measure</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">much</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span>  <span style="color:#a6e22e">Measure</span> <span style="color:#a6e22e">toil</span>, <span style="color:#a6e22e">reliability</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">service</span>.
+</code></pre></div><p>Therefore, one initial conclusion is that:</p>
+<blockquote>
+<p><strong>SRE is a concrete class that implements Devops</strong></p>
+</blockquote>
+<h3 id="who-are-cres">Who are CREs?</h3>
+<h3 id="how-can-they-help-you-be-more-reliable">How can they help you be more reliable?</h3>
+<h3 id="why-are-slos-important-for-your-organization">Why Are SLOs Important for Your Organization?</h3>
+<h1 id="targeting-reliability">Targeting Reliability</h1>
+<h3 id="introduction">Introduction</h3>
+<h3 id="promises-promises-slos-vs-slas-happiness-test">Promises, Promises. SLOs vs SLAs. Happiness Test.</h3>
+<h3 id="how-do-we-measure-reliability-edge-cases">How Do We Measure Reliability? Edge Cases</h3>
+<h3 id="how-reliable-should-a-service-be-setting-targets-for-reliability-iterate">How Reliable Should a Service Be? Setting Targets for Reliability. Iterate!</h3>
+<h1 id="operating-for-reliability">Operating for Reliability</h1>
+<h3 id="introduction-1">Introduction</h3>
+<h3 id="when-do-we-need-to-make-a-service-more-reliable-error-budgets">When Do We Need to Make a Service More Reliable? Error Budgets.</h3>
+<h3 id="trading-off-reliability-against-features">Trading off Reliability Against Features</h3>
+<h3 id="how-do-we-make-a-service-more-reliable">How Do We Make a Service More Reliable?</h3>
 
 
 <footer class="footline">
@@ -1030,19 +1096,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1585865987"></script>
-    <script src="/js/perfect-scrollbar.min.js?1585865987"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1585865987"></script>
-    <script src="/js/jquery.sticky.js?1585865987"></script>
-    <script src="/js/featherlight.min.js?1585865987"></script>
-    <script src="/js/highlight.pack.js?1585865987"></script>
+    <script src="/js/clipboard.min.js?1586179016"></script>
+    <script src="/js/perfect-scrollbar.min.js?1586179016"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1586179016"></script>
+    <script src="/js/jquery.sticky.js?1586179016"></script>
+    <script src="/js/featherlight.min.js?1586179016"></script>
+    <script src="/js/highlight.pack.js?1586179016"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1585865987"></script>
-    <script src="/js/learn.js?1585865987"></script>
-    <script src="/js/hugo-learn.js?1585865987"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1586179016"></script>
+    <script src="/js/learn.js?1586179016"></script>
+    <script src="/js/hugo-learn.js?1586179016"></script>
 
-    <link href="/mermaid/mermaid.css?1585865987" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1585865987"></script>
+    <link href="/mermaid/mermaid.css?1586179016" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1586179016"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

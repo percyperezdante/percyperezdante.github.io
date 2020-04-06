@@ -44,7 +44,8 @@
       <pubDate>Thu, 02 Apr 2020 22:54:36 +0100</pubDate>
       
       <guid>http://example.org/sre/online/sre-mmr-week1/</guid>
-      <description></description>
+      <description>Introduction to SRE How does SRE differ from Devops? Devops and SRE point to similar goals, which is break down organizational barriers to deliver software features faster.
+Traditionally, developers are responsable for features and operations for stability. Developers want to move faster to release new features and operations want to move slow to keep all service stable. As a commong results, tension between teams appears during realease times. Devops and SRE practices aim to break downs this tensions.</description>
     </item>
     
   </channel>
