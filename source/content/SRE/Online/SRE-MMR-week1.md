@@ -35,12 +35,15 @@ Therefore, one initial conclusion is that:
 
 > **SRE is a concrete class that implements Devops**
 
-
-### Who are CREs?
-
-
+### What is CRE?
+It stands for Customer Reliability Engineering and it is focus on breaking down organizational barries between service prodivers and customers.  In this context, failure is pre-accepted as a conditions to enhance future cases, error budget.This pre-condition helps to minimise panic when a down time happens at the service level. Another important criteria is to implement measurements that can offer to everyone, in both sides, visibility of on how the service performs.
 
 ### How can they help you be more reliable?
+In various cases, customers use provider's services, through APIs.  in different ways that are not expected by the service provider, and providers do not like to breaks the customer expectation. This sceneario is easly visible the number of customers scale up.
+
+CRE helps to providers to openinly communicate with customers. Clear communication of how your service was designed to behave, indirectly means to expose provider's SRE practices, such is their SLOs, to the customers. By teaching or helping the customers to build their own SRE environment, we are teaching them how to interact correctly with our system or platform. Consequently, the real scope and limitations are presented clearly to the customer, which formilise what the customer can expect as a final result.
+
+In conclusion, by sharing SRE practices with customers, not only new features can be released faster, it also enhance customer satisfactione.
 
 
 ### Why Are SLOs Important for Your Organization?
