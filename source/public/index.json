@@ -11,7 +11,7 @@
 	"title": "DevOps",
 	"tags": [],
 	"description": "",
-	"content": "Devops Infrastructure as a code  Building images: This section presents examples of building images using Packer from HashiCorp.  "
+	"content": "Devops Infrastructure as a code  Building images: This section presents examples of building images using Packer from HashiCorp. GCP notes Short notes from GCP training sessions.  "
 },
 {
 	"uri": "http://example.org/sre/",
@@ -26,6 +26,13 @@
 	"tags": [],
 	"description": "",
 	"content": "General notes This page containts brief examples and explanation of different topics of interests from my students.\nMore details will be added gradually.\n"
+},
+{
+	"uri": "http://example.org/devops/gcp/",
+	"title": "GCP",
+	"tags": [],
+	"description": "",
+	"content": "Googgle Cloud Platform Notes. This section contains notes about different GCP topics.\nGoogle Cloud Platform Fundamentals: Core Infrastructure "
 },
 {
 	"uri": "http://example.org/tools/",
@@ -68,6 +75,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Demetria \u0026amp; Mario foundation This is a foundation created by Demetria Inocencia Aruni Rojas de Perez and Mario Hermogenes Perez Limachi with the intention to support education and culture for Aymara children in the community of Viacha in La Paz - Bolivia. The Demetria \u0026amp; Mario foundation is in its initial stage and it is planned to start its first intervention by the end of 2020.\nI decided to join this foundation after the talk provided by the founders in Viacha-Bolivia, which explained the importance to invest in education of Aymara Children as a way to preserve Aymara culture and let the future of Viacha coexists with new technoligies that can enhance the life standards of people within the community.\nMore details are planned to appear in the comming months and if you are interested to join, please feel free to contact me.\n"
+},
+{
+	"uri": "http://example.org/devops/gcp/fundamentals/",
+	"title": "Fundamentals",
+	"tags": [],
+	"description": "",
+	"content": "Introduction GCP offers four main services: - Compute - Storage - Big data - Machine learning\nThe fundamentals course covers mainly the first two plus networking.\nCloud computing is an on-demand infrastrucuture available under the following characteristics:\n- Compute resouces on-demand self-service: no human intervention - Access from anywhere in the internet - Resource pooling: GCP provides share-base resources - Rapid elasiticity: Get more resources quickly as needed - Measured service: pay for what you consume or use  There are serveral GCP computing services, such as:\n- IaaS: where you pay for what you allocated - PaaS: where you pay for what you use  GCP allocation:\n- Zone: Deploymenat area, not geographically related. A zone is a single failure domain witdh in a region. - Region: Group of zone, independen geographical areas.  "
 },
 {
 	"uri": "http://example.org/",

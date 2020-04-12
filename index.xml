@@ -6,10 +6,22 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Apr 2020 23:02:43 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2020 11:06:46 +0100</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fundamentals</title>
+      <link>http://example.org/devops/gcp/fundamentals/</link>
+      <pubDate>Sun, 12 Apr 2020 11:06:46 +0100</pubDate>
+      
+      <guid>http://example.org/devops/gcp/fundamentals/</guid>
+      <description>Introduction GCP offers four main services: - Compute - Storage - Big data - Machine learning
+The fundamentals course covers mainly the first two plus networking.
+Cloud computing is an on-demand infrastrucuture available under the following characteristics:
+- Compute resouces on-demand self-service: no human intervention - Access from anywhere in the internet - Resource pooling: GCP provides share-base resources - Rapid elasiticity: Get more resources quickly as needed - Measured service: pay for what you consume or use  There are serveral GCP computing services, such as:</description>
+    </item>
     
     <item>
       <title>SRE MMR Week4</title>

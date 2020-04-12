@@ -12,6 +12,4 @@ pre = "<b>2. </b>"
 #### Infrastructure as a code
 
 * **[Building images:](images/)**  This section presents examples of building images using Packer from HashiCorp.
-
-
-
+* **[GCP notes](gcp/)**  Short notes from GCP training sessions.

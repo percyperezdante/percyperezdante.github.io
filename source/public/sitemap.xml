@@ -23,6 +23,11 @@
   </url>
   
   <url>
+    <loc>http://example.org/devops/gcp/</loc>
+    <lastmod>2020-04-12T10:46:05+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/tools/</loc>
     <lastmod>2020-03-15T17:34:27+00:00</lastmod>
   </url>
@@ -53,8 +58,13 @@
   </url>
   
   <url>
+    <loc>http://example.org/devops/gcp/fundamentals/</loc>
+    <lastmod>2020-04-12T11:06:46+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/</loc>
-    <lastmod>2020-04-02T23:02:43+01:00</lastmod>
+    <lastmod>2020-04-12T11:06:46+01:00</lastmod>
   </url>
   
   <url>

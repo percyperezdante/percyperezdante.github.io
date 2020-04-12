@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Research :: Home</title>
+    <title>Fundamentals :: Home</title>
 
     
     <link href="/css/nucleus.css?1586731808" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/research/">
+  <body class="" data-url="/devops/gcp/fundamentals/">
     <nav id="sidebar" class="">
 
 
@@ -107,7 +107,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/devops/" title="DevOps" class="dd-item 
-        
+        parent
         
         
         ">
@@ -136,7 +136,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/devops/gcp/" title="GCP" class="dd-item 
-        
+        parent
         
         
         ">
@@ -162,7 +162,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/devops/gcp/fundamentals/" title="Fundamentals" class="dd-item ">
+      <li data-nav-id="/devops/gcp/fundamentals/" title="Fundamentals" class="dd-item active">
         <a href="/devops/gcp/fundamentals/">
         Fundamentals
         
@@ -525,8 +525,8 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/research/" title="Research" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/research/">
@@ -658,6 +658,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -668,7 +670,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            <a href='/'>Home</a> > Research
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Home</a> > <a href='/devops/'>DevOps</a> > <a href='/devops/gcp/'>GCP</a> > Fundamentals
+          
+         
+          
+         
           
          
           
@@ -677,6 +691,21 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -684,31 +713,46 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Fundamentals
+            </h1>
           
 
         
 
 
 
+<h3 id="introduction">Introduction</h3>
+<p>GCP offers four main services:
+- Compute
+- Storage
+- Big data
+- Machine learning</p>
+<p>The fundamentals course covers mainly the first two plus networking.</p>
+<p>Cloud computing is an on-demand infrastrucuture available under the following characteristics:</p>
+<pre><code>- Compute resouces on-demand self-service: no human intervention
+- Access from anywhere in the internet
+- Resource pooling: GCP provides share-base resources
+- Rapid elasiticity: Get more resources quickly as needed
+- Measured service: pay for what you consume or use
+</code></pre>
+<p>There are serveral GCP computing services, such as:</p>
+<pre><code>- IaaS: where you pay for what you allocated
+- PaaS: where you pay for what you use
+</code></pre>
+<p>GCP allocation:</p>
+<pre><code>- Zone: Deploymenat area, not geographically related. A zone is a single failure domain witdh in a region.
+- Region: Group of zone, independen geographical areas. 
+</code></pre>
 
-	<h1 id="research">Research</h1>
-<p>This section presents the research topics of interest.</p>
-<h4 id="nmanetresearchnmanetmd"><a href="/Research/nmanet.md">nMANET</a></h4>
-<p>nManet is the short name for NDN applied in Manets. NDN stands for Named Data Neworking and Manets stands for Mobile Ad-hoc Networks. In this research, nMANET aims to offer an alterntive to ad-hoc mobile exchange of information in emergency scenarios.</p>
 
-
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -759,6 +803,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                    
                 
                 
 
@@ -774,6 +819,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                    
                 
                 
 
@@ -786,6 +832,29 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -811,25 +880,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
                     
                     
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                         
                     
                     
@@ -847,22 +897,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -912,9 +946,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
         
                     
-            
-        
-                    
                         
             
             
@@ -933,35 +964,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -1011,6 +1013,22 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                     
 
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1019,6 +1037,37 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1032,9 +1081,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1091,10 +1137,10 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 	 
 	 
 		
-			<a class="nav nav-prev" href="/teaching/" title="Teaching"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/devops/gcp/" title="GCP"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/research/nmanet/" title="NManet" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/devops/images/" title="Building Images" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1124,3 +1170,4 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
   </body>
 </html>
+
