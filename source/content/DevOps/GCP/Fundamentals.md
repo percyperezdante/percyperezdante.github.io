@@ -6,6 +6,7 @@ date: 2020-04-12T11:06:46+01:00
 ### Introduction
 
 GCP offers four main services:
+
     - Compute
     - Storage
     - Big data
