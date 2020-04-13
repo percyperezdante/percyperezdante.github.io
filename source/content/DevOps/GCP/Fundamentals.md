@@ -38,11 +38,11 @@ To work in GCP you organise your work load in projects. These projects organize 
 
 User interfaces to access and interact with GCP includes: 
 
-    - Web interface
-    - SDK
-    - Command line
-    - API
-    - Mobile App
+    - Web interface ( GCP console and generally used at the begining )
+    - SDK ( gcloud, gsutil for cloud storage, bq for Big query )
+    - Command line ( cloud shell )
+    - RESTful API ( uses JSON and OAuth 2.0 authentication and authorization )
+    - Mobile App  
 
 All resources in GCP are organised into projects.Optionally, this projects can be organised into folder and subfolders. All these projects, folders and subfolders that belongs to an organisation can be brought under an organisation node. Each project  is separated compartiment and usually have the following id:
 
@@ -55,9 +55,12 @@ On the other hand, a policy is set on a resource, where each policy contains a s
 The Identity and Access Management, IAM, helps to manage access rights to currents users of a project. There are three parts:
 
     - Who: Identifies the user or resource, such as google or service account, group, domain. 
-    - AIM Role: A collection of permissions: primitive, predefined, and custom. 
+    - How/when: This uses AIM Role, a collection of permissions: primitive, predefined, and custom. 
         - Primitive are broad an include: owner, editor , viewer and billing administrator. 
         - Predefined: Pre designed rules that can be used.
-        - Custom: Where you design and set your own rules.
-    - Resource: 
+        - Custom: Where you design and set your own roles.
+    - What: GCP Resource.
 
+Note to give access permissions to a VM you need to use a service account. 
+
+GCP Launcher is a quick tool for deployment that contains a pre-packaged and ready-to-deploy solutions. Some of these solutions are offered by Google and others by third-party vendors.  GCP upgrades on the VMs do not update installed packages, but GCP allows you to maintain them.

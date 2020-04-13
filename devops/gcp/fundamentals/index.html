@@ -12,20 +12,20 @@
     <title>Fundamentals :: Home</title>
 
     
-    <link href="/css/nucleus.css?1586783314" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1586783314" rel="stylesheet">
-    <link href="/css/hybrid.css?1586783314" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1586783314" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1586783314" rel="stylesheet">
-    <link href="/css/auto-complete.css?1586783314" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1586783314" rel="stylesheet">
-    <link href="/css/theme.css?1586783314" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1586783314" rel="stylesheet">
+    <link href="/css/nucleus.css?1586787334" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1586787334" rel="stylesheet">
+    <link href="/css/hybrid.css?1586787334" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1586787334" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1586787334" rel="stylesheet">
+    <link href="/css/auto-complete.css?1586787334" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1586787334" rel="stylesheet">
+    <link href="/css/theme.css?1586787334" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1586787334" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1586783314" rel="stylesheet">
+      <link href="/css/theme-percy.css?1586787334" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1586783314"></script>
+    <script src="/js/jquery-3.3.1.min.js?1586787334"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1586783314"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1586783314"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1586787334"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1586787334"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1586783314"></script>
+<script type="text/javascript" src="/js/search.js?1586787334"></script>
 
     
   </div>
@@ -752,11 +752,11 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 <h3 id="the-basics">The basics</h3>
 <p>To work in GCP you organise your work load in projects. These projects organize GCP resorues with common basic objectives. Access to GCP is through IAM, GCP ID and Access Management, and it defifnes who can do what.</p>
 <p>User interfaces to access and interact with GCP includes:</p>
-<pre><code>- Web interface
-- SDK
-- Command line
-- API
-- Mobile App
+<pre><code>- Web interface ( GCP console and generally used at the begining )
+- SDK ( gcloud, gsutil for cloud storage, bq for Big query )
+- Command line ( cloud shell )
+- RESTful API ( uses JSON and OAuth 2.0 authentication and authorization )
+- Mobile App  
 </code></pre>
 <p>All resources in GCP are organised into projects.Optionally, this projects can be organised into folder and subfolders. All these projects, folders and subfolders that belongs to an organisation can be brought under an organisation node. Each project  is separated compartiment and usually have the following id:</p>
 <pre><code>- Project ID:  Global inmutable unique name chosen by you.
@@ -766,12 +766,14 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 <p>On the other hand, a policy is set on a resource, where each policy contains a set of roles and role members. Resources inherit policies from parents, where a less restrictive policy overrides a more restrictive resource policy. For example, if a organisation node policy is set to read only, but a project policy is set to read and write, then read and write is possible for that project. Take in mind this when you design your policies.</p>
 <p>The Identity and Access Management, IAM, helps to manage access rights to currents users of a project. There are three parts:</p>
 <pre><code>- Who: Identifies the user or resource, such as google or service account, group, domain. 
-- AIM Role: A collection of permissions: primitive, predefined, and custom. 
+- How/when: This uses AIM Role, a collection of permissions: primitive, predefined, and custom. 
     - Primitive are broad an include: owner, editor , viewer and billing administrator. 
     - Predefined: Pre designed rules that can be used.
-    - Custom: Where you design and set your own rules.
-- Resource: 
+    - Custom: Where you design and set your own roles.
+- What: GCP Resource.
 </code></pre>
+<p>Note to give access permissions to a VM you need to use a service account.</p>
+<p>GCP Launcher is a quick tool for deployment that contains a pre-packaged and ready-to-deploy solutions. Some of these solutions are offered by Google and others by third-party vendors.  GCP upgrades on the VMs do not update installed packages, but GCP allows you to maintain them.</p>
 
 
 <footer class="footline">
@@ -1175,19 +1177,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1586783314"></script>
-    <script src="/js/perfect-scrollbar.min.js?1586783314"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1586783314"></script>
-    <script src="/js/jquery.sticky.js?1586783314"></script>
-    <script src="/js/featherlight.min.js?1586783314"></script>
-    <script src="/js/highlight.pack.js?1586783314"></script>
+    <script src="/js/clipboard.min.js?1586787334"></script>
+    <script src="/js/perfect-scrollbar.min.js?1586787334"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1586787334"></script>
+    <script src="/js/jquery.sticky.js?1586787334"></script>
+    <script src="/js/featherlight.min.js?1586787334"></script>
+    <script src="/js/highlight.pack.js?1586787334"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1586783314"></script>
-    <script src="/js/learn.js?1586783314"></script>
-    <script src="/js/hugo-learn.js?1586783314"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1586787334"></script>
+    <script src="/js/learn.js?1586787334"></script>
+    <script src="/js/hugo-learn.js?1586787334"></script>
 
-    <link href="/mermaid/mermaid.css?1586783314" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1586783314"></script>
+    <link href="/mermaid/mermaid.css?1586787334" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1586787334"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
