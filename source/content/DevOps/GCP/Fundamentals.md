@@ -32,4 +32,18 @@ GCP allocation:
     - Zone: Deploymenat area, not geographically related. A zone is a single failure domain witdh in a region.
     - Region: Group of zone, independen geographical areas. 
 
+### The basics
+
+To work in GCP you organise your work load in projects. These projects organize GCP resorues with common basic objectives. Access to GCP is through IAM, GCP ID and Access Management, and it defifnes who can do what.
+
+User interfaces to access and interact with GCP includes: 
+
+    - Web interface
+    - SDK
+    - Command line
+    - API
+    - Mobile App
+
+
+
 

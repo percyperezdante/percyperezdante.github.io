@@ -11,7 +11,7 @@
 	"title": "DevOps",
 	"tags": [],
 	"description": "",
-	"content": "Devops Infrastructure as a code  Building images: This section presents examples of building images using Packer from HashiCorp. GCP notes Short notes from GCP training sessions.  "
+	"content": "Devops Infrastructure as a code  Building images: This section presents examples of building images using Packer from HashiCorp.  Cloud Computing  GCP notes Short notes from GCP training sessions.  "
 },
 {
 	"uri": "http://example.org/sre/",
@@ -81,7 +81,7 @@
 	"title": "Fundamentals",
 	"tags": [],
 	"description": "",
-	"content": "Introduction GCP offers four main services:\n- Compute - Storage - Big data - Machine learning  The fundamentals course covers mainly the first two plus networking.\nCloud computing is an on-demand infrastrucuture available under the following characteristics:\n- Compute resouces on-demand self-service: no human intervention - Access from anywhere in the internet - Resource pooling: GCP provides share-base resources - Rapid elasiticity: Get more resources quickly as needed - Measured service: pay for what you consume or use  There are serveral GCP computing services, such as:\n- IaaS: where you pay for what you allocated - PaaS: where you pay for what you use  GCP allocation:\n- Zone: Deploymenat area, not geographically related. A zone is a single failure domain witdh in a region. - Region: Group of zone, independen geographical areas.  "
+	"content": "Introduction GCP offers four main services:\n- Compute - Storage - Big data - Machine learning  The fundamentals course covers mainly the first two plus networking.\nCloud computing is an on-demand infrastrucuture available under the following characteristics:\n- Compute resouces on-demand self-service: no human intervention - Access from anywhere in the internet - Resource pooling: GCP provides share-base resources - Rapid elasiticity: Get more resources quickly as needed - Measured service: pay for what you consume or use  There are serveral GCP computing services, such as:\n- IaaS: where you pay for what you allocated - PaaS: where you pay for what you use  GCP allocation:\n- Zone: Deploymenat area, not geographically related. A zone is a single failure domain witdh in a region. - Region: Group of zone, independen geographical areas.  The basics To work in GCP you organise your work load in projects. These projects organize GCP resorues with common basic objectives. Access to GCP is through IAM, GCP ID and Access Management, and it defifnes who can do what.\nUser interfaces to access and interact with GCP includes:\n- Web interface - SDK - Command line - API - Mobile App  "
 },
 {
 	"uri": "http://example.org/",
