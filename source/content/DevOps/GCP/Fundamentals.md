@@ -64,3 +64,29 @@ The Identity and Access Management, IAM, helps to manage access rights to curren
 Note to give access permissions to a VM you need to use a service account. 
 
 GCP Launcher is a quick tool for deployment that contains a pre-packaged and ready-to-deploy solutions. Some of these solutions are offered by Google and others by third-party vendors.  GCP upgrades on the VMs do not update installed packages, but GCP allows you to maintain them.
+
+### Virtual Private Cloud (VCP) network
+
+VCP is a set of one or many virtual machines interconnected through a virtual network inside your project in GCP. It is similar to a traditional network where you can define your own firewall rules to restrict access to internal resources or create static routes to redirect traffic to specific destination. An important feature of VCP in GCP is its global scope, which allow your virtual machines to be reachable globaly. It is possible to allocate resources in different zones or expand resources, such as storage or network, to any virtual machine inside your VCP. One tip at this stage is to use preemptible VMs which allows you in some extend to reduce costs.
+
+A VM can be creatd by console UI or by command line, gcloud. If there is not a pre-define image of your interest, you can customise your own image. Additionally, in cases such as intensive data analysis, you can use a local SSD disk. However, you need to store the data of permanent value in different place as GCP will not leave data on your local SSD disk after all process has finished. For this last case, you can use GCP persistent disks.
+
+At booting time, you can als provide to GCP start-up scripts or metadata to initialise your VM. It is possible to define the number of CPUs and memory size for each VM, for example, at the time of this writing, the maximum number of CPU to provision was 96, and the maximum memory size in data was 624 GB.  To complete tasks such as intensive data analytics, GCP offers auto-scale, which automatically deploys new VMs base on the load of your task. Additionally, GCP offers cloud load balancing base on the incoming traffic. The options that GCP offer for cross regional load balancing are:
+
+    - Global HTTP(s): Layer 7 load balancing based on load. It routes different URLs to different backends.
+    - Global SSL proxy: Layer 4 load balancing for non-HTTPS SSL traffic.
+    - Global TCP proxy: Layer 4 load balancing of non-SSL TCP traffic.
+    - Regional: Load balancing of any traffic, TCP and UDP on any port.
+    - Regional internal: Load balancing of traffic inside a VPC. All options have this option.
+    
+Inside a VCP, GCP already set up a firewall and routers, you do not need to provision these resources manually. However, you can configurate them as you need. This feature comes automatically because VCP networks belong to GCP projects. In case you need to allow communication between two VCP from different GCP project, you can use VCP peering.  Additonally, you can difine access rules between VCPs using VCP sharing, which define who and what can be accessed from one VCP to another.
+
+On the other hand, GCP offers also Cloud DNS, which can be manage programatically through its API or by command line. You can manage zones, which includes edit, add, remove DNS entries. Finally, Cloud CDN is able to cache your content close to your clients.
+
+Note that in the case you want to interconnect with external networks or your own local network, GCP offers the following options:
+
+    - VPN: Through a cloud router using Boarder Gateway protocol.  This means you access your GCP through internet.
+    - Direct peering: This is private connection between your network and GCP. This is not cover GCP SLA. 
+    - Carried peering: Connection through the largest partner network of service providers.
+    - Dedicated Interconnect: Connects nx10G transport circuit for private cloud traffic.
+
