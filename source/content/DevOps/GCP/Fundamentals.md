@@ -90,3 +90,31 @@ Note that in the case you want to interconnect with external networks or your ow
     - Carried peering: Connection through the largest partner network of service providers.
     - Dedicated Interconnect: Connects nx10G transport circuit for private cloud traffic.
 
+    *How to create a VM using UI console*
+
+```toml
+    1. Login to GCP console --> Click product and services --> Compute Engine --> VM instances --> create.
+    2. Edit name, zone, VM specs as you need --> Click create.
+```
+
+    *How to create a VM by command line*
+
+```toml
+    1. Click on Activate Google Cloud shell ( icon on the top bar ) 
+    2. $gcloud compute zones list   # List all available zones
+    3. $gcloud config set compute/zone us-central1-c   # Sets the zone 
+    4. $gcloud compute instances create "MYVM" \
+        --machine-type "n1-standard-1" \
+        --image-project "debian-cloud" \
+        --image "debian-9-stretch-v20170918" \
+        --subnet "default"
+```
+
+    *Basic inspection*
+
+```toml
+    - You can ssh into your VM by click on the SSH in the console interface.
+    - You can ssh from one VM to another by ssh <NAME_VM> directly. 
+    - You can install a web server, such as nginx-light, and use http to retrieve content.
+    - Use sudo to have admin privileges without a password.
+```
