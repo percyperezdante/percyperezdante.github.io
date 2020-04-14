@@ -90,14 +90,14 @@ Note that in the case you want to interconnect with external networks or your ow
     - Carried peering: Connection through the largest partner network of service providers.
     - Dedicated Interconnect: Connects nx10G transport circuit for private cloud traffic.
 
-*How to create a VM using UI console*
+    **How to create a VM using UI console**
 
 ```toml
     1. Login to GCP console --> Click product and services --> Compute Engine --> VM instances --> create.
     2. Edit name, zone, VM specs as you need --> Click create.
 ```
 
-*How to create a VM by command line*
+    **How to create a VM by command line**
 
 ```toml
     1. Click on Activate Google Cloud shell ( icon on the top bar ) 
@@ -110,7 +110,7 @@ Note that in the case you want to interconnect with external networks or your ow
         --subnet "default"
 ```
 
-*Basic inspection*
+    **Basic inspection**
 
 ```toml
     - You can ssh into your VM by click on the SSH in the console interface.
