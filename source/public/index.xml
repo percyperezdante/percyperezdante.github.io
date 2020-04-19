@@ -99,7 +99,7 @@ A G   GO
       <guid>http://example.org/devops/images/</guid>
       <description>This page presents a set of templates to build images through tools such as packer. The content of these templates is the result of a combination of available resources online.
 Packer This sections present cases about how to build linux-base images. More details in the Ajayu github repository.
- Oracle Linux 6.10 using a DVD .iso file.  </description>
+ Oracle Linux 6.10 using a DVD .iso file. Jenkins and Capistrano V2 base on OL6. It is also available in Vagrant Cloud  </description>
     </item>
     
   </channel>

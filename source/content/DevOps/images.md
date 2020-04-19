@@ -11,6 +11,6 @@ This page presents a set of templates to build images through tools such as pack
 This sections present cases about how to build linux-base images. More details in the **[Ajayu](https://github.com/percyperezdante/ajayu)** github repository.
 
 
-* Oracle Linux 6.10 using a DVD .iso file.
-
+* [Oracle Linux 6.10 using a DVD .iso file.](https://github.com/percyperezdante/ajayu/tree/master/oracle_linux_6)
+* [Jenkins and Capistrano V2 base on OL6.](https://github.com/percyperezdante/ajayu/tree/master/jenkinsCapistranoOl6)  It is also available in [Vagrant Cloud](https://app.vagrantup.com/percyperezd/boxes/JenkinsCapistranoV2) 
 
