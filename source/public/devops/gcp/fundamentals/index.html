@@ -12,20 +12,20 @@
     <title>Fundamentals :: Home</title>
 
     
-    <link href="/css/nucleus.css?1587337226" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1587337226" rel="stylesheet">
-    <link href="/css/hybrid.css?1587337226" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1587337226" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1587337226" rel="stylesheet">
-    <link href="/css/auto-complete.css?1587337226" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1587337226" rel="stylesheet">
-    <link href="/css/theme.css?1587337226" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1587337226" rel="stylesheet">
+    <link href="/css/nucleus.css?1587416670" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1587416670" rel="stylesheet">
+    <link href="/css/hybrid.css?1587416670" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1587416670" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1587416670" rel="stylesheet">
+    <link href="/css/auto-complete.css?1587416670" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1587416670" rel="stylesheet">
+    <link href="/css/theme.css?1587416670" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1587416670" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1587337226" rel="stylesheet">
+      <link href="/css/theme-percy.css?1587416670" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1587337226"></script>
+    <script src="/js/jquery-3.3.1.min.js?1587416670"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1587337226"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1587337226"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1587416670"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1587416670"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1587337226"></script>
+<script type="text/javascript" src="/js/search.js?1587416670"></script>
 
     
   </div>
@@ -700,6 +700,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#the-basics">The basics</a></li>
         <li><a href="#virtual-private-cloud-vcp-network">Virtual Private Cloud (VCP) network</a></li>
+        <li><a href="#storage">Storage</a></li>
       </ul>
     </li>
   </ul>
@@ -792,13 +793,11 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 - Direct peering: This is private connection between your network and GCP. This is not cover GCP SLA. 
 - Carried peering: Connection through the largest partner network of service providers.
 - Dedicated Interconnect: Connects nx10G transport circuit for private cloud traffic.
-
-**How to create a VM using UI console**
 </code></pre>
+<p><strong>How to create a VM using UI console</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">    <span style="color:#ae81ff">1</span>. <span style="color:#a6e22e">Login</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">GCP</span> <span style="color:#a6e22e">console</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Click</span> <span style="color:#a6e22e">product</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">services</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Compute</span> <span style="color:#a6e22e">Engine</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">VM</span> <span style="color:#a6e22e">instances</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">create</span>.
     <span style="color:#ae81ff">2</span>. <span style="color:#a6e22e">Edit</span> <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">zone</span>, <span style="color:#a6e22e">VM</span> <span style="color:#a6e22e">specs</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">need</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Click</span> <span style="color:#a6e22e">create</span>.
-</code></pre></div><pre><code>**How to create a VM by command line**
-</code></pre>
+</code></pre></div><p><strong>How to create a VM by command line</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">    <span style="color:#ae81ff">1</span>. <span style="color:#a6e22e">Click</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">Activate</span> <span style="color:#a6e22e">Google</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">shell</span> <span style="color:#960050;background-color:#1e0010">(</span> <span style="color:#a6e22e">icon</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">top</span> <span style="color:#a6e22e">bar</span> <span style="color:#960050;background-color:#1e0010">)</span> 
     <span style="color:#ae81ff">2</span>. <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">gcloud</span> <span style="color:#a6e22e">compute</span> <span style="color:#a6e22e">zones</span> <span style="color:#a6e22e">list</span>   <span style="color:#75715e"># List all available zones</span>
     <span style="color:#ae81ff">3</span>. <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">gcloud</span> <span style="color:#a6e22e">config</span> <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">compute</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">zone</span> <span style="color:#a6e22e">us</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">central1</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">c</span>   <span style="color:#75715e"># Sets the zone </span>
@@ -807,12 +806,35 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         <span style="color:#960050;background-color:#1e0010">--</span><span style="color:#a6e22e">image</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">project</span> <span style="color:#e6db74">&#34;debian-cloud&#34;</span> <span style="color:#960050;background-color:#1e0010">\</span>
         <span style="color:#960050;background-color:#1e0010">--</span><span style="color:#a6e22e">image</span> <span style="color:#e6db74">&#34;debian-9-stretch-v20170918&#34;</span> <span style="color:#960050;background-color:#1e0010">\</span>
         <span style="color:#960050;background-color:#1e0010">--</span><span style="color:#a6e22e">subnet</span> <span style="color:#e6db74">&#34;default&#34;</span>
-</code></pre></div><pre><code>**Basic inspection**
-</code></pre>
+</code></pre></div><p><strong>Basic inspection</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">You</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">ssh</span> <span style="color:#a6e22e">into</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">VM</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">click</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">SSH</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">console</span> <span style="color:#a6e22e">interface</span>.
     <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">You</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">ssh</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">one</span> <span style="color:#a6e22e">VM</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">another</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">ssh</span> <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">NAME_VM</span><span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#a6e22e">directly</span>. 
     <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">You</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">web</span> <span style="color:#a6e22e">server</span>, <span style="color:#a6e22e">such</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">nginx</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">light</span>, <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">use</span> <span style="color:#a6e22e">http</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">retrieve</span> <span style="color:#a6e22e">content</span>.
     <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Use</span> <span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">admin</span> <span style="color:#a6e22e">privileges</span> <span style="color:#a6e22e">without</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">password</span>.
+</code></pre></div><h3 id="storage">Storage</h3>
+<p>You can store data inside the VMs you ship in GCP. However, GCP can store structured, unstructured, transactional and relational data throught the following services:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">storage</span>
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">CLoud</span> <span style="color:#a6e22e">SQL</span>
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">Spanner</span>
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">Data</span> <span style="color:#a6e22e">Store</span>
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Google</span> <span style="color:#a6e22e">Big</span> <span style="color:#a6e22e">Table</span>
+    <span style="color:#960050;background-color:#1e0010">```</span>
+
+<span style="color:#960050;background-color:#1e0010">**</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">storage</span> <span style="color:#960050;background-color:#1e0010">**</span>
+<span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">uses</span> <span style="color:#a6e22e">object</span> <span style="color:#a6e22e">storages</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">store</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">data</span>. <span style="color:#a6e22e">Object</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">same</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">traditional</span> <span style="color:#a6e22e">file</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">block</span> <span style="color:#a6e22e">storage</span>. <span style="color:#a6e22e">Instead</span>, <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">whole</span> <span style="color:#a6e22e">object</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">stored</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">associating</span> <span style="color:#a6e22e">it</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">key</span> <span style="color:#a6e22e">that</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">URL</span> <span style="color:#a6e22e">form</span>.
+
+<span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">buckets</span>, <span style="color:#a6e22e">that</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">inmutable</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">means</span> <span style="color:#a6e22e">that</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">edit</span> <span style="color:#a6e22e">them</span>, <span style="color:#a6e22e">but</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">create</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">new</span> <span style="color:#a6e22e">version</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">them</span>. <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">always</span> <span style="color:#a6e22e">encrypt</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">server</span> <span style="color:#a6e22e">side</span>.
+
+<span style="color:#a6e22e">Each</span> <span style="color:#a6e22e">bucket</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">unique</span> <span style="color:#a6e22e">id</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">location</span>. <span style="color:#a6e22e">You</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">move</span> <span style="color:#a6e22e">one</span> <span style="color:#a6e22e">bucket</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">one</span> <span style="color:#a6e22e">location</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">another</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">order</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">optimise</span> <span style="color:#a6e22e">latency</span>. <span style="color:#a6e22e">To</span> <span style="color:#a6e22e">control</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">buckets</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">use</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">IAM</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">general</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">sufficient</span>. <span style="color:#a6e22e">Each</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">control</span> <span style="color:#a6e22e">lists</span>, <span style="color:#a6e22e">ACLs</span>, <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">two</span> <span style="color:#a6e22e">parts</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">one</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">specify</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">user</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">group</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">users</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">other</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">specify</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">permissions</span> <span style="color:#a6e22e">associated</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">these</span> <span style="color:#a6e22e">users</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">groups</span>.
+
+<span style="color:#a6e22e">Additionaly</span>, <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">turn</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">versioninng</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">allows</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">track</span> <span style="color:#a6e22e">all</span> <span style="color:#a6e22e">modifcations</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">object</span> <span style="color:#a6e22e">storage</span>. <span style="color:#a6e22e">However</span>, <span style="color:#a6e22e">if</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">turn</span> <span style="color:#a6e22e">off</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">versioning</span>, <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">always</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">one</span> <span style="color:#a6e22e">version</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">object</span> <span style="color:#a6e22e">storage</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">means</span> <span style="color:#a6e22e">that</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">old</span> <span style="color:#a6e22e">version</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">replaced</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">new</span> <span style="color:#a6e22e">one</span>.
+
+
+<span style="color:#960050;background-color:#1e0010">**</span> <span style="color:#a6e22e">CLoud</span> <span style="color:#a6e22e">SQL</span> <span style="color:#960050;background-color:#1e0010">**</span>
+<span style="color:#960050;background-color:#1e0010">**</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">Spanner</span> <span style="color:#960050;background-color:#1e0010">**</span>
+<span style="color:#960050;background-color:#1e0010">**</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">Data</span> <span style="color:#a6e22e">Store</span> <span style="color:#960050;background-color:#1e0010">**</span>
+<span style="color:#960050;background-color:#1e0010">**</span> <span style="color:#a6e22e">Google</span> <span style="color:#a6e22e">Big</span> <span style="color:#a6e22e">Table</span> <span style="color:#960050;background-color:#1e0010">**</span>
+
 </code></pre></div>
 
 <footer class="footline">
@@ -1216,19 +1238,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1587337226"></script>
-    <script src="/js/perfect-scrollbar.min.js?1587337226"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1587337226"></script>
-    <script src="/js/jquery.sticky.js?1587337226"></script>
-    <script src="/js/featherlight.min.js?1587337226"></script>
-    <script src="/js/highlight.pack.js?1587337226"></script>
+    <script src="/js/clipboard.min.js?1587416670"></script>
+    <script src="/js/perfect-scrollbar.min.js?1587416670"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1587416670"></script>
+    <script src="/js/jquery.sticky.js?1587416670"></script>
+    <script src="/js/featherlight.min.js?1587416670"></script>
+    <script src="/js/highlight.pack.js?1587416670"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1587337226"></script>
-    <script src="/js/learn.js?1587337226"></script>
-    <script src="/js/hugo-learn.js?1587337226"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1587416670"></script>
+    <script src="/js/learn.js?1587416670"></script>
+    <script src="/js/hugo-learn.js?1587416670"></script>
 
-    <link href="/mermaid/mermaid.css?1587337226" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1587337226"></script>
+    <link href="/mermaid/mermaid.css?1587416670" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1587416670"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

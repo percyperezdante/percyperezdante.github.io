@@ -90,14 +90,14 @@ Note that in the case you want to interconnect with external networks or your ow
     - Carried peering: Connection through the largest partner network of service providers.
     - Dedicated Interconnect: Connects nx10G transport circuit for private cloud traffic.
 
-    **How to create a VM using UI console**
+**How to create a VM using UI console**
 
 ```toml
     1. Login to GCP console --> Click product and services --> Compute Engine --> VM instances --> create.
     2. Edit name, zone, VM specs as you need --> Click create.
 ```
 
-    **How to create a VM by command line**
+**How to create a VM by command line**
 
 ```toml
     1. Click on Activate Google Cloud shell ( icon on the top bar ) 
@@ -110,7 +110,7 @@ Note that in the case you want to interconnect with external networks or your ow
         --subnet "default"
 ```
 
-    **Basic inspection**
+**Basic inspection**
 
 ```toml
     - You can ssh into your VM by click on the SSH in the console interface.
@@ -118,3 +118,31 @@ Note that in the case you want to interconnect with external networks or your ow
     - You can install a web server, such as nginx-light, and use http to retrieve content.
     - Use sudo to have admin privileges without a password.
 ```
+
+### Storage
+
+You can store data inside the VMs you ship in GCP. However, GCP can store structured, unstructured, transactional and relational data throught the following services:
+
+```toml
+    - Cloud storage
+    - CLoud SQL
+    - Cloud Spanner
+    - Cloud Data Store
+    - Google Big Table
+    ```
+
+** Cloud storage **
+Cloud storage uses object storages to store your data. Object storage is not same as the traditional file storage or block storage. Instead, the whole object is stored by associating it to a key, a key that has a URL form.
+
+Cloud storage is a set of buckets, that are inmutable, which means that you can not edit them, but you can create a new version of them. Cloud storage always encrypt your data in the server side.
+
+Each bucket has a unique id and location. You can move one bucket from one location to another in order to optimise latency. To control access to your buckets you can use Cloud IAM, which in general is sufficient. Each of the access control lists, ACLs, have two parts: one to specify the user or group of users and the other to specify the type of permissions associated to these users or groups.
+
+Additionaly, you can turn on versioninng, which allows you track all modifcations of you object storage. However, if you turn off your versioning, you will always have one version of your object storage, which means that the old version will be replaced by the new one.
+
+
+** CLoud SQL **
+** Cloud Spanner **
+** Cloud Data Store **
+** Google Big Table **
+
