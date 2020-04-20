@@ -12,20 +12,20 @@
     <title>Fundamentals :: Home</title>
 
     
-    <link href="/css/nucleus.css?1587416670" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1587416670" rel="stylesheet">
-    <link href="/css/hybrid.css?1587416670" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1587416670" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1587416670" rel="stylesheet">
-    <link href="/css/auto-complete.css?1587416670" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1587416670" rel="stylesheet">
-    <link href="/css/theme.css?1587416670" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1587416670" rel="stylesheet">
+    <link href="/css/nucleus.css?1587416818" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1587416818" rel="stylesheet">
+    <link href="/css/hybrid.css?1587416818" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1587416818" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1587416818" rel="stylesheet">
+    <link href="/css/auto-complete.css?1587416818" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1587416818" rel="stylesheet">
+    <link href="/css/theme.css?1587416818" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1587416818" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1587416670" rel="stylesheet">
+      <link href="/css/theme-percy.css?1587416818" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1587416670"></script>
+    <script src="/js/jquery-3.3.1.min.js?1587416818"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1587416670"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1587416670"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1587416818"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1587416818"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1587416670"></script>
+<script type="text/javascript" src="/js/search.js?1587416818"></script>
 
     
   </div>
@@ -818,24 +818,16 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">Spanner</span>
     <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">Data</span> <span style="color:#a6e22e">Store</span>
     <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Google</span> <span style="color:#a6e22e">Big</span> <span style="color:#a6e22e">Table</span>
-    <span style="color:#960050;background-color:#1e0010">```</span>
+</code></pre></div><p>**Cloud storage **
+Cloud storage uses object storages to store your data. Object storage is not same as the traditional file storage or block storage. Instead, the whole object is stored by associating it to a key, a key that has a URL form.</p>
+<p>Cloud storage is a set of buckets, that are inmutable, which means that you can not edit them, but you can create a new version of them. Cloud storage always encrypt your data in the server side.</p>
+<p>Each bucket has a unique id and location. You can move one bucket from one location to another in order to optimise latency. To control access to your buckets you can use Cloud IAM, which in general is sufficient. Each of the access control lists, ACLs, have two parts: one to specify the user or group of users and the other to specify the type of permissions associated to these users or groups.</p>
+<p>Additionaly, you can turn on versioninng, which allows you track all modifcations of you object storage. However, if you turn off your versioning, you will always have one version of your object storage, which means that the old version will be replaced by the new one.</p>
+<p>**CLoud SQL **
+**Cloud Spanner **
+**Cloud Data Store **
+**Google Big Table **</p>
 
-<span style="color:#960050;background-color:#1e0010">**</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">storage</span> <span style="color:#960050;background-color:#1e0010">**</span>
-<span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">uses</span> <span style="color:#a6e22e">object</span> <span style="color:#a6e22e">storages</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">store</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">data</span>. <span style="color:#a6e22e">Object</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">same</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">traditional</span> <span style="color:#a6e22e">file</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">block</span> <span style="color:#a6e22e">storage</span>. <span style="color:#a6e22e">Instead</span>, <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">whole</span> <span style="color:#a6e22e">object</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">stored</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">associating</span> <span style="color:#a6e22e">it</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">key</span> <span style="color:#a6e22e">that</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">URL</span> <span style="color:#a6e22e">form</span>.
-
-<span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">buckets</span>, <span style="color:#a6e22e">that</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">inmutable</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">means</span> <span style="color:#a6e22e">that</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">edit</span> <span style="color:#a6e22e">them</span>, <span style="color:#a6e22e">but</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">create</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">new</span> <span style="color:#a6e22e">version</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">them</span>. <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">storage</span> <span style="color:#a6e22e">always</span> <span style="color:#a6e22e">encrypt</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">server</span> <span style="color:#a6e22e">side</span>.
-
-<span style="color:#a6e22e">Each</span> <span style="color:#a6e22e">bucket</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">unique</span> <span style="color:#a6e22e">id</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">location</span>. <span style="color:#a6e22e">You</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">move</span> <span style="color:#a6e22e">one</span> <span style="color:#a6e22e">bucket</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">one</span> <span style="color:#a6e22e">location</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">another</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">order</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">optimise</span> <span style="color:#a6e22e">latency</span>. <span style="color:#a6e22e">To</span> <span style="color:#a6e22e">control</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">buckets</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">use</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">IAM</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">general</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">sufficient</span>. <span style="color:#a6e22e">Each</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">control</span> <span style="color:#a6e22e">lists</span>, <span style="color:#a6e22e">ACLs</span>, <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">two</span> <span style="color:#a6e22e">parts</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">one</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">specify</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">user</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">group</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">users</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">other</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">specify</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">permissions</span> <span style="color:#a6e22e">associated</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">these</span> <span style="color:#a6e22e">users</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">groups</span>.
-
-<span style="color:#a6e22e">Additionaly</span>, <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">turn</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">versioninng</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">allows</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">track</span> <span style="color:#a6e22e">all</span> <span style="color:#a6e22e">modifcations</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">object</span> <span style="color:#a6e22e">storage</span>. <span style="color:#a6e22e">However</span>, <span style="color:#a6e22e">if</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">turn</span> <span style="color:#a6e22e">off</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">versioning</span>, <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">always</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">one</span> <span style="color:#a6e22e">version</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">object</span> <span style="color:#a6e22e">storage</span>, <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">means</span> <span style="color:#a6e22e">that</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">old</span> <span style="color:#a6e22e">version</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">replaced</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">new</span> <span style="color:#a6e22e">one</span>.
-
-
-<span style="color:#960050;background-color:#1e0010">**</span> <span style="color:#a6e22e">CLoud</span> <span style="color:#a6e22e">SQL</span> <span style="color:#960050;background-color:#1e0010">**</span>
-<span style="color:#960050;background-color:#1e0010">**</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">Spanner</span> <span style="color:#960050;background-color:#1e0010">**</span>
-<span style="color:#960050;background-color:#1e0010">**</span> <span style="color:#a6e22e">Cloud</span> <span style="color:#a6e22e">Data</span> <span style="color:#a6e22e">Store</span> <span style="color:#960050;background-color:#1e0010">**</span>
-<span style="color:#960050;background-color:#1e0010">**</span> <span style="color:#a6e22e">Google</span> <span style="color:#a6e22e">Big</span> <span style="color:#a6e22e">Table</span> <span style="color:#960050;background-color:#1e0010">**</span>
-
-</code></pre></div>
 
 <footer class="footline">
 	
@@ -1238,19 +1230,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1587416670"></script>
-    <script src="/js/perfect-scrollbar.min.js?1587416670"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1587416670"></script>
-    <script src="/js/jquery.sticky.js?1587416670"></script>
-    <script src="/js/featherlight.min.js?1587416670"></script>
-    <script src="/js/highlight.pack.js?1587416670"></script>
+    <script src="/js/clipboard.min.js?1587416818"></script>
+    <script src="/js/perfect-scrollbar.min.js?1587416818"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1587416818"></script>
+    <script src="/js/jquery.sticky.js?1587416818"></script>
+    <script src="/js/featherlight.min.js?1587416818"></script>
+    <script src="/js/highlight.pack.js?1587416818"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1587416670"></script>
-    <script src="/js/learn.js?1587416670"></script>
-    <script src="/js/hugo-learn.js?1587416670"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1587416818"></script>
+    <script src="/js/learn.js?1587416818"></script>
+    <script src="/js/hugo-learn.js?1587416818"></script>
 
-    <link href="/mermaid/mermaid.css?1587416670" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1587416670"></script>
+    <link href="/mermaid/mermaid.css?1587416818" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1587416818"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

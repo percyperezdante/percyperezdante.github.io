@@ -129,9 +129,9 @@ You can store data inside the VMs you ship in GCP. However, GCP can store struct
     - Cloud Spanner
     - Cloud Data Store
     - Google Big Table
-    ```
+```
 
-** Cloud storage **
+**Cloud storage **
 Cloud storage uses object storages to store your data. Object storage is not same as the traditional file storage or block storage. Instead, the whole object is stored by associating it to a key, a key that has a URL form.
 
 Cloud storage is a set of buckets, that are inmutable, which means that you can not edit them, but you can create a new version of them. Cloud storage always encrypt your data in the server side.
@@ -141,8 +141,8 @@ Each bucket has a unique id and location. You can move one bucket from one locat
 Additionaly, you can turn on versioninng, which allows you track all modifcations of you object storage. However, if you turn off your versioning, you will always have one version of your object storage, which means that the old version will be replaced by the new one.
 
 
-** CLoud SQL **
-** Cloud Spanner **
-** Cloud Data Store **
-** Google Big Table **
+**CLoud SQL **
+**Cloud Spanner **
+**Cloud Data Store **
+**Google Big Table **
 
