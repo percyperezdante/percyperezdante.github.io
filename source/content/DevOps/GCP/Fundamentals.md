@@ -142,7 +142,10 @@ Additionaly, you can turn on versioninng, which allows you track all modifcation
 
 
 **CLoud SQL**
+
 **Cloud Spanner**
+
 **Cloud Data Store**
+
 **Google Big Table**
 
