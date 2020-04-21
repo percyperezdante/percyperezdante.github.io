@@ -152,11 +152,33 @@ GCP offers four Cloud storage classes:
 
 There are several methods to transfer your data into Cloud storage. These methods include gs-util, drag and drop, online transfer storage service and the offline transfer appicanes tools. Cloud Storage also works with other GCP services to transfer your data, these services include import export tables using BigQuery and cloud SQL, Object storage, logs and backups from App engines, scripts and images from Compute Engine.
 
+**Google Big Table**
+
+It is a NOSQL Big Data database service. Bigtable can scale to billonw of rows and thousands of columns allowing you to store petabytes of data. It is ideal for storing large set of data with low latency, it support high throughput to both read and write, which make it a good choice for operational and analytical analysis.
+
+It uses the same open source API as HBase. The advantages of using Bigtable over Hbase are:
+
+```toml
+    - Scalability: especially when query rates per time increases, GCP manages to scale up your cluster through a machine counter. 
+    - Administration: These tasks are transparent to the user, and GCP manages all operational work such as updates, and patches.
+    - Encryption: Data is encrypted in both in-flight and at rest. Also IAM permissions can be applied to RBAC to Bigtable data.
+    - GCP: Bigtable is same data base used by Google's core services such as search, analytics and maps.
+```
+
+Bigtable can be accessed by the following patterns:
+
+```toml
+    - App API: You can write and read from Bigtable using service layer like VMs, HBase REST server or Java server through HBase client. 
+    - Streaming: You can use popular tools such as Cloud Dataflow, Spark Streaming and Storm.
+    - Batches: You can read and write using Hadoop Mapreduce, Dataflow, or Spark.
+
+```
+
+
 **CLoud SQL**
 
 **Cloud Spanner**
 
 **Cloud Data Store**
 
-**Google Big Table**
 
