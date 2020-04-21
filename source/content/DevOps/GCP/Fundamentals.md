@@ -140,6 +140,17 @@ Each bucket has a unique id and location. You can move one bucket from one locat
 
 Additionaly, you can turn on versioninng, which allows you track all modifcations of you object storage. However, if you turn off your versioning, you will always have one version of your object storage, which means that the old version will be replaced by the new one.
 
+GCP offers four Cloud storage classes:
+
+```toml
+    - Regional(99.95% availability): Let your store your data in a specific region. Cheaper but less redundant. Examples include: Europe west, asia east.
+    - Multi-regional(99.90% availability): Stores your date in a at least two geographica regions separated by at lease 160 km. Examples include: EU, Asia. Ideal for data frequently accessed.
+    - Nearline(99.00% availability): It is a low cost and ideal for unfrequently accessed data, such as once a month or lest on average.
+    - Coldline(99.00% availability): It is a very low cost and ideal for data accessed less than once a year, such as archiving, online backups and disaster recovery.
+```
+
+
+There are several methods to transfer your data into Cloud storage. These methods include gs-util, drag and drop, online transfer storage service and the offline transfer appicanes tools. Cloud Storage also works with other GCP services to transfer your data, these services include import export tables using BigQuery and cloud SQL, Object storage, logs and backups from App engines, scripts and images from Compute Engine.
 
 **CLoud SQL**
 

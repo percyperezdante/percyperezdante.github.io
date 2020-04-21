@@ -12,20 +12,20 @@
     <title>Fundamentals :: Home</title>
 
     
-    <link href="/css/nucleus.css?1587421419" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1587421419" rel="stylesheet">
-    <link href="/css/hybrid.css?1587421419" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1587421419" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1587421419" rel="stylesheet">
-    <link href="/css/auto-complete.css?1587421419" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1587421419" rel="stylesheet">
-    <link href="/css/theme.css?1587421419" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1587421419" rel="stylesheet">
+    <link href="/css/nucleus.css?1587459524" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1587459524" rel="stylesheet">
+    <link href="/css/hybrid.css?1587459524" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1587459524" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1587459524" rel="stylesheet">
+    <link href="/css/auto-complete.css?1587459524" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1587459524" rel="stylesheet">
+    <link href="/css/theme.css?1587459524" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1587459524" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1587421419" rel="stylesheet">
+      <link href="/css/theme-percy.css?1587459524" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1587421419"></script>
+    <script src="/js/jquery-3.3.1.min.js?1587459524"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1587421419"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1587421419"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1587459524"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1587459524"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1587421419"></script>
+<script type="text/javascript" src="/js/search.js?1587459524"></script>
 
     
   </div>
@@ -823,6 +823,12 @@ Cloud storage uses object storages to store your data. Object storage is not sam
 <p>Cloud storage is a set of buckets, that are inmutable, which means that you can not edit them, but you can create a new version of them. Cloud storage always encrypt your data in the server side.</p>
 <p>Each bucket has a unique id and location. You can move one bucket from one location to another in order to optimise latency. To control access to your buckets you can use Cloud IAM, which in general is sufficient. Each of the access control lists, ACLs, have two parts: one to specify the user or group of users and the other to specify the type of permissions associated to these users or groups.</p>
 <p>Additionaly, you can turn on versioninng, which allows you track all modifcations of you object storage. However, if you turn off your versioning, you will always have one version of your object storage, which means that the old version will be replaced by the new one.</p>
+<p>GCP offers four Cloud storage classes:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Regional</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#ae81ff">99.95</span><span style="color:#960050;background-color:#1e0010">%</span> <span style="color:#a6e22e">availability</span><span style="color:#960050;background-color:#1e0010">):</span> <span style="color:#a6e22e">Let</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">store</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">specific</span> <span style="color:#a6e22e">region</span>. <span style="color:#a6e22e">Cheaper</span> <span style="color:#a6e22e">but</span> <span style="color:#a6e22e">less</span> <span style="color:#a6e22e">redundant</span>. <span style="color:#a6e22e">Examples</span> <span style="color:#a6e22e">include</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">Europe</span> <span style="color:#a6e22e">west</span>, <span style="color:#a6e22e">asia</span> <span style="color:#a6e22e">east</span>.
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Multi</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">regional</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#ae81ff">99.90</span><span style="color:#960050;background-color:#1e0010">%</span> <span style="color:#a6e22e">availability</span><span style="color:#960050;background-color:#1e0010">):</span> <span style="color:#a6e22e">Stores</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">date</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">at</span> <span style="color:#a6e22e">least</span> <span style="color:#a6e22e">two</span> <span style="color:#a6e22e">geographica</span> <span style="color:#a6e22e">regions</span> <span style="color:#a6e22e">separated</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">at</span> <span style="color:#a6e22e">lease</span> <span style="color:#ae81ff">160</span> <span style="color:#a6e22e">km</span>. <span style="color:#a6e22e">Examples</span> <span style="color:#a6e22e">include</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">EU</span>, <span style="color:#a6e22e">Asia</span>. <span style="color:#a6e22e">Ideal</span> <span style="color:#a6e22e">for</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">frequently</span> <span style="color:#a6e22e">accessed</span>.
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Nearline</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#ae81ff">99.00</span><span style="color:#960050;background-color:#1e0010">%</span> <span style="color:#a6e22e">availability</span><span style="color:#960050;background-color:#1e0010">):</span> <span style="color:#a6e22e">It</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">low</span> <span style="color:#a6e22e">cost</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">ideal</span> <span style="color:#a6e22e">for</span> <span style="color:#a6e22e">unfrequently</span> <span style="color:#a6e22e">accessed</span> <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">such</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">once</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">month</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">lest</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">average</span>.
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Coldline</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#ae81ff">99.00</span><span style="color:#960050;background-color:#1e0010">%</span> <span style="color:#a6e22e">availability</span><span style="color:#960050;background-color:#1e0010">):</span> <span style="color:#a6e22e">It</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">very</span> <span style="color:#a6e22e">low</span> <span style="color:#a6e22e">cost</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">ideal</span> <span style="color:#a6e22e">for</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">accessed</span> <span style="color:#a6e22e">less</span> <span style="color:#a6e22e">than</span> <span style="color:#a6e22e">once</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">year</span>, <span style="color:#a6e22e">such</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">archiving</span>, <span style="color:#a6e22e">online</span> <span style="color:#a6e22e">backups</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">disaster</span> <span style="color:#a6e22e">recovery</span>.
+</code></pre></div><p>There are several methods to transfer your data into Cloud storage. These methods include gs-util, drag and drop, online transfer storage service and the offline transfer appicanes tools. Cloud Storage also works with other GCP services to transfer your data, these services include import export tables using BigQuery and cloud SQL, Object storage, logs and backups from App engines, scripts and images from Compute Engine.</p>
 <p><strong>CLoud SQL</strong></p>
 <p><strong>Cloud Spanner</strong></p>
 <p><strong>Cloud Data Store</strong></p>
@@ -1230,19 +1236,19 @@ Cloud storage uses object storages to store your data. Object storage is not sam
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1587421419"></script>
-    <script src="/js/perfect-scrollbar.min.js?1587421419"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1587421419"></script>
-    <script src="/js/jquery.sticky.js?1587421419"></script>
-    <script src="/js/featherlight.min.js?1587421419"></script>
-    <script src="/js/highlight.pack.js?1587421419"></script>
+    <script src="/js/clipboard.min.js?1587459524"></script>
+    <script src="/js/perfect-scrollbar.min.js?1587459524"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1587459524"></script>
+    <script src="/js/jquery.sticky.js?1587459524"></script>
+    <script src="/js/featherlight.min.js?1587459524"></script>
+    <script src="/js/highlight.pack.js?1587459524"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1587421419"></script>
-    <script src="/js/learn.js?1587421419"></script>
-    <script src="/js/hugo-learn.js?1587421419"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1587459524"></script>
+    <script src="/js/learn.js?1587459524"></script>
+    <script src="/js/hugo-learn.js?1587459524"></script>
 
-    <link href="/mermaid/mermaid.css?1587421419" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1587421419"></script>
+    <link href="/mermaid/mermaid.css?1587459524" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1587459524"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
