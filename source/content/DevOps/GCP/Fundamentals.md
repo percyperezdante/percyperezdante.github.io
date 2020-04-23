@@ -177,8 +177,113 @@ Bigtable can be accessed by the following patterns:
 
 **CLoud SQL**
 
+This is a RDBMS service. Offers MySQL or PostgreSQL databases as service. The benefits of using Cloud SQL rather than set my own database in the cloud, is that Cloud SQL offers:
+
+```toml
+    - Automatic replication: read, failover and external replicas. This means that Cloud SQL can replicate data within multiple zones without failover.
+    - Backups: Cloud SQL offers you backup your data on-demand or base on schedules. The backup could be vertical, by changing the machine type, or horizontal via read replicas.
+    - Security: Cloud SQL includes network firewalls, customer data encryption when data is in internal Google's networks.
+    - Visibility: Cloud SQL instances are accessible by other GCP or external services.
+```
+
+    Cloud SQL can be used with App Engine application. Compute engine instances can be authorized to access Cloud SQL using external IP address and also can be configured with a preferred zone.  Additionaly,  Cloud SQL can be adminnistrated by external tools or can be set external replicas.
+
 **Cloud Spanner**
 
-**Cloud Data Store**
+Cloud Spanner offers an horizontal scalability for Cloud SQL. It offers transactional consistency at global scale, schemas , SQL and automatic synchronous replication for high availability. Cloud Spinner can be consider when you have an outgrown any relational database or you need glocal data transactional consistency such as the cases of financial application and inventory applications.
+
+**Cloud DataStore**
+
+It is another high scalable  NOSQL database service. Its main case is to store structured data from App Engine applications. Cloud DataStore automaticaly handles replications and sharding. 
+
+**Summary**
+
+The following figures present a summary of technical differences between GCP services and their common use cases.
+
+![Summary of Comparing Store Options](/devops/gcp/comparingstoreoptions.png?width=50pc)
+![Summary of Comparing Use Cases](/devops/gcp/comparingusescases.png?width=50pc)
+
+_Note: These figures are screenshots took during the course. Credits to GCP training material_
+
+#### How to get started with Cloud Storage and Cloud SQL
+
+1. Create a VM with an Apache web server and upload an image to a new bucket.
+
+
+```toml
+    -  Create a VM as it was described on section "how to create a VM ...". 
+
+Before click create please add a start up script that install a web server in this VM by expanding the link "management, disks, networking, SSH keys" and look for the "Startup script".  You can copy the following:
+        
+        apt update
+        apt isntall apache2 php php-mysql -y
+        service apache2 restart
+
+    - Create a bucket and upload any image to this bucket.
+
+You can click on cloud shell and type:
+
+        $ gsutil mb -l EU gs://$DEVSHELL_PROJECT_ID   # This creates a bucket with an UNIQUE ID,my google project id
+        $ gsutil cp gs://cloud-training/gcpfxi/my-excellent-blog.png my-image-blog.png  # Copy an image to my local VM
+        $ ls   # This should show that the images is in your VM now.
+        $ gsutil cp my-image-blog.png gs://$DEVSHELL_PROJECT_ID/my-image-blog.png # This uploads my image to my bucket.
+        $ gsutil acl ch -u allUsers:R gs://$DEVSHELL_PROJECT_ID/my-excellent-blog.png # modify access permissions
+        $ gsutil ls gs://$DEVSHELL_PROJECT_ID  # will show you the content of your bucket, not VM.
+
+        Also you can see open your bucket using the GUI and see if it is there. To do so, click on Storage -> Browser -> Click on the name of the bucket. In here check the box for "Share plublicly". Please, copy the link somewehre we will use it to point from the index.php page of this webserver.
+```
+
+2.  Create SQL instance
+
+```toml
+    - Click on Products and Services -> Storage -> SQL - > Create Instance -> MySQL 
+    - Give a name of this instance and set a password. Remember to choose the same ZONE as the VM on step 1. Click create.
+    - Click on the name and create an account:  click on users -> create users -> type user name and password -> Click create.
+    - Restrict the access to this SQL instance to VM on point 1. Click authorization -> add network -> Give a name -> Copy the publick IP address of the VM on point 1.  Remember add /32 as mask for the public IP address, this is to protect from broad internet access.
+
+```
+
+3.  Configure your Apache main page
+
+```toml
+    - Login to the VM created on point 1 using SSH. 
+    - Edit the /var/www/html/index.php and add php code to connect to the DB of point 2 and show the image uploaded in point 1.
+    - Restart Apache and open in a browser "public ip address of VM"/index.php. You should be able to see the image we  uploaded on point 1 and see a connection succed message to the SQL instance.
+
+    As a quick example here some tips:
+
+            html>
+            <head><title>Welcome to my excellent blog</title></head>
+            <img src='https://storage.googleapis.com/qwiklabs-gcp-0005e186fa559a09/my-excellent-blog.png'>
+            <body>
+            <h1>Welcome to my excellent blog</h1>
+            <?php
+            $dbserver = "CLOUDSQLIP";
+            $dbuser = "blogdbuser";
+            $dbpassword = "DBPASSWORD";
+            // In a production blog, we would not store the MySQL
+            // password in the document root. Instead, we would store it in a
+            // configuration file elsewhere on the web server VM instance.
+
+            $conn = new mysqli($dbserver, $dbuser, $dbpassword);
+
+            if (mysqli_connect_error()) {
+                    echo ("Database connection failed: " . mysqli_connect_error());
+            } else {
+                    echo ("Database connection succeeded.");
+            }
+            ?>
+            </body></html>
+
+```
+
+
+### Containers in the Cloud
+
+### Applications in the Cloud
+
+### Developing, Deploying and Monitoring in the Cloud
+
+### Big Data and Machine Learning in the Cloud
 
 
