@@ -23,6 +23,11 @@
   </url>
   
   <url>
+    <loc>http://example.org/teaching/resources/</loc>
+    <lastmod>2020-05-05T12:25:59+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/devops/gcp/</loc>
     <lastmod>2020-04-12T10:46:05+01:00</lastmod>
   </url>
@@ -58,12 +63,12 @@
   </url>
   
   <url>
-    <loc>http://example.org/devops/gcp/fundamentals/</loc>
-    <lastmod>2020-04-12T11:06:46+01:00</lastmod>
+    <loc>http://example.org/</loc>
+    <lastmod>2020-05-05T12:25:59+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>http://example.org/devops/gcp/fundamentals/</loc>
     <lastmod>2020-04-12T11:06:46+01:00</lastmod>
   </url>
   

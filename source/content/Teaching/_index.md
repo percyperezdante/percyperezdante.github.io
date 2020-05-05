@@ -8,7 +8,7 @@ pre = "<b>7. </b>"
 
 # Teaching
 
-This site present my teaching and knowledge transfer activities inside and outside the university.
+This site present my teaching and knowledge transfer activities inside and outside the university. Some resources are showed in [here](resources/) in case of interest.
 
 #### 2020    
         A practical overview of Vagrant

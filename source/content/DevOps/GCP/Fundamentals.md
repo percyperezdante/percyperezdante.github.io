@@ -280,6 +280,7 @@ You can click on cloud shell and type:
 
 ### Containers in the Cloud
 
+
 ### Applications in the Cloud
 
 ### Developing, Deploying and Monitoring in the Cloud
