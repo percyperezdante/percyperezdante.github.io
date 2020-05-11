@@ -12,20 +12,20 @@
     <title>Go :: Home</title>
 
     
-    <link href="/css/nucleus.css?1589201734" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1589201734" rel="stylesheet">
-    <link href="/css/hybrid.css?1589201734" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1589201734" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1589201734" rel="stylesheet">
-    <link href="/css/auto-complete.css?1589201734" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1589201734" rel="stylesheet">
-    <link href="/css/theme.css?1589201734" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1589201734" rel="stylesheet">
+    <link href="/css/nucleus.css?1589226462" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1589226462" rel="stylesheet">
+    <link href="/css/hybrid.css?1589226462" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1589226462" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1589226462" rel="stylesheet">
+    <link href="/css/auto-complete.css?1589226462" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1589226462" rel="stylesheet">
+    <link href="/css/theme.css?1589226462" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1589226462" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1589201734" rel="stylesheet">
+      <link href="/css/theme-percy.css?1589226462" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1589201734"></script>
+    <script src="/js/jquery-3.3.1.min.js?1589226462"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1589201734"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1589201734"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1589226462"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1589226462"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1589201734"></script>
+<script type="text/javascript" src="/js/search.js?1589226462"></script>
 
     
   </div>
@@ -761,6 +761,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <li>
       <ul>
         <li></li>
+        <li><a href="#general">General</a></li>
+        <li><a href="#go-internals">Go internals</a></li>
       </ul>
     </li>
   </ul>
@@ -793,7 +795,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 <ul>
 <li><a href="https://www.packtpub.com/networking-and-servers/mastering-go">Go mastering by Mihalis Tsoukalos</a></li>
 </ul>
-<h4 id="general">General</h4>
+<h3 id="general">General</h3>
 <p><strong>1. Go inserts only a semicolon at the end of a &ldquo;{&quot;</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> func main<span style="color:#f92672">()</span>
  <span style="color:#f92672">{</span>              // &lt;-- this will trigger error
@@ -980,6 +982,13 @@ RUN go build -o /files/hw hw.go
 ENTRYPOINT <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;/files/hw&#34;</span><span style="color:#f92672">]</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker build -t go_hw:v1 .
 $ docker run go_hw:v1
+</code></pre></div><h3 id="go-internals">Go internals</h3>
+<p><strong>1. Go compiler</strong></p>
+<ul>
+<li>Compiling source file</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go tool compile sourceFile.go
+$ ls -ltr sourceFile.o
 </code></pre></div>
 
 <footer class="footline">
@@ -1416,19 +1425,19 @@ $ docker run go_hw:v1
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1589201734"></script>
-    <script src="/js/perfect-scrollbar.min.js?1589201734"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1589201734"></script>
-    <script src="/js/jquery.sticky.js?1589201734"></script>
-    <script src="/js/featherlight.min.js?1589201734"></script>
-    <script src="/js/highlight.pack.js?1589201734"></script>
+    <script src="/js/clipboard.min.js?1589226462"></script>
+    <script src="/js/perfect-scrollbar.min.js?1589226462"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1589226462"></script>
+    <script src="/js/jquery.sticky.js?1589226462"></script>
+    <script src="/js/featherlight.min.js?1589226462"></script>
+    <script src="/js/highlight.pack.js?1589226462"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1589201734"></script>
-    <script src="/js/learn.js?1589201734"></script>
-    <script src="/js/hugo-learn.js?1589201734"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1589226462"></script>
+    <script src="/js/learn.js?1589226462"></script>
+    <script src="/js/hugo-learn.js?1589226462"></script>
 
-    <link href="/mermaid/mermaid.css?1589201734" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1589201734"></script>
+    <link href="/mermaid/mermaid.css?1589226462" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1589226462"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

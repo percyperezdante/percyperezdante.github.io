@@ -9,7 +9,7 @@ The following notes were extracted, adjusted or extended from the following refe
 - [Go mastering by Mihalis Tsoukalos](https://www.packtpub.com/networking-and-servers/mastering-go)
 
 
-#### General
+### General
 
 **1. Go inserts only a semicolon at the end of a "{"**
 
@@ -216,3 +216,13 @@ $ docker build -t go_hw:v1 .
 $ docker run go_hw:v1
 ```
 
+### Go internals
+
+**1. Go compiler**
+
+- Compiling source file
+
+```bash
+$ go tool compile sourceFile.go
+$ ls -ltr sourceFile.o
+```
