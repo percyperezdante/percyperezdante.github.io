@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>SRE MMR Week4 :: Home</title>
+    <title>Go :: Home</title>
 
     
     <link href="/css/nucleus.css?1589201734" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/sre/online/sre-mmr-week4/">
+  <body class="" data-url="/notes/go/">
     <nav id="sidebar" class="">
 
 
@@ -221,7 +221,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/sre/" title="SRE" class="dd-item 
-        parent
+        
         
         
         ">
@@ -250,7 +250,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/sre/online/" title="Online resources" class="dd-item 
-        parent
+        
         
         
         ">
@@ -276,7 +276,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/sre/online/sre-mmr-week4/" title="SRE MMR Week4" class="dd-item active">
+      <li data-nav-id="/sre/online/sre-mmr-week4/" title="SRE MMR Week4" class="dd-item ">
         <a href="/sre/online/sre-mmr-week4/">
         SRE MMR Week4
         
@@ -398,7 +398,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/notes/" title="Notes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -424,7 +424,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/notes/go/" title="Go" class="dd-item ">
+      <li data-nav-id="/notes/go/" title="Go" class="dd-item active">
         <a href="/notes/go/">
         Go
         
@@ -743,13 +743,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            
-            
-          
-          
-            <a href='/'>Home</a> > <a href='/sre/'>SRE</a> > <a href='/sre/online/'>Online resources</a> > SRE MMR Week4
-          
-         
+            <a href='/'>Home</a> > <a href='/notes/'>Notes</a> > Go
           
          
           
@@ -762,7 +756,15 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -778,7 +780,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
           
             <h1>
               
-              SRE MMR Week4
+              Go
             </h1>
           
 
@@ -786,7 +788,199 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
+<h4 id="references">References</h4>
+<p>The following notes were extracted, adjusted or extended from the following references.</p>
+<ul>
+<li><a href="https://www.packtpub.com/networking-and-servers/mastering-go">Go mastering by Mihalis Tsoukalos</a></li>
+</ul>
+<h4 id="general">General</h4>
+<p><strong>1. Go inserts only a semicolon at the end of a &ldquo;{&quot;</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> func main<span style="color:#f92672">()</span>
+ <span style="color:#f92672">{</span>              // &lt;-- this will trigger error
+    ....
+ <span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> func main<span style="color:#f92672">(){</span>              // &lt;-- this will  NOT trigger error
+    ....
+ <span style="color:#f92672">}</span>
+</code></pre></div><p><strong>2. Install and clean packages</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go get -v github.com/mastsoud/go/package_name
+.....
+$ go clean -i -v -x package_name
+$ rm -rf ~/go/src/github.com/mastsoud/go/package_name
 
+</code></pre></div><p><strong>3. Stdin/out/err</strong></p>
+<table>
+<thead>
+<tr>
+<th>Go</th>
+<th>Unix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>os.Stdin</td>
+<td>stdin   &ndash;&gt;  /dev/stdin  &ndash;&gt;  /proc/self/fd/0</td>
+</tr>
+<tr>
+<td>os.Stdout</td>
+<td>stdout   &ndash;&gt;  /dev/stdout  &ndash;&gt;  /proc/self/fd/1</td>
+</tr>
+<tr>
+<td>os.Stderr</td>
+<td>stderr   &ndash;&gt;  /dev/stderr  &ndash;&gt;  /proc/self/fd/2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>4. Reading input</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package main
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;bufio&#34;</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;os&#34;</span>
+<span style="color:#f92672">)</span>
+
+func main<span style="color:#f92672">(){</span>
+    var f *os.File
+    f <span style="color:#f92672">=</span> os.Stdin
+    defer f.Close<span style="color:#f92672">()</span>
+    scanner :<span style="color:#f92672">=</span> bufio.NewScanner<span style="color:#f92672">(</span>f<span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">for</span> scanner.Scan<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&gt;&#34;</span>, scanner.Text<span style="color:#f92672">())</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><strong>5. Logs</strong></p>
+<ul>
+<li>rsyslogd configuration</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ grep -v <span style="color:#e6db74">&#34;#&#34;</span> /etc/rsyslog.conf
+</code></pre></div><ul>
+<li>Syslog</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package main
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;log&#34;</span>
+    <span style="color:#e6db74">&#34;log/syslog&#34;</span>
+    <span style="color:#e6db74">&#34;os&#34;</span>
+    <span style="color:#e6db74">&#34;path/filepath&#34;</span>
+<span style="color:#f92672">)</span>
+func main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    programName :<span style="color:#f92672">=</span> filepath.Base<span style="color:#f92672">(</span>os.Args<span style="color:#f92672">[</span>0<span style="color:#f92672">])</span>
+    sysLog, err :<span style="color:#f92672">=</span> syslog.New<span style="color:#f92672">(</span>syslog.LOG_INFO|syslog.LOG_LOCAL7,programName<span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">if</span> err !<span style="color:#f92672">=</span> nil <span style="color:#f92672">{</span>
+        log.Fatal<span style="color:#f92672">(</span>err<span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+        log.SetOutput<span style="color:#f92672">(</span>sysLog<span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span>
+    log.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;LOG_INFO + LOG_LOCAL7: Logging in Go!&#34;</span><span style="color:#f92672">)</span>
+    sysLog, err <span style="color:#f92672">=</span> syslog.New<span style="color:#f92672">(</span>syslog.LOG_MAIL, <span style="color:#e6db74">&#34;Some program!&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">if</span> err !<span style="color:#f92672">=</span> nil <span style="color:#f92672">{</span>
+        log.Fatal<span style="color:#f92672">(</span>err<span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+        log.SetOutput<span style="color:#f92672">(</span>sysLog<span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span>
+    log.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;LOG_MAIL: Logging in Go!&#34;</span><span style="color:#f92672">)</span>
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Will you see this?&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><p><strong>6. Errors</strong></p>
+<ul>
+<li>Error types</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package main
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;errors&#34;</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">)</span>
+func returnError<span style="color:#f92672">(</span>a, b int<span style="color:#f92672">)</span> error <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> a <span style="color:#f92672">==</span> b <span style="color:#f92672">{</span>
+        err :<span style="color:#f92672">=</span> errors.New<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Error in returnError() function!&#34;</span><span style="color:#f92672">)</span>
+        <span style="color:#66d9ef">return</span> err
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> nil
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+func main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    err :<span style="color:#f92672">=</span> returnError<span style="color:#f92672">(</span>1, 2<span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">if</span> err <span style="color:#f92672">==</span> nil <span style="color:#f92672">{</span>
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;returnError() ended normally!&#34;</span><span style="color:#f92672">)</span>
+        fmt.Println<span style="color:#f92672">(</span>err<span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span>
+    err <span style="color:#f92672">=</span> returnError<span style="color:#f92672">(</span>10, 10<span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">if</span> err <span style="color:#f92672">==</span> nil <span style="color:#f92672">{</span>
+        fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;returnError() ended normally!&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+        fmt.Println<span style="color:#f92672">(</span>err<span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">if</span> err.Error<span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Error in returnError() function!&#34;</span> <span style="color:#f92672">{</span>
+        fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;!!&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><ul>
+<li>Typical handling of errors</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   <span style="color:#66d9ef">if</span> err !<span style="color:#f92672">=</span> nil <span style="color:#f92672">{</span>
+        fmt.Println<span style="color:#f92672">(</span>err<span style="color:#f92672">)</span>  or  log.Println<span style="color:#f92672">(</span>err<span style="color:#f92672">)</span>    or   panic<span style="color:#f92672">(</span>err<span style="color:#f92672">)</span>
+        os.Exit<span style="color:#f92672">(</span>10<span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span> 
+</code></pre></div><ul>
+<li>Example</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package main
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;errors&#34;</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;os&#34;</span>
+    <span style="color:#e6db74">&#34;strconv&#34;</span>
+<span style="color:#f92672">)</span>
+func main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> len<span style="color:#f92672">(</span>os.Args<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">{</span>
+        fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Please give one or more floats.&#34;</span><span style="color:#f92672">)</span>
+        os.Exit<span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span>
+    arguments :<span style="color:#f92672">=</span> os.Args
+    var err error <span style="color:#f92672">=</span> errors.New<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;An error&#34;</span><span style="color:#f92672">)</span>
+    k :<span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+    var n float64
+    <span style="color:#66d9ef">for</span> err !<span style="color:#f92672">=</span> nil <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> k &gt;<span style="color:#f92672">=</span> len<span style="color:#f92672">(</span>arguments<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;None of the arguments is a float!&#34;</span><span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">return</span>
+        <span style="color:#f92672">}</span>
+        n, err <span style="color:#f92672">=</span> strconv.ParseFloat<span style="color:#f92672">(</span>arguments<span style="color:#f92672">[</span>k<span style="color:#f92672">]</span>, 64<span style="color:#f92672">)</span>
+        k++
+    <span style="color:#f92672">}</span>
+    min, max :<span style="color:#f92672">=</span> n, n
+    <span style="color:#66d9ef">for</span> i :<span style="color:#f92672">=</span> 2; i &lt; len<span style="color:#f92672">(</span>arguments<span style="color:#f92672">)</span>; i++ <span style="color:#f92672">{</span>
+        n, err :<span style="color:#f92672">=</span> strconv.ParseFloat<span style="color:#f92672">(</span>arguments<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>, 64<span style="color:#f92672">)</span>
+        <span style="color:#66d9ef">if</span> err <span style="color:#f92672">==</span> nil <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> n &lt; min <span style="color:#f92672">{</span>
+                min <span style="color:#f92672">=</span> n
+            <span style="color:#f92672">}</span>
+            <span style="color:#66d9ef">if</span> n &gt; max <span style="color:#f92672">{</span>
+                max <span style="color:#f92672">=</span> n
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Min:&#34;</span>, min<span style="color:#f92672">)</span>
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Max:&#34;</span>, max<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><p><strong>7. Using docker</strong></p>
+<ul>
+<li>Dockerfile</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">FROM golang:alpine
+RUN mkdir /files
+COPY hw.go /files
+WORKDIR /file
+RUN go build -o /files/hw hw.go
+ENTRYPOINT <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;/files/hw&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker build -t go_hw:v1 .
+$ docker run go_hw:v1
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -908,7 +1102,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                    
                 
                 
 
@@ -924,7 +1117,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                    
                 
                 
 
@@ -937,7 +1129,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
-                    
                     
                 
                 
@@ -954,9 +1145,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1028,6 +1216,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                    
                 
                 
 
@@ -1040,6 +1229,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
                     
                 
                 
@@ -1059,6 +1249,9 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1210,10 +1403,10 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 	 
 	 
 		
-			<a class="nav nav-prev" href="/sre/online/" title="Online resources"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/notes/" title="Notes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/sre/online/sre-mmr-week3/" title="SRE MMR Week3" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/tools/" title="Tools" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

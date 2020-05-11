@@ -6,10 +6,22 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 May 2020 12:25:59 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2020 11:04:57 +0100</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go</title>
+      <link>http://example.org/notes/go/</link>
+      <pubDate>Mon, 11 May 2020 11:04:57 +0100</pubDate>
+      
+      <guid>http://example.org/notes/go/</guid>
+      <description>References The following notes were extracted, adjusted or extended from the following references.
+ Go mastering by Mihalis Tsoukalos  General 1. Go inserts only a semicolon at the end of a &amp;ldquo;{&amp;quot;
+func main() { // &amp;lt;-- this will trigger error .... } func main(){ // &amp;lt;-- this will NOT trigger error .... } 2. Install and clean packages
+$ go get -v github.com/mastsoud/go/package_name ..... $ go clean -i -v -x package_name $ rm -rf ~/go/src/github.</description>
+    </item>
     
     <item>
       <title>Fundamentals</title>
