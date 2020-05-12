@@ -384,5 +384,49 @@ Taking the example of "4->4->0":
 **WebAssembly code**
 
 
-# Data types
+### Data types
+
+**1. Slices**
+
+- Slices are passed by reference to functions.
+
+- Slices are often used, more than arrays.
+
+```bash
+ mySlcie := []int{1,23,4}
+ mySlice := make([]int, 20)  // Go initilise with default values
+ mySlice = append(mySlice, 2134)
+ len(mySlice)
+ fmt.Println(mySlice[1:3])
+```
+
+- Re-slicing may cause some problems.
+
+Reslice do not copy values, reslice keeps reference from the orignal slice. Therefore, if you make any change of values in the reslice, they will also change values in the original slice.
+
+
+```bash
+package main
+import "fmt"
+func main() {
+    s1 := make([]int, 5)
+    reSlice := s1[1:3]  // Reslice not copy from s1, it make reference
+    fmt.Println(s1)
+    fmt.Println(reSlice)
+    reSlice[0] = -100  // This means also s[1]=-100
+    reSlice[1] = 123456 // This also means s[2]=123456
+    fmt.Println(s1)
+    fmt.Println(reSlice)
+}
+
+```
+
+Output
+```
+$ go run reslice.go
+[0 0 0 0 0]
+[0 0]
+[0 -100 123456 0 0]
+[-100 123456]
+```
 

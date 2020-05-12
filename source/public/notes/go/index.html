@@ -12,20 +12,20 @@
     <title>Go :: Home</title>
 
     
-    <link href="/css/nucleus.css?1589234216" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1589234216" rel="stylesheet">
-    <link href="/css/hybrid.css?1589234216" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1589234216" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1589234216" rel="stylesheet">
-    <link href="/css/auto-complete.css?1589234216" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1589234216" rel="stylesheet">
-    <link href="/css/theme.css?1589234216" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1589234216" rel="stylesheet">
+    <link href="/css/nucleus.css?1589268570" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1589268570" rel="stylesheet">
+    <link href="/css/hybrid.css?1589268570" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1589268570" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1589268570" rel="stylesheet">
+    <link href="/css/auto-complete.css?1589268570" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1589268570" rel="stylesheet">
+    <link href="/css/theme.css?1589268570" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1589268570" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1589234216" rel="stylesheet">
+      <link href="/css/theme-percy.css?1589268570" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1589234216"></script>
+    <script src="/js/jquery-3.3.1.min.js?1589268570"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1589234216"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1589234216"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1589268570"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1589268570"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1589234216"></script>
+<script type="text/javascript" src="/js/search.js?1589268570"></script>
 
     
   </div>
@@ -763,6 +763,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         <li></li>
         <li><a href="#general">General</a></li>
         <li><a href="#go-internals">Go internals</a></li>
+        <li><a href="#data-types">Data types</a></li>
       </ul>
     </li>
   </ul>
@@ -1108,8 +1109,45 @@ mem.Alloc: <span style="color:#ae81ff">125896</span>
 <p><strong>Node trees</strong></p>
 <p><strong>Go build</strong></p>
 <p><strong>WebAssembly code</strong></p>
-<h1 id="data-types">Data types</h1>
+<h3 id="data-types">Data types</h3>
+<p><strong>1. Slices</strong></p>
+<ul>
+<li>
+<p>Slices are passed by reference to functions.</p>
+</li>
+<li>
+<p>Slices are often used, more than arrays.</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> mySlcie :<span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>int<span style="color:#f92672">{</span>1,23,4<span style="color:#f92672">}</span>
+ mySlice :<span style="color:#f92672">=</span> make<span style="color:#f92672">([]</span>int, 20<span style="color:#f92672">)</span>  // Go initilise with default values
+ mySlice <span style="color:#f92672">=</span> append<span style="color:#f92672">(</span>mySlice, 2134<span style="color:#f92672">)</span>
+ len<span style="color:#f92672">(</span>mySlice<span style="color:#f92672">)</span>
+ fmt.Println<span style="color:#f92672">(</span>mySlice<span style="color:#f92672">[</span>1:3<span style="color:#f92672">])</span>
+</code></pre></div><ul>
+<li>Re-slicing may cause some problems.</li>
+</ul>
+<p>Reslice do not copy values, reslice keeps reference from the orignal slice. Therefore, if you make any change of values in the reslice, they will also change values in the original slice.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package main
+import <span style="color:#e6db74">&#34;fmt&#34;</span>
+func main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    s1 :<span style="color:#f92672">=</span> make<span style="color:#f92672">([]</span>int, 5<span style="color:#f92672">)</span>
+    reSlice :<span style="color:#f92672">=</span> s1<span style="color:#f92672">[</span>1:3<span style="color:#f92672">]</span>  // Reslice not copy from s1, it make reference
+    fmt.Println<span style="color:#f92672">(</span>s1<span style="color:#f92672">)</span>
+    fmt.Println<span style="color:#f92672">(</span>reSlice<span style="color:#f92672">)</span>
+    reSlice<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> -100  // This means also s<span style="color:#f92672">[</span>1<span style="color:#f92672">]=</span>-100
+    reSlice<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">123456</span> // This also means s<span style="color:#f92672">[</span>2<span style="color:#f92672">]=</span><span style="color:#ae81ff">123456</span>
+    fmt.Println<span style="color:#f92672">(</span>s1<span style="color:#f92672">)</span>
+    fmt.Println<span style="color:#f92672">(</span>reSlice<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
 
+</code></pre></div><p>Output</p>
+<pre><code>$ go run reslice.go
+[0 0 0 0 0]
+[0 0]
+[0 -100 123456 0 0]
+[-100 123456]
+</code></pre>
 
 <footer class="footline">
 	
@@ -1545,19 +1583,19 @@ mem.Alloc: <span style="color:#ae81ff">125896</span>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1589234216"></script>
-    <script src="/js/perfect-scrollbar.min.js?1589234216"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1589234216"></script>
-    <script src="/js/jquery.sticky.js?1589234216"></script>
-    <script src="/js/featherlight.min.js?1589234216"></script>
-    <script src="/js/highlight.pack.js?1589234216"></script>
+    <script src="/js/clipboard.min.js?1589268570"></script>
+    <script src="/js/perfect-scrollbar.min.js?1589268570"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1589268570"></script>
+    <script src="/js/jquery.sticky.js?1589268570"></script>
+    <script src="/js/featherlight.min.js?1589268570"></script>
+    <script src="/js/highlight.pack.js?1589268570"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1589234216"></script>
-    <script src="/js/learn.js?1589234216"></script>
-    <script src="/js/hugo-learn.js?1589234216"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1589268570"></script>
+    <script src="/js/learn.js?1589268570"></script>
+    <script src="/js/hugo-learn.js?1589268570"></script>
 
-    <link href="/mermaid/mermaid.css?1589234216" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1589234216"></script>
+    <link href="/mermaid/mermaid.css?1589268570" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1589268570"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
