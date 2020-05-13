@@ -12,20 +12,20 @@
     <title>Go :: Home</title>
 
     
-    <link href="/css/nucleus.css?1589268570" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1589268570" rel="stylesheet">
-    <link href="/css/hybrid.css?1589268570" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1589268570" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1589268570" rel="stylesheet">
-    <link href="/css/auto-complete.css?1589268570" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1589268570" rel="stylesheet">
-    <link href="/css/theme.css?1589268570" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1589268570" rel="stylesheet">
+    <link href="/css/nucleus.css?1589352814" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1589352814" rel="stylesheet">
+    <link href="/css/hybrid.css?1589352814" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1589352814" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1589352814" rel="stylesheet">
+    <link href="/css/auto-complete.css?1589352814" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1589352814" rel="stylesheet">
+    <link href="/css/theme.css?1589352814" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1589352814" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1589268570" rel="stylesheet">
+      <link href="/css/theme-percy.css?1589352814" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1589268570"></script>
+    <script src="/js/jquery-3.3.1.min.js?1589352814"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1589268570"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1589268570"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1589352814"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1589352814"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1589268570"></script>
+<script type="text/javascript" src="/js/search.js?1589352814"></script>
 
     
   </div>
@@ -764,6 +764,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         <li><a href="#general">General</a></li>
         <li><a href="#go-internals">Go internals</a></li>
         <li><a href="#data-types">Data types</a></li>
+        <li><a href="#composite-types">Composite Types</a></li>
       </ul>
     </li>
   </ul>
@@ -1147,7 +1148,207 @@ func main<span style="color:#f92672">()</span> <span style="color:#f92672">{</sp
 [0 0]
 [0 -100 123456 0 0]
 [-100 123456]
-</code></pre>
+</code></pre><ul>
+<li>
+<p>If the length and the capacity of a slice have the same values and you try to add another element to the slice, the capacity of the slice will be doubled whereas its length will be increased by one.</p>
+</li>
+<li>
+<p>Byte slices</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">s :<span style="color:#f92672">=</span> make<span style="color:#f92672">([]</span>byte,5<span style="color:#f92672">)</span>
+
+
+**2. Copy slices**
+
+- Becareful using copy<span style="color:#f92672">(</span>destination, source<span style="color:#f92672">)</span>, as copy<span style="color:#f92672">()</span> copies the minimum number of len<span style="color:#f92672">(</span>dst<span style="color:#f92672">)</span> and len<span style="color:#f92672">(</span>src<span style="color:#f92672">)</span> elements
+
+**3. Sort slice**
+
+**4. Appending arrays to slices** 
+
+
+**5. Maps**
+
+- Declaration
+
+<span style="color:#e6db74">```</span>bash
+iMap <span style="color:#f92672">=</span> make<span style="color:#f92672">(</span>map<span style="color:#f92672">[</span>string<span style="color:#f92672">]</span>int<span style="color:#f92672">)</span>
+delete<span style="color:#f92672">(</span>mapName, Key<span style="color:#f92672">)</span>
+
+<span style="color:#66d9ef">for</span> key, value :<span style="color:#f92672">=</span> range iMap <span style="color:#f92672">{</span>
+    fmt.Println<span style="color:#f92672">(</span>key, value<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><p>The bad thing is that if you try to get the value of a map key that does not exist in the map, you will end up getting zero, which gives you no way of determining whether the result was zero because the key you requested was not there or because the element with the corresponding key actually had a zero value. This is why we have _, ok in maps.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+_, ok :<span style="color:#f92672">=</span> iMap<span style="color:#f92672">[</span><span style="color:#e6db74">&#34;doesItExist&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#66d9ef">if</span> ok <span style="color:#f92672">{</span>
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Exists!&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Does NOT exist&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Please note that you cannot and should not make any assumptions about the order the map pairs are going to be displayed on your screen because that order is totally random.</p>
+<p>The next Go code will not work because you have assigned the nil value to the map you are trying to use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aMap :<span style="color:#f92672">=</span> map<span style="color:#f92672">[</span>string<span style="color:#f92672">]</span>int<span style="color:#f92672">{}</span>
+// var aMap map<span style="color:#f92672">[</span>string<span style="color:#f92672">]</span>int
+aMap <span style="color:#f92672">=</span> nil
+fmt.Println<span style="color:#f92672">(</span>aMap<span style="color:#f92672">)</span>
+aMap<span style="color:#f92672">[</span><span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</code></pre></div><p>Saving the preceding code to failMap.go and trying to compile it will generate the next error message:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go run failMap.go
+map<span style="color:#f92672">[]</span>
+panic: assignment to entry in nil map
+</code></pre></div><p>This means that trying to insert data to a nil map will fail. However, looking up, deleting, finding the length, and using range loops on nil maps will not crash your code.</p>
+<p><strong>6. Constants</strong></p>
+<p><strong>7. Pointers</strong></p>
+<p>When working with pointers, you need * to get the value of a pointer, which is called dereferencing the pointer, and &amp; to get the memory address of a non-pointer variable</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package main
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">)</span>
+func getPointer<span style="color:#f92672">(</span>n *int<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    *n <span style="color:#f92672">=</span> *n * *n
+
+    fmt.Println<span style="color:#f92672">(</span>&amp;n<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+func returnPointer<span style="color:#f92672">(</span>n int<span style="color:#f92672">)</span> *int <span style="color:#f92672">{</span>
+    v :<span style="color:#f92672">=</span> n * n
+    <span style="color:#66d9ef">return</span> &amp;v
+<span style="color:#f92672">}</span>
+func main<span style="color:#f92672">(){</span>
+    n:<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
+    getPointer<span style="color:#f92672">(</span>&amp;n<span style="color:#f92672">)</span>
+    fmt.Println<span style="color:#f92672">(</span>n<span style="color:#f92672">)</span>
+
+    k :<span style="color:#f92672">=</span> returnPointer<span style="color:#f92672">(</span>12<span style="color:#f92672">)</span>
+    fmt.Println<span style="color:#f92672">(</span>*k<span style="color:#f92672">)</span>
+    fmt.Println<span style="color:#f92672">(</span>k<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Pointers allow you to share data, especially between Go functions. Pointers can be extremely useful when you want to differentiate between a zero value and a value that is not set</p>
+<p><strong>Time</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package main
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;time&#34;</span>
+<span style="color:#f92672">)</span>
+func main<span style="color:#f92672">(){</span>
+    fmt.Println<span style="color:#f92672">(</span>time.Now<span style="color:#f92672">())</span>
+    time.Sleep<span style="color:#f92672">(</span>time.Second*2<span style="color:#f92672">)</span>
+    t:<span style="color:#f92672">=</span>time.Now<span style="color:#f92672">()</span>
+    fmt.Println<span style="color:#f92672">(</span>t.Day<span style="color:#f92672">()</span>,t.Month<span style="color:#f92672">()</span>, t.Year<span style="color:#f92672">())</span>
+    t2:<span style="color:#f92672">=</span>time.Now<span style="color:#f92672">()</span>
+    fmt.Println<span style="color:#f92672">(</span>t2.Sub<span style="color:#f92672">(</span>t<span style="color:#f92672">))</span>
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;time units&#34;</span>, time.Nanosecond , time.Microsecond , time.Millisecond , time.Minute , time.Hour<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>Parsing date +time from a string:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>CODE</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2006</td>
+<td>Year</td>
+</tr>
+<tr>
+<td>Jan</td>
+<td>Month</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Day</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Hour</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Minute</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Second</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package main
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;time&#34;</span>
+<span style="color:#f92672">)</span>
+func main<span style="color:#f92672">(){</span>
+    test:<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20201025 15:20:33&#34;</span>
+    d,_:<span style="color:#f92672">=</span>time.Parse<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;20060102 15:04:05&#34;</span>,test<span style="color:#f92672">)</span>
+    fmt.Println<span style="color:#f92672">(</span>d.Hour<span style="color:#f92672">()</span>,d.Minute<span style="color:#f92672">()</span>,d.Second<span style="color:#f92672">())</span>
+    fmt.Println<span style="color:#f92672">(</span>d.Year<span style="color:#f92672">()</span>,d.Month<span style="color:#f92672">()</span>,d.Day<span style="color:#f92672">())</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>Measure time execution</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package main
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;time&#34;</span>
+<span style="color:#f92672">)</span>
+func main<span style="color:#f92672">(){</span>
+    start:<span style="color:#f92672">=</span>time.Now<span style="color:#f92672">()</span>
+    time.Sleep<span style="color:#f92672">(</span>time.Second<span style="color:#f92672">)</span>
+    fmt.Println<span style="color:#f92672">(</span>time.Since<span style="color:#f92672">(</span>start<span style="color:#f92672">))</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="composite-types">Composite Types</h3>
+<p><strong>1. Struct</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package main
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">)</span>
+
+type XY struct<span style="color:#f92672">{</span>
+    x int
+    y int
+<span style="color:#f92672">}</span>
+
+func returnPointer<span style="color:#f92672">(</span>x,y int<span style="color:#f92672">)</span> *XY <span style="color:#f92672">{</span>
+    x++
+    y++
+    <span style="color:#66d9ef">return</span> &amp;XY<span style="color:#f92672">{</span>x,y<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+func returnStruct<span style="color:#f92672">(</span>x,y int<span style="color:#f92672">)</span> XY <span style="color:#f92672">{</span>
+    x--
+    y--
+    <span style="color:#66d9ef">return</span> XY<span style="color:#f92672">{</span>x,y<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+func main<span style="color:#f92672">(){</span>
+    s1:<span style="color:#f92672">=</span>returnPointer<span style="color:#f92672">(</span>3,4<span style="color:#f92672">)</span>
+    s2:<span style="color:#f92672">=</span>returnStruct<span style="color:#f92672">(</span>3,4<span style="color:#f92672">)</span>
+    fmt.Println<span style="color:#f92672">((</span>*s1<span style="color:#f92672">)</span>.x<span style="color:#f92672">)</span>  // You need a pointer reference in this <span style="color:#66d9ef">case</span>
+    fmt.Println<span style="color:#f92672">(</span>s2.x<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><strong>2. Tuples</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package main
+import <span style="color:#f92672">(</span>
+<span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">)</span>
+func retThree<span style="color:#f92672">(</span>x int<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>int, int, int<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span> * x, x * x, -x
+<span style="color:#f92672">}</span>
+func main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    fmt.Println<span style="color:#f92672">(</span>retThree<span style="color:#f92672">(</span>10<span style="color:#f92672">))</span>
+    n1, n2, n3 :<span style="color:#f92672">=</span> retThree<span style="color:#f92672">(</span>20<span style="color:#f92672">)</span>
+    fmt.Println<span style="color:#f92672">(</span>n1, n2, n3<span style="color:#f92672">)</span>
+    n1, n2, n3 <span style="color:#f92672">=</span>  n3,n2,n1  //swap
+    fmt.Println<span style="color:#f92672">(</span>n1, n2, n3<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+
+
+
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -1583,19 +1784,19 @@ func main<span style="color:#f92672">()</span> <span style="color:#f92672">{</sp
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1589268570"></script>
-    <script src="/js/perfect-scrollbar.min.js?1589268570"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1589268570"></script>
-    <script src="/js/jquery.sticky.js?1589268570"></script>
-    <script src="/js/featherlight.min.js?1589268570"></script>
-    <script src="/js/highlight.pack.js?1589268570"></script>
+    <script src="/js/clipboard.min.js?1589352814"></script>
+    <script src="/js/perfect-scrollbar.min.js?1589352814"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1589352814"></script>
+    <script src="/js/jquery.sticky.js?1589352814"></script>
+    <script src="/js/featherlight.min.js?1589352814"></script>
+    <script src="/js/highlight.pack.js?1589352814"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1589268570"></script>
-    <script src="/js/learn.js?1589268570"></script>
-    <script src="/js/hugo-learn.js?1589268570"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1589352814"></script>
+    <script src="/js/learn.js?1589352814"></script>
+    <script src="/js/hugo-learn.js?1589352814"></script>
 
-    <link href="/mermaid/mermaid.css?1589268570" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1589268570"></script>
+    <link href="/mermaid/mermaid.css?1589352814" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1589352814"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

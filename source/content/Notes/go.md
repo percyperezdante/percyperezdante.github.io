@@ -429,4 +429,213 @@ $ go run reslice.go
 [0 -100 123456 0 0]
 [-100 123456]
 ```
+- If the length and the capacity of a slice have the same values and you try to add another element to the slice, the capacity of the slice will be doubled whereas its length will be increased by one.
+
+- Byte slices
+
+```bash
+s := make([]byte,5)
+
+
+**2. Copy slices**
+
+- Becareful using copy(destination, source), as copy() copies the minimum number of len(dst) and len(src) elements
+
+**3. Sort slice**
+
+**4. Appending arrays to slices** 
+
+
+**5. Maps**
+
+- Declaration
+
+```bash
+iMap = make(map[string]int)
+delete(mapName, Key)
+
+for key, value := range iMap {
+    fmt.Println(key, value)
+}
+
+```
+
+The bad thing is that if you try to get the value of a map key that does not exist in the map, you will end up getting zero, which gives you no way of determining whether the result was zero because the key you requested was not there or because the element with the corresponding key actually had a zero value. This is why we have _, ok in maps.
+
+```bash
+
+_, ok := iMap["doesItExist"]
+if ok {
+    fmt.Println("Exists!")
+} else {
+    fmt.Println("Does NOT exist")
+}
+```
+
+
+Please note that you cannot and should not make any assumptions about the order the map pairs are going to be displayed on your screen because that order is totally random.
+
+The next Go code will not work because you have assigned the nil value to the map you are trying to use:
+
+```bash
+aMap := map[string]int{}
+// var aMap map[string]int
+aMap = nil
+fmt.Println(aMap)
+aMap["test"] = 1
+```
+
+Saving the preceding code to failMap.go and trying to compile it will generate the next error message:
+```bash
+$ go run failMap.go
+map[]
+panic: assignment to entry in nil map
+```
+This means that trying to insert data to a nil map will fail. However, looking up, deleting, finding the length, and using range loops on nil maps will not crash your code.
+
+
+**6. Constants**
+
+
+**7. Pointers**
+
+When working with pointers, you need * to get the value of a pointer, which is called dereferencing the pointer, and & to get the memory address of a non-pointer variable
+
+```bash
+package main
+import (
+    "fmt"
+)
+func getPointer(n *int) {
+    *n = *n * *n
+
+    fmt.Println(&n)
+}
+func returnPointer(n int) *int {
+    v := n * n
+    return &v
+}
+func main(){
+    n:=3
+    getPointer(&n)
+    fmt.Println(n)
+
+    k := returnPointer(12)
+    fmt.Println(*k)
+    fmt.Println(k)
+}
+```
+Pointers allow you to share data, especially between Go functions. Pointers can be extremely useful when you want to differentiate between a zero value and a value that is not set
+
+**Time**
+
+```bash
+package main
+import (
+    "fmt"
+    "time"
+)
+func main(){
+    fmt.Println(time.Now())
+    time.Sleep(time.Second*2)
+    t:=time.Now()
+    fmt.Println(t.Day(),t.Month(), t.Year())
+    t2:=time.Now()
+    fmt.Println(t2.Sub(t))
+    fmt.Println("time units", time.Nanosecond , time.Microsecond , time.Millisecond , time.Minute , time.Hour)
+}
+```
+
+- Parsing date +time from a string:
+
+| CODE | Meaning |
+|------|---------|
+| 2006 | Year |
+| Jan | Month | 
+| 02 | Day |
+| 15 | Hour |
+| 04 | Minute |
+| 05 | Second |
+
+
+```bash
+package main
+import (
+    "fmt"
+    "time"
+)
+func main(){
+    test:="20201025 15:20:33"
+    d,_:=time.Parse("20060102 15:04:05",test)
+    fmt.Println(d.Hour(),d.Minute(),d.Second())
+    fmt.Println(d.Year(),d.Month(),d.Day())
+}
+```
+
+- Measure time execution
+
+```bash
+package main
+import (
+    "fmt"
+    "time"
+)
+func main(){
+    start:=time.Now()
+    time.Sleep(time.Second)
+    fmt.Println(time.Since(start))
+}
+```
+### Composite Types
+
+**1. Struct**
+
+```bash
+package main
+import (
+    "fmt"
+)
+
+type XY struct{
+    x int
+    y int
+}
+
+func returnPointer(x,y int) *XY {
+    x++
+    y++
+    return &XY{x,y}
+}
+func returnStruct(x,y int) XY {
+    x--
+    y--
+    return XY{x,y}
+}
+func main(){
+    s1:=returnPointer(3,4)
+    s2:=returnStruct(3,4)
+    fmt.Println((*s1).x)  // You need a pointer reference in this case
+    fmt.Println(s2.x)
+}
+```
+
+**2. Tuples**
+
+```bash
+package main
+import (
+"fmt"
+)
+func retThree(x int) (int, int, int) {
+return 2 * x, x * x, -x
+}
+func main() {
+    fmt.Println(retThree(10))
+    n1, n2, n3 := retThree(20)
+    fmt.Println(n1, n2, n3)
+    n1, n2, n3 =  n3,n2,n1  //swap
+    fmt.Println(n1, n2, n3)
+}
+
+
 
