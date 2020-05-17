@@ -638,4 +638,181 @@ func main() {
 }
 
 
+**3. Json""
 
+
+
+**4. XML""
+
+
+- 
+
+
+### Data Structures
+
+
+
+
+
+### Functions
+
+**1. Return values of function
+
+```bash
+func namedMinMax(x, y int) (min, max int) {
+    if x > y {
+        min = y
+        max = x
+    } else {
+        min = x
+        max = y
+    }
+    return 
+}
+```  
+
+Note that the return as this function has named return values in its signature, the min and max parameters are automatically returned in the order in which they were put into the function definition.
+
+**2. FUcntions with pointer parameters**
+
+```bash
+
+func getPtr(v *float64) float64 {
+    return *v * *v
+}
+
+func main() {
+    x := 12.2
+    fmt.Println(getPtr(&x))
+}
+```
+
+**3. Functions that return pointers**
+
+```bash
+func returnPtr(x int) *int {
+    y := x * x
+    return &y
+}
+
+func main() {
+    sq := returnPtr(10)
+    fmt.Println("sq value:", *sq)
+    fmt.Println("sq memory address:", sq)
+}
+
+```
+
+**4. Functions that return other functions**
+
+```bash
+func funReturnFun() func() int {
+    i := 0
+    return func() int {
+                i++
+                return i * i
+            }
+}
+
+func main() {
+    i := funReturnFun()
+    j := funReturnFun()
+    mt.Println("1:", i())
+    fmt.Println("2:", i())
+    fmt.Println("j1:", j())
+    fmt.Println("j2:", j())
+    fmt.Println("3:", i())
+}
+
+```
+
+Executing returnFunction.go will produce the following output:
+```bash
+$ go run returnFunction.go
+1: 1
+2: 4
+j1: 1
+j2: 4
+3: 9
+```
+As you can see from the output of returnFunction.go , the value of i in funReturnFun() keeps increasing and does not become 0 after each call either to i() or j() .
+
+
+**5. Functions that accept other functions as paramters**
+
+```bash
+func function1(i int) int {
+    return i + i
+}
+func function2(i int) int {
+    return i * i
+}
+func funFun(f func(int) int, v int) int {
+    return f(v)
+}
+func main() {
+    fmt.Println("function1:", funFun(function1, 123))
+    fmt.Println("function2:", funFun(function2, 123))
+    fmt.Println("Inline:", funFun( func(i int) int { 
+                                        return i * i*i
+                                        }, 123))
+}
+```
+
+Executing funFun.go will produce the next output:
+```bash
+$ go run funFun.go
+function1: 246
+function2: 15129
+Inline: 1860867
+```
+
+**6. Varadic functions**
+
+```bash
+func varFunc(input ...string) {
+    fmt.Println(input)
+}
+
+func oneByOne(message string, s ...int) int {  # accepts a single string and a variable number of integer arguments.
+    fmt.Println(message)
+    sum := 0
+    for i, a := range s {
+        fmt.Println(i, a)
+        sum = sum + a
+    }
+    s[0] = -1000
+    return sum
+}
+func main() {
+    arguments := os.Args
+    varFunc(arguments...)
+    sum := oneByOne("Adding numbers...", 1, 2, 3, 4, 5, -1, 10)
+    fmt.Println("Sum:", sum)
+    s := []int{1, 2, 3}
+    sum = oneByOne("Adding numbers...", s...)
+    fmt.Println(s)
+}
+```
+
+The input function argument is a slice and will be handled as a slice inside the varFunc() function. The ... operator used as ...Type is called the pack operator, whereas the unpack operator ends with ... and begins with a slice. A variadic function cannot use the pack operator more than once.
+
+Building and executing variadic.go will generate the following output:
+```bash
+$ ./variadic 1 2
+[./variadic 1 2]
+Adding numbers...
+0 1
+1 2
+2 3
+3 4
+4 5
+5 -1
+6 10
+Sum: 24
+Adding numbers...
+0 1
+1 2
+2 3
+[-1000 2 3]
+```

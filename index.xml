@@ -6,10 +6,21 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 May 2020 11:04:57 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2020 15:12:41 +0100</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>http://example.org/notes/kubernetes/</link>
+      <pubDate>Wed, 13 May 2020 15:12:41 +0100</pubDate>
+      
+      <guid>http://example.org/notes/kubernetes/</guid>
+      <description>Reference The following notes were extracted, adjusted or extended from the following references.
+ Kubernetes book by Nigel Poulton  General   The cluster is made up of one or more masters, and a bunch of nodes.
+  Package and deploy a Kubernetes application is done via a Deployment. With Deployments, we start out with our application code and we containerize it. Then we define it as a Deployment via a YAML or JSON manifest file.</description>
+    </item>
     
     <item>
       <title>Go</title>

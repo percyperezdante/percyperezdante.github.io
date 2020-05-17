@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>SRE MMR Week1 :: Home</title>
+    <title>Kubernetes :: Home</title>
 
     
     <link href="/css/nucleus.css?1589758946" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/sre/online/sre-mmr-week1/">
+  <body class="" data-url="/notes/kubernetes/">
     <nav id="sidebar" class="">
 
 
@@ -221,7 +221,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/sre/" title="SRE" class="dd-item 
-        parent
+        
         
         
         ">
@@ -250,7 +250,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/sre/online/" title="Online resources" class="dd-item 
-        parent
+        
         
         
         ">
@@ -339,7 +339,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/sre/online/sre-mmr-week1/" title="SRE MMR Week1" class="dd-item active">
+      <li data-nav-id="/sre/online/sre-mmr-week1/" title="SRE MMR Week1" class="dd-item ">
         <a href="/sre/online/sre-mmr-week1/">
         SRE MMR Week1
         
@@ -398,7 +398,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/notes/" title="Notes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -424,7 +424,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/notes/kubernetes/" title="Kubernetes" class="dd-item ">
+      <li data-nav-id="/notes/kubernetes/" title="Kubernetes" class="dd-item active">
         <a href="/notes/kubernetes/">
         Kubernetes
         
@@ -764,13 +764,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            
-            
-          
-          
-            <a href='/'>Home</a> > <a href='/sre/'>SRE</a> > <a href='/sre/online/'>Online resources</a> > SRE MMR Week1
-          
-         
+            <a href='/'>Home</a> > <a href='/notes/'>Notes</a> > Kubernetes
           
          
           
@@ -787,32 +781,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
   <ul>
     <li>
       <ul>
-        <li><a href="#how-does-sre-differ-from-devops">How does SRE differ from Devops?</a></li>
-        <li><a href="#what-is-cre">What is CRE?</a></li>
-        <li><a href="#how-can-they-help-you-be-more-reliable">How can they help you be more reliable?</a></li>
-        <li><a href="#why-are-slos-important-for-your-organization">Why Are SLOs Important for Your Organization?</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#promises-promises-slos-vs-slas-happiness-test">Promises, Promises. SLOs vs SLAs. Happiness Test.</a></li>
-        <li><a href="#how-do-we-measure-reliability-edge-cases">How Do We Measure Reliability? Edge Cases</a></li>
-        <li><a href="#how-reliable-should-a-service-be-setting-targets-for-reliability-iterate">How Reliable Should a Service Be? Setting Targets for Reliability. Iterate!</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#introduction-1">Introduction</a></li>
-        <li><a href="#when-do-we-need-to-make-a-service-more-reliable-error-budgets">When Do We Need to Make a Service More Reliable? Error Budgets.</a></li>
-        <li><a href="#trading-off-reliability-against-features">Trading off Reliability Against Features</a></li>
-        <li><a href="#how-do-we-make-a-service-more-reliable">How Do We Make a Service More Reliable?</a></li>
+        <li></li>
+        <li><a href="#general">General</a></li>
       </ul>
     </li>
   </ul>
@@ -832,7 +802,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
           
             <h1>
               
-              SRE MMR Week1
+              Kubernetes
             </h1>
           
 
@@ -840,43 +810,41 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
-<h1 id="introduction-to-sre">Introduction to SRE</h1>
-<h3 id="how-does-sre-differ-from-devops">How does SRE differ from Devops?</h3>
-<p>Devops and SRE point to similar goals, which is break down organizational barriers to deliver software features faster.</p>
-<p>Traditionally, developers are responsable for features and operations for stability. Developers want to move faster to release new features and operations want to move slow to keep all service stable. As a commong results, tension between teams appears during realease times. Devops and SRE practices aim to break downs this tensions.</p>
-<p>In general, Devops approach include the following areas:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Reduce</span> <span style="color:#a6e22e">organizational</span> <span style="color:#a6e22e">silos</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Break</span> <span style="color:#a6e22e">down</span> <span style="color:#a6e22e">tension</span> <span style="color:#a6e22e">promotes</span> <span style="color:#a6e22e">collaboration</span> <span style="color:#a6e22e">between</span> <span style="color:#a6e22e">teams</span>.
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Accept</span> <span style="color:#a6e22e">failure</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">normal</span>
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Implement</span> <span style="color:#a6e22e">gradual</span> <span style="color:#a6e22e">change</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Small</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">incremental</span> <span style="color:#a6e22e">changes</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">easy</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">review</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">maintain</span>.
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Leverage</span> <span style="color:#a6e22e">tooling</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">automation</span>
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Measure</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">much</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span> 
-</code></pre></div><p>On the other side, SRE appraoch to same areas are as following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Reduce</span> <span style="color:#a6e22e">organizational</span> <span style="color:#a6e22e">silos</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Operation</span> <span style="color:#a6e22e">responsability</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">release</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">production</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">shared</span> <span style="color:#a6e22e">with</span> <span style="color:#a6e22e">developers</span>.
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Accept</span> <span style="color:#a6e22e">failure</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">normal</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Blameless</span> <span style="color:#a6e22e">postmordem</span>. <span style="color:#a6e22e">Failure</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">expected</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">it</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">hold</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">an</span> <span style="color:#a6e22e">error</span> <span style="color:#a6e22e">budget</span>.
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Implement</span> <span style="color:#a6e22e">gradual</span> <span style="color:#a6e22e">change</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Small</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">incremental</span> <span style="color:#a6e22e">release</span>, <span style="color:#a6e22e">such</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">Canary</span> <span style="color:#a6e22e">releases</span>.
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Leverage</span> <span style="color:#a6e22e">tooling</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">automation</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span>  <span style="color:#a6e22e">Measure</span> <span style="color:#a6e22e">toil</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">automate</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">minimise</span> <span style="color:#a6e22e">manual</span> <span style="color:#a6e22e">intervention</span>.
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Measure</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">much</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span>  <span style="color:#a6e22e">Measure</span> <span style="color:#a6e22e">toil</span>, <span style="color:#a6e22e">reliability</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">service</span>.
-</code></pre></div><p>Therefore, one initial conclusion is that:</p>
-<blockquote>
-<p><strong>SRE is a concrete class that implements Devops</strong></p>
-</blockquote>
-<h3 id="what-is-cre">What is CRE?</h3>
-<p>It stands for Customer Reliability Engineering and it is focus on breaking down organizational barries between service prodivers and customers.  In this context, failure is pre-accepted as a conditions to enhance future cases, error budget.This pre-condition helps to minimise panic when a down time happens at the service level. Another important criteria is to implement measurements that can offer to everyone, in both sides, visibility of on how the service performs.</p>
-<h3 id="how-can-they-help-you-be-more-reliable">How can they help you be more reliable?</h3>
-<p>In various cases, customers use provider&rsquo;s services, through APIs.  in different ways that are not expected by the service provider, and providers do not like to breaks the customer expectation. This sceneario is easly visible the number of customers scale up.</p>
-<p>CRE helps to providers to openinly communicate with customers. Clear communication of how your service was designed to behave, indirectly means to expose provider&rsquo;s SRE practices, such is their SLOs, to the customers. By teaching or helping the customers to build their own SRE environment, we are teaching them how to interact correctly with our system or platform. Consequently, the real scope and limitations are presented clearly to the customer, which formilise what the customer can expect as a final result.</p>
-<p>In conclusion, by sharing SRE practices with customers, not only new features can be released faster, it also enhance customer satisfactione.</p>
-<h3 id="why-are-slos-important-for-your-organization">Why Are SLOs Important for Your Organization?</h3>
-<h1 id="targeting-reliability">Targeting Reliability</h1>
-<h3 id="introduction">Introduction</h3>
-<h3 id="promises-promises-slos-vs-slas-happiness-test">Promises, Promises. SLOs vs SLAs. Happiness Test.</h3>
-<h3 id="how-do-we-measure-reliability-edge-cases">How Do We Measure Reliability? Edge Cases</h3>
-<h3 id="how-reliable-should-a-service-be-setting-targets-for-reliability-iterate">How Reliable Should a Service Be? Setting Targets for Reliability. Iterate!</h3>
-<h1 id="operating-for-reliability">Operating for Reliability</h1>
-<h3 id="introduction-1">Introduction</h3>
-<h3 id="when-do-we-need-to-make-a-service-more-reliable-error-budgets">When Do We Need to Make a Service More Reliable? Error Budgets.</h3>
-<h3 id="trading-off-reliability-against-features">Trading off Reliability Against Features</h3>
-<h3 id="how-do-we-make-a-service-more-reliable">How Do We Make a Service More Reliable?</h3>
+<h4 id="reference">Reference</h4>
+<p>The following notes were extracted, adjusted or extended from the following references.</p>
+<ul>
+<li><a href="https://www.amazon.com/Kubernetes-Book-Version-November-2018-ebook/dp/B072TS9ZQZ">Kubernetes book by Nigel Poulton</a></li>
+</ul>
+<h3 id="general">General</h3>
+<ul>
+<li>
+<p>The cluster is made up of one or more masters, and a bunch of nodes.</p>
+</li>
+<li>
+<p>Package and deploy a Kubernetes application is done via a Deployment. With Deployments, we start out with our application code and we containerize it. Then we define it as a Deployment via a YAML or JSON manifest file. This manifest file tells Kubernetes two important features:</p>
+<ul>
+<li>What our app should look like – what images to use, ports to expose, networks to join, how to perform update etc.</li>
+<li>How many replicas of each part of the app to run (scale)</li>
+</ul>
+<p>Then we give the file to the Kubernetes master which takes care of deploying it n the cluste</p>
+</li>
+<li>
+<p>The API server</p>
+</li>
+</ul>
+<p>The API Server (apiserver) is the frontend into the Kubernetes control plane. It exposes a RESTful API that preferentially consumes JSON. We POST manifest files to it, these get validated, and the work they define gets deployed to the cluster.</p>
+<ul>
+<li>The cluster store</li>
+</ul>
+<p>The config and state of the cluster gets persistently stored in the cluster store, which is the only stateful component of the cluster and is vital to its operation.The cluster store is based on etcd, the popular distributed, consistent and watchable key-value store. As it is the single source of truth for the cluster, you should take care to protect it and provide adequate ways to recover it if things go wrong.</p>
+<ul>
+<li>The controller manager</li>
+</ul>
+<p>They tend to sit in loops and watch for changes, the aim is to make sure the current state of the cluster matches the desired state.</p>
+<ul>
+<li>The scheduler</li>
+</ul>
+<p>Watches and executes new workloads.</p>
 
 
 <footer class="footline">
@@ -999,7 +967,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                    
                 
                 
 
@@ -1015,7 +982,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                    
                 
                 
 
@@ -1023,25 +989,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1080,6 +1027,21 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1100,9 +1062,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -1122,6 +1081,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                    
                 
                 
 
@@ -1134,6 +1094,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
                     
                 
                 
@@ -1150,6 +1111,9 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1320,10 +1284,10 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 	 
 	 
 		
-			<a class="nav nav-prev" href="/sre/online/sre-mmr-week2/" title="SRE MMR Week2"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/notes/" title="Notes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/sre/references/" title="References" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/notes/go/" title="Go" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
