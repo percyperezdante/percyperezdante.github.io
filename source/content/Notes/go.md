@@ -816,3 +816,64 @@ Adding numbers...
 2 3
 [-1000 2 3]
 ```
+
+
+**7. Packages**
+
+- How to deploy own package.
+
+    - Verify where go stores package source code.
+    ```bash
+    $ echo $GOPATH
+    /home/percy/go
+    ```
+    - Create a directory inside ~/go/src. This folder will be installed by "go install"
+    ```bash
+    $ mkdir -p /home/percy/go/src/mypackagefolder
+    $ touch /home/percy/go/src/mypackagefolder/packageCode.go
+    ```
+
+    - Copy the package source code inside packageCode.go. For example
+    ```bash
+    package packageCodeImplementation     // This is called by external functions
+
+    import (
+        "fmt"
+    )
+    func A() {
+        fmt.Println("This is function A!")
+    }
+
+    const MY=123
+    ```
+    
+    - Install mypackageFolder, not the packageCode.go.
+    ```bash
+    $ go install mypackageFolder
+    ```
+
+    Note that "go install mypackageFolder" will create a "mypackageFolder.a" file at "/home/percy/go/pkg/linux_amd64/"
+
+    - Import mypackageFolder from another go code, for example.
+    ```bash
+    package main
+
+    import (     // Imports the FOLDER where the package is located.
+        "mypackageFolder"   // this calls mypackageFolder, not the packageCode and not packageCodeImplementaion.
+        "fmt"
+    )
+    func main() {   
+        fmt.Println("Using packageCode!")
+        // this calls the pacakgeCodeImplemetation, not the mypackageFolder nor packageCode
+        packageCodeImplementation.A() 
+        fmt.Println(packageCodeImplemenation.MY)
+    }
+    ```
+
+
+**NOTE: The following applies to FUNCTIONS, VARIABLES, TYPES, ETC.**
+
+|  Name | comment|
+|------------|--------|
+| fmt.Println | Functions that start with UPPER case are PUBLIC |
+| fmt.myPrint | It starts with LOWER case, it is PRIVATE |

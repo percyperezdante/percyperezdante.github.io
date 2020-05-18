@@ -12,20 +12,20 @@
     <title>Go :: Home</title>
 
     
-    <link href="/css/nucleus.css?1589758946" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1589758946" rel="stylesheet">
-    <link href="/css/hybrid.css?1589758946" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1589758946" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1589758946" rel="stylesheet">
-    <link href="/css/auto-complete.css?1589758946" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1589758946" rel="stylesheet">
-    <link href="/css/theme.css?1589758946" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1589758946" rel="stylesheet">
+    <link href="/css/nucleus.css?1589843568" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1589843568" rel="stylesheet">
+    <link href="/css/hybrid.css?1589843568" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1589843568" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1589843568" rel="stylesheet">
+    <link href="/css/auto-complete.css?1589843568" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1589843568" rel="stylesheet">
+    <link href="/css/theme.css?1589843568" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1589843568" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1589758946" rel="stylesheet">
+      <link href="/css/theme-percy.css?1589843568" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1589758946"></script>
+    <script src="/js/jquery-3.3.1.min.js?1589843568"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1589758946"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1589758946"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1589843568"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1589843568"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1589758946"></script>
+<script type="text/javascript" src="/js/search.js?1589843568"></script>
 
     
   </div>
@@ -1513,7 +1513,75 @@ Adding numbers...
 <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>
 <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>
 <span style="color:#f92672">[</span>-1000 <span style="color:#ae81ff">2</span> 3<span style="color:#f92672">]</span>
-</code></pre></div>
+</code></pre></div><p><strong>7. Packages</strong></p>
+<ul>
+<li>
+<p>How to deploy own package.</p>
+<ul>
+<li>Verify where go stores package source code.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo $GOPATH
+/home/percy/go
+</code></pre></div><ul>
+<li>Create a directory inside ~/go/src. This folder will be installed by &ldquo;go install&rdquo;</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir -p /home/percy/go/src/mypackagefolder
+$ touch /home/percy/go/src/mypackagefolder/packageCode.go
+</code></pre></div><ul>
+<li>Copy the package source code inside packageCode.go. For example</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package packageCodeImplementation     // This is called by external functions
+
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">)</span>
+func A<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;This is function A!&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+
+const MY<span style="color:#f92672">=</span><span style="color:#ae81ff">123</span>
+</code></pre></div><ul>
+<li>Install mypackageFolder, not the packageCode.go.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go install mypackageFolder
+</code></pre></div><p>Note that &ldquo;go install mypackageFolder&rdquo; will create a &ldquo;mypackageFolder.a&rdquo; file at &ldquo;/home/percy/go/pkg/linux_amd64/&rdquo;</p>
+<ul>
+<li>Import mypackageFolder from another go code, for example.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package main
+
+import <span style="color:#f92672">(</span>     // Imports the FOLDER where the package is located.
+    <span style="color:#e6db74">&#34;mypackageFolder&#34;</span>   // this calls mypackageFolder, not the packageCode and not packageCodeImplementaion.
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">)</span>
+func main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>   
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Using packageCode!&#34;</span><span style="color:#f92672">)</span>
+    // this calls the pacakgeCodeImplemetation, not the mypackageFolder nor packageCode
+    packageCodeImplementation.A<span style="color:#f92672">()</span> 
+    fmt.Println<span style="color:#f92672">(</span>packageCodeImplemenation.MY<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
+</ul>
+<p><strong>NOTE: The following applies to FUNCTIONS, VARIABLES, TYPES, ETC.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fmt.Println</td>
+<td>Functions that start with UPPER case are PUBLIC</td>
+</tr>
+<tr>
+<td>fmt.myPrint</td>
+<td>It starts with LOWER case, it is PRIVATE</td>
+</tr>
+</tbody>
+</table>
+
 
 <footer class="footline">
 	
@@ -1968,19 +2036,19 @@ Adding numbers...
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1589758946"></script>
-    <script src="/js/perfect-scrollbar.min.js?1589758946"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1589758946"></script>
-    <script src="/js/jquery.sticky.js?1589758946"></script>
-    <script src="/js/featherlight.min.js?1589758946"></script>
-    <script src="/js/highlight.pack.js?1589758946"></script>
+    <script src="/js/clipboard.min.js?1589843568"></script>
+    <script src="/js/perfect-scrollbar.min.js?1589843568"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1589843568"></script>
+    <script src="/js/jquery.sticky.js?1589843568"></script>
+    <script src="/js/featherlight.min.js?1589843568"></script>
+    <script src="/js/highlight.pack.js?1589843568"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1589758946"></script>
-    <script src="/js/learn.js?1589758946"></script>
-    <script src="/js/hugo-learn.js?1589758946"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1589843568"></script>
+    <script src="/js/learn.js?1589843568"></script>
+    <script src="/js/hugo-learn.js?1589843568"></script>
 
-    <link href="/mermaid/mermaid.css?1589758946" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1589758946"></script>
+    <link href="/mermaid/mermaid.css?1589843568" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1589843568"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
