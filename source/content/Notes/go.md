@@ -877,3 +877,69 @@ Adding numbers...
 |------------|--------|
 | fmt.Println | Functions that start with UPPER case are PUBLIC |
 | fmt.myPrint | It starts with LOWER case, it is PRIVATE |
+
+
+**8. Init()**
+
+Every Go package can optionally have a private function named init() that is automatically executed at the beginning of the execution time. The init() function is a private function by design, which means that it cannot be called from outside the package in which it is contained.  Additionally, as the user of a package has no control over the init() function, you should think carefully before using an init() function in public packages or changing any global state in init() .
+
+Init() is executed only once at the time where the import calls the package. For example:
+
+```bash
+
+package a
+import (
+    "fmt"
+)
+func init() {
+    fmt.Println("init() a")
+}
+func FromA() {
+    fmt.Println("fromA()")
+}
+```
+
+```bash
+package b
+import (
+    "a"
+    "fmt"
+)
+func init() {
+    fmt.Println("init() b")
+}
+func FromB() {
+    fmt.Println("fromB()")
+    a.FromA()
+}
+```
+```bash
+package main
+import (
+    "a"
+    "b"
+    "fmt"
+)
+func init() {
+    fmt.Println("init() manyInit")
+}
+func main() {
+    a.FromA()
+    b.FromB()
+}
+```
+Will results as:
+
+```bash
+$ go run manyInit.go
+init() a
+init() b
+init() manyInit
+fromA()
+fromB()
+fromA()
+```
+
+**9. Modules**
+
+Go modules allow you to write things outside of GOPATH .

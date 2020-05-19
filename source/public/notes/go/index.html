@@ -12,20 +12,20 @@
     <title>Go :: Home</title>
 
     
-    <link href="/css/nucleus.css?1589843584" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1589843584" rel="stylesheet">
-    <link href="/css/hybrid.css?1589843584" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1589843584" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1589843584" rel="stylesheet">
-    <link href="/css/auto-complete.css?1589843584" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1589843584" rel="stylesheet">
-    <link href="/css/theme.css?1589843584" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1589843584" rel="stylesheet">
+    <link href="/css/nucleus.css?1589924470" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1589924470" rel="stylesheet">
+    <link href="/css/hybrid.css?1589924470" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1589924470" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1589924470" rel="stylesheet">
+    <link href="/css/auto-complete.css?1589924470" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1589924470" rel="stylesheet">
+    <link href="/css/theme.css?1589924470" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1589924470" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1589843584" rel="stylesheet">
+      <link href="/css/theme-percy.css?1589924470" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1589843584"></script>
+    <script src="/js/jquery-3.3.1.min.js?1589924470"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1589843584"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1589843584"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1589924470"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1589924470"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1589843584"></script>
+<script type="text/javascript" src="/js/search.js?1589924470"></script>
 
     
   </div>
@@ -1581,6 +1581,55 @@ func main<span style="color:#f92672">()</span> <span style="color:#f92672">{</sp
 </tr>
 </tbody>
 </table>
+<p><strong>8. Init()</strong></p>
+<p>Every Go package can optionally have a private function named init() that is automatically executed at the beginning of the execution time. The init() function is a private function by design, which means that it cannot be called from outside the package in which it is contained.  Additionally, as the user of a package has no control over the init() function, you should think carefully before using an init() function in public packages or changing any global state in init() .</p>
+<p>Init() is executed only once at the time where the import calls the package. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+package a
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">)</span>
+func init<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;init() a&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+func FromA<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;fromA()&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package b
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;a&#34;</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">)</span>
+func init<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;init() b&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+func FromB<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;fromB()&#34;</span><span style="color:#f92672">)</span>
+    a.FromA<span style="color:#f92672">()</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package main
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;a&#34;</span>
+    <span style="color:#e6db74">&#34;b&#34;</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">)</span>
+func init<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;init() manyInit&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+func main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    a.FromA<span style="color:#f92672">()</span>
+    b.FromB<span style="color:#f92672">()</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Will results as:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go run manyInit.go
+init<span style="color:#f92672">()</span> a
+init<span style="color:#f92672">()</span> b
+init<span style="color:#f92672">()</span> manyInit
+fromA<span style="color:#f92672">()</span>
+fromB<span style="color:#f92672">()</span>
+fromA<span style="color:#f92672">()</span>
+</code></pre></div><p><strong>9. Modules</strong></p>
+<p>Go modules allow you to write things outside of GOPATH .</p>
 
 
 <footer class="footline">
@@ -2036,19 +2085,19 @@ func main<span style="color:#f92672">()</span> <span style="color:#f92672">{</sp
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1589843584"></script>
-    <script src="/js/perfect-scrollbar.min.js?1589843584"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1589843584"></script>
-    <script src="/js/jquery.sticky.js?1589843584"></script>
-    <script src="/js/featherlight.min.js?1589843584"></script>
-    <script src="/js/highlight.pack.js?1589843584"></script>
+    <script src="/js/clipboard.min.js?1589924470"></script>
+    <script src="/js/perfect-scrollbar.min.js?1589924470"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1589924470"></script>
+    <script src="/js/jquery.sticky.js?1589924470"></script>
+    <script src="/js/featherlight.min.js?1589924470"></script>
+    <script src="/js/highlight.pack.js?1589924470"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1589843584"></script>
-    <script src="/js/learn.js?1589843584"></script>
-    <script src="/js/hugo-learn.js?1589843584"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1589924470"></script>
+    <script src="/js/learn.js?1589924470"></script>
+    <script src="/js/hugo-learn.js?1589924470"></script>
 
-    <link href="/mermaid/mermaid.css?1589843584" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1589843584"></script>
+    <link href="/mermaid/mermaid.css?1589924470" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1589924470"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
