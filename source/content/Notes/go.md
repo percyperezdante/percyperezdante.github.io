@@ -1034,5 +1034,27 @@ $ go mod vendor
 
 Go downloads all dependencies in inside the test/vendor folder
 
+**10. Type assertions**
 
+A type assertion is the x.(T) notation, where x is an interface type and T is a type. Additionally, the actual value stored in x is of type T and T must satisfy the interface type of x.
 
+```bash
+func main() {
+    var myInt interface{} = 123    // This declares and defines an interface
+    k, ok := myInt.(int) 
+    if ok {
+        fmt.Println("Success:", k)
+    }
+    v, ok := myInt.(float64)
+    if ok {
+        fmt.Println(v)
+    } else {
+        fmt.Println("Failed without panicking!")
+    }
+
+    i := myInt.(int)    // This is int and = 123
+    fmt.Println("No checking:", i)
+    j := myInt.(bool)  // This will fail as it myInt is int not boolean
+    fmt.Println(j)
+}
+```
