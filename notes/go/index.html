@@ -12,20 +12,20 @@
     <title>Go :: Home</title>
 
     
-    <link href="/css/nucleus.css?1589924481" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1589924481" rel="stylesheet">
-    <link href="/css/hybrid.css?1589924481" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1589924481" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1589924481" rel="stylesheet">
-    <link href="/css/auto-complete.css?1589924481" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1589924481" rel="stylesheet">
-    <link href="/css/theme.css?1589924481" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1589924481" rel="stylesheet">
+    <link href="/css/nucleus.css?1590052470" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1590052470" rel="stylesheet">
+    <link href="/css/hybrid.css?1590052470" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1590052470" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1590052470" rel="stylesheet">
+    <link href="/css/auto-complete.css?1590052470" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1590052470" rel="stylesheet">
+    <link href="/css/theme.css?1590052470" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1590052470" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1589924481" rel="stylesheet">
+      <link href="/css/theme-percy.css?1590052470" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1589924481"></script>
+    <script src="/js/jquery-3.3.1.min.js?1590052470"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1589924481"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1589924481"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1590052470"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1590052470"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1589924481"></script>
+<script type="text/javascript" src="/js/search.js?1590052470"></script>
 
     
   </div>
@@ -786,6 +786,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         <li><a href="#go-internals">Go internals</a></li>
         <li><a href="#data-types">Data types</a></li>
         <li><a href="#composite-types">Composite Types</a></li>
+        <li><a href="#note">NOTE</a></li>
       </ul>
     </li>
   </ul>
@@ -1629,8 +1630,63 @@ fromA<span style="color:#f92672">()</span>
 fromB<span style="color:#f92672">()</span>
 fromA<span style="color:#f92672">()</span>
 </code></pre></div><p><strong>9. Modules</strong></p>
-<p>Go modules allow you to write things outside of GOPATH .</p>
+<p>Go modules allow you to write things outside of GOPATH. Modules are used to specify dependencies and their locations.</p>
+<p>For example</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+percy@prec:m$ mkdir test
+percy@prec:m$ cd test
+percy@prec:m$ touch test.go
+percy@prec:m$ cat test.go 
+package main
+import <span style="color:#f92672">(</span>
+    v1 <span style="color:#e6db74">&#34;github.com/percyperezdante/gomod&#34;</span>
+<span style="color:#f92672">)</span>
 
+func main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    v1.Version<span style="color:#f92672">()</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>requires github.com/percyperezdante/gomod which is in github.com and contain the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">package gomod
+
+import <span style="color:#f92672">(</span>
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">)</span>
+
+func Version<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+	fmt.Println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Version 1.0.0&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>If you run at this stage you will get a similar error as the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">test.go:3:5: cannot find package <span style="color:#e6db74">&#34;github.com/percyperezdante/gomod&#34;</span> in any of:
+	/usr/local/go/src/github.com/percyperezdante/gomod <span style="color:#f92672">(</span>from $GOROOT<span style="color:#f92672">)</span>
+	/home/percy/go/src/github.com/percyperezdante/gomod <span style="color:#f92672">(</span>from $GOPATH<span style="color:#f92672">)</span>
+
+</code></pre></div><p>To execute test.go you could run the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd test
+$ export GO111MODULE<span style="color:#f92672">=</span>on
+$ go mod init anyname
+$ vim go.mod
+$ cat go.mod
+   module anyname
+
+   go 1.14
+
+   require github.com/percyperezdante/gomod v1.0.0
+</code></pre></div><p>And then</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go run test.go
+</code></pre></div><h3 id="note">NOTE</h3>
+<p>To remove this module:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go env GOPATH
+  /usr/local/go
+$ cd $GOPATH/pkg/mod/github.com/percyperezdante
+$ ls -ltr
+
+dr-x------ <span style="color:#ae81ff">2</span> percy percy <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">21</span> 08:47 gomod@v1.0.0
+dr-x------ <span style="color:#ae81ff">2</span> percy percy <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">21</span> 08:58 gomod@v1.1.0
+
+$ rm -rf gomod@v1.0.0
+$ cd $GOPATH/pkg/mod/cache/download/github.com/percyperezdante
+$ rm -rf gomod
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -2085,19 +2141,19 @@ fromA<span style="color:#f92672">()</span>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1589924481"></script>
-    <script src="/js/perfect-scrollbar.min.js?1589924481"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1589924481"></script>
-    <script src="/js/jquery.sticky.js?1589924481"></script>
-    <script src="/js/featherlight.min.js?1589924481"></script>
-    <script src="/js/highlight.pack.js?1589924481"></script>
+    <script src="/js/clipboard.min.js?1590052470"></script>
+    <script src="/js/perfect-scrollbar.min.js?1590052470"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1590052470"></script>
+    <script src="/js/jquery.sticky.js?1590052470"></script>
+    <script src="/js/featherlight.min.js?1590052470"></script>
+    <script src="/js/highlight.pack.js?1590052470"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1589924481"></script>
-    <script src="/js/learn.js?1589924481"></script>
-    <script src="/js/hugo-learn.js?1589924481"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1590052470"></script>
+    <script src="/js/learn.js?1590052470"></script>
+    <script src="/js/hugo-learn.js?1590052470"></script>
 
-    <link href="/mermaid/mermaid.css?1589924481" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1589924481"></script>
+    <link href="/mermaid/mermaid.css?1590052470" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1590052470"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

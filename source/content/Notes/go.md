@@ -942,4 +942,84 @@ fromA()
 
 **9. Modules**
 
-Go modules allow you to write things outside of GOPATH .
+Go modules allow you to write things outside of GOPATH. Modules are used to specify dependencies and their locations.
+
+For example
+
+```bash
+
+percy@prec:m$ mkdir test
+percy@prec:m$ cd test
+percy@prec:m$ touch test.go
+percy@prec:m$ cat test.go 
+package main
+import (
+    v1 "github.com/percyperezdante/gomod"
+)
+
+func main() {
+    v1.Version()
+}
+```
+
+requires github.com/percyperezdante/gomod which is in github.com and contain the following:
+
+```bash
+package gomod
+
+import (
+	"fmt"
+)
+
+func Version() {
+	fmt.Println("Version 1.0.0")
+}
+```
+
+If you run at this stage you will get a similar error as the following:
+
+```bash
+test.go:3:5: cannot find package "github.com/percyperezdante/gomod" in any of:
+	/usr/local/go/src/github.com/percyperezdante/gomod (from $GOROOT)
+	/home/percy/go/src/github.com/percyperezdante/gomod (from $GOPATH)
+
+```
+
+To execute test.go you could run the following:
+
+```bash
+$ cd test
+$ export GO111MODULE=on
+$ go mod init anyname
+$ vim go.mod
+$ cat go.mod
+   module anyname
+
+   go 1.14
+
+   require github.com/percyperezdante/gomod v1.0.0
+```
+
+And then 
+
+```bash
+$ go run test.go
+```
+
+
+### NOTE
+To remove this module:
+
+```bash
+$ go env GOPATH
+  /usr/local/go
+$ cd $GOPATH/pkg/mod/github.com/percyperezdante
+$ ls -ltr
+
+dr-x------ 2 percy percy 4096 May 21 08:47 gomod@v1.0.0
+dr-x------ 2 percy percy 4096 May 21 08:58 gomod@v1.1.0
+
+$ rm -rf gomod@v1.0.0
+$ cd $GOPATH/pkg/mod/cache/download/github.com/percyperezdante
+$ rm -rf gomod
+```
