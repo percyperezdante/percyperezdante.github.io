@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Projects :: Home</title>
+    <title>Shell :: Home</title>
 
     
     <link href="/css/nucleus.css?1590058622" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/projects/">
+  <body class="" data-url="/notes/shell/">
     <nav id="sidebar" class="">
 
 
@@ -83,8 +83,8 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/projects/" title="Projects" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/projects/">
@@ -398,7 +398,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/notes/" title="Notes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -424,7 +424,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/notes/shell/" title="Shell" class="dd-item ">
+      <li data-nav-id="/notes/shell/" title="Shell" class="dd-item active">
         <a href="/notes/shell/">
         Shell
         
@@ -769,6 +769,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -779,7 +781,13 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            <a href='/'>Home</a> > Projects
+            
+            
+          
+          
+            <a href='/'>Home</a> > <a href='/notes/'>Notes</a> > Shell
+          
+         
           
          
           
@@ -788,6 +796,21 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -795,38 +818,40 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Shell
+            </h1>
           
 
         
 
 
 
-
-	<h1 id="projects">Projects</h1>
-<p>This page list some of the small projects I worked in during my free time in ad-hoc mode.</p>
-<h4 id="wawahttpsgithubcompercyperezdantewawa"><a href="https://github.com/percyperezdante/wawa">Wawa</a></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">A</span> <span style="color:#a6e22e">baby</span> <span style="color:#a6e22e">monitoring</span> <span style="color:#a6e22e">trail</span>.
-
-<span style="color:#a6e22e">Wawa</span>, <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">Aymara</span> <span style="color:#a6e22e">Baby</span>, <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">project</span> <span style="color:#a6e22e">inspired</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">how</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">help</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">mum</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">keep</span> <span style="color:#a6e22e">one</span> <span style="color:#a6e22e">eye</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">her</span> <span style="color:#a6e22e">newborn</span> <span style="color:#a6e22e">baby</span> <span style="color:#a6e22e">while</span> <span style="color:#a6e22e">she</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">executing</span> <span style="color:#a6e22e">some</span> <span style="color:#a6e22e">activity</span> <span style="color:#a6e22e">inside</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">house</span>, <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">particular</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">case</span> <span style="color:#a6e22e">when</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">newborn</span> <span style="color:#a6e22e">baby</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">sleeping</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">want</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">monitor</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">baby</span>.
-</code></pre></div><h4 id="qilquirihttpsgithubcompercyperezdanteqilquiri"><a href="https://github.com/percyperezdante/qilquiri">Qilquiri</a></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">Qilquiri</span>, <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">Aymara</span> <span style="color:#a6e22e">Writer</span>, <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">helper</span> <span style="color:#a6e22e">that</span> <span style="color:#a6e22e">generates</span> <span style="color:#a6e22e">snipes</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">common</span> <span style="color:#a6e22e">Java</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">base</span> <span style="color:#a6e22e">code</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">Vim</span> <span style="color:#a6e22e">session</span>. <span style="color:#a6e22e">For</span> <span style="color:#a6e22e">example</span>, <span style="color:#a6e22e">create</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">class</span> <span style="color:#a6e22e">signature</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">just</span> <span style="color:#a6e22e">presing</span> <span style="color:#a6e22e">two</span> <span style="color:#a6e22e">keys</span>.
-
-</code></pre></div><h4 id="achacachihttpsgithubcompercyperezdanteachacachi"><a href="https://github.com/percyperezdante/achacachi">Achacachi</a></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">Achachachi</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">name</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">small</span> <span style="color:#a6e22e">town</span> <span style="color:#a6e22e">located</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">Altiplano</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">South</span> <span style="color:#a6e22e">American</span> <span style="color:#a6e22e">Andes</span>. <span style="color:#a6e22e">This</span> <span style="color:#a6e22e">project</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">small</span> <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">scripts</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">re</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">deploy</span> <span style="color:#a6e22e">my</span> <span style="color:#a6e22e">laptop</span> <span style="color:#a6e22e">configuration</span>. <span style="color:#a6e22e">When</span> <span style="color:#a6e22e">my</span> <span style="color:#a6e22e">laptop</span> <span style="color:#a6e22e">broken</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">simply</span> <span style="color:#a6e22e">needs</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">re</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">installed</span>, <span style="color:#e6db74">&#34;I need to back to Achacachi&#34;</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">all</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">configuration</span> <span style="color:#a6e22e">back</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">before</span>.
-</code></pre></div>
+<h4 id="1-sending-message-to-pts-terminal">1. Sending message to pts terminal</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># List of opened terminals.</span> 
+percy@prec:~$ ls -tlr /dev/pts/
+total <span style="color:#ae81ff">0</span>
+c--------- <span style="color:#ae81ff">1</span> root  root   5, <span style="color:#ae81ff">2</span> May <span style="color:#ae81ff">21</span> 06:18 ptmx
+crw--w---- <span style="color:#ae81ff">1</span> percy tty  136, <span style="color:#ae81ff">2</span> May <span style="color:#ae81ff">21</span> 11:36 <span style="color:#ae81ff">2</span>
+crw--w---- <span style="color:#ae81ff">1</span> percy tty  136, <span style="color:#ae81ff">0</span> May <span style="color:#ae81ff">21</span> 11:52 <span style="color:#ae81ff">0</span>
+crw--w---- <span style="color:#ae81ff">1</span> percy tty  136, <span style="color:#ae81ff">3</span> May <span style="color:#ae81ff">21</span> 11:53 <span style="color:#ae81ff">3</span>
+crw--w---- <span style="color:#ae81ff">1</span> percy tty  136, <span style="color:#ae81ff">4</span> May <span style="color:#ae81ff">21</span> 11:53 <span style="color:#ae81ff">4</span>
+crw--w---- <span style="color:#ae81ff">1</span> percy tty  136, <span style="color:#ae81ff">6</span> May <span style="color:#ae81ff">21</span> 11:53 <span style="color:#ae81ff">6</span>
+crw--w---- <span style="color:#ae81ff">1</span> percy tty  136, <span style="color:#ae81ff">5</span> May <span style="color:#ae81ff">21</span> 11:53 <span style="color:#ae81ff">5</span>
 
 
+percy@prec:~$ echo <span style="color:#e6db74">&#34;How are you ?&#34;</span> &gt; /dev/pts/6
+
+</code></pre></div><p>You can use &ldquo;ps&rdquo; to identify each pts terminal.</p>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -858,23 +883,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -883,58 +891,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
                     
                     
-                        
-                    
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -966,54 +924,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1063,6 +973,21 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
                     
                     
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                     
 
                     
@@ -1086,6 +1011,110 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1272,10 +1301,10 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 	 
 	 
 		
-			<a class="nav nav-prev" href="/" title="Home"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/notes/" title="Notes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/devops/" title="DevOps" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/notes/kubernetes/" title="Kubernetes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1305,3 +1334,4 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
   </body>
 </html>
+

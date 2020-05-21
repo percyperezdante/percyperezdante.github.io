@@ -1008,7 +1008,7 @@ $ go run test.go
 
 
 ### NOTE
-To remove this module:
+- To remove this module:
 
 ```bash
 $ go env GOPATH
@@ -1023,3 +1023,16 @@ $ rm -rf gomod@v1.0.0
 $ cd $GOPATH/pkg/mod/cache/download/github.com/percyperezdante
 $ rm -rf gomod
 ```
+
+- To keep all dependencies in the current directory
+
+```bash
+$ cd test
+$ go mod init anyname
+$ go mod vendor
+```
+
+Go downloads all dependencies in inside the test/vendor folder
+
+
+

@@ -64,7 +64,12 @@
   
   <url>
     <loc>http://example.org/</loc>
-    <lastmod>2020-05-13T15:12:41+01:00</lastmod>
+    <lastmod>2020-05-21T11:52:12+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/notes/shell/</loc>
+    <lastmod>2020-05-21T11:52:12+01:00</lastmod>
   </url>
   
   <url>

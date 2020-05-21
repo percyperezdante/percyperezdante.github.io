@@ -22,3 +22,6 @@ More details will be added gradually.
 
 - [Golang](go/)
 
+# S
+
+- [Shell tricks](shell/)
