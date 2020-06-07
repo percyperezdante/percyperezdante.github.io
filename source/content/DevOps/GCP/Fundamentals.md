@@ -280,6 +280,52 @@ You can click on cloud shell and type:
 
 ### Containers in the Cloud
 
+You can build container images though tools such as docker or cloud build.  However, more tasks are needed to have a reliable and scalable system, therefore more considerations are needed, such as: service discovery, application configuration, managing updates and monitoring.
+
+1. Introduction to GKE
+
+Kubernetes is an open source orchestrator for containers, it helps to manage and scale your containers. Kubernetes lets you deploy containers inside nodes called cluster, where a cluster is a set of master nodes and containter nodes. In kubernetes, a node is a computing instance, in contrast, in GCP, a node is a VM running inside a compute engine.
+
+To create a Kubernetes cluster in GKE, you can type the following command. Note that  Kubernetes create "pods" to locate one or more than one containers of a Kubernetes cluster, which means a container runs inside a pod. 
+
+``bash
+$ gcloud container clusters create k1   # This creates a Kubernetes cluster called k1
+
+```
+Here some useful basic commands:
+
+```bash
+$ kubectl run nginx --image=nginx:1.15.16
+$ kubectl get pods
+$ kubectl expose deployments nginx --port=80 --type=LoadBalancer  # creates public IP to be accessed by public
+```
+
+Note that by exposing to the public, GKE creates a service that uses a public IP address. This service is the end point for any request from outside, and is this service that re-directs any outside request to the respective pod. The advantage to use service IP address instead of the pod's IP address is that pods need manages in the case IP addresses change, whereasa service do the manage for you. 
+
+
+```bash
+$ kubectl scale services
+```
+
+In case you need more resources, you can scale your infrastructure by:
+
+```bash
+$ kubectl scale nginx --replica=3
+$ kubectl autoscale nginx --min=10 --max=15 --cpu=80
+$ kubectl get pods -l "app=nginx" -o yaml  # declarative eay to use yaml file for configuration.
+$ kubectl get replicasets  # replicas states
+$ kubectl get pods 
+$ kubectl get deployments   # To verify that replicas are running
+```
+
+![KubernetesPods](/devops/gcp/kubernetespods.png?width=40pc)
+
+2. Hybrid and multi-cloud computing: Anthos
+
+Anthos allows you to move some components of your on-premises application to the cloud, while keeping the rest on your own local infrastrcuture. Anthos allows both, cloud and on-prem, stay in sync, and offers a rich set of tools to manage services on-prem and on cloud, monitoring, migrations of apps from VMs int your clusters, and maintain policies across all clusters.
+
+
+![Anthos general overview](/devops/gcp/anthosgeneral.png?width=50pc)
 
 ### Applications in the Cloud
 

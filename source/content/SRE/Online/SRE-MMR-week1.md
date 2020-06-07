@@ -47,6 +47,7 @@ In conclusion, by sharing SRE practices with customers, not only new features ca
 
 
 ### Why Are SLOs Important for Your Organization?
+Building new features quickly leads to a negative correlation between development velocity and system reliability.  This means that development velocity implies the posibility to break another features that can also affect our customers. Therefore, measuring SLOs gives real indications of possibel effects on the expectation of customers when a new feature is released.You can plan proactively by estimating risks to your reliability from the roll-out of new features in terms of time to detection, time to resolution, and impact percentage. Also, if you have enough error budget you can reduce the effort to cover any potential risk.
 
 
 # Targeting Reliability
