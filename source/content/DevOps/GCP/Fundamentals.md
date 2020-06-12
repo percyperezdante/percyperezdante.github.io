@@ -329,7 +329,105 @@ Anthos allows you to move some components of your on-premises application to the
 
 ### Applications in the Cloud
 
+1. App Engine: PaaS
+
+This could be useful when you want to focus effort  on implement your code rather than in the platform where you deploy your application. App engine is a better solution for a web app rather than a longer-running batch processing. Beside run your application, App engines offers other services to your application, such ash NoSQL databases, load balancing, loggin and authetication.
+
+* **The App Standard Engine**
+
+Run times services includes: java, python, php, and go. If you code in anothe language, Standard environment is not the rigth place, instead you can choose the flexible environment. In standard environment you use sandboxes, which no writes in local files, if you need data persistance, you can write down to a data service instead. Also all request time out at 60s, and has a limit of thrid-party software.
+
+* **The App Engine Flexible environment**
+
+You deploy your application inside containers, and GCP manage them for you.
+
+![General app engine comparison](/devops/gcp/appenginescomparison.png?width=50pc)
+
+![General app kubernetes and app engines compariso](/devops/gcp/kgeversusappengine.png?width=50pc)
+
+* **Could Endpoints and Apigee Edge**
+
+Cloud endpints helps you to create and mantain APIs, distribute API managemente through a console and expose your API using RESTfil interface. Apigee also helps you secure and monetize APIs. Apigee contains analytics, monetization and a developer portal. It is usually used by business developers when they want to expose legacy code though APIs to another business customers. Instead of replacing the monoitic application all in once, it peal layer by layer or component by component until
+complete all migration. It usually implementes microservices to expose APIs until the legacy code can be retired.
+
+* **Notes**
+- App Engine manages the hardware and networking infrastructure required to run your code.
+- It is possible for and App Engine application's daily billing to drop to zero.
+- Three advatnages for App Engine Standard: scaling is finer-grained, billing can drop to zero if your application is idle, and GCP provides and maintain runtime binaries.
+- In case you want to do business analytics and billing on a customer-facing API, Apigee Edge is a good choice. 
+- In case you want to support developers who are building services in GCP through API logging and monitoring, Cloud Endpoints is good choice.
+- Below some gcloud command to deploy an app in App Engine:
+
+
+To run the app, not deploy it yet:
+```bash
+$ gcloud auth list
+$ gcloud config list project
+$ gcloud components install app-engine-python
+$ gcloud app create --project=$DEVSHELL_PROJECT_ID
+$ git clone https://github.com/GoogleCloudPlatform/python-docs-samples
+$ cd python-docs-samples/appengine/standard_python37/hello_world
+$ sudo apt-get install virtualenv
+$ source venv/bin/activate
+$ pip install  -r requirements.txt
+$ python main.py
+```
+
+To run and deploy the app:
+```bash
+$ cd python-docs-samples/appengine/standard_python37/hello_world
+$ gcloud app deploy
+$ gcloud app browse
+
+```
+
 ### Developing, Deploying and Monitoring in the Cloud
+
+1. Development
+
+- GCP includes a cloud source repository, it provides a git for development. It also includes a source viewer.
+- Payments is in intervals of 100 milliseconds.
+- GCP allows you to create triggers to update new events in your application.
+
+* **Infrastrcuture as a code**
+
+- GCP provides you a deployment manager for re-deployment by usign a .yaml template file.
+- This .yaml template file describes your environment which are read by deployment manager.
+- Deployment manager create the resources declared in the .yaml file.
+
+* **Monitoring**
+
+- GCP uses stackdriver for monitoring, logging, debug, error reporting, and trace.
+
+![Stackdriver features](/devops/gcp/stackdriverfeatures.png?width=50pc)
+
+
+
+```bash
+resources:
+- name: my-vm
+  type: compute.v1.instance
+  properties:
+    zone: us-central1-a
+    machineType: zones/ZONE/machineTypes/n1-standard-1
+    metadata:
+      items:
+      - key: startup-script
+        value: "apt-get update"
+    disks:
+    - deviceName: boot
+      type: PERSISTENT
+      boot: true
+      autoDelete: true
+      initializeParams:
+        sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20180806
+    networkInterfaces:
+    - network: https://www.googleapis.com/compute/v1/projects/$DEVSHELL_PROJECT_ID/global/networks/defaul
+      accessConfigs:
+      - name: External NAT
+        type: ONE_TO_ONE_NAT
+```
+
 
 ### Big Data and Machine Learning in the Cloud
 

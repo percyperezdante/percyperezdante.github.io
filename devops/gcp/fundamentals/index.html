@@ -12,20 +12,20 @@
     <title>Fundamentals :: Home</title>
 
     
-    <link href="/css/nucleus.css?1590077453" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1590077453" rel="stylesheet">
-    <link href="/css/hybrid.css?1590077453" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1590077453" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1590077453" rel="stylesheet">
-    <link href="/css/auto-complete.css?1590077453" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1590077453" rel="stylesheet">
-    <link href="/css/theme.css?1590077453" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1590077453" rel="stylesheet">
+    <link href="/css/nucleus.css?1591960013" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1591960013" rel="stylesheet">
+    <link href="/css/hybrid.css?1591960013" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1591960013" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1591960013" rel="stylesheet">
+    <link href="/css/auto-complete.css?1591960013" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1591960013" rel="stylesheet">
+    <link href="/css/theme.css?1591960013" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1591960013" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1590077453" rel="stylesheet">
+      <link href="/css/theme-percy.css?1591960013" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1590077453"></script>
+    <script src="/js/jquery-3.3.1.min.js?1591960013"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1590077453"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1590077453"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1591960013"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1591960013"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1590077453"></script>
+<script type="text/javascript" src="/js/search.js?1591960013"></script>
 
     
   </div>
@@ -1038,9 +1038,129 @@ Cloud storage uses object storages to store your data. Object storage is not sam
             <span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">body</span><span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span><span style="color:#a6e22e">html</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
 
 </code></pre></div><h3 id="containers-in-the-cloud">Containers in the Cloud</h3>
+<p>You can build container images though tools such as docker or cloud build.  However, more tasks are needed to have a reliable and scalable system, therefore more considerations are needed, such as: service discovery, application configuration, managing updates and monitoring.</p>
+<ol>
+<li>Introduction to GKE</li>
+</ol>
+<p>Kubernetes is an open source orchestrator for containers, it helps to manage and scale your containers. Kubernetes lets you deploy containers inside nodes called cluster, where a cluster is a set of master nodes and containter nodes. In kubernetes, a node is a computing instance, in contrast, in GCP, a node is a VM running inside a compute engine.</p>
+<p>To create a Kubernetes cluster in GKE, you can type the following command. Note that  Kubernetes create &ldquo;pods&rdquo; to locate one or more than one containers of a Kubernetes cluster, which means a container runs inside a pod.</p>
+<p>``bash
+$ gcloud container clusters create k1   # This creates a Kubernetes cluster called k1</p>
+<pre><code>Here some useful basic commands:
+
+```bash
+$ kubectl run nginx --image=nginx:1.15.16
+$ kubectl get pods
+$ kubectl expose deployments nginx --port=80 --type=LoadBalancer  # creates public IP to be accessed by public
+</code></pre><p>Note that by exposing to the public, GKE creates a service that uses a public IP address. This service is the end point for any request from outside, and is this service that re-directs any outside request to the respective pod. The advantage to use service IP address instead of the pod&rsquo;s IP address is that pods need manages in the case IP addresses change, whereasa service do the manage for you.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl scale services
+</code></pre></div><p>In case you need more resources, you can scale your infrastructure by:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl scale nginx --replica<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
+$ kubectl autoscale nginx --min<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> --max<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span> --cpu<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span>
+$ kubectl get pods -l <span style="color:#e6db74">&#34;app=nginx&#34;</span> -o yaml  <span style="color:#75715e"># declarative eay to use yaml file for configuration.</span>
+$ kubectl get replicasets  <span style="color:#75715e"># replicas states</span>
+$ kubectl get pods 
+$ kubectl get deployments   <span style="color:#75715e"># To verify that replicas are running</span>
+</code></pre></div><p><img src="/devops/gcp/kubernetespods.png?width=40pc" alt="KubernetesPods"></p>
+<ol start="2">
+<li>Hybrid and multi-cloud computing: Anthos</li>
+</ol>
+<p>Anthos allows you to move some components of your on-premises application to the cloud, while keeping the rest on your own local infrastrcuture. Anthos allows both, cloud and on-prem, stay in sync, and offers a rich set of tools to manage services on-prem and on cloud, monitoring, migrations of apps from VMs int your clusters, and maintain policies across all clusters.</p>
+<p><img src="/devops/gcp/anthosgeneral.png?width=50pc" alt="Anthos general overview"></p>
 <h3 id="applications-in-the-cloud">Applications in the Cloud</h3>
-<h3 id="developing-deploying-and-monitoring-in-the-cloud">Developing, Deploying and Monitoring in the Cloud</h3>
-<h3 id="big-data-and-machine-learning-in-the-cloud">Big Data and Machine Learning in the Cloud</h3>
+<ol>
+<li>App Engine: PaaS</li>
+</ol>
+<p>This could be useful when you want to focus effort  on implement your code rather than in the platform where you deploy your application. App engine is a better solution for a web app rather than a longer-running batch processing. Beside run your application, App engines offers other services to your application, such ash NoSQL databases, load balancing, loggin and authetication.</p>
+<ul>
+<li><strong>The App Standard Engine</strong></li>
+</ul>
+<p>Run times services includes: java, python, php, and go. If you code in anothe language, Standard environment is not the rigth place, instead you can choose the flexible environment. In standard environment you use sandboxes, which no writes in local files, if you need data persistance, you can write down to a data service instead. Also all request time out at 60s, and has a limit of thrid-party software.</p>
+<ul>
+<li><strong>The App Engine Flexible environment</strong></li>
+</ul>
+<p>You deploy your application inside containers, and GCP manage them for you.</p>
+<p><img src="/devops/gcp/appenginescomparison.png?width=50pc" alt="General app engine comparison"></p>
+<p><img src="/devops/gcp/kgeversusappengine.png?width=50pc" alt="General app kubernetes and app engines compariso"></p>
+<ul>
+<li><strong>Could Endpoints and Apigee Edge</strong></li>
+</ul>
+<p>Cloud endpints helps you to create and mantain APIs, distribute API managemente through a console and expose your API using RESTfil interface. Apigee also helps you secure and monetize APIs. Apigee contains analytics, monetization and a developer portal. It is usually used by business developers when they want to expose legacy code though APIs to another business customers. Instead of replacing the monoitic application all in once, it peal layer by layer or component by component until
+complete all migration. It usually implementes microservices to expose APIs until the legacy code can be retired.</p>
+<ul>
+<li><strong>Notes</strong></li>
+</ul>
+<ul>
+<li>App Engine manages the hardware and networking infrastructure required to run your code.</li>
+<li>It is possible for and App Engine application&rsquo;s daily billing to drop to zero.</li>
+<li>Three advatnages for App Engine Standard: scaling is finer-grained, billing can drop to zero if your application is idle, and GCP provides and maintain runtime binaries.</li>
+<li>In case you want to do business analytics and billing on a customer-facing API, Apigee Edge is a good choice.</li>
+<li>In case you want to support developers who are building services in GCP through API logging and monitoring, Cloud Endpoints is good choice.</li>
+<li>Below some gcloud command to deploy an app in App Engine:</li>
+</ul>
+<p>To run the app, not deploy it yet:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ gcloud auth list
+$ gcloud config list project
+$ gcloud components install app-engine-python
+$ gcloud app create --project<span style="color:#f92672">=</span>$DEVSHELL_PROJECT_ID
+$ git clone https://github.com/GoogleCloudPlatform/python-docs-samples
+$ cd python-docs-samples/appengine/standard_python37/hello_world
+$ sudo apt-get install virtualenv
+$ source venv/bin/activate
+$ pip install  -r requirements.txt
+$ python main.py
+</code></pre></div><p>To run and deploy the app:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd python-docs-samples/appengine/standard_python37/hello_world
+$ gcloud app deploy
+$ gcloud app browse
+
+</code></pre></div><h3 id="developing-deploying-and-monitoring-in-the-cloud">Developing, Deploying and Monitoring in the Cloud</h3>
+<ol>
+<li>Development</li>
+</ol>
+<ul>
+<li>GCP includes a cloud source repository, it provides a git for development. It also includes a source viewer.</li>
+<li>Payments is in intervals of 100 milliseconds.</li>
+<li>GCP allows you to create triggers to update new events in your application.</li>
+</ul>
+<ul>
+<li><strong>Infrastrcuture as a code</strong></li>
+</ul>
+<ul>
+<li>GCP provides you a deployment manager for re-deployment by usign a .yaml template file.</li>
+<li>This .yaml template file describes your environment which are read by deployment manager.</li>
+<li>Deployment manager create the resources declared in the .yaml file.</li>
+</ul>
+<ul>
+<li><strong>Monitoring</strong></li>
+</ul>
+<ul>
+<li>GCP uses stackdriver for monitoring, logging, debug, error reporting, and trace.</li>
+</ul>
+<p><img src="/devops/gcp/stackdriverfeatures.png?width=50pc" alt="Stackdriver features"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">resources:
+- name: my-vm
+  type: compute.v1.instance
+  properties:
+    zone: us-central1-a
+    machineType: zones/ZONE/machineTypes/n1-standard-1
+    metadata:
+      items:
+      - key: startup-script
+        value: <span style="color:#e6db74">&#34;apt-get update&#34;</span>
+    disks:
+    - deviceName: boot
+      type: PERSISTENT
+      boot: true
+      autoDelete: true
+      initializeParams:
+        sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20180806
+    networkInterfaces:
+    - network: https://www.googleapis.com/compute/v1/projects/$DEVSHELL_PROJECT_ID/global/networks/defaul
+      accessConfigs:
+      - name: External NAT
+        type: ONE_TO_ONE_NAT
+</code></pre></div><h3 id="big-data-and-machine-learning-in-the-cloud">Big Data and Machine Learning in the Cloud</h3>
 
 
 <footer class="footline">
@@ -1510,19 +1630,19 @@ Cloud storage uses object storages to store your data. Object storage is not sam
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1590077453"></script>
-    <script src="/js/perfect-scrollbar.min.js?1590077453"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1590077453"></script>
-    <script src="/js/jquery.sticky.js?1590077453"></script>
-    <script src="/js/featherlight.min.js?1590077453"></script>
-    <script src="/js/highlight.pack.js?1590077453"></script>
+    <script src="/js/clipboard.min.js?1591960013"></script>
+    <script src="/js/perfect-scrollbar.min.js?1591960013"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1591960013"></script>
+    <script src="/js/jquery.sticky.js?1591960013"></script>
+    <script src="/js/featherlight.min.js?1591960013"></script>
+    <script src="/js/highlight.pack.js?1591960013"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1590077453"></script>
-    <script src="/js/learn.js?1590077453"></script>
-    <script src="/js/hugo-learn.js?1590077453"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1591960013"></script>
+    <script src="/js/learn.js?1591960013"></script>
+    <script src="/js/hugo-learn.js?1591960013"></script>
 
-    <link href="/mermaid/mermaid.css?1590077453" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1590077453"></script>
+    <link href="/mermaid/mermaid.css?1591960013" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1591960013"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
