@@ -401,7 +401,16 @@ $ gcloud app browse
 
 ![Stackdriver features](/devops/gcp/stackdriverfeatures.png?width=50pc)
 
+* **Notes**
+- Example of a yaml file to deploy a box in GCP.
 
+```bash
+$ export MY_ZONE=us-central1-a
+$ gsutil cp gs://cloud-training/gcpfcoreinfra/mydeploy.yaml test.yaml
+$ sed -i -e 's/PROJECT_ID/'$DEVSHELL_PROJECT_ID/ test.yaml
+$ sed -i -e 's/ZONE/'$MY_ZONE/ test.yaml
+$ cat test.yaml
+```
 
 ```bash
 resources:
@@ -428,7 +437,60 @@ resources:
         type: ONE_TO_ONE_NAT
 ```
 
+```bash
+$ gcloud deployment-manager deployments create HalloWOrld --config test.yaml
+
+# To update VM in caste test.yaml files is modified:
+$ gcloud deployment-manager deployments update HalloWOrld --config test.yaml
+
+```
+
+- To create CPU Load
+
+```
+$ dd if=/dev/urandom | gzip -9 >> /dev/null &
+```
 
 ### Big Data and Machine Learning in the Cloud
+
+- MLlib is to run classification algorithms.
+        - TensorFlow
+        - Used for classification, regresion, recommendation, anomaly detection, image and bideo analysis and text analytics.
+- Cloud Dataflow:
+        - Manage data pipelines
+        - "write code once and get batch and streaming"
+        - ETL  (extract, transform, load) pipelines to move, filter, enrich, shate data
+        - Data analysis usgin streaming
+- BIg query: 
+        - Fully managed data warehouse
+        - Provides near real-time interactive analysis of peta-bytes of datasets using SQL 2011 syntax
+        - Computes with a terabit network
+- Data Pub/Sub
+        - Supports many-to-many async messaging
+        - Apps components make push/pull subscriptions to topics
+- Cloud datalab
+        - Interactive data exploration for large-scale data exploration, transformation, analysis, and visualization
+        - Built on Jupyter(Ipython)
+        - Integration with BigQuery, Compute Engine and Cloud Storage using Python, SQL, and JS
+- Cloud vision
+        - Analyse content of images with REST API
+            - Logo detection
+            - Label detection
+            - Extract text
+- Cloud NLP
+        - Return text from audio in real time
+        - High accuracity, even with noise
+        - It can do syntax analysis
+        - Breaking down sentences supplied by our users into tokens
+        - Identify the nouns, verbs, adjectives, and other parts of speech and figure out the relationships among the words
+
+- Cloud translation API
+        - Translate arbitrary string in to another language
+- Cloud video intelligence API
+        - Annotate content of videos
+        - Detect sceme changes
+        - Flag inappropiate events
+        - 
+
 
 

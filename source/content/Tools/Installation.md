@@ -43,7 +43,10 @@ This page presents suggestions on how to install tools of interest. It is ordere
         $ ./configure
         $ sudo make install
         $ vifm .  # <-- Enjoy vi File Manager
-        
+
+- [Vimium](https://vimium.github.io/)
+
+        This extension is available in Google Chrome and Firefox. It provides keyboard shorcuts for navigation.
 
 ## Z
 
