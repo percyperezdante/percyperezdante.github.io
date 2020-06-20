@@ -6,10 +6,39 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 May 2020 11:52:12 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:52:44 +0100</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SRECON 2019</title>
+      <link>http://example.org/sre/online/srecon2019/</link>
+      <pubDate>Sat, 20 Jun 2020 16:52:44 +0100</pubDate>
+      
+      <guid>http://example.org/sre/online/srecon2019/</guid>
+      <description>The SRE I Aspire to be by Yaniv Aknin at SRECON 2019  Yaniv A. is GCP quantitative reliability lead. SRE skill is the ability to measure or translate to numbers ( quantify ) SRE includes: &amp;ldquo;measurably optimse reliability vs cost&amp;rdquo; It is important to trade Operations and Reliability How can we build a more reliable logical disk? then we do not need to increase operations due to failure. One solution as use RAIDs, but cost more and more complexity!</description>
+    </item>
+    
+    <item>
+      <title>Crypto</title>
+      <link>http://example.org/notes/crypto/</link>
+      <pubDate>Tue, 16 Jun 2020 22:11:31 +0100</pubDate>
+      
+      <guid>http://example.org/notes/crypto/</guid>
+      <description>General  DES; The Data Encryption Standard uses a key of 56bits and a block size of 64 buts. It is not recommended, and insted you can consider other approaches such as AES, Salsa20.:w   </description>
+    </item>
+    
+    <item>
+      <title>Networking</title>
+      <link>http://example.org/devops/gcp/networking/</link>
+      <pubDate>Sun, 14 Jun 2020 09:29:44 +0100</pubDate>
+      
+      <guid>http://example.org/devops/gcp/networking/</guid>
+      <description>Insert MAP
+VPC Virtual Private Cloud INSERT VPC
+ Projects   Key organisers in VPC, and it is linked to billing Projects contains entire networks Default quota is 5 networks for one project.   Networks   No IP address range Networks are global Contain subnwtowrks Type: default, auto or custom. Custom networks can not be converted to auto mode networks  ipaddress</description>
+    </item>
     
     <item>
       <title>Shell</title>

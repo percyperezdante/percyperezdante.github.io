@@ -453,6 +453,8 @@ $ dd if=/dev/urandom | gzip -9 >> /dev/null &
 
 ### Big Data and Machine Learning in the Cloud
 
+![Cloud big data](/devops/gcp/cloudbigdatasummary.png?width=50pc)
+
 - MLlib is to run classification algorithms.
         - TensorFlow
         - Used for classification, regresion, recommendation, anomaly detection, image and bideo analysis and text analytics.
@@ -490,7 +492,11 @@ $ dd if=/dev/urandom | gzip -9 >> /dev/null &
         - Annotate content of videos
         - Detect sceme changes
         - Flag inappropiate events
-        - 
 
+### Summary
 
-
+![choosing Cloud storage](/devops/gcp/summarychoosingcloudstorageclasses.png?width=50pc)
+![Comparing interconnect options](/devops/gcp/summarycomparinginterconnectoptions.png?width=50pc)
+![Comparing load balancing](/devops/gcp/summarycomparingloadbalancingoptions.png?width=50pc)
+![Comparing options](/devops/gcp/summarycomparingoptions.png?width=50pc)
+![Comparing storage options](/devops/gcp/summarychoosingcloudstorageclasses.png?width=50pc)

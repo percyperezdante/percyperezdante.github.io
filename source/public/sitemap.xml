@@ -64,7 +64,22 @@
   
   <url>
     <loc>http://example.org/</loc>
-    <lastmod>2020-05-21T11:52:12+01:00</lastmod>
+    <lastmod>2020-06-20T16:52:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/sre/online/srecon2019/</loc>
+    <lastmod>2020-06-20T16:52:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/notes/crypto/</loc>
+    <lastmod>2020-06-16T22:11:31+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/devops/gcp/networking/</loc>
+    <lastmod>2020-06-14T09:29:44+01:00</lastmod>
   </url>
   
   <url>

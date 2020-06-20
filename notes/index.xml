@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Crypto</title>
+      <link>http://example.org/notes/crypto/</link>
+      <pubDate>Tue, 16 Jun 2020 22:11:31 +0100</pubDate>
+      
+      <guid>http://example.org/notes/crypto/</guid>
+      <description>General  DES; The Data Encryption Standard uses a key of 56bits and a block size of 64 buts. It is not recommended, and insted you can consider other approaches such as AES, Salsa20.:w   </description>
+    </item>
+    
+    <item>
       <title>Shell</title>
       <link>http://example.org/notes/shell/</link>
       <pubDate>Thu, 21 May 2020 11:52:12 +0100</pubDate>
