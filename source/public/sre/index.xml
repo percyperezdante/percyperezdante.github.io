@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Myapproach</title>
+      <link>http://example.org/sre/myapproach/</link>
+      <pubDate>Sun, 21 Jun 2020 08:40:40 +0100</pubDate>
+      
+      <guid>http://example.org/sre/myapproach/</guid>
+      <description>What is ###SRE
+ SRE measures how reliable my serivice is from my customer&amp;rsquo;s perspective, not from my perspective. It seems most of the talks use current or historic data, logs, Why we do not estimate future data then ?  The reason is that usually you take generated logs, so it is hard to have a real-time observations. How to have real-time observations? how to estimate the future?    SLO  Defines a threshold, max or min value, for an SLI.</description>
+    </item>
+    
+    <item>
       <title>References</title>
       <link>http://example.org/sre/references/</link>
       <pubDate>Sat, 21 Mar 2020 12:00:04 +0000</pubDate>

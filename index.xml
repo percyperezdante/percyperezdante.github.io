@@ -6,10 +6,20 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jun 2020 16:52:44 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2020 08:40:40 +0100</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Myapproach</title>
+      <link>http://example.org/sre/myapproach/</link>
+      <pubDate>Sun, 21 Jun 2020 08:40:40 +0100</pubDate>
+      
+      <guid>http://example.org/sre/myapproach/</guid>
+      <description>What is ###SRE
+ SRE measures how reliable my serivice is from my customer&amp;rsquo;s perspective, not from my perspective. It seems most of the talks use current or historic data, logs, Why we do not estimate future data then ?  The reason is that usually you take generated logs, so it is hard to have a real-time observations. How to have real-time observations? how to estimate the future?    SLO  Defines a threshold, max or min value, for an SLI.</description>
+    </item>
     
     <item>
       <title>SRECON 2019</title>
@@ -17,7 +27,7 @@
       <pubDate>Sat, 20 Jun 2020 16:52:44 +0100</pubDate>
       
       <guid>http://example.org/sre/online/srecon2019/</guid>
-      <description>The SRE I Aspire to be by Yaniv Aknin at SRECON 2019  Yaniv A. is GCP quantitative reliability lead. SRE skill is the ability to measure or translate to numbers ( quantify ) SRE includes: &amp;ldquo;measurably optimse reliability vs cost&amp;rdquo; It is important to trade Operations and Reliability How can we build a more reliable logical disk? then we do not need to increase operations due to failure. One solution as use RAIDs, but cost more and more complexity!</description>
+      <description>1. The SRE I Aspire to be by Yaniv Aknin at SRECON 2019  Yaniv A. is GCP quantitative reliability lead. SRE skill is the ability to measure or translate to numbers ( quantify ) SRE includes: &amp;ldquo;measurably optimse reliability vs cost&amp;rdquo; It is important to trade Operations and Reliability How can we build a more reliable logical disk? then we do not need to increase operations due to failure. One solution as use RAIDs, but cost more and more complexity!</description>
     </item>
     
     <item>

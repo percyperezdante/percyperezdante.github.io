@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Shell :: Home</title>
+    <title>Myapproach :: Home</title>
 
     
     <link href="/css/nucleus.css?1592864315" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/notes/shell/">
+  <body class="" data-url="/sre/myapproach/">
     <nav id="sidebar" class="">
 
 
@@ -242,7 +242,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/sre/" title="SRE" class="dd-item 
-        
+        parent
         
         
         ">
@@ -270,7 +270,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/sre/myapproach/" title="Myapproach" class="dd-item ">
+      <li data-nav-id="/sre/myapproach/" title="Myapproach" class="dd-item active">
         <a href="/sre/myapproach/">
         Myapproach
         
@@ -461,7 +461,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/notes/" title="Notes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -508,7 +508,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/notes/shell/" title="Shell" class="dd-item active">
+      <li data-nav-id="/notes/shell/" title="Shell" class="dd-item ">
         <a href="/notes/shell/">
         Shell
         
@@ -869,7 +869,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            <a href='/'>Home</a> > <a href='/notes/'>Notes</a> > Shell
+            <a href='/'>Home</a> > <a href='/sre/'>SRE</a> > Myapproach
           
          
           
@@ -886,7 +886,11 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
   <ul>
     <li>
       <ul>
-        <li></li>
+        <li><a href="#slo">SLO</a></li>
+        <li><a href="#sli">SLI</a></li>
+        <li><a href="#sla">SLA</a></li>
+        <li><a href="#alerts">Alerts</a></li>
+        <li><a href="#customer-perception">Customer perception</a></li>
       </ul>
     </li>
   </ul>
@@ -906,7 +910,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
           
             <h1>
               
-              Shell
+              Myapproach
             </h1>
           
 
@@ -914,22 +918,77 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
-<h4 id="1-sending-message-to-pts-terminal">1. Sending message to pts terminal</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># List of opened terminals.</span> 
-percy@prec:~$ ls -tlr /dev/pts/
-total <span style="color:#ae81ff">0</span>
-c--------- <span style="color:#ae81ff">1</span> root  root   5, <span style="color:#ae81ff">2</span> May <span style="color:#ae81ff">21</span> 06:18 ptmx
-crw--w---- <span style="color:#ae81ff">1</span> percy tty  136, <span style="color:#ae81ff">2</span> May <span style="color:#ae81ff">21</span> 11:36 <span style="color:#ae81ff">2</span>
-crw--w---- <span style="color:#ae81ff">1</span> percy tty  136, <span style="color:#ae81ff">0</span> May <span style="color:#ae81ff">21</span> 11:52 <span style="color:#ae81ff">0</span>
-crw--w---- <span style="color:#ae81ff">1</span> percy tty  136, <span style="color:#ae81ff">3</span> May <span style="color:#ae81ff">21</span> 11:53 <span style="color:#ae81ff">3</span>
-crw--w---- <span style="color:#ae81ff">1</span> percy tty  136, <span style="color:#ae81ff">4</span> May <span style="color:#ae81ff">21</span> 11:53 <span style="color:#ae81ff">4</span>
-crw--w---- <span style="color:#ae81ff">1</span> percy tty  136, <span style="color:#ae81ff">6</span> May <span style="color:#ae81ff">21</span> 11:53 <span style="color:#ae81ff">6</span>
-crw--w---- <span style="color:#ae81ff">1</span> percy tty  136, <span style="color:#ae81ff">5</span> May <span style="color:#ae81ff">21</span> 11:53 <span style="color:#ae81ff">5</span>
-
-
-percy@prec:~$ echo <span style="color:#e6db74">&#34;How are you ?&#34;</span> &gt; /dev/pts/6
-
-</code></pre></div><p>You can use &ldquo;ps&rdquo; to identify each pts terminal.</p>
+<h1 id="what-is">What is</h1>
+<p>###SRE</p>
+<ul>
+<li>SRE measures how reliable my serivice is from my customer&rsquo;s perspective, not from my perspective.</li>
+<li>It seems most of the talks use current or historic data, logs, Why we do not estimate future data then ?
+<ul>
+<li>The reason is that usually you take generated logs, so it is hard to have a real-time observations.</li>
+<li>How to have real-time observations? how to estimate the future?</li>
+</ul>
+</li>
+</ul>
+<h3 id="slo">SLO</h3>
+<ul>
+<li>Defines a threshold, max or min value, for an SLI.</li>
+<li>Defines what are your service expectations.</li>
+<li>Examples:
+<ul>
+<li>Uptime 999% i.e. SLI-1 over the last month 99.95 of the time.</li>
+<li>99% of valid requests in the past 28 days served in less than one second.</li>
+</ul>
+</li>
+</ul>
+<h3 id="sli">SLI</h3>
+<ul>
+<li>
+<p>Includes the most relevant metrics to measure service of your system.</p>
+</li>
+<li>
+<p>If you see historical data, you can not take overall view, instead every slot should be analysed. For example, if we have a pick in a specific day, maybe the traffic was high at that time and that is where we need to guarantee reliability. This should be consider even if it occurs only once.</p>
+</li>
+<li>
+<p>Examples:</p>
+<ul>
+<li>One a minute, ssh into the target host, report 1 if it&rsquo;s working 0 if not.</li>
+<li>The proportion of valir requests that were serverd within less than one second.</li>
+<li></li>
+</ul>
+</li>
+<li>
+<p>How percentiles should be treated? can we aggregate along the time? When can be aggreagted when not?</p>
+</li>
+<li>
+<p>Can we averga percentiles of many modules and for a long time of data analysis?</p>
+</li>
+<li>
+<p>If we do not use logs, what will be the benefit to counts events as soon as they happen, and evaluate SLI base on this fresh results?</p>
+</li>
+</ul>
+<h3 id="sla">SLA</h3>
+<ul>
+<li>Examples:
+<ul>
+<li>If we do not meet our SLO in one month, you will get exactly one cake</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="alerts">Alerts</h3>
+<ul>
+<li>
+<p>Set an alert ONLY when a manual internvention is required, not for infomative purposes. Alerts mean action and now. If this is not possible, you can separate alerts that requries action and alerts where no action is required.</p>
+</li>
+<li>
+<p>Monitoring should be display in one place.</p>
+</li>
+<li></li>
+</ul>
+<h3 id="customer-perception">Customer perception</h3>
+<ul>
+<li>Collect data from customers, slack, twitter, emails, open public conversations and centralise them. Apply ML to analyse them and get insights for understand whether customer are happy or not with services.</li>
+</ul>
 
 
 <footer class="footline">
@@ -1068,12 +1127,46 @@ percy@prec:~$ echo <span style="color:#e6db74">&#34;How are you ?&#34;</span> &g
             
                 
                     
+                    
                 
                 
 
                     
                     
                         
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
                     
                     
 
@@ -1090,6 +1183,92 @@ percy@prec:~$ echo <span style="color:#e6db74">&#34;How are you ?&#34;</span> &g
                     
                     
 
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1143,129 +1322,6 @@ percy@prec:~$ echo <span style="color:#e6db74">&#34;How are you ?&#34;</span> &g
             
             
                 
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1452,10 +1508,10 @@ percy@prec:~$ echo <span style="color:#e6db74">&#34;How are you ?&#34;</span> &g
 	 
 	 
 		
-			<a class="nav nav-prev" href="/notes/crypto/" title="Crypto"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/sre/" title="SRE"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/notes/kubernetes/" title="Kubernetes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/sre/online/" title="Online resources" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

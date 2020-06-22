@@ -17,7 +17,7 @@
       <pubDate>Sat, 20 Jun 2020 16:52:44 +0100</pubDate>
       
       <guid>http://example.org/sre/online/srecon2019/</guid>
-      <description>The SRE I Aspire to be by Yaniv Aknin at SRECON 2019  Yaniv A. is GCP quantitative reliability lead. SRE skill is the ability to measure or translate to numbers ( quantify ) SRE includes: &amp;ldquo;measurably optimse reliability vs cost&amp;rdquo; It is important to trade Operations and Reliability How can we build a more reliable logical disk? then we do not need to increase operations due to failure. One solution as use RAIDs, but cost more and more complexity!</description>
+      <description>1. The SRE I Aspire to be by Yaniv Aknin at SRECON 2019  Yaniv A. is GCP quantitative reliability lead. SRE skill is the ability to measure or translate to numbers ( quantify ) SRE includes: &amp;ldquo;measurably optimse reliability vs cost&amp;rdquo; It is important to trade Operations and Reliability How can we build a more reliable logical disk? then we do not need to increase operations due to failure. One solution as use RAIDs, but cost more and more complexity!</description>
     </item>
     
     <item>
