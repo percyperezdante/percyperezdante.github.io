@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Research :: Home</title>
+    <title>Review :: Home</title>
 
     
     <link href="/css/nucleus.css?1598306593" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/research/">
+  <body class="" data-url="/sre/review/">
     <nav id="sidebar" class="">
 
 
@@ -242,7 +242,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/sre/" title="SRE" class="dd-item 
-        
+        parent
         
         
         ">
@@ -270,7 +270,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/sre/review/" title="Review" class="dd-item ">
+      <li data-nav-id="/sre/review/" title="Review" class="dd-item active">
         <a href="/sre/review/">
         Review
         
@@ -741,8 +741,8 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/research/" title="Research" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/research/">
@@ -874,6 +874,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -884,7 +886,13 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            <a href='/'>Home</a> > Research
+            
+            
+          
+          
+            <a href='/'>Home</a> > <a href='/sre/'>SRE</a> > Review
+          
+         
           
          
           
@@ -893,6 +901,26 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-sql-is-no-excuse-to-avoid-devops">1. SQL is no excuse to avoid devops</a></li>
+        <li><a href="#reliability-what-is-it-and-how-is-it-measured">Reliability: What is it, and how is it measured?</a></li>
+        <li><a href="#3--nines-are-not-enough-meaningful-metrics-for-clouds">3.  Nines are not enough: meaningful metrics for clouds</a></li>
+        <li><a href="#4-thinking-about-availabitliy-in-large-service-infrastrcuture">4. Thinking about availabitliy in large service infrastrcuture.</a></li>
+        <li><a href="#5-auditing-to-keep-online-storage-services-honest">5. Auditing to keep online storage services honest.</a></li>
+        <li><a href="#6-handbook-of-software-reliability-engineering">6. Handbook of software reliability engineering.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -900,31 +928,142 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Review
+            </h1>
           
 
         
 
 
 
+<p>This section contains reviews or summaries from exisitng literature.</p>
+<h3 id="1-sql-is-no-excuse-to-avoid-devops">1. SQL is no excuse to avoid devops</h3>
+<pre><code>@article{limoncelli2018sql,
+  title={SQL is no excuse to avoid DevOps},
+  author={Limoncelli, Thomas A},
+  journal={Communications of the ACM},
+  volume={62},
+  number={1},
+  pages={46--49},
+  year={2018},
+  publisher={ACM New York, NY, USA}
+}
+</code></pre><p>Automation and a little discipline allow better testing, shorter release cycles, and reduced business risk.</p>
+<p>Previous  articles:</p>
+<ul>
+<li>“The Small Batches Principle,”Communications, July 2016), when something is risky there is a natural inclination to seek to do it less.</li>
+<li>McHenry Technique in The Practice of Cloud System Administration, Strata R.  Chalup and Christina J. Hogan.
+<ul>
+<li>It is also called Expand/Contract in Release It!: Design and Deploy Production-Ready Software by Michael T. Nygard.</li>
+</ul>
+</li>
+<li>SQL migration tools:
+<ul>
+<li><a href="https://github.com/bretcope/Mayflower.NET">https://github.com/bretcope/Mayflower.NET</a></li>
+<li><a href="https://bitbucket.org/liamstask/goose/src/master/">https://bitbucket.org/liamstask/goose/src/master/</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="reliability-what-is-it-and-how-is-it-measured">Reliability: What is it, and how is it measured?</h3>
+<pre><code>@article{bruton2000reliability,
+  title={Reliability: what is it, and how is it measured?},
+  author={Bruton, Anne and Conway, Joy H and Holgate, Stephen T},
+  journal={Physiotherapy},
+  volume={86},
+  number={2},
+  pages={94--99},
+  year={2000},
+  publisher={Elsevier}
+}
 
-	<h1 id="research">Research</h1>
-<p>This section presents the research topics of interest.</p>
-<h4 id="nmanetresearchnmanetmd"><a href="/Research/nmanet.md">nMANET</a></h4>
-<p>nManet is the short name for NDN applied in Manets. NDN stands for Named Data Neworking and Manets stands for Mobile Ad-hoc Networks. In this research, nMANET aims to offer an alterntive to ad-hoc mobile exchange of information in emergency scenarios.</p>
+</code></pre><p>how to quantify relibility<code>how to measue how to seect mesure metrics how ti collect metrics how to validate the methodology of collecting metrics how to classify them how to aggregate them how to quantify errors errors in cpollectin errors in analysis errors agrregation errors per cases how to store them how to analize them how to filter them how to archive them how to validate them how to reuse them hoe to reproduce them how to transfort them how long this measuremens and realibility is valid how define good realibility? what is good?</code>
+how important is reproucibility</p>
+<p>Baumgarter (1989) has identified two types
+of reliability, ie relative reliability and
+absolute reliability.</p>
+<h3 id="3--nines-are-not-enough-meaningful-metrics-for-clouds">3.  Nines are not enough: meaningful metrics for clouds</h3>
+<pre><code>@inproceedings{mogul2019nines,
+  title={Nines are not enough: meaningful metrics for clouds},
+  author={Mogul, Jeffrey C and Wilkes, John},
+  booktitle={Proceedings of the Workshop on Hot Topics in Operating Systems},
+  pages={136--141},
+  year={2019}
+}
+</code></pre><ul>
+<li>
+<p>This paper analyse: Why SLO are so hard to define?</p>
+</li>
+<li>
+<p>However, SLOs are not free. We have to spend resources
+collecting and processing the data that allows us to com-
+pute an SLO’s predicate, without significantly interfering
+with “real&rdquo; work – and without compromising security or
+privacy of cloud customers and their own users. We often
+must aggregate data to reduce costs, which loses fidelity.
+(These costs are what we mean by the “feasibility&rdquo; of a set
+of SLOs.</p>
+</li>
+<li>
+<p>how to collect sufficient data without bias,</p>
+</li>
+<li>
+<p>When to triggerd the decision to claim an SLA?</p>
+</li>
+<li>
+<p>How much data you need to collect?</p>
+</li>
+<li>
+<p>How expensive it is?</p>
+</li>
+<li>
+<p>we have uncertain knowledge of future workloads, and we also
+are unable to accurately model the performance of complex
+computer systems even if we did know the workloads.</p>
+</li>
+<li>
+<p>By monitoring and collecting data, we can find the time when of SLA violation, which
+can lead to a financial penalty in benefit of the customer, if the SLA says it. SLA&rsquo;s
+are very important from business and  law point of view.</p>
+</li>
+<li>
+<p>This paper present many interesting open questions.</p>
+</li>
+</ul>
+<h3 id="4-thinking-about-availabitliy-in-large-service-infrastrcuture">4. Thinking about availabitliy in large service infrastrcuture.</h3>
+<pre><code>@inproceedings{mogul2017thinking,
+  title={Thinking about availability in large service infrastructures},
+  author={Mogul, Jeffrey C and Isaacs, Rebecca and Welch, Brent},
+  booktitle={Proceedings of the 16th Workshop on Hot Topics in Operating Systems},
+  pages={12--17},
+  year={2017}
+}
+</code></pre><h3 id="5-auditing-to-keep-online-storage-services-honest">5. Auditing to keep online storage services honest.</h3>
+<pre><code>@inproceedings{shah2007auditing,
+  title={Auditing to Keep Online Storage Services Honest.},
+  author={Shah, Mehul A and Baker, Mary and Mogul, Jeffrey C and Swaminathan, Ram and others},
+  booktitle={HotOS},
+  year={2007}
+}
 
+</code></pre><h3 id="6-handbook-of-software-reliability-engineering">6. Handbook of software reliability engineering.</h3>
+<pre><code>@book{lyu1996handbook,
+  title={Handbook of software reliability engineering},
+  author={Lyu, Michael R and others},
+  volume={222},
+  year={1996},
+  publisher={IEEE computer society press CA}
+}
 
+</code></pre>
 
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1057,6 +1196,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                    
                 
                 
 
@@ -1071,6 +1211,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
                     
                 
                 
@@ -1088,34 +1229,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
                     
                 
                 
@@ -1124,92 +1239,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -1291,6 +1320,121 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1381,7 +1525,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                    
                 
                 
 
@@ -1394,9 +1537,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1453,10 +1593,10 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 	 
 	 
 		
-			<a class="nav nav-prev" href="/teaching/resources/" title="Resources"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/sre/" title="SRE"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/research/nmanet/" title="NManet" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/sre/myapproach/" title="Myapproach" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1486,3 +1626,4 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
   </body>
 </html>
+

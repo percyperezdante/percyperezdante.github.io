@@ -6,10 +6,22 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Jun 2020 08:40:40 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2020 12:04:13 +0100</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Review</title>
+      <link>http://example.org/sre/review/</link>
+      <pubDate>Mon, 24 Aug 2020 12:04:13 +0100</pubDate>
+      
+      <guid>http://example.org/sre/review/</guid>
+      <description>This section contains reviews or summaries from exisitng literature.
+1. SQL is no excuse to avoid devops @article{limoncelli2018sql, title={SQL is no excuse to avoid DevOps}, author={Limoncelli, Thomas A}, journal={Communications of the ACM}, volume={62}, number={1}, pages={46--49}, year={2018}, publisher={ACM New York, NY, USA} } Automation and a little discipline allow better testing, shorter release cycles, and reduced business risk.
+Previous articles:
+ “The Small Batches Principle,”Communications, July 2016), when something is risky there is a natural inclination to seek to do it less.</description>
+    </item>
     
     <item>
       <title>Myapproach</title>
@@ -17,8 +29,7 @@
       <pubDate>Sun, 21 Jun 2020 08:40:40 +0100</pubDate>
       
       <guid>http://example.org/sre/myapproach/</guid>
-      <description>What is ###SRE
- SRE measures how reliable my serivice is from my customer&amp;rsquo;s perspective, not from my perspective. It seems most of the talks use current or historic data, logs, Why we do not estimate future data then ?  The reason is that usually you take generated logs, so it is hard to have a real-time observations. How to have real-time observations? how to estimate the future?    SLO  Defines a threshold, max or min value, for an SLI.</description>
+      <description>What is SRE  SRE measures how reliable my serivice is from my customer&amp;rsquo;s perspective, not from my perspective. It seems most of the talks use current or historic data, logs, Why we do not estimate future data then ?  The reason is that usually you take generated logs, so it is hard to have a real-time observations. How to have real-time observations? how to estimate the future?    SLO  Defines a threshold, max or min value, for an SLI.</description>
     </item>
     
     <item>

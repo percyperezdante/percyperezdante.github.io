@@ -93,4 +93,12 @@ date: 2020-06-20T16:52:44+01:00
             - Aggregate couter metrics as needed
 
 
+### 4. [Evolution of Observability Tools at Pinterest by Naoman Abbas](https://www.usenix.org/conference/srecon19emea/presentation/abbas)
+
+### 5. [How to SRE When Everything's Already on Fire by Alex Hidalgo and Alex Lee, Squarespace](https://www.usenix.org/conference/srecon19emea/presentation/hidalgo)
+
+### 6. [Advanced Napkin Math: Estimating System Performance from First Principles by Simon Eskildsen, Shopify](https://www.usenix.org/conference/srecon19emea/presentation/eskildsen)
+
+### 7. [The Map Is Not the Territory: How SLOs Lead Us Astray, and What We Can Do about It by Narayan Desai, Google](https://www.usenix.org/conference/srecon19emea/presentation/desai)
+
 

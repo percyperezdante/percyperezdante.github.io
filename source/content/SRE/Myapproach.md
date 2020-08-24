@@ -5,7 +5,7 @@ date: 2020-06-21T08:40:40+01:00
 
 # What is 
 
-###SRE
+### SRE
 
 - SRE measures how reliable my serivice is from my customer's perspective, not from my perspective.
 - It seems most of the talks use current or historic data, logs, Why we do not estimate future data then ?
@@ -36,11 +36,14 @@ date: 2020-06-21T08:40:40+01:00
             
 - If we do not use logs, what will be the benefit to counts events as soon as they happen, and evaluate SLI base on this fresh results?
 
+- Metrics have two faces: 
+    - Enough to evaluate the customer perception. We can not use so many metrics and overflow it.
+    - Metrics should be enough to do a post mortem analysis and document. Postmortem analysis includes analysis of historic data logs, and also includes to collect metrics or logs in detail that can allow us to find the root of cause without the need to implement new metrics and wait for the second time the error to happen. 
 ### SLA
 
 - Examples:
     - If we do not meet our SLO in one month, you will get exactly one cake
-    - 
+    - In the case of JRI: I will pay 10£ to the member of the team that points a failed SLO
 
 ### Alerts
 
@@ -53,3 +56,17 @@ date: 2020-06-21T08:40:40+01:00
 ### Customer perception
 
 - Collect data from customers, slack, twitter, emails, open public conversations and centralise them. Apply ML to analyse them and get insights for understand whether customer are happy or not with services.
+
+
+### How to build SLO 
+
+
+### How to maintain SLO
+
+- Refer to https://www.usenix.org/conference/srecon19emea/presentation/desai talk
+
+NOTES
+- Get differencd between service satisfaction and content satisfaction.
+- how error budget leads with customer trust: i believe customers should be able to set our error budget, not us
+
+- Also postmortem should be quick and not generate historic toil.
