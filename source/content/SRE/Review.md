@@ -139,15 +139,32 @@ are very important from business and  law point of view.
 ```
 
 
-### 6. Handbook of software reliability engineering.
+### 6. Sre tools as product
 
+This document, not paper, gives a general lines about SRE.
+One important message: reduce MTTR and toil.
+
+
+### 7. Debugging Incidents in Google's Distributed Systems.
 ```
-@book{lyu1996handbook,
-  title={Handbook of software reliability engineering},
-  author={Lyu, Michael R and others},
-  volume={222},
-  year={1996},
-  publisher={IEEE computer society press CA}
+@article{chan2020debugging,
+  title={Debugging Incidents in Google's Distributed Systems},
+  author={Chan, Charisma and Cooper, Beth},
+  journal={Queue},
+  volume={18},
+  number={2},
+  pages={47--66},
+  year={2020},
+  publisher={ACM New York, NY, USA}
 }
-
 ```
+
+It introduces a general overview of SRE and present postmorten use cases.
+
+
+### 8. Generic mitigation
+
+Jennifer Mace:
+Spotlight on Cloud: Reducing the Impact of Service Outages with Generic Mitigations with Jennifer Mace
+https://www.oreilly.com/library/view/spotlight-on-cloud/0636920347927/
+
