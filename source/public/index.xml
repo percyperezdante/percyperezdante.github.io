@@ -6,10 +6,40 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Aug 2020 12:04:13 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2020 09:35:37 +0100</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Restful</title>
+      <link>http://example.org/notes/restful/</link>
+      <pubDate>Wed, 09 Sep 2020 09:35:37 +0100</pubDate>
+      
+      <guid>http://example.org/notes/restful/</guid>
+      <description>Design tips  URI format:  URI = scheme &amp;quot;://&amp;quot; authority &amp;quot;/&amp;quot; path [ &amp;quot;?&amp;quot; query] [&amp;quot;#&amp;quot; fragment&amp;quot;] URI = http://myserver.com/mypath?query=1#document   General rules for URI formating:
+ A forward slash / is used to indicate a hierarchical relationship between resources A trailing forward slash / should not be included in URIs Hyphens - should be used to improve readability Underscores _ should not be used in URIs Lowercase lette    URI path design</description>
+    </item>
+    
+    <item>
+      <title>Mypostmortem</title>
+      <link>http://example.org/sre/mypostmortem/</link>
+      <pubDate>Sun, 30 Aug 2020 11:19:50 +0100</pubDate>
+      
+      <guid>http://example.org/sre/mypostmortem/</guid>
+      <description>Random notes  Expose your code for one day to everyone. Ask people to execute disaster revocery of everything once or twice a year. blameless I do not think is a way to avoid future mistakes, I think it is a way to save time and effort, thefore reduce costs. We should test our selves at least once a year. to see how if we are ready or notfor disasters Postmorten of the month?</description>
+    </item>
+    
+    <item>
+      <title>Jfrog</title>
+      <link>http://example.org/notes/jfrog/</link>
+      <pubDate>Thu, 27 Aug 2020 14:09:26 +0100</pubDate>
+      
+      <guid>http://example.org/notes/jfrog/</guid>
+      <description>1. How to install a local Jfrog (open source) The following shows how to install a local Jfrog (OSS) in a Linux-base host.
+ Open https://jfrog.com/open-source/#artifactory Select the OS you are working with: Linux, Windows or Mac and click on &amp;ldquo;Click here to Download&amp;rdquo;  In our case we could directly download the tar file for Linux:
+$ mkdir myJfrog $ cd myJfrog $ wget https://api.bintray.com/content/jfrog/artifactory/org/artifactory/oss/jfrog-artifactory-oss/$latest/jfrog-artifactory-oss-$latest-linux.tar.gz?bt_package=jfrog-artifactory-oss $ ls -tlr total 811768 -rw-rw-r-- 1 percy percy 831242240 Aug 26 17:28 jfrog-artifactory-oss-7.</description>
+    </item>
     
     <item>
       <title>Review</title>

@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Mypostmortem</title>
+      <link>http://example.org/sre/mypostmortem/</link>
+      <pubDate>Sun, 30 Aug 2020 11:19:50 +0100</pubDate>
+      
+      <guid>http://example.org/sre/mypostmortem/</guid>
+      <description>Random notes  Expose your code for one day to everyone. Ask people to execute disaster revocery of everything once or twice a year. blameless I do not think is a way to avoid future mistakes, I think it is a way to save time and effort, thefore reduce costs. We should test our selves at least once a year. to see how if we are ready or notfor disasters Postmorten of the month?</description>
+    </item>
+    
+    <item>
       <title>Review</title>
       <link>http://example.org/sre/review/</link>
       <pubDate>Mon, 24 Aug 2020 12:04:13 +0100</pubDate>

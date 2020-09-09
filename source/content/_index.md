@@ -40,7 +40,14 @@ nMANET intends to show whether future Internet architectures such as Name Data b
 
 * **Sports.** I like to play football and basketball, but also I often swim. I currenly swiming for the Diabetes UK charity, [swim22](https://swim22.diabetes.org.uk). We formed a great team of colleges who are willing to swim approximatelly 230 Km all together. As a team we would love to have your [contributions](https://swim22.diabetes.org.uk/pages/wacky-whales) if possible of course.
 
-* **Devops days Edinburgh 2020.** I am member of the organizers for the [2020 Devops days in Edinburgh](https://devopsdays.org/events/2020-edinburgh/contact/). Devops days happen here in Edinburhg once a year and is an international conference that include technical talks about software development, IT infrastructure operations, and a mix of them.
+* **Devops days Edinburgh 2020.** I am member of the organizers for the [2020 Devops days in Edinburgh](https://devopsdays.org/events/2020-edinburgh/contact/). Devops days happen here in Edinburhg once a year and is an international conference that include technical talks about software development, IT infrastructure operations, and a mix of them. 
+
+Sadly, this event is cancelled due to COVID-19. 
+
+####  Tooling
+
+- [Jfrog Artifactory](notes/jfrog)
+
 
 
 #### Notes
@@ -54,6 +61,10 @@ This section contains a set of basic tutorials I wrote for my students. They are
 * Infrastrucuture as a code
 
 * Devops & SRE
+
+
+
+
 
 
 
