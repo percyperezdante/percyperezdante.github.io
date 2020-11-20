@@ -12,7 +12,7 @@ This page presents suggestions on how to install tools of interest. It is ordere
 - [GO](https://golang.org/doc/install/source)
 
         $ git clone https://github.com/golang/go.git
-        $ cd go
+        $ cd go/src
         $ ./all.bash    # <-- This should generate ../bin/go file.
         $ cd ..
         $ export GOPATH=`pwd`  # <-- Add this to your profile such as ~/.bashrc 

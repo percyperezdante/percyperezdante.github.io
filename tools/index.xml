@@ -19,7 +19,7 @@
       <guid>http://example.org/tools/installation/</guid>
       <description>This page presents suggestions on how to install tools of interest. It is ordered alphabetically.
 A G   GO
- $ git clone https://github.com/golang/go.git $ cd go $ ./all.bash # &amp;lt;-- This should generate ../bin/go file. $ cd .. $ export GOPATH=`pwd` # &amp;lt;-- Add this to your profile such as ~/.bashrc $ cd bin $ export GOBIN=`pwd` # &amp;lt;-- Add this to your profile such as ~/.bashrc $ go version    P   Packer</description>
+ $ git clone https://github.com/golang/go.git $ cd go/src $ ./all.bash # &amp;lt;-- This should generate ../bin/go file. $ cd .. $ export GOPATH=`pwd` # &amp;lt;-- Add this to your profile such as ~/.bashrc $ cd bin $ export GOBIN=`pwd` # &amp;lt;-- Add this to your profile such as ~/.bashrc $ go version    P   Packer</description>
     </item>
     
   </channel>
