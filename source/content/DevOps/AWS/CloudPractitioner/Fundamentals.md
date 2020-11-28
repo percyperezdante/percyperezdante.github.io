@@ -286,3 +286,8 @@ Business-critical system down = Core system for an organization that is completl
 - Case 3: a developer does not need technical support, and he has access to trusted advisor core checks. 
     - Here Basic support is enough
 
+
+# Review
+
+
+![to review](/devops/aws/cloudpractitioner/toreview.png?width=50pc)

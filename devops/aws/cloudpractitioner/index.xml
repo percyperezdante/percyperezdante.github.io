@@ -12,6 +12,18 @@
     
     
     <item>
+      <title>CoreServices</title>
+      <link>http://example.org/devops/aws/cloudpractitioner/coreservices/</link>
+      <pubDate>Sat, 28 Nov 2020 18:26:31 +0000</pubDate>
+      
+      <guid>http://example.org/devops/aws/cloudpractitioner/coreservices/</guid>
+      <description>Methods to interact to AWS   AWS console
+ Includes Mobule app Good for testing services or simple tests    AWS CLI
+ Includes: Java, .net, Node.js, JS, PHP, Python, Ruby, Go, C++ automation    AWS SDK
+ automation use it when you want to integreat to your app    AWS console   Two types of user: ROOT USRE and IAM user.</description>
+    </item>
+    
+    <item>
       <title>Fundamentals</title>
       <link>http://example.org/devops/aws/cloudpractitioner/fundamentals/</link>
       <pubDate>Sat, 28 Nov 2020 10:13:49 +0000</pubDate>

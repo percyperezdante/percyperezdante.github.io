@@ -1,9 +1,9 @@
 +++
 title = "AWS"
 date = 2020-11-28T10:08:41Z
-weight = 5
+weight = 6
 chapter = true
-pre = "<b>X. </b>"
+pre = "<b>2.2</b>"
 +++
 
 ### Chapter X

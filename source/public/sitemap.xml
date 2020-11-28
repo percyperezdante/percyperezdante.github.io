@@ -28,11 +28,6 @@
   </url>
   
   <url>
-    <loc>http://example.org/devops/aws/</loc>
-    <lastmod>2020-11-28T10:08:41+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://example.org/teaching/resources/</loc>
     <lastmod>2020-05-05T12:25:59+01:00</lastmod>
   </url>
@@ -45,6 +40,11 @@
   <url>
     <loc>http://example.org/tools/</loc>
     <lastmod>2020-03-15T17:34:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/devops/aws/</loc>
+    <lastmod>2020-11-28T10:08:41+00:00</lastmod>
   </url>
   
   <url>
@@ -73,12 +73,17 @@
   </url>
   
   <url>
-    <loc>http://example.org/devops/aws/cloudpractitioner/fundamentals/</loc>
-    <lastmod>2020-11-28T10:13:49+00:00</lastmod>
+    <loc>http://example.org/devops/aws/cloudpractitioner/coreservices/</loc>
+    <lastmod>2020-11-28T18:26:31+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://example.org/</loc>
+    <lastmod>2020-11-28T18:26:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/devops/aws/cloudpractitioner/fundamentals/</loc>
     <lastmod>2020-11-28T10:13:49+00:00</lastmod>
   </url>
   
