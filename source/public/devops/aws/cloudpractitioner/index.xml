@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CloudPractitioner on Home</title>
+    <link>http://example.org/devops/aws/cloudpractitioner/</link>
+    <description>Recent content in CloudPractitioner on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Nov 2020 10:13:01 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/devops/aws/cloudpractitioner/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fundamentals</title>
+      <link>http://example.org/devops/aws/cloudpractitioner/fundamentals/</link>
+      <pubDate>Sat, 28 Nov 2020 10:13:49 +0000</pubDate>
+      
+      <guid>http://example.org/devops/aws/cloudpractitioner/fundamentals/</guid>
+      <description>Main topics:   Creating an account
+  Examining traditional data center challenges:
+ Large up-front investment Difficult to predict future traffic or demand Slow deploy of new data centers and servers Maintain data centers is expensive You own all security and compliance burden with all data centers    Benefits of cloud computing
+ Trade capital expense for variable expenses: you pay what you use Scaling Stop to guess future needed capacity, traffic Speed and agility Stop spend money for maintenance Go global in minutes.</description>
+    </item>
+    
+  </channel>
+</rss>
