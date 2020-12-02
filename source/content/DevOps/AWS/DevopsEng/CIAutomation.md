@@ -128,17 +128,150 @@ date: 2020-12-01T17:29:27Z
 ![Adding a ssh key](/devops/aws/devopseng/codecommitaddsshkey.png)
 
     
-
-
-
-
-
-
-
-
 ---
 # III Infrastrcuture as a code
+- Benefits:
+    - Not expensive, cost management
+        - You can allocate cost for all resources. For example by tagging the resource
+        - You can have stimated costs for each stack
+        - Helps you to avoid leftover resources
+        - Offers policy compliance
+        - Less redundant work 
 
+    - Reproducible
+        - No UI to make mistakes in
+        - No series of commands to run correctly
+        - Use one config file and deploy 
+        - Parametrize across different regions or stages
+        - 
+    - Secure
+        - Templates can be reviewed by other developers
+        - Create approved reusable templates
+        - Limit the way of changing infra
+        - Audits can focus on IaC changs and app logs
+
+- AWS cloud formation
+    - What is?
+        - AWS service to manage infra as a code
+        - Uses Json or Yaml syntax
+        - Allows extend through AWS Lambda 
+        - Controls the state of your infra by describing every single cloud resource in code
+    
+    - Basic concepts
+        - Templates: Information about the resources to create
+        - Stacks: List of AWS resources to create using templates
+        - AWS Resources
+
+    - Tools 
+        - AWS CDK
+        - AWS SAM
+        - £rd party frameworks
+
+    - AWS cloud development kit
+        - Controling your infra using high-level or low-level constructs that consist of one or more cloud resources.
+
+    - AWS serverless application model: LAMBDA
+        - Developing and deploying AWS lambda based applications 
+
+    - AWS code deploy
+        - Deploying application code to different cpmpute services with nuanced rollout strategies.
+
+    - Permissions
+        - Need to set permission to work with CloudFormation
+        - Also permissions for all the services touched by CLoudFormation
+
+    - Security for CloudFormation with CI/CD
+        - Build pipelines using CLoudFormation carry lots of permissions
+        - Have isolated and inaccessile build environments if possible
+        - Sexure the pipeline and how to modify it or its permissions
+        - Secure the git workflows that trigger build pipelines
+
+
+- Deploying CloudFormation
+    - Open the CloudFormation console
+    - CLick "Create Stack", wiht "new resources"
+    - Click on "create template in Designer"  <= you also can click on "Template is ready"
+    - Click on "template" bar, and there you can write your infra as a code in json format
+    - Once you copy your code in the template section, click "refresh" ( right top botton)
+    - Validate the template by clicking on the check mark on the top of the panel
+    - CLick upload
+    - CLick Next -> type a name for the stack -> click "next"
+    - CLick Next -> Click "create"
+
+    Now that the resource were created, to verify them:
+
+    - Click on "resources"
+    - Also you can see events, once all events are completed:
+        - Go to the selected resource console, for example SNS
+        - Look for the topic, click in topics. You should be able to find your topic there.
+
+    Here an example of how looks like a template:
+
+![cloud formation tempalte](/devops/aws/devopseng/cloudformationtemplatejson.png?width=10pc)
+
+- Deploying CloudFormatoin from CLI
+
+    ```bash
+    # To deploy a stack 
+    $ aws cloudformation deploy \
+            --template-file myTemplate-stack.json \
+            --stack-name    demoStack
+
+    # To delete a stack
+    $ aws cloudformation delete-stack \
+            --stack-name  demoStack
+    ```
+
+- Parameter store in Lambda functions
+
+    ```bash
+    # To create a parameter
+    $ aws ssm put-parameter \
+        --name  MyParameter1 \
+        --value Hello \
+        --type  SecureString    <== this means encrypted
+
+    # To get the value of a parameter with an encrypted value
+    $ aws ssm get-parameter \
+        --name MyParameter1 \
+
+
+    # To get the value of a parameter with an decrypted value
+    $ aws ssm get-parameter \
+        --name MyParameter1 \
+        --with-decryption 
+
+    # TO update the value of the paramter
+    $ aws ssm put-parameter \
+        --name  MyParameter1 \
+        --value HiHi \
+        --type  SecureString \ 
+        --overwrite
+
+    ```
+- Deploying parameters in Lambda function
+    ```bash
+    # Create a stack with AIM capabilities
+    $ aws cloudformation deploy \
+            --template-file myTemplate-stack.json \
+            --stack-name    demoStack
+            --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM  <= allows you to use roles 
+
+    # To list Lambda functions
+    $ aws lambda list-functions
+
+    ```
+    If the last command is too long, alternative way to find a specific  is:
+        - Open the Lambda console
+        - Order the deployed lambda functions by "last modified". Copy the name fo the lambda function
+
+        ```bash
+        #  To retrieve the value of the lambda function
+        $ aws lambda invoke \
+            --function-name XXXXASFASXZXXXXXX \ <-- name of the function copy from the lambda console
+            result.txt                          <--  Will save output in a file
+        ```
+####  **This is very useful if you want to hide secrets aways from your code or from being hardcoded**
 
 ---
 # IV Building and testing

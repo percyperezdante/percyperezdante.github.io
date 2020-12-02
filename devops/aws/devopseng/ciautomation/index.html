@@ -12,20 +12,20 @@
     <title>CIAutomation :: Home</title>
 
     
-    <link href="/css/nucleus.css?1606867802" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1606867802" rel="stylesheet">
-    <link href="/css/hybrid.css?1606867802" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1606867802" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1606867802" rel="stylesheet">
-    <link href="/css/auto-complete.css?1606867802" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1606867802" rel="stylesheet">
-    <link href="/css/theme.css?1606867802" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1606867802" rel="stylesheet">
+    <link href="/css/nucleus.css?1606952910" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1606952910" rel="stylesheet">
+    <link href="/css/hybrid.css?1606952910" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1606952910" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1606952910" rel="stylesheet">
+    <link href="/css/auto-complete.css?1606952910" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1606952910" rel="stylesheet">
+    <link href="/css/theme.css?1606952910" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1606952910" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1606867802" rel="stylesheet">
+      <link href="/css/theme-percy.css?1606952910" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1606867802"></script>
+    <script src="/js/jquery-3.3.1.min.js?1606952910"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1606867802"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1606867802"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1606952910"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1606952910"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1606867802"></script>
+<script type="text/javascript" src="/js/search.js?1606952910"></script>
 
     
   </div>
@@ -1151,7 +1151,15 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1368,6 +1376,194 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 <p><img src="/devops/aws/devopseng/codecommitaddsshkey.png" alt="Adding a ssh key"></p>
 <hr>
 <h1 id="iii-infrastrcuture-as-a-code">III Infrastrcuture as a code</h1>
+<ul>
+<li>
+<p>Benefits:</p>
+<ul>
+<li>
+<p>Not expensive, cost management</p>
+<ul>
+<li>You can allocate cost for all resources. For example by tagging the resource</li>
+<li>You can have stimated costs for each stack</li>
+<li>Helps you to avoid leftover resources</li>
+<li>Offers policy compliance</li>
+<li>Less redundant work</li>
+</ul>
+</li>
+<li>
+<p>Reproducible</p>
+<ul>
+<li>No UI to make mistakes in</li>
+<li>No series of commands to run correctly</li>
+<li>Use one config file and deploy</li>
+<li>Parametrize across different regions or stages</li>
+<li></li>
+</ul>
+</li>
+<li>
+<p>Secure</p>
+<ul>
+<li>Templates can be reviewed by other developers</li>
+<li>Create approved reusable templates</li>
+<li>Limit the way of changing infra</li>
+<li>Audits can focus on IaC changs and app logs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>AWS cloud formation</p>
+<ul>
+<li>
+<p>What is?</p>
+<ul>
+<li>AWS service to manage infra as a code</li>
+<li>Uses Json or Yaml syntax</li>
+<li>Allows extend through AWS Lambda</li>
+<li>Controls the state of your infra by describing every single cloud resource in code</li>
+</ul>
+</li>
+<li>
+<p>Basic concepts</p>
+<ul>
+<li>Templates: Information about the resources to create</li>
+<li>Stacks: List of AWS resources to create using templates</li>
+<li>AWS Resources</li>
+</ul>
+</li>
+<li>
+<p>Tools</p>
+<ul>
+<li>AWS CDK</li>
+<li>AWS SAM</li>
+<li>£rd party frameworks</li>
+</ul>
+</li>
+<li>
+<p>AWS cloud development kit</p>
+<ul>
+<li>Controling your infra using high-level or low-level constructs that consist of one or more cloud resources.</li>
+</ul>
+</li>
+<li>
+<p>AWS serverless application model: LAMBDA</p>
+<ul>
+<li>Developing and deploying AWS lambda based applications</li>
+</ul>
+</li>
+<li>
+<p>AWS code deploy</p>
+<ul>
+<li>Deploying application code to different cpmpute services with nuanced rollout strategies.</li>
+</ul>
+</li>
+<li>
+<p>Permissions</p>
+<ul>
+<li>Need to set permission to work with CloudFormation</li>
+<li>Also permissions for all the services touched by CLoudFormation</li>
+</ul>
+</li>
+<li>
+<p>Security for CloudFormation with CI/CD</p>
+<ul>
+<li>Build pipelines using CLoudFormation carry lots of permissions</li>
+<li>Have isolated and inaccessile build environments if possible</li>
+<li>Sexure the pipeline and how to modify it or its permissions</li>
+<li>Secure the git workflows that trigger build pipelines</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Deploying CloudFormation</p>
+<ul>
+<li>Open the CloudFormation console</li>
+<li>CLick &ldquo;Create Stack&rdquo;, wiht &ldquo;new resources&rdquo;</li>
+<li>Click on &ldquo;create template in Designer&rdquo;  &lt;= you also can click on &ldquo;Template is ready&rdquo;</li>
+<li>Click on &ldquo;template&rdquo; bar, and there you can write your infra as a code in json format</li>
+<li>Once you copy your code in the template section, click &ldquo;refresh&rdquo; ( right top botton)</li>
+<li>Validate the template by clicking on the check mark on the top of the panel</li>
+<li>CLick upload</li>
+<li>CLick Next -&gt; type a name for the stack -&gt; click &ldquo;next&rdquo;</li>
+<li>CLick Next -&gt; Click &ldquo;create&rdquo;</li>
+</ul>
+<p>Now that the resource were created, to verify them:</p>
+<ul>
+<li>Click on &ldquo;resources&rdquo;</li>
+<li>Also you can see events, once all events are completed:
+<ul>
+<li>Go to the selected resource console, for example SNS</li>
+<li>Look for the topic, click in topics. You should be able to find your topic there.</li>
+</ul>
+</li>
+</ul>
+<p>Here an example of how looks like a template:</p>
+</li>
+</ul>
+<p><img src="/devops/aws/devopseng/cloudformationtemplatejson.png?width=10pc" alt="cloud formation tempalte"></p>
+<ul>
+<li>
+<p>Deploying CloudFormatoin from CLI</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># To deploy a stack</span> 
+$ aws cloudformation deploy <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --template-file myTemplate-stack.json <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --stack-name    demoStack
+
+<span style="color:#75715e"># To delete a stack</span>
+$ aws cloudformation delete-stack <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --stack-name  demoStack
+</code></pre></div></li>
+<li>
+<p>Parameter store in Lambda functions</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># To create a parameter</span>
+$ aws ssm put-parameter <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --name  MyParameter1 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --value Hello <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --type  SecureString    &lt;<span style="color:#f92672">==</span> this means encrypted
+
+<span style="color:#75715e"># To get the value of a parameter with an encrypted value</span>
+$ aws ssm get-parameter <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --name MyParameter1 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>
+
+<span style="color:#75715e"># To get the value of a parameter with an decrypted value</span>
+$ aws ssm get-parameter <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --name MyParameter1 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --with-decryption 
+
+<span style="color:#75715e"># TO update the value of the paramter</span>
+$ aws ssm put-parameter <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --name  MyParameter1 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --value HiHi <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --type  SecureString <span style="color:#ae81ff">\ </span>
+    --overwrite
+
+</code></pre></div></li>
+<li>
+<p>Deploying parameters in Lambda function</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create a stack with AIM capabilities</span>
+$ aws cloudformation deploy <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --template-file myTemplate-stack.json <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --stack-name    demoStack
+        --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM  &lt;<span style="color:#f92672">=</span> allows you to use roles 
+
+<span style="color:#75715e"># To list Lambda functions</span>
+$ aws lambda list-functions
+
+</code></pre></div><p>If the last command is too long, alternative way to find a specific  is:
+- Open the Lambda console
+- Order the deployed lambda functions by &ldquo;last modified&rdquo;. Copy the name fo the lambda function</p>
+<pre><code>  ```bash
+  #  To retrieve the value of the lambda function
+  $ aws lambda invoke \
+      --function-name XXXXASFASXZXXXXXX \ &lt;-- name of the function copy from the lambda console
+      result.txt                          &lt;--  Will save output in a file
+  ```
+</code></pre>
+</li>
+</ul>
+<h4 id="this-is-very-useful-if-you-want-to-hide-secrets-aways-from-your-code-or-from-being-hardcoded"><strong>This is very useful if you want to hide secrets aways from your code or from being hardcoded</strong></h4>
 <hr>
 <h1 id="iv-building-and-testing">IV Building and testing</h1>
 <hr>
@@ -2076,19 +2272,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1606867802"></script>
-    <script src="/js/perfect-scrollbar.min.js?1606867802"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1606867802"></script>
-    <script src="/js/jquery.sticky.js?1606867802"></script>
-    <script src="/js/featherlight.min.js?1606867802"></script>
-    <script src="/js/highlight.pack.js?1606867802"></script>
+    <script src="/js/clipboard.min.js?1606952910"></script>
+    <script src="/js/perfect-scrollbar.min.js?1606952910"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1606952910"></script>
+    <script src="/js/jquery.sticky.js?1606952910"></script>
+    <script src="/js/featherlight.min.js?1606952910"></script>
+    <script src="/js/highlight.pack.js?1606952910"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1606867802"></script>
-    <script src="/js/learn.js?1606867802"></script>
-    <script src="/js/hugo-learn.js?1606867802"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1606952910"></script>
+    <script src="/js/learn.js?1606952910"></script>
+    <script src="/js/hugo-learn.js?1606952910"></script>
 
-    <link href="/mermaid/mermaid.css?1606867802" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1606867802"></script>
+    <link href="/mermaid/mermaid.css?1606952910" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1606952910"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
