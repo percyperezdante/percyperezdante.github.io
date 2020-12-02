@@ -43,6 +43,11 @@
   </url>
   
   <url>
+    <loc>http://example.org/devops/aws/devopseng/</loc>
+    <lastmod>2020-12-01T17:29:09+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/devops/aws/</loc>
     <lastmod>2020-11-28T10:08:41+00:00</lastmod>
   </url>
@@ -73,12 +78,17 @@
   </url>
   
   <url>
-    <loc>http://example.org/devops/aws/cloudpractitioner/coreservices/</loc>
-    <lastmod>2020-11-28T18:26:31+00:00</lastmod>
+    <loc>http://example.org/devops/aws/devopseng/ciautomation/</loc>
+    <lastmod>2020-12-01T17:29:27+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://example.org/</loc>
+    <lastmod>2020-12-01T17:29:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/devops/aws/cloudpractitioner/coreservices/</loc>
     <lastmod>2020-11-28T18:26:31+00:00</lastmod>
   </url>
   

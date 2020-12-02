@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevopsEng on Home</title>
+    <link>http://example.org/devops/aws/devopseng/</link>
+    <description>Recent content in DevopsEng on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Dec 2020 17:29:09 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/devops/aws/devopseng/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CIAutomation</title>
+      <link>http://example.org/devops/aws/devopseng/ciautomation/</link>
+      <pubDate>Tue, 01 Dec 2020 17:29:27 +0000</pubDate>
+      
+      <guid>http://example.org/devops/aws/devopseng/ciautomation/</guid>
+      <description>II Designinh a Source control strategy with CodeCommit   Devops covers at least the following areas:
+ Development workflows Test, build, and deploy applications Infrastructure as a code    Why AWS
+ AWS is public cloud leader AWS is a full platform of integration with other services.    What is Devops
+ It is a blanket term for tooling, practices, and ideas that allow organization sto build better software - faster.</description>
+    </item>
+    
+  </channel>
+</rss>
