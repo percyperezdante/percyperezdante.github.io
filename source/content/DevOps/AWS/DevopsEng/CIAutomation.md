@@ -276,6 +276,22 @@ date: 2020-12-01T17:29:27Z
 ---
 # IV Building and testing
 
+- What is AWS CodeBuild
+    - CodeBuild automate building source code, execute test, and produce deployment artifacs.
+    - It is fully managed by AWS
+        - No build server is needed,
+        - No maintenance to build servers is required
+        - AWS offers pre-configurated environments.
+            - For different OS
+            - For different languages routines
+
+- CodeBuild concepts:
+    - It requires define a build project, which has the environment to build the source code: the build environment.
+    - It also requires define the buld specs. Specs show the specific process to execute the build.
+
+
+
+
 
 ---
 # V Applic
