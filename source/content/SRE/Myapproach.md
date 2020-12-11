@@ -39,6 +39,36 @@ date: 2020-06-21T08:40:40+01:00
 - Metrics have two faces: 
     - Enough to evaluate the customer perception. We can not use so many metrics and overflow it.
     - Metrics should be enough to do a post mortem analysis and document. Postmortem analysis includes analysis of historic data logs, and also includes to collect metrics or logs in detail that can allow us to find the root of cause without the need to implement new metrics and wait for the second time the error to happen. 
+
+
+#### SLI templates:
+
+```
+1. The proportion of successfully retrived SKU IDs associated to products, for /api/getSKUs that have a valid ID retrieved from server-side and measure at the client-side.
+```
+
+`The proportion of .... for .... that have ... measured at ...`
+
+2. The following is an exampe for purchase items from a mobile device: `https://developer.android.com/google/play/billing/integrate`
+
+```bash
+1. The proportion of valid retrived SKU IDs associated to products, for /api/getSKUs that have a valid ID retrieved from server-side and measure at the client-side.
+      - This shows the rate of SKU IDs presented to the customer. If we have 10 products in our store, this SLI specifies how many of them are presented to the customer.
+     - The validity of a SKU ID should be evaluated at the client side as it defines that the received ID are the ones that matched the server-side.
+     - The implementation should be instrumented at the client side, by counting the number of SKU IDs and validate them
+    - This SLI is estimated every time the customer wants to see the available products in store.
+    - Every time that the customer refresh, or re-visit this stage this rate should be updated.
+   - This SLI is active while the customer is viewing the list of products and needs to be stopped when the customer moves to the next stage, which is select a specific product asking for more details.
+   - This SLI needs to be implemented in the client-side
+   - The gap for this SLI includes lost of connectivity due to client-side lost internet connection, and customer side device used for this application.
+
+2.  The proportion of HTTP get requests for /api/completePurchase  that have 0 and 1 as a response code value measured at the client side.
+- This SLI shows the rate of successfully transactions, associating  succesfull transaction to response code 0 and 1 : success and user presed back or cancel a dialog.
+- This SLI should be instrumented at the client side and count the number of totals reponse codes versus the total number of 0 and 1 responses.
+-  This SLI is estimated every time the customer press the "buy"  botton on the screen.
+- This SLI happens for the time the "buy" transaction is required.
+- The gap for this SLI includes lost of connectivity as in that case the application should mention that connectivity was lost.
+```
 ### SLA
 
 - Examples:

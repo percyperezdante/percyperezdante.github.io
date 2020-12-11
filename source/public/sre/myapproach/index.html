@@ -12,20 +12,20 @@
     <title>Myapproach :: Home</title>
 
     
-    <link href="/css/nucleus.css?1607110432" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1607110432" rel="stylesheet">
-    <link href="/css/hybrid.css?1607110432" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1607110432" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1607110432" rel="stylesheet">
-    <link href="/css/auto-complete.css?1607110432" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1607110432" rel="stylesheet">
-    <link href="/css/theme.css?1607110432" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1607110432" rel="stylesheet">
+    <link href="/css/nucleus.css?1607684239" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1607684239" rel="stylesheet">
+    <link href="/css/hybrid.css?1607684239" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1607684239" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1607684239" rel="stylesheet">
+    <link href="/css/auto-complete.css?1607684239" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1607684239" rel="stylesheet">
+    <link href="/css/theme.css?1607684239" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1607684239" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1607110432" rel="stylesheet">
+      <link href="/css/theme-percy.css?1607684239" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1607110432"></script>
+    <script src="/js/jquery-3.3.1.min.js?1607684239"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1607110432"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1607110432"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1607684239"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1607684239"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1607110432"></script>
+<script type="text/javascript" src="/js/search.js?1607684239"></script>
 
     
   </div>
@@ -1233,7 +1233,29 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 </ul>
 </li>
 </ul>
-<h3 id="sla">SLA</h3>
+<h4 id="sli-templates">SLI templates:</h4>
+<pre><code>1. The proportion of successfully retrived SKU IDs associated to products, for /api/getSKUs that have a valid ID retrieved from server-side and measure at the client-side.
+</code></pre><p><code>The proportion of .... for .... that have ... measured at ...</code></p>
+<ol start="2">
+<li>The following is an exampe for purchase items from a mobile device: <code>https://developer.android.com/google/play/billing/integrate</code></li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">1. The proportion of valid retrived SKU IDs associated to products, <span style="color:#66d9ef">for</span> /api/getSKUs that have a valid ID retrieved from server-side and measure at the client-side.
+      - This shows the rate of SKU IDs presented to the customer. If we have <span style="color:#ae81ff">10</span> products in our store, this SLI specifies how many of them are presented to the customer.
+     - The validity of a SKU ID should be evaluated at the client side as it defines that the received ID are the ones that matched the server-side.
+     - The implementation should be instrumented at the client side, by counting the number of SKU IDs and validate them
+    - This SLI is estimated every time the customer wants to see the available products in store.
+    - Every time that the customer refresh, or re-visit this stage this rate should be updated.
+   - This SLI is active <span style="color:#66d9ef">while</span> the customer is viewing the list of products and needs to be stopped when the customer moves to the next stage, which is <span style="color:#66d9ef">select</span> a specific product asking <span style="color:#66d9ef">for</span> more details.
+   - This SLI needs to be implemented in the client-side
+   - The gap <span style="color:#66d9ef">for</span> this SLI includes lost of connectivity due to client-side lost internet connection, and customer side device used <span style="color:#66d9ef">for</span> this application.
+
+2.  The proportion of HTTP get requests <span style="color:#66d9ef">for</span> /api/completePurchase  that have <span style="color:#ae81ff">0</span> and <span style="color:#ae81ff">1</span> as a response code value measured at the client side.
+- This SLI shows the rate of successfully transactions, associating  succesfull transaction to response code <span style="color:#ae81ff">0</span> and <span style="color:#ae81ff">1</span> : success and user presed back or cancel a dialog.
+- This SLI should be instrumented at the client side and count the number of totals reponse codes versus the total number of <span style="color:#ae81ff">0</span> and <span style="color:#ae81ff">1</span> responses.
+-  This SLI is estimated every time the customer press the <span style="color:#e6db74">&#34;buy&#34;</span>  botton on the screen.
+- This SLI happens <span style="color:#66d9ef">for</span> the time the <span style="color:#e6db74">&#34;buy&#34;</span> transaction is required.
+- The gap <span style="color:#66d9ef">for</span> this SLI includes lost of connectivity as in that <span style="color:#66d9ef">case</span> the application should mention that connectivity was lost.
+</code></pre></div><h3 id="sla">SLA</h3>
 <ul>
 <li>Examples:
 <ul>
@@ -1970,19 +1992,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1607110432"></script>
-    <script src="/js/perfect-scrollbar.min.js?1607110432"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1607110432"></script>
-    <script src="/js/jquery.sticky.js?1607110432"></script>
-    <script src="/js/featherlight.min.js?1607110432"></script>
-    <script src="/js/highlight.pack.js?1607110432"></script>
+    <script src="/js/clipboard.min.js?1607684239"></script>
+    <script src="/js/perfect-scrollbar.min.js?1607684239"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1607684239"></script>
+    <script src="/js/jquery.sticky.js?1607684239"></script>
+    <script src="/js/featherlight.min.js?1607684239"></script>
+    <script src="/js/highlight.pack.js?1607684239"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1607110432"></script>
-    <script src="/js/learn.js?1607110432"></script>
-    <script src="/js/hugo-learn.js?1607110432"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1607684239"></script>
+    <script src="/js/learn.js?1607684239"></script>
+    <script src="/js/hugo-learn.js?1607684239"></script>
 
-    <link href="/mermaid/mermaid.css?1607110432" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1607110432"></script>
+    <link href="/mermaid/mermaid.css?1607684239" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1607684239"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
