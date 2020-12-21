@@ -6,6 +6,9 @@ date: 2020-12-21T11:55:40Z
 Below are suggested steps to work with CodeCommit from Command line
 
 
+* #### NOTE 
+* ##### You need to have `AWSCodeCommitPowerUser ` or similar in your AWS account profile in the section `Permission policies`*
+
 1. Be sure you have a public key upload into your IAM profile
 
     - To check if you have already one or more public keys in AIM
@@ -126,3 +129,8 @@ Below are suggested steps to work with CodeCommit from Command line
     ![code commit push example](/devops/aws/devopseng/codecommitpushexample.png)
 
     You can verify this by login to the AWS console and browsing the "CODE COMMIT" console
+
+5. References:
+
+    - [AWS codecommit User guide](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html?icmpid=docs_acc_console_connect)
+    - [AWS CLI  codecommit reference manual](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/codecommit/index.html)

@@ -18,10 +18,9 @@
       
       <guid>http://example.org/devops/aws/devopseng/codecommitcmd/</guid>
       <description>Below are suggested steps to work with CodeCommit from Command line
-  Be sure you have a public key upload into your IAM profile
+  NOTE   You need to have AWSCodeCommitPowerUser  or similar in your AWS account profile in the section Permission policies*     Be sure you have a public key upload into your IAM profile
   To check if you have already one or more public keys in AIM
-$ aws iam list-ssh-public-keys { &amp;#34;SSHPublicKeys&amp;#34;: [] }   If you have not any public key updated, then update one:
-$ aws iam upload-ssh-public-key \  --user-name percy \  --ssh-public-key-body file:///home/percy/.</description>
+$ aws iam list-ssh-public-keys { &amp;#34;SSHPublicKeys&amp;#34;: [] }   If you have not any public key updated, then update one:</description>
     </item>
     
     <item>
