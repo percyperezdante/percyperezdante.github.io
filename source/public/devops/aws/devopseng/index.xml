@@ -12,6 +12,19 @@
     
     
     <item>
+      <title>Codecommitcmd</title>
+      <link>http://example.org/devops/aws/devopseng/codecommitcmd/</link>
+      <pubDate>Mon, 21 Dec 2020 11:55:40 +0000</pubDate>
+      
+      <guid>http://example.org/devops/aws/devopseng/codecommitcmd/</guid>
+      <description>Below are suggested steps to work with CodeCommit from Command line
+  Be sure you have a public key upload into your IAM profile
+  To check if you have already one or more public keys in AIM
+$ aws iam list-ssh-public-keys { &amp;#34;SSHPublicKeys&amp;#34;: [] }   If you have not any public key updated, then update one:
+$ aws iam upload-ssh-public-key \  --user-name percy \  --ssh-public-key-body file:///home/percy/.</description>
+    </item>
+    
+    <item>
       <title>CIAutomation</title>
       <link>http://example.org/devops/aws/devopseng/ciautomation/</link>
       <pubDate>Tue, 01 Dec 2020 17:29:27 +0000</pubDate>
