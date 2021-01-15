@@ -25,6 +25,11 @@ This page presents suggestions on how to install tools of interest. It is ordere
         $ git config --global --list
         $ git config --global user.email "xxx@ee.com"
         $ git config --global user.name "xx yyy"
+        $ cat ~/.gitconfig 
+            [user]
+            email = xxx@yy.com
+            name = xxx YYY
+            signingkey = ASDF2320xXXX
 
 ## P
 - [Packer](https://github.com/hashicorp/packer/blob/master/.github/CONTRIBUTING.md#setting-up-go-to-work-on-packer)
