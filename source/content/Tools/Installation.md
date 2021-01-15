@@ -20,7 +20,11 @@ This page presents suggestions on how to install tools of interest. It is ordere
         $ export GOBIN=`pwd`   # <-- Add this to your profile such as ~/.bashrc 
         $ go version
 
+- GIT
 
+        $ git config --global --list
+        $ git config --global user.email "xxx@ee.com"
+        $ git config --global user.name "xx yyy"
 
 ## P
 - [Packer](https://github.com/hashicorp/packer/blob/master/.github/CONTRIBUTING.md#setting-up-go-to-work-on-packer)
