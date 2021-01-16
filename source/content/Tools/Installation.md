@@ -31,7 +31,6 @@ This page presents suggestions on how to install tools of interest. It is ordere
             name = xxx YYY
             signingkey = ASDF2320xXXX
 
-## P
 - [Packer](https://github.com/hashicorp/packer/blob/master/.github/CONTRIBUTING.md#setting-up-go-to-work-on-packer)
 
         $ git clone https://github.com/hashicorp/packer.git
