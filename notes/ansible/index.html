@@ -12,20 +12,20 @@
     <title>Ansible :: Home</title>
 
     
-    <link href="/css/nucleus.css?1610815398" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610815398" rel="stylesheet">
-    <link href="/css/hybrid.css?1610815398" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610815398" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610815398" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610815398" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610815398" rel="stylesheet">
-    <link href="/css/theme.css?1610815398" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610815398" rel="stylesheet">
+    <link href="/css/nucleus.css?1610970501" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1610970501" rel="stylesheet">
+    <link href="/css/hybrid.css?1610970501" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1610970501" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1610970501" rel="stylesheet">
+    <link href="/css/auto-complete.css?1610970501" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1610970501" rel="stylesheet">
+    <link href="/css/theme.css?1610970501" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1610970501" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1610815398" rel="stylesheet">
+      <link href="/css/theme-percy.css?1610970501" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610815398"></script>
+    <script src="/js/jquery-3.3.1.min.js?1610970501"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610815398"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610815398"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1610970501"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1610970501"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610815398"></script>
+<script type="text/javascript" src="/js/search.js?1610970501"></script>
 
     
   </div>
@@ -1267,6 +1267,74 @@ you can use <code>ansible-doc</code> to get information about a module from comm
 <img src="/notes/ansibleindentationexample.png" alt="indentataion ansible"></p>
 </li>
 </ul>
+<h1 id="inventory">Inventory</h1>
+<ul>
+<li>
+<p>Ansible ignore the following extensions:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible-config --list
+
+...
+INVENTORY_IGNORE_EXTS:
+  default: <span style="color:#e6db74">&#39;{{(BLACKLIST_EXTS + (&#39;&#39;.orig&#39;&#39;, &#39;&#39;.ini&#39;&#39;, &#39;&#39;.cfg&#39;&#39;, &#39;&#39;.retry&#39;&#39;))}}&#39;</span>
+  description: List of extensions to ignore when using a directory as an inventory
+    source
+...
+
+</code></pre></div></li>
+<li>
+<p>Ansible does not recommend to use &ldquo;.&rdquo;  as part of the name of a hosts or group of hosts</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Not replacing invalid character<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;{&#39;.&#39;}&#34;</span> in group name <span style="color:#f92672">(</span>new_group_jenkins_agents.ol7<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span>: Invalid characters were found in group names but not replaced, use -vvvv to see details
+Not replacing invalid character<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;{&#39;.&#39;}&#34;</span> in group name <span style="color:#f92672">(</span>newgroup_jenkins_agents.ol7<span style="color:#f92672">)</span>
+Not replacing invalid character<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;{&#39;.&#39;}&#34;</span> in group name <span style="color:#f92672">(</span>oldgroup_jenkins_agents.olh6<span style="color:#f92672">)</span>
+
+</code></pre></div></li>
+<li>
+<p>Ansible graph  presents hosts in different format:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible-inventory --graph
+<span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span>: Invalid characters were found in group names but not replaced, use -vvvv to see details
+@all:
+  |--@backup_coordinator_group.ol7:
+  |  |--hostonw.dcnet
+  |--@bitbucketgroup.ol6:
+  |  |--host2.dcnet
+  |  |--host2b.dcnet
+  |--@bitbucketgroup.ol6:
+  |  |--host3.cdnet
+  |--@health_checker_group.ol7:
+  |  |--host4.dcnet
+
+</code></pre></div></li>
+<li>
+<p>To run on any of this groups:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible -m command -a <span style="color:#e6db74">&#34;ls -ltr &#34;</span> bitbucketgroup
+$ ansible -m command -a <span style="color:#e6db74">&#34;ls -ltr &#34;</span> host4.dcnet
+
+</code></pre></div></li>
+<li>
+<p>Some useful links</p>
+<ul>
+<li><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_error_handling.html"> Ansible error handling </a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html"> Ansible use of varibles </a></li>
+</ul>
+</li>
+<li>
+<p>Steps to consider to use inventories:</p>
+<ul>
+<li>Config ansible using &ldquo;ansible.cfg&rdquo;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>default<span style="color:#f92672">]</span>
+<span style="color:#75715e"># disale host_key_chkcings</span>
+<span style="color:#75715e"># https://docs.ansible.com/ansible/latest/user_guide/connection_details.html</span>
+host_key_checking <span style="color:#f92672">=</span> False
+      
+inventory<span style="color:#f92672">=</span>myDirectory
+<span style="color:#75715e"># export ANSIBLE_INVENTORY = /path/directory/inventory</span>
+<span style="color:#75715e"># FYI : &#34;vagrant ssh-config &#34; is a great guide for configuring ansible to</span>
+<span style="color:#75715e"># connect directly to VMs created by vagrant</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
 
 
 <footer class="footline">
@@ -1993,19 +2061,19 @@ you can use <code>ansible-doc</code> to get information about a module from comm
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610815398"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610815398"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610815398"></script>
-    <script src="/js/jquery.sticky.js?1610815398"></script>
-    <script src="/js/featherlight.min.js?1610815398"></script>
-    <script src="/js/highlight.pack.js?1610815398"></script>
+    <script src="/js/clipboard.min.js?1610970501"></script>
+    <script src="/js/perfect-scrollbar.min.js?1610970501"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1610970501"></script>
+    <script src="/js/jquery.sticky.js?1610970501"></script>
+    <script src="/js/featherlight.min.js?1610970501"></script>
+    <script src="/js/highlight.pack.js?1610970501"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610815398"></script>
-    <script src="/js/learn.js?1610815398"></script>
-    <script src="/js/hugo-learn.js?1610815398"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1610970501"></script>
+    <script src="/js/learn.js?1610970501"></script>
+    <script src="/js/hugo-learn.js?1610970501"></script>
 
-    <link href="/mermaid/mermaid.css?1610815398" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610815398"></script>
+    <link href="/mermaid/mermaid.css?1610970501" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1610970501"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
