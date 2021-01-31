@@ -167,8 +167,7 @@ VPC Virtual Private Cloud INSERT VPC
       
       <guid>http://example.org/notes/kubernetes/</guid>
       <description>Reference The following notes were extracted, adjusted or extended from the following references.
- Kubernetes book by Nigel Poulton  General   The cluster is made up of one or more masters, and a bunch of nodes.
-  Package and deploy a Kubernetes application is done via a Deployment. With Deployments, we start out with our application code and we containerize it. Then we define it as a Deployment via a YAML or JSON manifest file.</description>
+ Kubernetes book by Nigel Poulton Kubernetes setup  Kubernetes the hard way Kubernetes network administraion  Google Kubernetes Engine: GKE docs AWS Elastic Container Service for Kubernetes EKS Kubectl docs  General   Kubernetes is a container orchestrator, which means to maintain, manage and support container that run applications. Kubernetes also manage workload placement, it offers an infrastructure abstraction and maintains a desire state of the infrastructure.</description>
     </item>
     
     <item>

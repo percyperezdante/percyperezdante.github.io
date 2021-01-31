@@ -12,20 +12,20 @@
     <title>Kubernetes :: Home</title>
 
     
-    <link href="/css/nucleus.css?1610970501" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610970501" rel="stylesheet">
-    <link href="/css/hybrid.css?1610970501" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610970501" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610970501" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610970501" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610970501" rel="stylesheet">
-    <link href="/css/theme.css?1610970501" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610970501" rel="stylesheet">
+    <link href="/css/nucleus.css?1612136501" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1612136501" rel="stylesheet">
+    <link href="/css/hybrid.css?1612136501" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1612136501" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1612136501" rel="stylesheet">
+    <link href="/css/auto-complete.css?1612136501" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1612136501" rel="stylesheet">
+    <link href="/css/theme.css?1612136501" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1612136501" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1610970501" rel="stylesheet">
+      <link href="/css/theme-percy.css?1612136501" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610970501"></script>
+    <script src="/js/jquery-3.3.1.min.js?1612136501"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610970501"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610970501"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1612136501"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1612136501"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610970501"></script>
+<script type="text/javascript" src="/js/search.js?1612136501"></script>
 
     
   </div>
@@ -1187,6 +1187,12 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
       <ul>
         <li></li>
         <li><a href="#general">General</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+      </ul>
+    </li>
+    <li><a href="#workloads">Workloads</a>
+      <ul>
+        <li><a href="#command-lines">Command lines</a></li>
       </ul>
     </li>
   </ul>
@@ -1218,9 +1224,18 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 <p>The following notes were extracted, adjusted or extended from the following references.</p>
 <ul>
 <li><a href="https://www.amazon.com/Kubernetes-Book-Version-November-2018-ebook/dp/B072TS9ZQZ">Kubernetes book by Nigel Poulton</a></li>
+<li><a href="https://kubernetes.io/docs/setup/">Kubernetes setup </a></li>
+<li><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way">Kubernetes the hard way</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/cluster-administration/">Kubernetes network administraion </a></li>
+<li><a href="https://cloud.google.com/kubernetes-engine/docs/how-to">Google Kubernetes Engine: GKE docs</a></li>
+<li><a href="https://aws.amazon.com/getting-started/hands-on/deploy-kubernetes-app-amazon-eks/">AWS Elastic Container Service for Kubernetes EKS</a></li>
+<li><a href="https://kubernetes.io/docs/reference/kubectl/">Kubectl docs</a></li>
 </ul>
 <h3 id="general">General</h3>
 <ul>
+<li>
+<p>Kubernetes is a container orchestrator, which means to maintain, manage and support container that run applications. Kubernetes also manage workload placement, it offers an infrastructure abstraction and maintains a desire state of the infrastructure.</p>
+</li>
 <li>
 <p>The cluster is made up of one or more masters, and a bunch of nodes.</p>
 </li>
@@ -1249,6 +1264,175 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 <li>The scheduler</li>
 </ul>
 <p>Watches and executes new workloads.</p>
+<h3 id="architecture">Architecture</h3>
+<ul>
+<li>
+<p>The sole way to interact with a Kubernetes cluster is through API over HTTP using JSON.</p>
+</li>
+<li>
+<p>The core API primitives of a kubernetes cluster includes:</p>
+<ul>
+<li>Pods</li>
+<li>Controllers</li>
+<li>Services</li>
+<li>Storage</li>
+</ul>
+<h4 id="pods">PODS</h4>
+<ul>
+<li>Pods is a core API primitive that contains one or more containers.</li>
+<li>Pod is the most basic unit of work (atomicity) and it is a unit of scheduling.</li>
+<li>Pods are ephemeral, which means that a destroyed pod can not be re-deployed. Once a pod is destroyed, it never comes back.</li>
+<li>Kubernetes job is to keep up and ranning all pods and applications running on them. To do that:
+<ul>
+<li>Kubernetes tracks the state of the pods.</li>
+<li>Check health about whether the application inside the pod is running.</li>
+<li>Kubernetes checks the health of pods and applications through &ldquo;liveness probes&rdquo;, which are responses to health check requests.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="workloads">Workloads</h2>
+<h3 id="command-lines">Command lines</h3>
+<ul>
+<li>
+<p>Kubectl:</p>
+<ul>
+<li>Relies on config file: $HOME/.kube/config. This file contains target cluster anme and credentials.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ gcloud container clusters get-credentials CLUSTER_NAME --zone ZONE_NAME   <span style="color:#75715e"># Authorizes interact with GCP from command line</span>
+    $ kubectl config view  <span style="color:#75715e"># view current config</span>
+    $ kubectl COMMAND  TYPE NAME FLAGS
+          COMMAND<span style="color:#f92672">=</span> what <span style="color:#66d9ef">do</span> you want to <span style="color:#66d9ef">do</span>
+          TYPE<span style="color:#f92672">=</span> on which type of object
+          NAME<span style="color:#f92672">=</span>Name fo the object
+          FLAGS<span style="color:#f92672">=</span>Extra information
+
+</code></pre></div><ul>
+<li>
+<p>GKE basics</p>
+<ul>
+<li>Create a cluster</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ export MY_zone<span style="color:#f92672">=</span>us-central2-a
+    $ export MY_cluster<span style="color:#f92672">=</span>test-cluster-1
+
+    $ <span style="color:#75715e"># To create a GKE cluster with default paramaters. You can choose more from [here](https://cloud.google.com/sdk/gcloud/reference/container/clusters/create)</span>
+    $ gcloud container clusters create $MY_cluster --num-nodes <span style="color:#ae81ff">3</span> --zone $MY_zone --enable-ip-alias
+
+    $ <span style="color:#75715e"># To increase the number of nodes. To verify this, from the GUI click on  kubernetes enginet -&gt; clusters</span>
+    $ gcloud container clusters resize $MY_cluster --zone $MY_zone --num-nodes<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+
+</code></pre></div><ul>
+<li>
+<p>Connect to the cluster</p>
+<p>To create a kubeconfig file:</p>
+<ul>
+<li>we need the credentials of the current user,to allow authentication and</li>
+<li>provide the endpoint details for a specific cluster, to allow communicating with that cluster through the kubectl command-line</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ <span style="color:#75715e"># this command will create ~/.kube/config</span>
+    $ gcloud container clusters get-credentials $my_cluster --zone $my_zone
+
+</code></pre></div><p>You have to run above command to connect to a cluster created by another user or in another environment.
+This comamnd is also let you switch between  the active context to a different cluster.</p>
+<ul>
+<li>Inspect the cluster</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ <span style="color:#75715e"># To see the config</span>
+    $ kubectl config view
+
+    $ <span style="color:#75715e"># Print the cluster information for the active context</span>
+    $ kubectl cluster-info
+
+    $ <span style="color:#75715e"># To print the active context</span>
+    $ kubectl config current-context
+
+    $ <span style="color:#75715e"># To print details for all the cluster contexts in the kubeconfig file</span>
+    $ kubectl config get-contexts
+
+    $ <span style="color:#75715e"># To change context</span>
+    $ kubectl config use-context gke_<span style="color:#e6db74">${</span>GOOGLE_CLOUD_PROJET<span style="color:#e6db74">}</span>_us-west1-d_standart-cluster-3
+
+    $ <span style="color:#75715e"># To view the resource usage across the nodes of the cluster</span>
+    $ kubectl top nodes
+
+    $ <span style="color:#75715e"># To view the resource usage acrossthe nodes of the cluster</span>
+    $ kubectl top nodes
+
+    $ <span style="color:#75715e"># To enable bash autocompletion for kubectl</span>
+    $ source &lt;<span style="color:#f92672">(</span>kubectl completion bash<span style="color:#f92672">)</span>
+</code></pre></div><p>NOTE:  The full name of the cluster, which includes the gke prefix, the project ID, the location, and the display name, all concatenated with underscores.</p>
+<ul>
+<li>Deploy pods</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ <span style="color:#75715e"># To deploy nginx as a pod and named nginx-1</span>
+    $ kubectl create deployment --image nginx nginx-1
+              
+    $ <span style="color:#75715e">#  to view all the deployed Pods in the active context cluste</span>
+    $ kubectl get pods
+
+    $ <span style="color:#75715e"># export your pod name and verify your env variable</span>
+    $ export MY_nginx_pod<span style="color:#f92672">=</span>nginx-1-74ca2123b22-nvxx
+
+    $ <span style="color:#75715e"># See details of the pod you creatd</span>
+    $ kubectl describe pod $MY_nginx_pod
+
+    $ <span style="color:#75715e"># Copy a test.html into the container</span>
+    $ kubectl cp ~/test.html $MY_nginx_pod:/usr/share/nginx/html/test.htmly
+           
+    $ <span style="color:#75715e"># Expose the Pod through services</span> 
+    $ kubectl expose pod $MY_nginx_pod --port <span style="color:#ae81ff">80</span> --type LoadBalancer
+
+    $ <span style="color:#75715e"># To view details of a service. Repeat this a couple of times before see the external IP</span>
+    $ kubectl get services
+
+    $ <span style="color:#75715e"># verify that we can access the test.html</span>
+    $ curl http://EXTERNAL_IP_ADDRESS/test.html
+
+    $ <span style="color:#75715e"># To view the resources beign used by the nginx pod</span>
+    $ kubectl top pods
+</code></pre></div><ul>
+<li>To introspec GKE pods</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ <span style="color:#75715e"># Clone the following</span> 
+    $ 
+    $ cat ak8s/shell/newNginxPod.yaml
+    apiVersion: v1
+        kind: Pod
+        metadata:
+          name: new-nginx
+          labels:
+            name: new-nginx
+        spec:
+          containers:
+          - name: new-nginx
+            image: nginx
+            ports:
+            - containerPort: <span style="color:#ae81ff">80</span>
+    $ kubectl apply -f ./newNginxPod.yaml
+    $ kubectl get pods
+
+    $ <span style="color:#75715e"># Connect to the container, and make some modifications to test.html</span>
+    $ kubectl exec -it newNginx /bin/bash
+
+    $ <span style="color:#75715e"># enable port forwarding to connect to the pod from cloud shell</span>
+    $ <span style="color:#75715e"># From 10082 of the cloud shell to port 80 of the nginx container</span>
+    $ kubectl port-forward newNginx 10082:80
+
+    $ <span style="color:#75715e"># From a second cloud shell</span> 
+    $ curl http://127.0.0.1:10081/test.html
+</code></pre></div><ul>
+<li>View logs</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ <span style="color:#75715e"># In a new cloud shell</span>
+    $ kubectl logs newNginx -f --timestamps
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
 
 
 <footer class="footline">
@@ -1978,19 +2162,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610970501"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610970501"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610970501"></script>
-    <script src="/js/jquery.sticky.js?1610970501"></script>
-    <script src="/js/featherlight.min.js?1610970501"></script>
-    <script src="/js/highlight.pack.js?1610970501"></script>
+    <script src="/js/clipboard.min.js?1612136501"></script>
+    <script src="/js/perfect-scrollbar.min.js?1612136501"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1612136501"></script>
+    <script src="/js/jquery.sticky.js?1612136501"></script>
+    <script src="/js/featherlight.min.js?1612136501"></script>
+    <script src="/js/highlight.pack.js?1612136501"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610970501"></script>
-    <script src="/js/learn.js?1610970501"></script>
-    <script src="/js/hugo-learn.js?1610970501"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1612136501"></script>
+    <script src="/js/learn.js?1612136501"></script>
+    <script src="/js/hugo-learn.js?1612136501"></script>
 
-    <link href="/mermaid/mermaid.css?1610970501" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610970501"></script>
+    <link href="/mermaid/mermaid.css?1612136501" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1612136501"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
