@@ -78,12 +78,17 @@
   </url>
   
   <url>
-    <loc>http://example.org/notes/ansible/</loc>
-    <lastmod>2021-01-16T15:49:01+00:00</lastmod>
+    <loc>http://example.org/devops/cloudsecurity/</loc>
+    <lastmod>2021-02-02T18:40:42+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://example.org/</loc>
+    <lastmod>2021-02-02T18:40:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/notes/ansible/</loc>
     <lastmod>2021-01-16T15:49:01+00:00</lastmod>
   </url>
   

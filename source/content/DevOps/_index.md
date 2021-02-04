@@ -17,3 +17,6 @@ pre = "<b>2. </b>"
 
 * **[GCP notes](gcp/)**  Short notes from GCP training sessions.
 
+#### Basic notes about cloud security
+
+* **[Cloud security notes](cloudsecurity/)** A collection of notes from different trainings.

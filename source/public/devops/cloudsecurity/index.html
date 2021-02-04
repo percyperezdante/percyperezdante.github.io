@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Building Images :: Home</title>
+    <title>CloudSecurity :: Home</title>
 
     
     <link href="/css/nucleus.css?1612398180" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/devops/images/">
+  <body class="" data-url="/devops/cloudsecurity/">
     <nav id="sidebar" class="">
 
 
@@ -407,7 +407,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/devops/cloudsecurity/" title="CloudSecurity" class="dd-item ">
+      <li data-nav-id="/devops/cloudsecurity/" title="CloudSecurity" class="dd-item active">
         <a href="/devops/cloudsecurity/">
         CloudSecurity
         
@@ -428,7 +428,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/devops/images/" title="Building Images" class="dd-item active">
+      <li data-nav-id="/devops/images/" title="Building Images" class="dd-item ">
         <a href="/devops/images/">
         Building Images
         
@@ -1189,7 +1189,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            <a href='/'>Home</a> > <a href='/devops/'>DevOps</a> > Building Images
+            <a href='/'>Home</a> > <a href='/devops/'>DevOps</a> > CloudSecurity
           
          
           
@@ -1204,7 +1204,28 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#packer">Packer</a></li>
+    <li><a href="#cloud-deployment-methods">Cloud deployment methods</a>
+      <ul>
+        <li><a href="#software-delivery-mechanism">Software delivery mechanism</a></li>
+        <li><a href="#data-security">Data security</a></li>
+        <li><a href="#persistent-disks">Persistent disks</a></li>
+        <li><a href="#containers">Containers</a></li>
+        <li><a href="#serveless-security">Serveless security</a></li>
+        <li><a href="#monitoring">Monitoring</a></li>
+        <li><a href="#analysis">Analysis</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#key-concepts">Key concepts</a></li>
+        <li><a href="#iam">IAM</a></li>
+        <li><a href="#network-and-data-security">Network and data security</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -1222,7 +1243,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
           
             <h1>
               
-              Building Images
+              CloudSecurity
             </h1>
           
 
@@ -1230,12 +1251,316 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
-<p>This page presents a set of templates to build images through tools such as packer. The content of these templates is the result of a combination of available resources online.</p>
-<h2 id="packer">Packer</h2>
-<p>This sections present cases about how to build linux-base images. More details in the <strong><a href="https://github.com/percyperezdante/ajayu">Ajayu</a></strong> github repository.</p>
+<h1 id="introduction-to-coud-security">Introduction to coud security</h1>
+<h2 id="cloud-deployment-methods">Cloud deployment methods</h2>
+<h3 id="software-delivery-mechanism">Software delivery mechanism</h3>
 <ul>
-<li><a href="https://github.com/percyperezdante/ajayu/tree/master/oracle_linux_6">Oracle Linux 6.10 using a DVD .iso file.</a></li>
-<li><a href="https://github.com/percyperezdante/ajayu/tree/master/jenkinsCapistranoOl6">Jenkins and Capistrano V2 base on OL6.</a>  It is also available in <a href="https://app.vagrantup.com/percyperezd/boxes/JenkinsCapistranoV2">Vagrant Cloud</a></li>
+<li>SaaS: Hands-off approach, where all hardware, software and security controls are managed by the provider, e.g. email.</li>
+<li>PaaS: Where you place your own source code on the top of the provider&rsquo;s infrastructure or platform, e.g. Heroku.</li>
+<li>IaaS: Where you build your own infrastrucuture and deploy your code on the top.</li>
+</ul>
+<p>Challenges and barriers when you move to the cloud include:</p>
+<ul>
+<li>Compliance and regulation of cloud providers.</li>
+<li>Application security.</li>
+<li>Identity and access management (IAM), which features include:
+<ul>
+<li>Unified interface for administration of policies and rulesets</li>
+<li>MFA, password policies and logging</li>
+<li>RBAC at granular level</li>
+<li>Programatic controls to manage IAM policies and updates applied through automated tools</li>
+<li>Single Sign-on (SSO) integration with providers</li>
+<li>Custom workflow creation and centralized audits capabilities</li>
+<li>Separation of duties, helps on auditing</li>
+</ul>
+</li>
+</ul>
+<p>Below some of the best practices:
+- Always craete individual users, never share credentials
+- Do not use root user for normal operation, remove any access key for root
+- Use groups to assign permissions to IAM users, not to individuals
+- Enable logging for all cloud API calls
+- Audit IAM accounts in regular bases
+- Restrict access to cloud resources using ip addresses
+- Turno on billing alerts to detect suspicious events
+- Requets to users to use multi-factor authentatication, including command lines interfaces
+- Assign users and groups to have emough access permissions</p>
+<p>Most of the cloud providers offer a Virtual Private Cloud (VPC) whic his a representation of a physical network or data center. It is used for communication between resources within a project. It also isolates resources from outside world.</p>
+<p>In VPC, every resource receives an individual IP address. This includes:
+- Traffic to and from instances inside the VPC are controlled with firewall rules
+- Resources inside VPC communicate each other using IP addresses
+- Instances within VPC can communicate witht eh cloud providers APIs and services</p>
+<p>To protect communication:
+- Virtual Private Networks (VPN):  Offers encrypted traffic between two networks over public networks such as internet.
+- Web traffic Encryption: It is important to use TLS encruptio from cloud load balancers to any VMs or containers in the backend.</p>
+<p>Note that inmutable infrastructure in here means, that instances on the cloud are replaced rather than updated: destroy-versus-updatei</p>
+<h3 id="data-security">Data security</h3>
+<p>To ensure object storage security:
+- Access control:
+- Grant permissions to all object requires access only
+- Do not make data public if it is not needed
+- Double check with your provider to ensure proper configuration
+- Use third-party audit tools to ensure no leaks
+- Logging:
+- Data retention:
+- Cloud providers have the ability to set user-defined retention policy
+- An object can be deleted once its age is greater than the retentino policy set</p>
+<h3 id="persistent-disks">Persistent disks</h3>
+<pre><code>- Backup disks periodically
+- Compress and store them in a location of your choice
+</code></pre>
+<h3 id="containers">Containers</h3>
+<pre><code>- To enforce the principle of least privilege, create an user with known ID int he dockerfile and run the application process as that user
+- Verify the integrity of an docker image using its SHA256
+- Scan vulnerabilities on your docker images using command line tools such as Clair or Anchore in your CI/CD pipeline
+</code></pre>
+<h3 id="serveless-security">Serveless security</h3>
+<pre><code>- Scan your code base with static or dynamic analysis tools
+- Ensure third party libraries are free of vulnerabilities
+- Threat model regularly
+- Construct a robust loggin pipeline
+- Apply the least privilege principle in your functions
+- Protect your code from DoS and Resrouce-exhaustion attacks
+- Consider the following resources:
+    - [OWASP ServerlessGoat](https://www.owasp.org/index.php/OWASP_Serverless_Goat)
+    - [OWASP Serverless Top 10](https://www.owasp.org/index.php/OWASP_Serverless_Top_10_Project)
+</code></pre>
+<h3 id="monitoring">Monitoring</h3>
+<pre><code>- App Metrics:
+    - Who logged in, from where , when
+    - Get attack payload submitted in the request
+    - HTTP error codes
+    - Response times
+    - Vulnerability scanner detection
+
+- Host metrics:
+    - Resource utilization, CPU, memory, threads
+    - SSH access
+    - Port opened, closed
+    - Malware detection
+    - File creation / deletion
+    - Thrid party libraries installed
+
+- Network metrics:
+    - Throughput
+    - Resource exhaustion
+    - Outbound network calls
+    - DNS queries
+
+- Cloud API metrics:
+    - Who logged into 
+
+- AWS cloud trail:
+    - Console sign-in events
+    - Security group changes
+    - CloudTrail logging changes
+    - VPC changes
+</code></pre>
+<h3 id="analysis">Analysis</h3>
+<p>Here some overall indicatores:
+- Number of 500 erros per period of time on your backend
+- If number of loggin attemps with same user
+- Attemps to access another account</p>
+<p>Note that logs should offer high integrity and not able to be deleted or modified easly.</p>
+<h1 id="gcp">GCP</h1>
+<h3 id="introduction">Introduction</h3>
+<p>Some recommendations:</p>
+<ul>
+<li>The GCP cloud platform itself is PCI DSS compliant. This does not mean that a company building an application in GCP is also in compliance with PCI DSS. Note that GCP is responsible for the compliance and security of the cloud infrastructure, and the company using GCP is responsible for the data and applications built on top of the platform.</li>
+<li>Isolate development and production environments and restrict developer access to sensitive production data.</li>
+<li>Analyse application using static or dynamic scanning tools</li>
+</ul>
+<h3 id="key-concepts">Key concepts</h3>
+<ul>
+<li>
+<p>Location:</p>
+<ul>
+<li>Glabal: When a resource is accessed across regions and zones, such as disk snapshots, networks, firewalls, images</li>
+<li>Regional: Resource that can only be accessed by other resource in the same region. It includes static external IP addresses, subnets and regional persistent disks</li>
+<li>Zonal: Resource hosted in a specific zone, such as CMs, disks.</li>
+</ul>
+</li>
+<li>
+<p>Services:</p>
+<ul>
+<li>GCP services provides access to the resources.</li>
+</ul>
+</li>
+<li>
+<p>Client libraries:</p>
+<ul>
+<li>App APIs provide access to services</li>
+<li>Admin APIs provide funtionality for resource management.</li>
+</ul>
+</li>
+<li>
+<p>To consider about DoS attacks</p>
+<ul>
+<li>Use GCP virtual networks to isolate your resources from internet</li>
+<li>Use firewall to limit access</li>
+<li>Reduce number of public IP addresses you deploy</li>
+<li>In the evento of a DoS use autoscaling to absorv the load and stay online</li>
+<li>Use CDN to offload traffic</li>
+<li>Consider Cloud Armor for defense</li>
+</ul>
+</li>
+<li>
+<p>Compliance:</p>
+<ul>
+<li>GCP is a PCI DSS certified cloud service provider and provides documentation</li>
+<li>If you are storing cardholder data in an GCP environment, you are responsible for managing your own PCI DSS compliance certification.</li>
+<li>PCI compliance is not inherited from GCP. A qualified PCI auditor must inspect your architecture to ensure it complies with the standard.</li>
+</ul>
+</li>
+</ul>
+<h3 id="iam">IAM</h3>
+<ul>
+<li>
+<p>General features</p>
+<ul>
+<li>Unified interface for IAM administration</li>
+<li>Offers multi-factor authentication, password policies and logging</li>
+<li>RBAC to usres and services at granular level</li>
+<li>Programiatic controls</li>
+<li>Single Sign On capabilities</li>
+<li>Custom workflow creation and centralized audit</li>
+</ul>
+</li>
+<li>
+<p>Google cloud identity and access management features:</p>
+<ul>
+<li>SSO: single sign on</li>
+<li>Pre configured and custom roles</li>
+<li>Built in audit trail</li>
+<li>Access through CLI, web interface and SDKs</li>
+<li>iIntegration to directory services such as Google Cloud Identity</li>
+</ul>
+</li>
+<li>
+<p>Google cloud identity features:</p>
+<ul>
+<li>SSO support using SAML2.0 and OpenID connect</li>
+<li>Device managemente policy enforcement for a variety of device types, Android and iOS</li>
+<li>MFA
+_ Application catalog creation of thrird-party SaaS apps.</li>
+<li>Ability to integrate other cloud directoires as well as on-premise directoreis into Google Cloud Identity</li>
+</ul>
+</li>
+<li>
+<p>Configuration :</p>
+<ul>
+<li>Roles: It is a collection of permissions assigned to a user, group or service account. This includes:
+<ul>
+<li>Primitive roles:
+<ul>
+<li>Viewer: Read-only</li>
+<li>Editor: All permissions to edit</li>
+<li>Owner: All permssions and acttions such as:
+<ul>
+<li>Managing roles and permissions for a project and resources</li>
+<li>Setting up billing</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Predefined roles
+<ul>
+<li>More granular access than primitives</li>
+<li>E.g. Storage object Creator role: to create buckets, but can not delete or overwrite them</li>
+</ul>
+</li>
+<li>Custom roles.
+<ul>
+<li>Enforce the principle of least privilege: access only to what you need or is enough</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Policies:
+<ul>
+<li>It is a list of members bound to roles</li>
+<li>A policy defines who has what kind of access</li>
+</ul>
+</li>
+<li>Service account:
+<ul>
+<li>For non-human access</li>
+<li>Generally uses hard code tokens to prove identity
+<ul>
+<li>GCP managed keys: Used by Cloud platform services ( App Engine), not downloadable and two week rotation</li>
+<li>User-managed keys: Created, downloaded and managed by users. Valid for 10 years.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>IAM best practices:</p>
+<ul>
+<li>Organize IAM policies simliar to your company structure, each team responsable for its own app and services</li>
+<li>Grant roles to a group, not to a individual</li>
+<li>Grant roles with atomic scope needed</li>
+<li>Use labels to annotate, group and filter resources</li>
+<li>Audir regularly</li>
+<li>Enforce MFA</li>
+<li>Customize password complexity policy and SSO</li>
+<li>When possible set predefined roles or custom roles over primitive roles</li>
+<li>Restrict which users can create or modify services accounts</li>
+<li>Becareful when granting the owner role</li>
+<li>Rotate service account keys</li>
+<li>Label service account keys to decrease confusion</li>
+<li>Do not push service account keys to code repositories</li>
+<li>Minimize access to GCP audit logs for each user themselves, e.g. do not allow to delete logs</li>
+<li>Backup logs</li>
+</ul>
+</li>
+</ul>
+<h3 id="network-and-data-security">Network and data security</h3>
+<ul>
+<li>VPC
+<ul>
+<li>General:
+<ul>
+<li>Traffic to and from instances withtin a VPC are controlled by firewalls rules</li>
+<li>Resources within a VPC are able to communciate each other using internal IP address</li>
+<li>Instances inside VPC are able to communicate with official Google APIs</li>
+</ul>
+</li>
+<li>Subnets:
+<ul>
+<li>VPC consist of a range of internal IP addresses partitioned into subnets</li>
+<li>VPC are global resources, subnets are regional. A VPC can containt multiple subnets in different regions</li>
+<li>Internal  IP address are contained in a Subnet, not VPC. You need at least one subnet in a VPC before use it.</li>
+</ul>
+</li>
+<li>Networking peering
+<ul>
+<li>Allos for private connectivity across two VPC networks regarless of whether the VPC is in the same org or project</li>
+</ul>
+</li>
+<li>Access using IAM
+<ul>
+<li>Create or modify VPC is for admins only</li>
+</ul>
+</li>
+<li>Flow logs
+<ul>
+<li>To capture sample network flow traffic sent to and from a resource within a VPC subnet</li>
+<li>E.g. Stackdriver Logging</li>
+<li>Capture period is five secons internvals for TCP and UDP</li>
+</ul>
+</li>
+<li>Firewall:
+<ul>
+<li>Each VPC has own firewall for control traffic out of the VPC and between VMs inside VPC</li>
+<li>Default policy: deny-all</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 
@@ -1474,22 +1799,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1502,9 +1811,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
         
                     
-            
-        
-                    
                         
             
             
@@ -1512,6 +1818,25 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1969,10 +2294,10 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 	 
 	 
 		
-			<a class="nav nav-prev" href="/devops/cloudsecurity/" title="CloudSecurity"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/devops/aws/devopseng/ciautomation/" title="CIAutomation"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/sre/" title="SRE" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/devops/images/" title="Building Images" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

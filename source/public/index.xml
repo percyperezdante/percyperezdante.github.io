@@ -6,10 +6,19 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Jan 2021 15:49:01 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Feb 2021 18:40:42 +0000</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CloudSecurity</title>
+      <link>http://example.org/devops/cloudsecurity/</link>
+      <pubDate>Tue, 02 Feb 2021 18:40:42 +0000</pubDate>
+      
+      <guid>http://example.org/devops/cloudsecurity/</guid>
+      <description>Introduction to coud security Cloud deployment methods Software delivery mechanism  SaaS: Hands-off approach, where all hardware, software and security controls are managed by the provider, e.g. email. PaaS: Where you place your own source code on the top of the provider&amp;rsquo;s infrastructure or platform, e.g. Heroku. IaaS: Where you build your own infrastrucuture and deploy your code on the top.  Challenges and barriers when you move to the cloud include:</description>
+    </item>
     
     <item>
       <title>Ansible</title>

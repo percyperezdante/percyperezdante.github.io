@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>CloudSecurity</title>
+      <link>http://example.org/devops/cloudsecurity/</link>
+      <pubDate>Tue, 02 Feb 2021 18:40:42 +0000</pubDate>
+      
+      <guid>http://example.org/devops/cloudsecurity/</guid>
+      <description>Introduction to coud security Cloud deployment methods Software delivery mechanism  SaaS: Hands-off approach, where all hardware, software and security controls are managed by the provider, e.g. email. PaaS: Where you place your own source code on the top of the provider&amp;rsquo;s infrastructure or platform, e.g. Heroku. IaaS: Where you build your own infrastrucuture and deploy your code on the top.  Challenges and barriers when you move to the cloud include:</description>
+    </item>
+    
+    <item>
       <title>Building Images</title>
       <link>http://example.org/devops/images/</link>
       <pubDate>Tue, 17 Mar 2020 17:49:45 +0000</pubDate>
