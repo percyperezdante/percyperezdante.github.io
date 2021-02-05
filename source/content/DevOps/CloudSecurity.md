@@ -249,4 +249,24 @@ Some recommendations:
     - Firewall:
         - Each VPC has own firewall for control traffic out of the VPC and between VMs inside VPC
         - Default policy: deny-all
-        - 
+    - Data Storage:
+        - Apply RBAC:
+            - Enforce fine grained access control using IAM permissions
+            - Do not make bucket public
+            - Enable logging
+            - Data retention :
+                - User-defined data retentino policy for new or existing buckets
+                - Locked data, which can never be removed, or after certain time
+                - Persistent disk: supports custom-supplied encryption keys, this should be backed up periodically.
+                - Google cloud SQL: It is a database-as-a-service that supports MYSQL and PostgreSQL.
+    - Encrypting data in transit:
+        - Cloud VPN:
+            - GCP offers a VPN to connect your VPC to on-premises or other clouds infrastructures
+            - Encrypt traffic as it travels
+            - IDeal to secure low-volume data connections
+        - Cloud Interconnect
+            - For higher bandwidth and encrypted connections
+            - It is a way to extend your on-prem network to Google's network
+            - Cloud VPN can not be used over Cloud Interconnect, you need to create a VPN gateway
+            - Using CLoud Load Balancing you can terminet TLS at the load balancer. This needs to set certs and keys on each VM with in VPC to ensure end-to-end encryption
+

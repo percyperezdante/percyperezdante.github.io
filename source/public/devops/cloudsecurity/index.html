@@ -12,20 +12,20 @@
     <title>CloudSecurity :: Home</title>
 
     
-    <link href="/css/nucleus.css?1612398180" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1612398180" rel="stylesheet">
-    <link href="/css/hybrid.css?1612398180" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1612398180" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1612398180" rel="stylesheet">
-    <link href="/css/auto-complete.css?1612398180" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1612398180" rel="stylesheet">
-    <link href="/css/theme.css?1612398180" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1612398180" rel="stylesheet">
+    <link href="/css/nucleus.css?1612516459" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1612516459" rel="stylesheet">
+    <link href="/css/hybrid.css?1612516459" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1612516459" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1612516459" rel="stylesheet">
+    <link href="/css/auto-complete.css?1612516459" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1612516459" rel="stylesheet">
+    <link href="/css/theme.css?1612516459" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1612516459" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1612398180" rel="stylesheet">
+      <link href="/css/theme-percy.css?1612516459" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1612398180"></script>
+    <script src="/js/jquery-3.3.1.min.js?1612516459"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1612398180"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1612398180"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1612516459"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1612516459"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1612398180"></script>
+<script type="text/javascript" src="/js/search.js?1612516459"></script>
 
     
   </div>
@@ -1556,7 +1556,44 @@ _ Application catalog creation of thrird-party SaaS apps.</li>
 <ul>
 <li>Each VPC has own firewall for control traffic out of the VPC and between VMs inside VPC</li>
 <li>Default policy: deny-all</li>
-<li></li>
+</ul>
+</li>
+<li>Data Storage:
+<ul>
+<li>Apply RBAC:
+<ul>
+<li>Enforce fine grained access control using IAM permissions</li>
+<li>Do not make bucket public</li>
+<li>Enable logging</li>
+<li>Data retention :
+<ul>
+<li>User-defined data retentino policy for new or existing buckets</li>
+<li>Locked data, which can never be removed, or after certain time</li>
+<li>Persistent disk: supports custom-supplied encryption keys, this should be backed up periodically.</li>
+<li>Google cloud SQL: It is a database-as-a-service that supports MYSQL and PostgreSQL.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Encrypting data in transit:
+<ul>
+<li>Cloud VPN:
+<ul>
+<li>GCP offers a VPN to connect your VPC to on-premises or other clouds infrastructures</li>
+<li>Encrypt traffic as it travels</li>
+<li>IDeal to secure low-volume data connections</li>
+</ul>
+</li>
+<li>Cloud Interconnect
+<ul>
+<li>For higher bandwidth and encrypted connections</li>
+<li>It is a way to extend your on-prem network to Google&rsquo;s network</li>
+<li>Cloud VPN can not be used over Cloud Interconnect, you need to create a VPN gateway</li>
+<li>Using CLoud Load Balancing you can terminet TLS at the load balancer. This needs to set certs and keys on each VM with in VPC to ensure end-to-end encryption</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -2307,19 +2344,19 @@ _ Application catalog creation of thrird-party SaaS apps.</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1612398180"></script>
-    <script src="/js/perfect-scrollbar.min.js?1612398180"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1612398180"></script>
-    <script src="/js/jquery.sticky.js?1612398180"></script>
-    <script src="/js/featherlight.min.js?1612398180"></script>
-    <script src="/js/highlight.pack.js?1612398180"></script>
+    <script src="/js/clipboard.min.js?1612516459"></script>
+    <script src="/js/perfect-scrollbar.min.js?1612516459"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1612516459"></script>
+    <script src="/js/jquery.sticky.js?1612516459"></script>
+    <script src="/js/featherlight.min.js?1612516459"></script>
+    <script src="/js/highlight.pack.js?1612516459"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1612398180"></script>
-    <script src="/js/learn.js?1612398180"></script>
-    <script src="/js/hugo-learn.js?1612398180"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1612516459"></script>
+    <script src="/js/learn.js?1612516459"></script>
+    <script src="/js/hugo-learn.js?1612516459"></script>
 
-    <link href="/mermaid/mermaid.css?1612398180" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1612398180"></script>
+    <link href="/mermaid/mermaid.css?1612516459" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1612516459"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
