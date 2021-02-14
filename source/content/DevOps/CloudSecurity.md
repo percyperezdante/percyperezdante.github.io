@@ -270,3 +270,22 @@ Some recommendations:
             - Cloud VPN can not be used over Cloud Interconnect, you need to create a VPN gateway
             - Using CLoud Load Balancing you can terminet TLS at the load balancer. This needs to set certs and keys on each VM with in VPC to ensure end-to-end encryption
 
+
+## References
+
+https://www.modsecurity.org/
+http://appsensor.org/
+
+https://www.yubico.com/products/
+https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html
+https://owasp.org/www-project-application-security-verification-standard/
+https://www.npmjs.com/package/bcrypt
+https://www.synopsys.com/software-integrity.html
+https://pages.nist.gov/800-63-3/sp800-63-3.html
+https://wiki.owasp.org/index.php/Category:Access_Control
+https://owasp.org/www-project-secure-headers/#X-XSS-Protection
+https://owasp.org/www-community/HttpOnly
+
+
+https://owasp.org/www-project-top-ten/
+https://bobby-tables.com/

@@ -12,20 +12,20 @@
     <title>Networking :: Home</title>
 
     
-    <link href="/css/nucleus.css?1612516459" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1612516459" rel="stylesheet">
-    <link href="/css/hybrid.css?1612516459" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1612516459" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1612516459" rel="stylesheet">
-    <link href="/css/auto-complete.css?1612516459" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1612516459" rel="stylesheet">
-    <link href="/css/theme.css?1612516459" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1612516459" rel="stylesheet">
+    <link href="/css/nucleus.css?1613261505" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1613261505" rel="stylesheet">
+    <link href="/css/hybrid.css?1613261505" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1613261505" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1613261505" rel="stylesheet">
+    <link href="/css/auto-complete.css?1613261505" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1613261505" rel="stylesheet">
+    <link href="/css/theme.css?1613261505" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1613261505" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1612516459" rel="stylesheet">
+      <link href="/css/theme-percy.css?1613261505" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1612516459"></script>
+    <script src="/js/jquery-3.3.1.min.js?1613261505"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1612516459"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1612516459"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1613261505"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1613261505"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1612516459"></script>
+<script type="text/javascript" src="/js/search.js?1613261505"></script>
 
     
   </div>
@@ -1240,27 +1240,114 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
-<p>Insert MAP</p>
 <h3 id="vpc-virtual-private-cloud">VPC Virtual Private Cloud</h3>
-<p>INSERT VPC</p>
+<p>VPC is a set of GCP objects, such as:</p>
 <ul>
-<li><strong>Projects</strong></li>
-</ul>
+<li>
+<p>Project</p>
 <ul>
-<li>Key organisers in VPC, and it is linked to billing</li>
-<li>Projects contains entire networks</li>
-<li>Default quota is 5 networks for one project.</li>
+<li>Associated to services and networks</li>
+<li>Organize infrastructure resources</li>
+<li>Link objects and services with billing</li>
+<li>Contain networks, default up to 5</li>
+<li>It containt entire networks</li>
 </ul>
+</li>
+<li>
+<p>Network: can be shared with other projects or peered, are global, and no ip address range</p>
 <ul>
-<li><strong>Networks</strong></li>
-</ul>
+<li>Default
 <ul>
-<li>No IP address range</li>
-<li>Networks are global</li>
-<li>Contain subnwtowrks</li>
-<li>Type: default, auto or custom. Custom networks can not be converted to auto mode networks</li>
+<li>Every project</li>
+<li>one subnet per region</li>
+<li>Default firewall rules</li>
 </ul>
-<p>ipaddress</p>
+</li>
+<li>Auto
+<ul>
+<li>Default network</li>
+<li>One subnet per region</li>
+<li>Regional IP allocation</li>
+<li>Fixed /20 subnet per region</li>
+<li>Expandable to /16</li>
+</ul>
+</li>
+<li>Custom
+<ul>
+<li>No default subnets created</li>
+<li>Full control of IP ranges</li>
+<li>Regional IP allocation</li>
+<li>Expandable to any RFC 1918 size</li>
+</ul>
+</li>
+</ul>
+<p><img src="/devops/gcp/vpcnetworkexample1.png" alt="example of network isolation"></p>
+<p>To connect to a on-premises network you can use a VPN gateway service from VPC. This is possible because VPC is global.
+<img src="/devops/gcp/vpcconnecttoonprem.png" alt="VPC is global and connect to on-prem"></p>
+</li>
+<li>
+<p>Subnets</p>
+<ul>
+<li>They work at REGIONAL scale.</li>
+<li>VMs can be on same subnet but different zones</li>
+<li>One single firewall rule can apply to both VMs</li>
+<li>Every subnet has 4 reserved addresses:
+<ul>
+<li>x.0.0.0   Network</li>
+<li>x.0.0.1   Subnet gateway</li>
+<li>x.0.0.255 Broadcast</li>
+<li>x.0.0.254 Primary used by Google ( second-to-last address )</li>
+</ul>
+</li>
+<li>New subnets can not overlap with extisting subnets</li>
+<li>New subnets address should be inside the <a href="https://tools.ietf.org/html/rfc1918">RFC 1918</a> address spaces</li>
+<li>Subnets can expand, can not shrink. Start with small subnet ranges
+<ul>
+<li>To expand a subnet: GCP console -&gt; VPC Network -&gt; Click subnet -&gt; Click Edit -&gt; Modify the range in &ldquo;IP address range&rdquo;</li>
+</ul>
+</li>
+<li>Automode can be expanded from /20 to /16</li>
+<li>Avoid large subnets</li>
+</ul>
+<p><img src="/devops/gcp/vpcsubnetszones.png" alt="VPC subnets per zone"></p>
+</li>
+<li>
+<p>Regions</p>
+</li>
+<li>
+<p>Zones</p>
+</li>
+<li>
+<p>Ip addresses</p>
+<ul>
+<li>
+<p>Internal</p>
+<ul>
+<li>Allocated  from subnet range to VMs by DHCP</li>
+<li>DHCP lease is renewed every 24 hours</li>
+<li>VMs name + IP is registered with network scoeped DNS</li>
+</ul>
+</li>
+<li>
+<p>External</p>
+<ul>
+<li>Assigned from pool ( external ips are ephemeral by default )</li>
+<li>Reserved (static) and billed more then not arrached to running VM</li>
+<li>VM does not know external IP, it is mapped to internal</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>VMs</p>
+</li>
+<li>
+<p>Routes</p>
+</li>
+<li>
+<p>Firewall rules</p>
+</li>
+</ul>
 
 
 <footer class="footline">
@@ -2004,19 +2091,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1612516459"></script>
-    <script src="/js/perfect-scrollbar.min.js?1612516459"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1612516459"></script>
-    <script src="/js/jquery.sticky.js?1612516459"></script>
-    <script src="/js/featherlight.min.js?1612516459"></script>
-    <script src="/js/highlight.pack.js?1612516459"></script>
+    <script src="/js/clipboard.min.js?1613261505"></script>
+    <script src="/js/perfect-scrollbar.min.js?1613261505"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1613261505"></script>
+    <script src="/js/jquery.sticky.js?1613261505"></script>
+    <script src="/js/featherlight.min.js?1613261505"></script>
+    <script src="/js/highlight.pack.js?1613261505"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1612516459"></script>
-    <script src="/js/learn.js?1612516459"></script>
-    <script src="/js/hugo-learn.js?1612516459"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1613261505"></script>
+    <script src="/js/learn.js?1613261505"></script>
+    <script src="/js/hugo-learn.js?1613261505"></script>
 
-    <link href="/mermaid/mermaid.css?1612516459" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1612516459"></script>
+    <link href="/mermaid/mermaid.css?1613261505" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1613261505"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

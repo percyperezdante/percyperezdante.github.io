@@ -17,9 +17,10 @@
       <pubDate>Sun, 14 Jun 2020 09:29:44 +0100</pubDate>
       
       <guid>http://example.org/devops/gcp/networking/</guid>
-      <description>Insert MAP
-VPC Virtual Private Cloud INSERT VPC
- Projects   Key organisers in VPC, and it is linked to billing Projects contains entire networks Default quota is 5 networks for one project.   Networks   No IP address range Networks are global Contain subnwtowrks Type: default, auto or custom. Custom networks can not be converted to auto mode networks  ipaddress</description>
+      <description>VPC Virtual Private Cloud VPC is a set of GCP objects, such as:
+  Project
+ Associated to services and networks Organize infrastructure resources Link objects and services with billing Contain networks, default up to 5 It containt entire networks    Network: can be shared with other projects or peered, are global, and no ip address range
+ Default  Every project one subnet per region Default firewall rules   Auto  Default network One subnet per region Regional IP allocation Fixed /20 subnet per region Expandable to /16   Custom  No default subnets created Full control of IP ranges Regional IP allocation Expandable to any RFC 1918 size    To connect to a on-premises network you can use a VPN gateway service from VPC.</description>
     </item>
     
     <item>
