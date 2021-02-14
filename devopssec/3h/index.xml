@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3h on Home</title>
+    <link>http://example.org/devopssec/3h/</link>
+    <description>Recent content in 3h on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Feb 2021 14:20:01 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/devopssec/3h/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>General</title>
+      <link>http://example.org/devopssec/3h/general/</link>
+      <pubDate>Sun, 14 Feb 2021 14:20:19 +0000</pubDate>
+      
+      <guid>http://example.org/devopssec/3h/general/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

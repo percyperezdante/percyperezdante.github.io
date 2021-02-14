@@ -12,20 +12,20 @@
     <title>Fundamentals :: Home</title>
 
     
-    <link href="/css/nucleus.css?1613261512" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1613261512" rel="stylesheet">
-    <link href="/css/hybrid.css?1613261512" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1613261512" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1613261512" rel="stylesheet">
-    <link href="/css/auto-complete.css?1613261512" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1613261512" rel="stylesheet">
-    <link href="/css/theme.css?1613261512" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1613261512" rel="stylesheet">
+    <link href="/css/nucleus.css?1613331106" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1613331106" rel="stylesheet">
+    <link href="/css/hybrid.css?1613331106" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1613331106" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1613331106" rel="stylesheet">
+    <link href="/css/auto-complete.css?1613331106" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1613331106" rel="stylesheet">
+    <link href="/css/theme.css?1613331106" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1613331106" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1613261512" rel="stylesheet">
+      <link href="/css/theme-percy.css?1613331106" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1613261512"></script>
+    <script src="/js/jquery-3.3.1.min.js?1613331106"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1613261512"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1613261512"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1613331106"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1613331106"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1613261512"></script>
+<script type="text/javascript" src="/js/search.js?1613331106"></script>
 
     
   </div>
@@ -1134,6 +1134,99 @@ Percy Perez Aruni
  
 
           
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/devopssec/" title="DevOpsSec" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devopssec/">
+          <b>11. </b>DevOpsSec
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/devopssec/3h/" title="3h" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devopssec/3h/">
+          <b>11.1. </b>3h
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/devopssec/3h/general/" title="General" class="dd-item ">
+        <a href="/devopssec/3h/general/">
+        General
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
          
     </ul>
 
@@ -1221,14 +1314,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         <li><a href="#developing-deploying-and-monitoring-in-the-cloud">Developing, Deploying and Monitoring in the Cloud</a></li>
         <li><a href="#big-data-and-machine-learning-in-the-cloud">Big Data and Machine Learning in the Cloud</a></li>
         <li><a href="#summary">Summary</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#general">General</a></li>
       </ul>
     </li>
   </ul>
@@ -1657,44 +1742,6 @@ $ gcloud deployment-manager deployments update HalloWOrld --config test.yaml
 <img src="/devops/gcp/summarycomparingloadbalancingoptions.png?width=50pc" alt="Comparing load balancing">
 <img src="/devops/gcp/summarycomparingoptions.png?width=50pc" alt="Comparing options">
 <img src="/devops/gcp/summarychoosingcloudstorageclasses.png?width=50pc" alt="Comparing storage options"></p>
-<h1 id="appendix-a-vpc">Appendix A: VPC</h1>
-<h3 id="general">General</h3>
-<p>VPC is a set of GCP objects, such as:</p>
-<pre><code>- Project
-    - Associated to services and networks
-    - Organize infrastructure resources 
-    - Link objects and services with billing
-    - Contain networks, default up to 5
-    - It containt entire networks
-
-- Network: can be shared with other projects or peered, are global, and no ip address range
-    - Default
-        - Every project
-        - one subnet per region
-        - Default firewall rules
-    - Auto
-        - Default network
-        - One subnet per region
-        - Regional IP allocation
-        - Fixed /20 subnet per region 
-        - Expandable to /16
-    - Custom
-        - No default subnets created
-        - Full control of IP ranges
-        - Regional IP allocation
-        - Expandable to any RFC 1918 size
-
-
-    ![example of network isolation](/devops/gcp/vpcnetworkexample1.png)
-- Subnets
-- Regions
-- Zones
-- Ip addresses
-    - Internal and external
-- VMs
-- Routes
-- Firewall rules
-</code></pre>
 
 
 <footer class="footline">
@@ -2419,6 +2466,56 @@ $ gcloud deployment-manager deployments update HalloWOrld --config test.yaml
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -2441,19 +2538,19 @@ $ gcloud deployment-manager deployments update HalloWOrld --config test.yaml
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1613261512"></script>
-    <script src="/js/perfect-scrollbar.min.js?1613261512"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1613261512"></script>
-    <script src="/js/jquery.sticky.js?1613261512"></script>
-    <script src="/js/featherlight.min.js?1613261512"></script>
-    <script src="/js/highlight.pack.js?1613261512"></script>
+    <script src="/js/clipboard.min.js?1613331106"></script>
+    <script src="/js/perfect-scrollbar.min.js?1613331106"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1613331106"></script>
+    <script src="/js/jquery.sticky.js?1613331106"></script>
+    <script src="/js/featherlight.min.js?1613331106"></script>
+    <script src="/js/highlight.pack.js?1613331106"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1613261512"></script>
-    <script src="/js/learn.js?1613261512"></script>
-    <script src="/js/hugo-learn.js?1613261512"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1613331106"></script>
+    <script src="/js/learn.js?1613331106"></script>
+    <script src="/js/hugo-learn.js?1613331106"></script>
 
-    <link href="/mermaid/mermaid.css?1613261512" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1613261512"></script>
+    <link href="/mermaid/mermaid.css?1613331106" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1613331106"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

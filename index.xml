@@ -6,10 +6,19 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Feb 2021 18:40:42 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Feb 2021 14:20:19 +0000</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>General</title>
+      <link>http://example.org/devopssec/3h/general/</link>
+      <pubDate>Sun, 14 Feb 2021 14:20:19 +0000</pubDate>
+      
+      <guid>http://example.org/devopssec/3h/general/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>CloudSecurity</title>

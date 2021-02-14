@@ -12,20 +12,20 @@
     <title>Networking :: Home</title>
 
     
-    <link href="/css/nucleus.css?1613261512" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1613261512" rel="stylesheet">
-    <link href="/css/hybrid.css?1613261512" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1613261512" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1613261512" rel="stylesheet">
-    <link href="/css/auto-complete.css?1613261512" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1613261512" rel="stylesheet">
-    <link href="/css/theme.css?1613261512" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1613261512" rel="stylesheet">
+    <link href="/css/nucleus.css?1613331106" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1613331106" rel="stylesheet">
+    <link href="/css/hybrid.css?1613331106" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1613331106" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1613331106" rel="stylesheet">
+    <link href="/css/auto-complete.css?1613331106" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1613331106" rel="stylesheet">
+    <link href="/css/theme.css?1613331106" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1613331106" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1613261512" rel="stylesheet">
+      <link href="/css/theme-percy.css?1613331106" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1613261512"></script>
+    <script src="/js/jquery-3.3.1.min.js?1613331106"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1613261512"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1613261512"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1613331106"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1613331106"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1613261512"></script>
+<script type="text/javascript" src="/js/search.js?1613331106"></script>
 
     
   </div>
@@ -1134,6 +1134,99 @@ Percy Perez Aruni
  
 
           
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/devopssec/" title="DevOpsSec" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devopssec/">
+          <b>11. </b>DevOpsSec
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/devopssec/3h/" title="3h" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devopssec/3h/">
+          <b>11.1. </b>3h
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/devopssec/3h/general/" title="General" class="dd-item ">
+        <a href="/devopssec/3h/general/">
+        General
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
          
     </ul>
 
@@ -1213,6 +1306,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <li>
       <ul>
         <li><a href="#vpc-virtual-private-cloud">VPC Virtual Private Cloud</a></li>
+        <li><a href="#mutlple-network-interfaces">Mutlple network interfaces:</a></li>
       </ul>
     </li>
   </ul>
@@ -1326,6 +1420,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 <li>Allocated  from subnet range to VMs by DHCP</li>
 <li>DHCP lease is renewed every 24 hours</li>
 <li>VMs name + IP is registered with network scoeped DNS</li>
+<li>VMs only see the internal IP, not the external.</li>
+<li>The external IP is maped to the VM by VCP, but the OS of the VM does not know it.</li>
 </ul>
 </li>
 <li>
@@ -1334,21 +1430,218 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 <li>Assigned from pool ( external ips are ephemeral by default )</li>
 <li>Reserved (static) and billed more then not arrached to running VM</li>
 <li>VM does not know external IP, it is mapped to internal</li>
+<li>Admins can also publish public DNS records pointing to the instance
+<ul>
+<li>Public DNS records are not published automatically</li>
+</ul>
+</li>
+<li>DNS zone can be hosted using Cloud DNS</li>
+</ul>
+</li>
+<li>
+<p>IP alias:</p>
+<ul>
+<li>Primary subnet: defines the subnet</li>
+<li>Each VM gets its primary IP from this range</li>
+<li>Swcondary ranges provide an organizational tool</li>
+<li>The following files replace the _spf.google.com TXT records previously recommended to use for listing Google IP addresses.
+<ul>
+<li>
+<p><a href="https://www.gstatic.com/ipranges/cloud.json:">https://www.gstatic.com/ipranges/cloud.json:</a>
+Provides a JSON representation of Cloud IP addresses organized by region.</p>
+</li>
+<li>
+<p><a href="https://www.gstatic.com/ipranges/cloud_geofeed">https://www.gstatic.com/ipranges/cloud_geofeed</a>
+It is a standard geofeed formatted IP geolocation file that we share with 3rd-party IP geo providers like Maxmind, Neustar, and IP2Location.</p>
+</li>
+<li>
+<p><a href="https://www.gstatic.com/ipranges/goog.json">https://www.gstatic.com/ipranges/goog.json</a> and <a href="https://www.gstatic.com/ipranges/goog.txt">https://www.gstatic.com/ipranges/goog.txt</a> are TXT and JSON formatted files respectively that include Google public prefixes in CIDR notation.</p>
+</li>
+<li>
+<p>For more information as well as an example of how to use this information, refer to <a href="https://cloud.google.com/vpc/docs/configure-private-google-access#ip-addr-defaults">https://cloud.google.com/vpc/docs/configure-private-google-access#ip-addr-defaults</a></p>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
 <p>VMs</p>
+<ul>
+<li>Name resolution is handle by an internal DNS</li>
+<li>Each VM has a hostname that can be resolve to an internal AP address.
+<ul>
+<li>FQDN= hostname.c.ProjectID.internal</li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
 <p>Routes</p>
+<ul>
+<li>A route is create when a network or subnet is created.</li>
+<li>COnnections are allowed or denied at the instance level</li>
+<li>Firewall rules are stateful, it means birectional communication</li>
+<li>If firewall and rules are deleted, the deny all ingress and allow all egress are still aplied.</li>
+</ul>
 </li>
 <li>
 <p>Firewall rules</p>
+<ul>
+<li>Configure firewall by setting the following:
+<ul>
+<li>Direction:
+<ul>
+<li>Inbound connections are matched with &ldquo;ingress&rdquo; rules only</li>
+<li>Outbound connection sre matched with &ldquo;egress&rdquo; rules only</li>
+</ul>
+</li>
+<li>Source or destination:
+<ul>
+<li>For ingress: source = ip address, source tags or source service account</li>
+<li>For egress: destination = rule with one or more ranges of ip addresses.</li>
+</ul>
+</li>
+<li>Protocol, port</li>
+<li>Action: allow or deny</li>
+<li>Priority: Order on how rules are applied, first matching rule is applied.</li>
+<li>Rule assignment: All rules are assigned to all instances, but you can assign ceratin rules to especific instances only</li>
+</ul>
+</li>
+<li>Hierarchical firewall policies:
+<ul>
+<li>GCP uses &ldquo;go to_next&rdquo; to allow low level instances to evaluate the ingress/egress</li>
+</ul>
 </li>
 </ul>
+</li>
+<li>
+<p>Example:</p>
+<ul>
+<li>
+<p>Go to GCP console -&gt; click on VPC Networks</p>
+</li>
+<li>
+<p>In the left pane, click Firewall rules. Notice that there are 4 Ingress firewall rules for the default network:</p>
+<ul>
+<li>
+<p>default-allow-icmp =&gt; This allows you to ping from a VM to the external IP only.</p>
+</li>
+<li>
+<p>default-allow-rdp</p>
+</li>
+<li>
+<p>default-allow-ssh ==&gt; This allows you to ssh this VM. If you remove this and you wanted to ssh, you will see the following message:</p>
+<blockquote>
+<p>Please consider adding a firewall rule to allow ingress from the Cloud IAP for TCP forwarding netblock to the SSH port of your machine to start using Cloud IAP for TCP forwarding for better performance.  Learn more Dismiss</p>
+</blockquote>
+</li>
+<li>
+<p>default-allow-internal ==&gt; This allows you to ping between VMs in the same subnet</p>
+</li>
+<li>
+<p>These firewall rules allow ICMP, RDP, and SSH ingress traffic from anywhere (0.0.0.0/0) and all TCP, UDP, and ICMP traffic within the network (10.128.0.0/9). The Targets, Filters, Protocols/ports, and Action columns explain these rules</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Note that if a VM has not network set, GCP does not allow to create it. You need to create a VPC network first, and that name should appear during the creation of the VM under the &quot; Management, security, disks, networking, sole tenancy &quot; tag.</p>
+</li>
+<li>
+<p>To create a VPC network, you can choose auto mode with firewall rules:</p>
+<ul>
+<li>Click on VPC network, create VPC, Name it</li>
+<li>For subnet creation mode, click &ldquo;automatic&rdquo;: Auto mode networks create subnets in each region automatically.</li>
+<li>For Firewall rules, select all available rules. These are the same standard firewall rules that the default network had. The deny-all-ingress and allow-all-egress rules are also displayed, but you cannot check or uncheck them because they are implied. These two rules have a lower Priority (higher integers indicate lower priorities) so that the allow ICMP, internal, RDP and SSH rules are considered first.</li>
+<li>Click create.</li>
+<li>When VPC network is created note that a subnet was creatd for each region.</li>
+<li>NOTE If you ever delete the default network, you can quickly re-create it by creating an auto mode network as you just did.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="mutlple-network-interfaces">Mutlple network interfaces:</h3>
+<ul>
+<li>
+<p>VPC network is isolated by default:</p>
+<ul>
+<li>Communication inside VPC, though internal IP</li>
+<li>Communication across networks, using external IP</li>
+</ul>
+</li>
+<li>
+<p>In multiple interfaces each NIC is attached to a different VPC network</p>
+<ul>
+<li>Usually 8 NICs are allowed peer VM
+<ul>
+<li>VM &lt;= 2vCPU, you can have 2 NICs</li>
+<li>VM &gt;  2 vCPI, you can have 1 NIC per vCPU ( max 8)
+<img src="/devops/gcp/vpcmultipleinterfaces.png" alt="Multiple interfacds"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Excercise:</p>
+</li>
+<li>
+<p>Command lines for network and subnets</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">To create a VPC netwok with custom subnets
+$ gcloud compute networks create myvpcnet --project<span style="color:#f92672">=</span>myproject --subnet-mode<span style="color:#f92672">=</span>custom --mtu<span style="color:#f92672">=</span><span style="color:#ae81ff">1460</span> --bgp-routing-mode<span style="color:#f92672">=</span>regional
+To create subnet
+$ gcloud compute networks subnets create mysubnet --project<span style="color:#f92672">=</span>myproject --range<span style="color:#f92672">=</span>10.130.0.0/20 --network<span style="color:#f92672">=</span>myvpcnet --region<span style="color:#f92672">=</span>us-central1
 
+To create mynet network. another approach
+$ gcloud compute networks create mynet --subnet-mode<span style="color:#f92672">=</span>custom
+To create a subnet called subnet1
+$ gcloud compute networks subnets create subnet1 --network<span style="color:#f92672">=</span>mynet --region<span style="color:#f92672">=</span>us-central1 --range<span style="color:#f92672">=</span>172.16.0.0/24
+
+To list available VPC networks
+$ gcloud compute networks list
+
+NAME           SUBNET_MODE  BGP_ROUTING_MODE  IPV4_RANGE  GATEWAY_IPV4
+default        AUTO         REGIONAL
+mynet1         CUSTOM       REGIONAL
+mynet2         AUTO         REGIONAL
+privatenet     CUSTOM       REGIONAL
+  
+To list subnets
+$ gcloud compute networks subnets list
+</code></pre></div><ul>
+<li>NOTE: Instances on this network will not be reachable until firewall rules are created. As an example, you can allow all internal traffic between instances as well as SSH, RDP, and ICMP by running.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ gcloud compute firewall-rules create &lt;FIREWALL_NAME&gt; --network privatenet --allow tcp,udp,icmp --source-ranges &lt;IP_RANGE&gt;
+$ gcloud compute firewall-rules create &lt;FIREWALL_NAME&gt; --network privatenet --allow tcp:22,tcp:3389,icmp
+</code></pre></div></li>
+<li>default and mynetwork are auto mode networks and create subnets in each region automatically.</li>
+<li>mynet1 and mynet2 are custom mode networks and start with no subnets, which gives you full control over subnet creation.</li>
+<li>To list available subnets. Note that auto mode networks create default subnets,and custom mode create only manually created subnets</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ gcloud compute networks subnets list --sort-by<span style="color:#f92672">=</span>NETWORK
+</code></pre></div></li>
+<li>
+<p>Command line for firewall rules:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ gcloud compute firewall-rules create mynet-allow-icmp-ssh-rdp --direction<span style="color:#f92672">=</span>INGRESS --priority<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span> --network<span style="color:#f92672">=</span>mynet --action<span style="color:#f92672">=</span>ALLOW --rules<span style="color:#f92672">=</span>icmp,tcp:22,tcp:3389 --source-ranges<span style="color:#f92672">=</span>0.0.0.0/0
+  
+To list all available firewall rules
+$ gcloud compute firewall-rules list --sort-by<span style="color:#f92672">=</span>NETWORK
+</code></pre></div></li>
+<li>
+<p>Command line to create VM:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ gcloud compute instances create myvm --zone<span style="color:#f92672">=</span>us-central1-c --machine-type<span style="color:#f92672">=</span>n1-standard-1 --subnet<span style="color:#f92672">=</span>privatesubnet-us
+
+ To list all VMs
+ $ gcloud compute instances list --sort-by<span style="color:#f92672">=</span>ZONE
+
+</code></pre></div></li>
+</ul>
+<p>gcloud beta compute &ndash;project=qwiklabs-gcp-00-f7be7ad6aa15 instances create managementnet-us-vm &ndash;zone=us-central1-c &ndash;machine-type=n1-standard-1 &ndash;subnet=managementsubnet-us &ndash;network-tier=PREMIUM &ndash;maintenance-policy=MIGRATE &ndash;<a href="mailto:service-account=344393310583-compute@developer.gserviceaccount.com">service-account=344393310583-compute@developer.gserviceaccount.com</a>
+&ndash;scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append &ndash;image=debian-10-buster-v20210122 &ndash;image-project=debian-cloud &ndash;boot-disk-size=10GB &ndash;boot-disk-type=pd-balanced &ndash;boot-disk-device-name=managementnet-us-vm
+&ndash;no-shielded-secure-boot &ndash;shielded-vtpm &ndash;shielded-integrity-monitoring &ndash;reservation-affinity=any</p>
+<pre><code> - NOte that two VMs in the same VPC can ping each other, but not necessarily other VPCs. To confirm this need to check the firewall rules. VPC networks are by default isolated private networking domains. However, no internal IP address communication is allowed between networks, unless you set up mechanisms such as VPC peering or VPN.
+ - The number of interfaces allowed in an instance is dependent on the instance's machine type and the number of vCPUs. The n1-standard-4 allows up to 4 network interfaces. Refer [here](https://cloud.google.com/vpc/docs/create-use-multiple-interfaces#max-interfaces) for more information.
+</code></pre>
 
 <footer class="footline">
 	
@@ -2069,6 +2362,56 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -2091,19 +2434,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1613261512"></script>
-    <script src="/js/perfect-scrollbar.min.js?1613261512"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1613261512"></script>
-    <script src="/js/jquery.sticky.js?1613261512"></script>
-    <script src="/js/featherlight.min.js?1613261512"></script>
-    <script src="/js/highlight.pack.js?1613261512"></script>
+    <script src="/js/clipboard.min.js?1613331106"></script>
+    <script src="/js/perfect-scrollbar.min.js?1613331106"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1613331106"></script>
+    <script src="/js/jquery.sticky.js?1613331106"></script>
+    <script src="/js/featherlight.min.js?1613331106"></script>
+    <script src="/js/highlight.pack.js?1613331106"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1613261512"></script>
-    <script src="/js/learn.js?1613261512"></script>
-    <script src="/js/hugo-learn.js?1613261512"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1613331106"></script>
+    <script src="/js/learn.js?1613331106"></script>
+    <script src="/js/hugo-learn.js?1613331106"></script>
 
-    <link href="/mermaid/mermaid.css?1613261512" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1613261512"></script>
+    <link href="/mermaid/mermaid.css?1613331106" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1613331106"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
