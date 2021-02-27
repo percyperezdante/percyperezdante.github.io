@@ -117,7 +117,7 @@ VPC is a set of GCP objects, such as:
         - default-allow-ssh ==> This allows you to ssh this VM. If you remove this and you wanted to ssh, you will see the following message:
             > Please consider adding a firewall rule to allow ingress from the Cloud IAP for TCP forwarding netblock to the SSH port of your machine to start using Cloud IAP for TCP forwarding for better performance.  Learn more Dismiss
             
-        - default-allow-internal ==> This allows you to ping between VMs in the same subnet
+        - default-allow-internal ==> This allows you to ping between VMs in the same subnet. The default-allow-internal firewall rule allows traffic on all protocols/ports within the default network. 
         - These firewall rules allow ICMP, RDP, and SSH ingress traffic from anywhere (0.0.0.0/0) and all TCP, UDP, and ICMP traffic within the network (10.128.0.0/9). The Targets, Filters, Protocols/ports, and Action columns explain these rules
 
     - Note that if a VM has not network set, GCP does not allow to create it. You need to create a VPC network first, and that name should appear during the creation of the VM under the " Management, security, disks, networking, sole tenancy " tag. 
@@ -192,9 +192,85 @@ VPC is a set of GCP objects, such as:
     To list all VMs
     $ gcloud compute instances list --sort-by=ZONE
 
-gcloud beta compute --project=qwiklabs-gcp-00-f7be7ad6aa15 instances create managementnet-us-vm --zone=us-central1-c --machine-type=n1-standard-1 --subnet=managementsubnet-us --network-tier=PREMIUM --maintenance-policy=MIGRATE --service-account=344393310583-compute@developer.gserviceaccount.com
---scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --image=debian-10-buster-v20210122 --image-project=debian-cloud --boot-disk-size=10GB --boot-disk-type=pd-balanced --boot-disk-device-name=managementnet-us-vm
---no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --reservation-affinity=any
+    gcloud beta compute --project=be7ad6aa15 instances create managementnet-us-vm --zone=us-central1-c --machine-type=n1-standard-1 --subnet=managementsubnet-us --network-tier=PREMIUM --maintenance-policy=MIGRATE --service-account=310583-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --image=debian-10-buster-v20210122 --image-project=debian-cloud --boot-disk-size=10GB --boot-disk-type=pd-balanced --boot-disk-device-name=managementnet-us-vm --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --reservation-affinity=any
    ```
     - NOte that two VMs in the same VPC can ping each other, but not necessarily other VPCs. To confirm this need to check the firewall rules. VPC networks are by default isolated private networking domains. However, no internal IP address communication is allowed between networks, unless you set up mechanisms such as VPC peering or VPN.
     - The number of interfaces allowed in an instance is dependent on the instance's machine type and the number of vCPUs. The n1-standard-4 allows up to 4 network interfaces. Refer [here](https://cloud.google.com/vpc/docs/create-use-multiple-interfaces#max-interfaces) for more information.
+
+## Cloud identity and Access management
+
+-  IAM is a service to identify "who","can do what", and "in which resource".
+    - WHO: The members
+        - Google accounts: Any individual that interacts with GCP, e.g. developer
+        - Service accounts: Account that belongs to an application
+        - Google groups: Collection of google accounts and service accounts. It has unique email addresses linked to each group. Ideal to apply policy to a group of users.
+        - G suite domains: Represents your organizational domain, e.g. example.com
+        - Cloud identity: Collection of accounts in your organization, but they do not have access to similar services as G suite domain.
+    - CAN WHO WHAT: Roles
+        - Basic roles:
+            - Owner
+            - Editor
+            - Viewer
+            - Billing Administrator
+
+    ![Cloud IAM](/devops/gcp/iamsrosourcehierarchy.png)
+
+- A policy contains a set of roles and memebers
+- Parent policies overrides a children policy, for example if the parent policy is less restrictive, it will override a more restrictive policy.
+
+## Firewall
+
+- VPC network functions as a distributed firewall
+- Firewalls are applied to the network as a whole
+- Deny all ingress and allow all egress rules are implied
+- Firewall rules parameters:
+    - Target: which could be one of the following: ( where to apply a rule )
+        - All instances in the network
+        - Specified target tags
+        - Specified services accounts
+    - Source: ( the type of resource to apply the rule)
+        - IP ranges
+        - Subnets
+        - Source tags
+        - Source accounts
+
+- Default 
+
+#### Exercise
+
+- In this exercise we create a A and B nginx webserver in a default VPC network.
+- Network tags are used by networks to identify which VM instances are subject to certain firewall rules and network routes. In a VM, you create a firewall rule to allow HTTP access for VM instances with the web-server tag. Alternatively, and during the creation of a VM using the GUI, you could select the Allow HTTP traffic checkbox, which would tag this instance as http-server and create the tagged firewall rule for tcp:80 for you.
+- To create a firewall, remember that a firewall is linked to a network tag. Network tags are used in each VM, so if a rule applies to a tag, then this firewall rule will apply to all VMs that are pointing to this network tag.
+    - In the GUI, go to VPC network -> firewall
+    - Select the create a firewall rule:
+        - GIve a name:
+        - Network = default
+        - Targets = Specified target tags
+        - Source filter = IP ranges
+        - Source IP ranges = 0.0.0.0/0
+        - Protocol and ports = Specified protocols and ports
+            - tcp =80
+
+- Cloud IAM lets you authorize who can take action on specific resources, which give you full control and visibility to manage cloud resources centrally. The following roles are used in conjunction with single-project networking to independently control administrative access to each VPC network:
+    - Network Admin: Permissions to create, modify, and delete networking resources, except for firewall rules and SSL certificates. Like read only.
+    - Security Admin: Permissions to create, modify, and delete firewall rules and SSL certificates.
+
+    - Explore these roles by applying them to a service account, which is a special Google account that belongs to your VM instance instead of to an individual end user. You will authorize a vm to use the service account to demonstrate the permissions of the Network Admin and Security Admin roles, instead of creating a new user.
+    - Some suggested steps:
+        - SSH to the Vm you want to apply permissions, and you will find that the Compute Engine default service account does not have the right permissions to allow you to list or delete firewall rules. The same applies to other users who do not have the right roles. This is why it is need to create a "service account"
+          ```bash
+          $ gcloud compute firewall-rules list 
+          $ gcloud compute firewall-rules delete allow-http-web-server
+          ```
+        - To create a service account: 
+            - IAM & admin console -> service accounts
+            - Set the servie account name and click create
+            - For Select a role, select Compute Engine > Compute Network Admin.
+            - CLick continue and then done
+            - Once this is complete, stop the VM, and edit the VM config and select "Network admin" ( or the name of your service account you just created ) in the field "service account"
+            - Once you start your VM, you can ssh and try to run the last two gcloud commands and see if you do not have any error for "list" firewall rules. Note that "NEtwork adrmin oonly allows you read access"
+            - To change settings from "Network admin" to "security admin":
+                 - AIM & admin console
+                 - CLick on AIM -> Search for the service account and click in the pencil for editing
+                 - Select Compute Enginte and Compute Security Admin  insated of "Compute Network admin"
+

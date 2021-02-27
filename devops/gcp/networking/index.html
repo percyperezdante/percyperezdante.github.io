@@ -12,20 +12,20 @@
     <title>Networking :: Home</title>
 
     
-    <link href="/css/nucleus.css?1613427010" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1613427010" rel="stylesheet">
-    <link href="/css/hybrid.css?1613427010" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1613427010" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1613427010" rel="stylesheet">
-    <link href="/css/auto-complete.css?1613427010" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1613427010" rel="stylesheet">
-    <link href="/css/theme.css?1613427010" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1613427010" rel="stylesheet">
+    <link href="/css/nucleus.css?1614451024" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1614451024" rel="stylesheet">
+    <link href="/css/hybrid.css?1614451024" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1614451024" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1614451024" rel="stylesheet">
+    <link href="/css/auto-complete.css?1614451024" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1614451024" rel="stylesheet">
+    <link href="/css/theme.css?1614451024" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1614451024" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1613427010" rel="stylesheet">
+      <link href="/css/theme-percy.css?1614451024" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1613427010"></script>
+    <script src="/js/jquery-3.3.1.min.js?1614451024"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1613427010"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1613427010"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1614451024"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1614451024"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1613427010"></script>
+<script type="text/javascript" src="/js/search.js?1614451024"></script>
 
     
   </div>
@@ -1309,6 +1309,12 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         <li><a href="#mutlple-network-interfaces">Mutlple network interfaces:</a></li>
       </ul>
     </li>
+    <li><a href="#cloud-identity-and-access-management">Cloud identity and Access management</a></li>
+    <li><a href="#firewall">Firewall</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -1538,7 +1544,7 @@ It is a standard geofeed formatted IP geolocation file that we share with 3rd-pa
 </blockquote>
 </li>
 <li>
-<p>default-allow-internal ==&gt; This allows you to ping between VMs in the same subnet</p>
+<p>default-allow-internal ==&gt; This allows you to ping between VMs in the same subnet. The default-allow-internal firewall rule allows traffic on all protocols/ports within the default network.</p>
 </li>
 <li>
 <p>These firewall rules allow ICMP, RDP, and SSH ingress traffic from anywhere (0.0.0.0/0) and all TCP, UDP, and ICMP traffic within the network (10.128.0.0/9). The Targets, Filters, Protocols/ports, and Action columns explain these rules</p>
@@ -1634,14 +1640,154 @@ $ gcloud compute firewall-rules list --sort-by<span style="color:#f92672">=</spa
  To list all VMs
  $ gcloud compute instances list --sort-by<span style="color:#f92672">=</span>ZONE
 
-</code></pre></div></li>
+ gcloud beta compute --project<span style="color:#f92672">=</span>be7ad6aa15 instances create managementnet-us-vm --zone<span style="color:#f92672">=</span>us-central1-c --machine-type<span style="color:#f92672">=</span>n1-standard-1 --subnet<span style="color:#f92672">=</span>managementsubnet-us --network-tier<span style="color:#f92672">=</span>PREMIUM --maintenance-policy<span style="color:#f92672">=</span>MIGRATE --service-account<span style="color:#f92672">=</span>310583-compute@developer.gserviceaccount.com --scopes<span style="color:#f92672">=</span>https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --image<span style="color:#f92672">=</span>debian-10-buster-v20210122 --image-project<span style="color:#f92672">=</span>debian-cloud --boot-disk-size<span style="color:#f92672">=</span>10GB --boot-disk-type<span style="color:#f92672">=</span>pd-balanced --boot-disk-device-name<span style="color:#f92672">=</span>managementnet-us-vm --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --reservation-affinity<span style="color:#f92672">=</span>any
+</code></pre></div><ul>
+<li>NOte that two VMs in the same VPC can ping each other, but not necessarily other VPCs. To confirm this need to check the firewall rules. VPC networks are by default isolated private networking domains. However, no internal IP address communication is allowed between networks, unless you set up mechanisms such as VPC peering or VPN.</li>
+<li>The number of interfaces allowed in an instance is dependent on the instance&rsquo;s machine type and the number of vCPUs. The n1-standard-4 allows up to 4 network interfaces. Refer <a href="https://cloud.google.com/vpc/docs/create-use-multiple-interfaces#max-interfaces">here</a> for more information.</li>
 </ul>
-<p>gcloud beta compute &ndash;project=qwiklabs-gcp-00-f7be7ad6aa15 instances create managementnet-us-vm &ndash;zone=us-central1-c &ndash;machine-type=n1-standard-1 &ndash;subnet=managementsubnet-us &ndash;network-tier=PREMIUM &ndash;maintenance-policy=MIGRATE &ndash;<a href="mailto:service-account=344393310583-compute@developer.gserviceaccount.com">service-account=344393310583-compute@developer.gserviceaccount.com</a>
-&ndash;scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append &ndash;image=debian-10-buster-v20210122 &ndash;image-project=debian-cloud &ndash;boot-disk-size=10GB &ndash;boot-disk-type=pd-balanced &ndash;boot-disk-device-name=managementnet-us-vm
-&ndash;no-shielded-secure-boot &ndash;shielded-vtpm &ndash;shielded-integrity-monitoring &ndash;reservation-affinity=any</p>
-<pre><code> - NOte that two VMs in the same VPC can ping each other, but not necessarily other VPCs. To confirm this need to check the firewall rules. VPC networks are by default isolated private networking domains. However, no internal IP address communication is allowed between networks, unless you set up mechanisms such as VPC peering or VPN.
- - The number of interfaces allowed in an instance is dependent on the instance's machine type and the number of vCPUs. The n1-standard-4 allows up to 4 network interfaces. Refer [here](https://cloud.google.com/vpc/docs/create-use-multiple-interfaces#max-interfaces) for more information.
-</code></pre>
+</li>
+</ul>
+<h2 id="cloud-identity-and-access-management">Cloud identity and Access management</h2>
+<ul>
+<li>
+<p>IAM is a service to identify &ldquo;who&rdquo;,&ldquo;can do what&rdquo;, and &ldquo;in which resource&rdquo;.</p>
+<ul>
+<li>WHO: The members
+<ul>
+<li>Google accounts: Any individual that interacts with GCP, e.g. developer</li>
+<li>Service accounts: Account that belongs to an application</li>
+<li>Google groups: Collection of google accounts and service accounts. It has unique email addresses linked to each group. Ideal to apply policy to a group of users.</li>
+<li>G suite domains: Represents your organizational domain, e.g. example.com</li>
+<li>Cloud identity: Collection of accounts in your organization, but they do not have access to similar services as G suite domain.</li>
+</ul>
+</li>
+<li>CAN WHO WHAT: Roles
+<ul>
+<li>Basic roles:
+<ul>
+<li>Owner</li>
+<li>Editor</li>
+<li>Viewer</li>
+<li>Billing Administrator</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/devops/gcp/iamsrosourcehierarchy.png" alt="Cloud IAM"></p>
+</li>
+<li>
+<p>A policy contains a set of roles and memebers</p>
+</li>
+<li>
+<p>Parent policies overrides a children policy, for example if the parent policy is less restrictive, it will override a more restrictive policy.</p>
+</li>
+</ul>
+<h2 id="firewall">Firewall</h2>
+<ul>
+<li>
+<p>VPC network functions as a distributed firewall</p>
+</li>
+<li>
+<p>Firewalls are applied to the network as a whole</p>
+</li>
+<li>
+<p>Deny all ingress and allow all egress rules are implied</p>
+</li>
+<li>
+<p>Firewall rules parameters:</p>
+<ul>
+<li>Target: which could be one of the following: ( where to apply a rule )
+<ul>
+<li>All instances in the network</li>
+<li>Specified target tags</li>
+<li>Specified services accounts</li>
+</ul>
+</li>
+<li>Source: ( the type of resource to apply the rule)
+<ul>
+<li>IP ranges</li>
+<li>Subnets</li>
+<li>Source tags</li>
+<li>Source accounts</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Default</p>
+</li>
+</ul>
+<h4 id="exercise">Exercise</h4>
+<ul>
+<li>
+<p>In this exercise we create a A and B nginx webserver in a default VPC network.</p>
+</li>
+<li>
+<p>Network tags are used by networks to identify which VM instances are subject to certain firewall rules and network routes. In a VM, you create a firewall rule to allow HTTP access for VM instances with the web-server tag. Alternatively, and during the creation of a VM using the GUI, you could select the Allow HTTP traffic checkbox, which would tag this instance as http-server and create the tagged firewall rule for tcp:80 for you.</p>
+</li>
+<li>
+<p>To create a firewall, remember that a firewall is linked to a network tag. Network tags are used in each VM, so if a rule applies to a tag, then this firewall rule will apply to all VMs that are pointing to this network tag.</p>
+<ul>
+<li>In the GUI, go to VPC network -&gt; firewall</li>
+<li>Select the create a firewall rule:
+<ul>
+<li>GIve a name:</li>
+<li>Network = default</li>
+<li>Targets = Specified target tags</li>
+<li>Source filter = IP ranges</li>
+<li>Source IP ranges = 0.0.0.0/0</li>
+<li>Protocol and ports = Specified protocols and ports
+<ul>
+<li>tcp =80</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Cloud IAM lets you authorize who can take action on specific resources, which give you full control and visibility to manage cloud resources centrally. The following roles are used in conjunction with single-project networking to independently control administrative access to each VPC network:</p>
+<ul>
+<li>
+<p>Network Admin: Permissions to create, modify, and delete networking resources, except for firewall rules and SSL certificates. Like read only.</p>
+</li>
+<li>
+<p>Security Admin: Permissions to create, modify, and delete firewall rules and SSL certificates.</p>
+</li>
+<li>
+<p>Explore these roles by applying them to a service account, which is a special Google account that belongs to your VM instance instead of to an individual end user. You will authorize a vm to use the service account to demonstrate the permissions of the Network Admin and Security Admin roles, instead of creating a new user.</p>
+</li>
+<li>
+<p>Some suggested steps:</p>
+<ul>
+<li>SSH to the Vm you want to apply permissions, and you will find that the Compute Engine default service account does not have the right permissions to allow you to list or delete firewall rules. The same applies to other users who do not have the right roles. This is why it is need to create a &ldquo;service account&rdquo;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ gcloud compute firewall-rules list 
+$ gcloud compute firewall-rules delete allow-http-web-server
+</code></pre></div></li>
+<li>To create a service account:
+<ul>
+<li>IAM &amp; admin console -&gt; service accounts</li>
+<li>Set the servie account name and click create</li>
+<li>For Select a role, select Compute Engine &gt; Compute Network Admin.</li>
+<li>CLick continue and then done</li>
+<li>Once this is complete, stop the VM, and edit the VM config and select &ldquo;Network admin&rdquo; ( or the name of your service account you just created ) in the field &ldquo;service account&rdquo;</li>
+<li>Once you start your VM, you can ssh and try to run the last two gcloud commands and see if you do not have any error for &ldquo;list&rdquo; firewall rules. Note that &ldquo;NEtwork adrmin oonly allows you read access&rdquo;</li>
+<li>To change settings from &ldquo;Network admin&rdquo; to &ldquo;security admin&rdquo;:
+<ul>
+<li>AIM &amp; admin console</li>
+<li>CLick on AIM -&gt; Search for the service account and click in the pencil for editing</li>
+<li>Select Compute Enginte and Compute Security Admin  insated of &ldquo;Compute Network admin&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
 
 <footer class="footline">
 	
@@ -2434,19 +2580,19 @@ $ gcloud compute firewall-rules list --sort-by<span style="color:#f92672">=</spa
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1613427010"></script>
-    <script src="/js/perfect-scrollbar.min.js?1613427010"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1613427010"></script>
-    <script src="/js/jquery.sticky.js?1613427010"></script>
-    <script src="/js/featherlight.min.js?1613427010"></script>
-    <script src="/js/highlight.pack.js?1613427010"></script>
+    <script src="/js/clipboard.min.js?1614451024"></script>
+    <script src="/js/perfect-scrollbar.min.js?1614451024"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1614451024"></script>
+    <script src="/js/jquery.sticky.js?1614451024"></script>
+    <script src="/js/featherlight.min.js?1614451024"></script>
+    <script src="/js/highlight.pack.js?1614451024"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1613427010"></script>
-    <script src="/js/learn.js?1613427010"></script>
-    <script src="/js/hugo-learn.js?1613427010"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1614451024"></script>
+    <script src="/js/learn.js?1614451024"></script>
+    <script src="/js/hugo-learn.js?1614451024"></script>
 
-    <link href="/mermaid/mermaid.css?1613427010" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1613427010"></script>
+    <link href="/mermaid/mermaid.css?1614451024" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1614451024"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
