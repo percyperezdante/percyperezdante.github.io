@@ -12,20 +12,20 @@
     <title>Networking :: Home</title>
 
     
-    <link href="/css/nucleus.css?1614451024" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1614451024" rel="stylesheet">
-    <link href="/css/hybrid.css?1614451024" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1614451024" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1614451024" rel="stylesheet">
-    <link href="/css/auto-complete.css?1614451024" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1614451024" rel="stylesheet">
-    <link href="/css/theme.css?1614451024" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1614451024" rel="stylesheet">
+    <link href="/css/nucleus.css?1614502788" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1614502788" rel="stylesheet">
+    <link href="/css/hybrid.css?1614502788" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1614502788" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1614502788" rel="stylesheet">
+    <link href="/css/auto-complete.css?1614502788" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1614502788" rel="stylesheet">
+    <link href="/css/theme.css?1614502788" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1614502788" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1614451024" rel="stylesheet">
+      <link href="/css/theme-percy.css?1614502788" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1614451024"></script>
+    <script src="/js/jquery-3.3.1.min.js?1614502788"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1614451024"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1614451024"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1614502788"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1614502788"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1614451024"></script>
+<script type="text/javascript" src="/js/search.js?1614502788"></script>
 
     
   </div>
@@ -1315,6 +1315,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         <li></li>
       </ul>
     </li>
+    <li><a href="#shared-vpc">Shared VPC</a></li>
   </ul>
 </nav>
     </div>
@@ -1783,6 +1784,47 @@ $ gcloud compute firewall-rules delete allow-http-web-server
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="shared-vpc">Shared VPC</h2>
+<ul>
+<li>Organization admin:
+<ul>
+<li>Organization is the root node</li>
+<li>Workplace or cloude indentiy super administrators assign Oranization Admins</li>
+<li>Nominates Shared VPC Admin ( compute.xpnAdmin)</li>
+</ul>
+</li>
+<li>Shared VPC admin
+<ul>
+<li>Enables shared VPC host project</li>
+<li>Attaches service projects</li>
+<li>Delegates access to some or all subnets in shared VPC networkd ( compute.networkUser)</li>
+<li>Shared VPC admin is the project owner  for a given host project</li>
+</ul>
+</li>
+<li>Service Project Admin
+<ul>
+<li>
+<p>Control over service project resources:</p>
+<ul>
+<li>Compute instance admin</li>
+<li>Project owner</li>
+</ul>
+</li>
+<li>
+<p>Create resources in sahred VPC:</p>
+<ul>
+<li>VM instances</li>
+<li>Instance templates and groups</li>
+<li>Static internal IP</li>
+<li>Load balancers</li>
+</ul>
+<p><img src="/devops/gcp/sharedvpcexample.png" alt="shared vpc example">
+<a href="https://www.youtube.com/watch?v=4MtfyViH9t0">Youtube Video on provisioning shared vpc</a></p>
+<p><a href="https://cloud.google.com/vpc/docs/provisioning-shared-vpc">Google docs for provisining shared VPC</a></p>
 </li>
 </ul>
 </li>
@@ -2580,19 +2622,19 @@ $ gcloud compute firewall-rules delete allow-http-web-server
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1614451024"></script>
-    <script src="/js/perfect-scrollbar.min.js?1614451024"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1614451024"></script>
-    <script src="/js/jquery.sticky.js?1614451024"></script>
-    <script src="/js/featherlight.min.js?1614451024"></script>
-    <script src="/js/highlight.pack.js?1614451024"></script>
+    <script src="/js/clipboard.min.js?1614502788"></script>
+    <script src="/js/perfect-scrollbar.min.js?1614502788"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1614502788"></script>
+    <script src="/js/jquery.sticky.js?1614502788"></script>
+    <script src="/js/featherlight.min.js?1614502788"></script>
+    <script src="/js/highlight.pack.js?1614502788"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1614451024"></script>
-    <script src="/js/learn.js?1614451024"></script>
-    <script src="/js/hugo-learn.js?1614451024"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1614502788"></script>
+    <script src="/js/learn.js?1614502788"></script>
+    <script src="/js/hugo-learn.js?1614502788"></script>
 
-    <link href="/mermaid/mermaid.css?1614451024" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1614451024"></script>
+    <link href="/mermaid/mermaid.css?1614502788" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1614502788"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

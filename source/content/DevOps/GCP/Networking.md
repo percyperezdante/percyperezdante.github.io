@@ -274,3 +274,29 @@ VPC is a set of GCP objects, such as:
                  - CLick on AIM -> Search for the service account and click in the pencil for editing
                  - Select Compute Enginte and Compute Security Admin  insated of "Compute Network admin"
 
+## Shared VPC
+
+- Organization admin:
+    - Organization is the root node
+    - Workplace or cloude indentiy super administrators assign Oranization Admins
+    - Nominates Shared VPC Admin ( compute.xpnAdmin)
+- Shared VPC admin
+    - Enables shared VPC host project
+    - Attaches service projects
+    - Delegates access to some or all subnets in shared VPC networkd ( compute.networkUser)
+    - Shared VPC admin is the project owner  for a given host project
+- Service Project Admin
+    - Control over service project resources:
+        - Compute instance admin
+        - Project owner
+    - Create resources in sahred VPC:
+        - VM instances
+        - Instance templates and groups
+        - Static internal IP
+        - Load balancers
+
+        ![shared vpc example](/devops/gcp/sharedvpcexample.png)
+        [Youtube Video on provisioning shared vpc](https://www.youtube.com/watch?v=4MtfyViH9t0)
+
+        [Google docs for provisining shared VPC](https://cloud.google.com/vpc/docs/provisioning-shared-vpc)
+
