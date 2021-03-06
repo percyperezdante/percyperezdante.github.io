@@ -12,20 +12,20 @@
     <title>Networking :: Home</title>
 
     
-    <link href="/css/nucleus.css?1614502788" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1614502788" rel="stylesheet">
-    <link href="/css/hybrid.css?1614502788" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1614502788" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1614502788" rel="stylesheet">
-    <link href="/css/auto-complete.css?1614502788" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1614502788" rel="stylesheet">
-    <link href="/css/theme.css?1614502788" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1614502788" rel="stylesheet">
+    <link href="/css/nucleus.css?1615046678" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1615046678" rel="stylesheet">
+    <link href="/css/hybrid.css?1615046678" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1615046678" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1615046678" rel="stylesheet">
+    <link href="/css/auto-complete.css?1615046678" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1615046678" rel="stylesheet">
+    <link href="/css/theme.css?1615046678" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1615046678" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1614502788" rel="stylesheet">
+      <link href="/css/theme-percy.css?1615046678" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1614502788"></script>
+    <script src="/js/jquery-3.3.1.min.js?1615046678"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1614502788"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1614502788"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1615046678"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1615046678"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1614502788"></script>
+<script type="text/javascript" src="/js/search.js?1615046678"></script>
 
     
   </div>
@@ -1316,6 +1316,11 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
       </ul>
     </li>
     <li><a href="#shared-vpc">Shared VPC</a></li>
+    <li><a href="#vpc-peering">VPC peering</a>
+      <ul>
+        <li><a href="#managed-instance-groups">Managed instance groups</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -1826,8 +1831,75 @@ $ gcloud compute firewall-rules delete allow-http-web-server
 <a href="https://www.youtube.com/watch?v=4MtfyViH9t0">Youtube Video on provisioning shared vpc</a></p>
 <p><a href="https://cloud.google.com/vpc/docs/provisioning-shared-vpc">Google docs for provisining shared VPC</a></p>
 </li>
+<li>
+<p>How to create a Shread VPC</p>
+<ol>
+<li>An Organization Admin nominates a Shared VPC Admin.</li>
+<li>A Shared VPC Admin enables shared VPC for the host project.</li>
+<li>A Shared VPC Admin delegates access to some or all subnets of a shared VPC network by granting the Network User role.</li>
+<li>A Network User creates resources in his/her Service Project.</li>
+</ol>
+</li>
 </ul>
 </li>
+</ul>
+<h2 id="vpc-peering">VPC peering</h2>
+<ul>
+<li>To establish a peer connection, the consumer network admin requires to establish connection to the producer network. Also and independently, the producer network admin requires to establish connection to the consumer network.</li>
+<li>Internal VM communicates using their private internal IP addresses.</li>
+<li>VPC peering worked wit compute engines, Kubernetes engine and APP engine environments</li>
+<li>Each VPC networks remain administratively independent and separate.</li>
+<li>Two auto mode VPC networks that only have the defatult subnet can not peer.</li>
+</ul>
+<p><img src="/devops/gcp/vpcpeering.png" alt="vpc peering">
+<img src="/devops/gcp/vpcpeeringwhentouse.png" alt="vpc peering versus shared vpc">
+<img src="/devops/gcp/vpcpeeringwithsharevpc.png" alt="vpc peering connected to shared vpc"></p>
+<ul>
+<li>From labs:
+<ul>
+<li>
+<p>VPC network peering gives you several advantages over using external IP addresses or VPNs to connect networks, including:</p>
+<ul>
+<li>Network Latency: Public IP networking results in higher latency than private networking.</li>
+<li>Network Security: Service owners do not need to have their services exposed to the public internet and deal with its associated risks.</li>
+<li>Network Cost: Google Cloud charges egress bandwidth pricing for networks using external IPs to communicate, even if the traffic is within the same zone. If, however, the networks are peered, they can use internal IPs to communicate and save on those egress costs. Regular network pricing still applies to all traffic.</li>
+</ul>
+</li>
+<li>
+<p>In a peered VPC network, no subnet IP range can overlap with another subnet IP range. Therefore, verify that the CIDR blocks of the subnets of mynetwork and privatenet are non-overlapping. You can configure VPC network peering between mynetwork and privatenet because their subnets&rsquo; CIDR blocks are non-overlapping. <strong>In google console click on VPC network</strong></p>
+</li>
+<li>
+<p>Usually verify that there is not a related peering network or route  by clicking on  <strong>VPC networkind peering</strong>, also verify that no <strong>route</strong> has a &ldquo;peering connection&rdquo; as the &ldquo;next hop&rdquo; tag.</p>
+</li>
+<li>
+<p>To create peering network:</p>
+<ul>
+<li>You need project ID and the name of the VPC network to pair with
+<img src="/devops/gcp/vpcpeeringlab.png" alt="vpc peering lab"></li>
+<li>Deleting one side of the peering connection terminates the overall peering connection.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="managed-instance-groups">Managed instance groups</h3>
+<ul>
+<li>It is a group of VMs that were created base on a template, this means all these VMs are similar.
+<ul>
+<li>GCP console can help you to create a template: Compute Engine-&gt; Instance template</li>
+<li>To create a instance group:
+<ul>
+<li>Choose a single zone or multizone template</li>
+<li>Define which ports will be allow</li>
+<li>Select the template you would like to use</li>
+<li>Define whether you want to autoscale</li>
+<li>Define whether you need a health check</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Instance group can be resized in one single zone or regional, the last one is recommended.</li>
+<li>Manager can autoscale base on a template and can be integrated with a load balancer.</li>
 </ul>
 
 
@@ -2622,19 +2694,19 @@ $ gcloud compute firewall-rules delete allow-http-web-server
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1614502788"></script>
-    <script src="/js/perfect-scrollbar.min.js?1614502788"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1614502788"></script>
-    <script src="/js/jquery.sticky.js?1614502788"></script>
-    <script src="/js/featherlight.min.js?1614502788"></script>
-    <script src="/js/highlight.pack.js?1614502788"></script>
+    <script src="/js/clipboard.min.js?1615046678"></script>
+    <script src="/js/perfect-scrollbar.min.js?1615046678"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1615046678"></script>
+    <script src="/js/jquery.sticky.js?1615046678"></script>
+    <script src="/js/featherlight.min.js?1615046678"></script>
+    <script src="/js/highlight.pack.js?1615046678"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1614502788"></script>
-    <script src="/js/learn.js?1614502788"></script>
-    <script src="/js/hugo-learn.js?1614502788"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1615046678"></script>
+    <script src="/js/learn.js?1615046678"></script>
+    <script src="/js/hugo-learn.js?1615046678"></script>
 
-    <link href="/mermaid/mermaid.css?1614502788" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1614502788"></script>
+    <link href="/mermaid/mermaid.css?1615046678" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1615046678"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

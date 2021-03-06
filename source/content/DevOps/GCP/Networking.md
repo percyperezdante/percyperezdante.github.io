@@ -300,3 +300,49 @@ VPC is a set of GCP objects, such as:
 
         [Google docs for provisining shared VPC](https://cloud.google.com/vpc/docs/provisioning-shared-vpc)
 
+    - How to create a Shread VPC
+        1. An Organization Admin nominates a Shared VPC Admin.
+        2. A Shared VPC Admin enables shared VPC for the host project.
+        3. A Shared VPC Admin delegates access to some or all subnets of a shared VPC network by granting the Network User role.
+        4. A Network User creates resources in his/her Service Project.
+
+
+## VPC peering
+
+- To establish a peer connection, the consumer network admin requires to establish connection to the producer network. Also and independently, the producer network admin requires to establish connection to the consumer network.
+- Internal VM communicates using their private internal IP addresses.
+- VPC peering worked wit compute engines, Kubernetes engine and APP engine environments
+- Each VPC networks remain administratively independent and separate. 
+- Two auto mode VPC networks that only have the defatult subnet can not peer.
+
+![vpc peering](/devops/gcp/vpcpeering.png)
+![vpc peering versus shared vpc](/devops/gcp/vpcpeeringwhentouse.png)
+![vpc peering connected to shared vpc](/devops/gcp/vpcpeeringwithsharevpc.png)
+
+- From labs:
+    - VPC network peering gives you several advantages over using external IP addresses or VPNs to connect networks, including:
+        - Network Latency: Public IP networking results in higher latency than private networking.
+        - Network Security: Service owners do not need to have their services exposed to the public internet and deal with its associated risks.
+        - Network Cost: Google Cloud charges egress bandwidth pricing for networks using external IPs to communicate, even if the traffic is within the same zone. If, however, the networks are peered, they can use internal IPs to communicate and save on those egress costs. Regular network pricing still applies to all traffic.
+
+    - In a peered VPC network, no subnet IP range can overlap with another subnet IP range. Therefore, verify that the CIDR blocks of the subnets of mynetwork and privatenet are non-overlapping. You can configure VPC network peering between mynetwork and privatenet because their subnets' CIDR blocks are non-overlapping. **In google console click on VPC network**
+    - Usually verify that there is not a related peering network or route  by clicking on  **VPC networkind peering**, also verify that no **route** has a "peering connection" as the "next hop" tag.
+    - To create peering network:
+        - You need project ID and the name of the VPC network to pair with
+        ![vpc peering lab](/devops/gcp/vpcpeeringlab.png)
+        - Deleting one side of the peering connection terminates the overall peering connection. 
+
+
+### Managed instance groups
+
+- It is a group of VMs that were created base on a template, this means all these VMs are similar.
+    - GCP console can help you to create a template: Compute Engine-> Instance template
+    - To create a instance group: 
+        - Choose a single zone or multizone template
+        - Define which ports will be allow
+        - Select the template you would like to use
+        - Define whether you want to autoscale
+        - Define whether you need a health check
+- Instance group can be resized in one single zone or regional, the last one is recommended.
+- Manager can autoscale base on a template and can be integrated with a load balancer.
+
