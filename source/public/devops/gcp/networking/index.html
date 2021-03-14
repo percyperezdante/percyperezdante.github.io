@@ -12,20 +12,20 @@
     <title>Networking :: Home</title>
 
     
-    <link href="/css/nucleus.css?1615046678" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1615046678" rel="stylesheet">
-    <link href="/css/hybrid.css?1615046678" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1615046678" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1615046678" rel="stylesheet">
-    <link href="/css/auto-complete.css?1615046678" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1615046678" rel="stylesheet">
-    <link href="/css/theme.css?1615046678" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1615046678" rel="stylesheet">
+    <link href="/css/nucleus.css?1615714426" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1615714426" rel="stylesheet">
+    <link href="/css/hybrid.css?1615714426" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1615714426" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1615714426" rel="stylesheet">
+    <link href="/css/auto-complete.css?1615714426" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1615714426" rel="stylesheet">
+    <link href="/css/theme.css?1615714426" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1615714426" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1615046678" rel="stylesheet">
+      <link href="/css/theme-percy.css?1615714426" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1615046678"></script>
+    <script src="/js/jquery-3.3.1.min.js?1615714426"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1615046678"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1615046678"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1615714426"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1615714426"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1615046678"></script>
+<script type="text/javascript" src="/js/search.js?1615714426"></script>
 
     
   </div>
@@ -1321,6 +1321,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         <li><a href="#managed-instance-groups">Managed instance groups</a></li>
       </ul>
     </li>
+    <li><a href="#load-balancer-over-http">Load balancer over HTTP</a></li>
   </ul>
 </nav>
     </div>
@@ -1900,6 +1901,59 @@ $ gcloud compute firewall-rules delete allow-http-web-server
 </li>
 <li>Instance group can be resized in one single zone or regional, the last one is recommended.</li>
 <li>Manager can autoscale base on a template and can be integrated with a load balancer.</li>
+</ul>
+<h2 id="load-balancer-over-http">Load balancer over HTTP</h2>
+<ul>
+<li>
+<p>Overview
+<img src="/devops/gcp/lbhttparchitecture.png" alt="HTTP load balancer architecture overview"></p>
+<ul>
+<li>From above diagram,the backend service contains:
+<ul>
+<li>Health checker</li>
+<li>Session afinity, it uses Round Robbin algorithm</li>
+<li>Timeout setting ( 30 sec default )</li>
+<li>One or more backends:
+<ul>
+<li>An instance group ( managed and unmanaged )
+<ul>
+<li>Contains VMS</li>
+</ul>
+</li>
+<li>A balancing mode ( criteria to scale service considering CPU utilization or RPS )
+<ul>
+<li>Defines how to LB should behave when it is in a full usage.</li>
+</ul>
+</li>
+<li>A capacity scaler ( ceilling % of CPU / Rate targets )</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>HTTPS</p>
+<ul>
+<li>Requires a s HTTPS load balancer</li>
+<li>Up to 10 SSL certificatates ( per target proxy )</li>
+<li>Creates an SSL certificate resource, which is used only with HTTPS LB</li>
+</ul>
+</li>
+<li>
+<p>ARMOR</p>
+<ul>
+<li>It provides built-in defense against DDOS attacks.</li>
+<li>Uses security policies:
+<ul>
+<li>Deny or/and allow access to your LB: Block source IP or CIDR range</li>
+<li>Deny rule: 403, 404, 502 error code</li>
+<li>Priority: ruler order</li>
+<li>Customer rules L3 to L7</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 
@@ -2694,19 +2748,19 @@ $ gcloud compute firewall-rules delete allow-http-web-server
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1615046678"></script>
-    <script src="/js/perfect-scrollbar.min.js?1615046678"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1615046678"></script>
-    <script src="/js/jquery.sticky.js?1615046678"></script>
-    <script src="/js/featherlight.min.js?1615046678"></script>
-    <script src="/js/highlight.pack.js?1615046678"></script>
+    <script src="/js/clipboard.min.js?1615714427"></script>
+    <script src="/js/perfect-scrollbar.min.js?1615714427"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1615714427"></script>
+    <script src="/js/jquery.sticky.js?1615714427"></script>
+    <script src="/js/featherlight.min.js?1615714427"></script>
+    <script src="/js/highlight.pack.js?1615714427"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1615046678"></script>
-    <script src="/js/learn.js?1615046678"></script>
-    <script src="/js/hugo-learn.js?1615046678"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1615714427"></script>
+    <script src="/js/learn.js?1615714427"></script>
+    <script src="/js/hugo-learn.js?1615714427"></script>
 
-    <link href="/mermaid/mermaid.css?1615046678" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1615046678"></script>
+    <link href="/mermaid/mermaid.css?1615714427" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1615714427"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

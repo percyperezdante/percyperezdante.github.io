@@ -346,3 +346,31 @@ VPC is a set of GCP objects, such as:
 - Instance group can be resized in one single zone or regional, the last one is recommended.
 - Manager can autoscale base on a template and can be integrated with a load balancer.
 
+
+## Load balancer over HTTP
+
+- Overview
+![HTTP load balancer architecture overview](/devops/gcp/lbhttparchitecture.png)
+
+    - From above diagram,the backend service contains:
+        - Health checker
+        - Session afinity, it uses Round Robbin algorithm
+        - Timeout setting ( 30 sec default )
+        - One or more backends:
+            - An instance group ( managed and unmanaged )
+                - Contains VMS
+            - A balancing mode ( criteria to scale service considering CPU utilization or RPS )
+                - Defines how to LB should behave when it is in a full usage.
+            - A capacity scaler ( ceilling % of CPU / Rate targets )
+    
+- HTTPS
+    - Requires a s HTTPS load balancer
+    - Up to 10 SSL certificatates ( per target proxy )
+    - Creates an SSL certificate resource, which is used only with HTTPS LB
+- ARMOR
+    - It provides built-in defense against DDOS attacks.
+    - Uses security policies:
+        - Deny or/and allow access to your LB: Block source IP or CIDR range
+        - Deny rule: 403, 404, 502 error code
+        - Priority: ruler order
+        - Customer rules L3 to L7
