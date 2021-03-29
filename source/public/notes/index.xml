@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>MyTools</title>
+      <link>http://example.org/notes/mytools/</link>
+      <pubDate>Mon, 29 Mar 2021 17:41:58 +0100</pubDate>
+      
+      <guid>http://example.org/notes/mytools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ansible</title>
       <link>http://example.org/notes/ansible/</link>
       <pubDate>Sat, 16 Jan 2021 15:49:01 +0000</pubDate>
