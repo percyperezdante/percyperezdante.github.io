@@ -17,6 +17,9 @@ I am taking here the case of Ubuntu, but this should work with similar distros o
 
 $ sudo apt update -y
 $ sudo apt install git vim -y
+$ git config --global user.email percyyperezdante@gmail.com
+
 ```
+
 
 
