@@ -25,7 +25,7 @@
 	"title": "Notes",
 	"tags": [],
 	"description": "",
-	"content": "General notes This page containts brief examples and explanation of different topics of interests from my students.\nMore details will be added gradually.\nA K  Kubernetes  G  Golang  S  Shell tricks  "
+	"content": "General notes This page containts brief examples and explanation of different topics of interests from my students.\nMore details will be added gradually.\nA K  Kubernetes  G  Golang  S  Shell tricks  V  Vim  "
 },
 {
 	"uri": "http://example.org/devopssec/3h/",
@@ -126,11 +126,18 @@
 	"content": "Welcome My name is Percy, and this site has a minimal content about my interests, activities, and notes I recorded for myself or for people with similar interests.\nContact  percyperezdante [at] gmail (dot) com Github Linkedin, Vagrant Cloud Twitter: @percyperezd  Interests My main interests include to develop, experiment and test new technologies related to:\n nMANET Reproducibility Teaching Automation Continuous Integration and Continuous Delivery Site Reliability Engineering DevOps Software Development Enginering Cloud computing Distributed systems Security  NOTE: nMANET is an approach that intends to offer an alternative to solve the limitations of Mobile Ad-hoc Networks in emergency scenarios such as earthquakes and social riots.\nnMANET intends to show whether future Internet architectures such as Name Data based Networking protocol can be applied in Mobila Ad-hoc networks. To achieve this, I am designing, implementing and testing JNFD, which is the prototype of nMANET, and that is functional in Andriod and Linux base mobile devices. The source code of JNFD is open source and it has been tested in smartphones such as MotoE, MotoG, and Samsumg Note4, and also in laptops and through JNFD simulators such as Mini-JNFD.\nActivities   Sports. I like to play football and basketball, but also I often swim. I currenly swiming for the Diabetes UK charity, swim22. We formed a great team of colleges who are willing to swim approximatelly 230 Km all together. As a team we would love to have your contributions if possible of course.\n  Devops days Edinburgh 2020. I am member of the organizers for the 2020 Devops days in Edinburgh. Devops days happen here in Edinburhg once a year and is an international conference that include technical talks about software development, IT infrastructure operations, and a mix of them.\n  Sadly, this event is cancelled due to COVID-19.\nTooling  Jfrog Artifactory  Notes This section contains a set of basic tutorials I wrote for my students. They are simple notes I took from books and online resources. These notes are grouped in the following categories.\n  Minimal infrastructure\n  Software Development\n  Infrastrucuture as a code\n  Devops \u0026amp; SRE\n  "
 },
 {
+	"uri": "http://example.org/notes/vim/",
+	"title": "Vim",
+	"tags": [],
+	"description": "",
+	"content": "Vim with Netwr let g:netrw_banner = 0 let g:netrw_liststyle = 3 let g:netrw_browse_split = 4 let g:netrw_altv = 1 let g:netrw_winsize = 25 augroup ProjectDrawer autocmd! autocmd VimEnter * :Vexplore augroup END Vim scripts Reference https://shapeshed.com/vim-netrw/\nhttps://learnvimscriptthehardway.stevelosh.com/\n"
+},
+{
 	"uri": "http://example.org/notes/mytools/",
 	"title": "MyTools",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "This page contains the list of tools I used in my laptop. It was used to set a ready-to-use host from IAC.\nA. OS I am taking here the case of Ubuntu, but this should work with similar distros of the same family.\nB. Tools  Update  $ sudo apt update -y $ sudo apt install git vim -y $ git config --global user.email percyyperezdante@gmail.com "
 },
 {
 	"uri": "http://example.org/devopssec/3h/general/",

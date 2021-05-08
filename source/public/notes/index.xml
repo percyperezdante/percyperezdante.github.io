@@ -12,12 +12,24 @@
     
     
     <item>
+      <title>Vim</title>
+      <link>http://example.org/notes/vim/</link>
+      <pubDate>Sat, 08 May 2021 18:34:11 +0100</pubDate>
+      
+      <guid>http://example.org/notes/vim/</guid>
+      <description>Vim with Netwr let g:netrw_banner = 0 let g:netrw_liststyle = 3 let g:netrw_browse_split = 4 let g:netrw_altv = 1 let g:netrw_winsize = 25 augroup ProjectDrawer autocmd! autocmd VimEnter * :Vexplore augroup END Vim scripts Reference https://shapeshed.com/vim-netrw/
+https://learnvimscriptthehardway.stevelosh.com/</description>
+    </item>
+    
+    <item>
       <title>MyTools</title>
       <link>http://example.org/notes/mytools/</link>
       <pubDate>Mon, 29 Mar 2021 17:41:58 +0100</pubDate>
       
       <guid>http://example.org/notes/mytools/</guid>
-      <description></description>
+      <description>This page contains the list of tools I used in my laptop. It was used to set a ready-to-use host from IAC.
+A. OS I am taking here the case of Ubuntu, but this should work with similar distros of the same family.
+B. Tools  Update  $ sudo apt update -y $ sudo apt install git vim -y $ git config --global user.email percyyperezdante@gmail.com </description>
     </item>
     
     <item>
