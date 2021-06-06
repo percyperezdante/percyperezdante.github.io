@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.68.0-DEV" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>Vim :: Home</title>
 
     
-    <link href="/css/nucleus.css?1620495569" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1620495569" rel="stylesheet">
-    <link href="/css/hybrid.css?1620495569" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1620495569" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1620495569" rel="stylesheet">
-    <link href="/css/auto-complete.css?1620495569" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1620495569" rel="stylesheet">
-    <link href="/css/theme.css?1620495569" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1620495569" rel="stylesheet">
+    <link href="/css/nucleus.css?1622963516" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1622963516" rel="stylesheet">
+    <link href="/css/hybrid.css?1622963516" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1622963516" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1622963516" rel="stylesheet">
+    <link href="/css/auto-complete.css?1622963516" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1622963516" rel="stylesheet">
+    <link href="/css/theme.css?1622963516" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1622963516" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1620495569" rel="stylesheet">
+      <link href="/css/theme-percy.css?1622963516" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1620495569"></script>
+    <script src="/js/jquery-3.3.1.min.js?1622963516"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1620495569"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1620495569"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1622963516"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1622963516"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1620495569"></script>
+<script type="text/javascript" src="/js/search.js?1622963516"></script>
 
     
   </div>
@@ -1382,10 +1382,64 @@ augroup ProjectDrawer
 augroup END
 
 
-</code></pre></div><h3 id="vim-scripts">Vim scripts</h3>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  ---			-----------------			----
+	  Map			Quick Explanation			Link
+	  ---			-----------------			----
+ 	 &lt;F1&gt;	Causes Netrw to issue help
+	 &lt;cr&gt;	Netrw will enter the directory or read the file      |netrw-cr|
+	 &lt;del&gt;	Netrw will attempt to remove the file/directory      |netrw-del|
+	   -	Makes Netrw go up one directory                      |netrw--|
+	   a	Toggles between normal display,                      |netrw-a|
+		hiding <span style="color:#f92672">(</span>suppress display of files matching g:netrw_list_hide<span style="color:#f92672">)</span>
+		showing <span style="color:#f92672">(</span>display only files which match g:netrw_list_hide<span style="color:#f92672">)</span>
+	   c	Make browsing directory the current directory        |netrw-c|
+	   C	Setting the editing window                           |netrw-C|
+	   d	Make a directory                                     |netrw-d|
+	   D	Attempt to remove the file<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>/directory<span style="color:#f92672">(</span>ies<span style="color:#f92672">)</span>         |netrw-D|
+	   gb	Go to previous bookmarked directory                  |netrw-gb|
+	   gh	Quick hide/unhide of dot-files                       |netrw-gh|
+	 &lt;c-h&gt;	Edit file hiding list                             |netrw-ctrl-h|
+	   i	Cycle between thin, long, wide, and tree listings    |netrw-i|
+	 &lt;c-l&gt;	Causes Netrw to refresh the directory listing     |netrw-ctrl-l|
+	   mb	Bookmark current directory                           |netrw-mb|
+	   mc	Copy marked files to marked-file target directory    |netrw-mc|
+	   md	Apply diff to marked files <span style="color:#f92672">(</span>up to 3<span style="color:#f92672">)</span>                 |netrw-md|
+	   me	Place marked files on arg list and edit them         |netrw-me|
+	   mf	Mark a file                                          |netrw-mf|
+	   mh	Toggle marked file suffices<span style="color:#e6db74">&#39; presence on hiding list |netrw-mh|
+</span><span style="color:#e6db74">	   mm	Move marked files to marked-file target directory    |netrw-mm|
+</span><span style="color:#e6db74">	   mp	Print marked files                                   |netrw-mp|
+</span><span style="color:#e6db74">	   mr	Mark files satisfying a shell-style |regexp|         |netrw-mr|
+</span><span style="color:#e6db74">	   mt	Current browsing directory becomes markfile target   |netrw-mt|
+</span><span style="color:#e6db74">	   mT	Apply ctags to marked files                          |netrw-mT|
+</span><span style="color:#e6db74">	   mu	Unmark all marked files                              |netrw-mu|
+</span><span style="color:#e6db74">	   mx	Apply arbitrary shell command to marked files        |netrw-mx|
+</span><span style="color:#e6db74">	   mz	Compress/decompress marked files                     |netrw-mz|
+</span><span style="color:#e6db74">	   o	Enter the file/directory under the cursor in a new   |netrw-o|
+</span><span style="color:#e6db74">		browser window.  A horizontal split is used.
+</span><span style="color:#e6db74">	   O	Obtain a file specified by cursor                    |netrw-O|
+</span><span style="color:#e6db74">	   p	Preview the file                                     |netrw-p|
+</span><span style="color:#e6db74">	   P	Browse in the previously used window                 |netrw-P|
+</span><span style="color:#e6db74">	   qb	List bookmarked directories and history              |netrw-qb|
+</span><span style="color:#e6db74">	   qf	Display information on file                          |netrw-qf|
+</span><span style="color:#e6db74">	   r	Reverse sorting order                                |netrw-r|
+</span><span style="color:#e6db74">	   R	Rename the designed file(s)/directory(ies)           |netrw-R|
+</span><span style="color:#e6db74">	   s	Select sorting style: by name, time, or file size    |netrw-s|
+</span><span style="color:#e6db74">	   S	Specify suffix priority for name-sorting             |netrw-S|
+</span><span style="color:#e6db74">	   t	Enter the file/directory under the cursor in a new tab|netrw-tYXXY
+</span><span style="color:#e6db74">	   u	Change to recently-visited directory                 |netrw-u|
+</span><span style="color:#e6db74">	   U	Change to subsequently-visited directory             |netrw-U|
+</span><span style="color:#e6db74">	   v	Enter the file/directory under the cursor in a new   |netrw-v|
+</span><span style="color:#e6db74">		browser window.  A vertical split is used.
+</span><span style="color:#e6db74">	   x	View file with an associated program                 |netrw-x|
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">	   %	Open a new file in netrw&#39;</span>s current directory         |netrw-%|
+</code></pre></div><p>[3]</p>
+<h3 id="vim-scripts">Vim scripts</h3>
 <h1 id="reference">Reference</h1>
 <p><a href="https://shapeshed.com/vim-netrw/">https://shapeshed.com/vim-netrw/</a></p>
 <p><a href="https://learnvimscriptthehardway.stevelosh.com/">https://learnvimscriptthehardway.stevelosh.com/</a></p>
+<p>[3] <a href="http://vimdoc.sourceforge.net/htmldoc/pi_netrw.html#netrw">http://vimdoc.sourceforge.net/htmldoc/pi_netrw.html#netrw</a></p>
 
 
 <footer class="footline">
@@ -2210,19 +2264,19 @@ augroup END
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1620495569"></script>
-    <script src="/js/perfect-scrollbar.min.js?1620495569"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1620495569"></script>
-    <script src="/js/jquery.sticky.js?1620495569"></script>
-    <script src="/js/featherlight.min.js?1620495569"></script>
-    <script src="/js/highlight.pack.js?1620495569"></script>
+    <script src="/js/clipboard.min.js?1622963516"></script>
+    <script src="/js/perfect-scrollbar.min.js?1622963516"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1622963516"></script>
+    <script src="/js/jquery.sticky.js?1622963516"></script>
+    <script src="/js/featherlight.min.js?1622963516"></script>
+    <script src="/js/highlight.pack.js?1622963516"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1620495569"></script>
-    <script src="/js/learn.js?1620495569"></script>
-    <script src="/js/hugo-learn.js?1620495569"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1622963516"></script>
+    <script src="/js/learn.js?1622963516"></script>
+    <script src="/js/hugo-learn.js?1622963516"></script>
 
-    <link href="/mermaid/mermaid.css?1620495569" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1620495569"></script>
+    <link href="/mermaid/mermaid.css?1622963516" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1622963516"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
