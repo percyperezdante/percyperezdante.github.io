@@ -169,3 +169,6 @@ https://learnvimscriptthehardway.stevelosh.com/
 
 [4] https://iccf-holland.org/vim_books.html
 
+[5] https://vonheikemen.github.io/devlog/tools/using-netrw-vim-builtin-file-explorer/
+
+
