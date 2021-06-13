@@ -81,8 +81,10 @@ Type :r FILENAME         It will insert the content of FILENAME in the cursor lo
         :help w                    
         :help c_CTRL-D 
         :help insert-index         
+        :help normal-index         
         :help user-manual   
         :help vimrc-intro
+	:help windows
 
 ```
 ### Vim with Netwr
