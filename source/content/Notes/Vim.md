@@ -156,6 +156,18 @@ augroup END
 ```
 [3]
 
+
+```bash
+
+  For inside a windows and in normal mode
+  https://catswhocode.com/vim-commands/
+ gx   Open URL in default browser
+ gt   Next tab
+
+
+
+```
+
 ### Vim scripts
 
 # Reference
