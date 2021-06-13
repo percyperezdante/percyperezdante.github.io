@@ -139,8 +139,7 @@ augroup END
 		browser window.  A horizontal split is used.
 	   O	Obtain a file specified by cursor                    |netrw-O|
 	   p	Preview the file                                     |netrw-p|
-	   P	Browse in the previously used window                 |netrw-P|
-	   qb	List bookmarked directories and history              |netrw-qb|
+	   P	Browse in the previously used window                 |netrw-P| qb	List bookmarked directories and history              |netrw-qb|
 	   qf	Display information on file                          |netrw-qf|
 	   r	Reverse sorting order                                |netrw-r|
 	   R	Rename the designed file(s)/directory(ies)           |netrw-R|
@@ -167,4 +166,6 @@ https://learnvimscriptthehardway.stevelosh.com/
 
 [3] http://vimdoc.sourceforge.net/htmldoc/pi_netrw.html#netrw
 
+
+[4] https://iccf-holland.org/vim_books.html
 
