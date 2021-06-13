@@ -12,20 +12,20 @@
     <title>Vim :: Home</title>
 
     
-    <link href="/css/nucleus.css?1622963516" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1622963516" rel="stylesheet">
-    <link href="/css/hybrid.css?1622963516" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1622963516" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1622963516" rel="stylesheet">
-    <link href="/css/auto-complete.css?1622963516" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1622963516" rel="stylesheet">
-    <link href="/css/theme.css?1622963516" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1622963516" rel="stylesheet">
+    <link href="/css/nucleus.css?1623594277" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1623594277" rel="stylesheet">
+    <link href="/css/hybrid.css?1623594277" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1623594277" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1623594277" rel="stylesheet">
+    <link href="/css/auto-complete.css?1623594277" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1623594277" rel="stylesheet">
+    <link href="/css/theme.css?1623594277" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1623594277" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1622963516" rel="stylesheet">
+      <link href="/css/theme-percy.css?1623594277" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1622963516"></script>
+    <script src="/js/jquery-3.3.1.min.js?1623594277"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1622963516"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1622963516"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1623594277"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1623594277"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1622963516"></script>
+<script type="text/javascript" src="/js/search.js?1623594277"></script>
 
     
   </div>
@@ -1341,6 +1341,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
   <ul>
     <li>
       <ul>
+        <li><a href="#vim">Vim</a></li>
         <li><a href="#vim-with-netwr">Vim with Netwr</a></li>
         <li><a href="#vim-scripts">Vim scripts</a></li>
       </ul>
@@ -1370,7 +1371,86 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
-<h3 id="vim-with-netwr">Vim with Netwr</h3>
+<h3 id="vim">Vim</h3>
+<h4 id="normal-mode">Normal mode</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+Press A   Move to after last character on a line to insert a new character.
+Press a   To insert text just after the cursor
+
+Type  dw  to delete a word.
+Type  d$  to delete to the end of the line.
+
+Type  w   <span style="color:#66d9ef">until</span> the start of the next word, EXCLUDING its first character.
+Type  e   to the end of the current word, INCLUDING the last character.
+Type  $   to the end of the line, INCLUDING the last character.
+
+Type  2w  to move the cursor two words forward.
+Type  3e  to move the cursor to the end of the third word forward.
+Type  <span style="color:#ae81ff">0</span>   <span style="color:#f92672">(</span>zero<span style="color:#f92672">)</span> to move to the start of the line.
+
+Type  d2w to delete the two UPPER CASE words.
+Type  2dd to delete two lines.
+
+Press  u  to undo the last commands
+Press  U  to fix<span style="color:#f92672">(</span>undo<span style="color:#f92672">)</span> a whole line.
+Press Ctrl-R <span style="color:#f92672">(</span>keeping CTRL key pressed <span style="color:#66d9ef">while</span> hitting R<span style="color:#f92672">)</span> to redo the commands <span style="color:#f92672">(</span>undo the undo<span style="color:#e6db74">&#39;s).
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">Type  p   to put/paste previously deleted text after the cursor.
+</span><span style="color:#e6db74">Type  r   to replace the character at the cursor
+</span><span style="color:#e6db74">Type  R   to replace more than one character
+</span><span style="color:#e6db74">Press ce  To change until the end of a word, c=change, e=end
+</span><span style="color:#e6db74">Type  c$  To change until the end of the line
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">##############################################
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">Type  %   to find a matching ),], or }
+</span><span style="color:#e6db74">Type  :s/old/new/g  to substitute &#39;</span>new<span style="color:#e6db74">&#39; for &#39;</span>old<span style="color:#960050;background-color:#1e0010">&#39;</span>
+          To change every occurrence of a character string between two lines,
+               type   :#,#s/old/new/g    where <span style="color:#75715e">#,# are the line numbers of the range</span>
+                                         of lines where the substitution is to be <span style="color:#66d9ef">done</span>.
+               Type   :%s/old/new/g      to change every occurrence in the whole file.
+               Type   :%s/old/new/gc     to find every occurrence in the whole file,
+                                         with a prompt whether to substitute or not.
+
+Type  o       To insert a blank line below, o lower <span style="color:#66d9ef">case</span>
+Type  o       To insert a blank line above, O upper <span style="color:#66d9ef">case</span>
+
+:set ic	      Ignore <span style="color:#66d9ef">case</span> sensitive. <span style="color:#e6db74">&#34;noic&#34;</span> to disable.
+:set hls      Highlight search. <span style="color:#e6db74">&#34;nohls&#34;</span> to disable
+:set is       Increase or progresive search. <span style="color:#e6db74">&#34;nois&#34;</span> to disable
+
+:set nocp     Type :e and press CTRL-d to list all commands that start with <span style="color:#e6db74">&#34;e&#34;</span> 
+              and TAB to <span style="color:#66d9ef">select</span>
+
+<span style="color:#75715e">###############################################</span>
+
+Ctrl-g    Location of the current file
+          Type the number of the line you were on and <span style="color:#66d9ef">then</span>  G .  This will
+          <span style="color:#66d9ef">return</span> you to the line you were on when you first pressed CTRL-G.
+
+/         Search forwards
+?         Search backwards
+
+CTRL-o    <span style="color:#e6db74">&#34;o&#34;</span> lowercase to  go back to where you came from.
+CTRL-I    goes forward
+
+Press v + : w FILENAME   Press v, <span style="color:#66d9ef">select</span> lines, Press :, and type <span style="color:#e6db74">&#34;w test.txt&#34;</span>. This
+                         will save in test.txt the selected lines. Type <span style="color:#e6db74">&#34;w! test.txt&#34;</span>
+                         to overwrite
+
+Type :r FILENAME         It will insert the content of FILENAME in the cursor location
+                         For example type :r !ls to insert existing files
+
+
+<span style="color:#75715e">################################################</span>
+
+        :help w                    
+        :help c_CTRL-D 
+        :help insert-index         
+        :help user-manual   
+        :help vimrc-intro
+
+</code></pre></div><h3 id="vim-with-netwr">Vim with Netwr</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">let g:netrw_banner <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 let g:netrw_liststyle <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
 let g:netrw_browse_split <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
@@ -2264,19 +2344,19 @@ augroup END
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1622963516"></script>
-    <script src="/js/perfect-scrollbar.min.js?1622963516"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1622963516"></script>
-    <script src="/js/jquery.sticky.js?1622963516"></script>
-    <script src="/js/featherlight.min.js?1622963516"></script>
-    <script src="/js/highlight.pack.js?1622963516"></script>
+    <script src="/js/clipboard.min.js?1623594277"></script>
+    <script src="/js/perfect-scrollbar.min.js?1623594277"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1623594277"></script>
+    <script src="/js/jquery.sticky.js?1623594277"></script>
+    <script src="/js/featherlight.min.js?1623594277"></script>
+    <script src="/js/highlight.pack.js?1623594277"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1622963516"></script>
-    <script src="/js/learn.js?1622963516"></script>
-    <script src="/js/hugo-learn.js?1622963516"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1623594277"></script>
+    <script src="/js/learn.js?1623594277"></script>
+    <script src="/js/hugo-learn.js?1623594277"></script>
 
-    <link href="/mermaid/mermaid.css?1622963516" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1622963516"></script>
+    <link href="/mermaid/mermaid.css?1623594277" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1623594277"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
