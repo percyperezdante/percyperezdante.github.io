@@ -186,3 +186,6 @@ https://learnvimscriptthehardway.stevelosh.com/
 [5] https://vonheikemen.github.io/devlog/tools/using-netrw-vim-builtin-file-explorer/
 
 
+Command line inside Vim
+[6] https://unix.stackexchange.com/questions/523090/vim-autostart-with-vexplore-and-terminal
+
