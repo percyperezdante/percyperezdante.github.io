@@ -12,20 +12,20 @@
     <title>Installation :: Home</title>
 
     
-    <link href="/css/nucleus.css?1623600258" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1623600258" rel="stylesheet">
-    <link href="/css/hybrid.css?1623600258" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1623600258" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1623600258" rel="stylesheet">
-    <link href="/css/auto-complete.css?1623600258" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1623600258" rel="stylesheet">
-    <link href="/css/theme.css?1623600258" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1623600258" rel="stylesheet">
+    <link href="/css/nucleus.css?1623652176" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1623652176" rel="stylesheet">
+    <link href="/css/hybrid.css?1623652176" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1623652176" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1623652176" rel="stylesheet">
+    <link href="/css/auto-complete.css?1623652176" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1623652176" rel="stylesheet">
+    <link href="/css/theme.css?1623652176" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1623652176" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1623600258" rel="stylesheet">
+      <link href="/css/theme-percy.css?1623652176" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1623600258"></script>
+    <script src="/js/jquery-3.3.1.min.js?1623652176"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1623600258"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1623600258"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1623652176"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1623652176"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1623600258"></script>
+<script type="text/javascript" src="/js/search.js?1623652176"></script>
 
     
   </div>
@@ -1340,6 +1340,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 <nav id="TableOfContents">
   <ul>
     <li><a href="#a">A</a></li>
+    <li><a href="#d">D</a></li>
     <li><a href="#g">G</a></li>
     <li><a href="#v">V</a></li>
     <li><a href="#z">Z</a></li>
@@ -1370,7 +1371,22 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 <p>This page presents suggestions on how to install tools of interest. It is ordered alphabetically.</p>
 <h2 id="a">A</h2>
-<h2 id="g">G</h2>
+<h2 id="d">D</h2>
+<ul>
+<li><a href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script">Docker</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $  sudo apt-get install <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>       apt-transport-https <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>       ca-certificates <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>       curl <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>       gnupg <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>       lsb-release
+    $  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    $  echo <span style="color:#e6db74">&#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+</span><span style="color:#e6db74">       </span><span style="color:#66d9ef">$(</span>lsb_release -cs<span style="color:#66d9ef">)</span><span style="color:#e6db74"> stable&#34;</span> | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+    $  sudo apt update
+    $  sudo apt-get install docker-ce docker-ce-cli containerd.io
+</code></pre></div><h2 id="g">G</h2>
 <ul>
 <li>
 <p><a href="https://golang.org/doc/install/source">GO</a></p>
@@ -2252,19 +2268,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1623600258"></script>
-    <script src="/js/perfect-scrollbar.min.js?1623600258"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1623600258"></script>
-    <script src="/js/jquery.sticky.js?1623600258"></script>
-    <script src="/js/featherlight.min.js?1623600258"></script>
-    <script src="/js/highlight.pack.js?1623600258"></script>
+    <script src="/js/clipboard.min.js?1623652176"></script>
+    <script src="/js/perfect-scrollbar.min.js?1623652176"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1623652176"></script>
+    <script src="/js/jquery.sticky.js?1623652176"></script>
+    <script src="/js/featherlight.min.js?1623652176"></script>
+    <script src="/js/highlight.pack.js?1623652176"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1623600258"></script>
-    <script src="/js/learn.js?1623600258"></script>
-    <script src="/js/hugo-learn.js?1623600258"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1623652176"></script>
+    <script src="/js/learn.js?1623652176"></script>
+    <script src="/js/hugo-learn.js?1623652176"></script>
 
-    <link href="/mermaid/mermaid.css?1623600258" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1623600258"></script>
+    <link href="/mermaid/mermaid.css?1623652176" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1623652176"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
