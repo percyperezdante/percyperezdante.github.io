@@ -22,7 +22,22 @@ This page presents suggestions on how to install tools of interest. It is ordere
        $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     $  sudo apt update
     $  sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+
+#### CASE 1: If you have permissions errors, such as:
+
+```bash
+docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create: dial unix /va r/run/docker.sock: connect: permission denied.
+```
+
+You could add your $USER as part of the docker group, and re-login or [restart ubuntu](https://linuxhandbook.com/docker-permission-denied/) if need it :( 
+
+```
+    $  sudo usermod -aG docker $USER
+    $  groups
+    $  newgrp docker    # To login as part of docker group and to avoid restart
 ```	
+
 
 ## G
 
