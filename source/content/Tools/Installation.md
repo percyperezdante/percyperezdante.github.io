@@ -75,12 +75,11 @@ You could add your $USER as part of the docker group, and re-login or [restart u
         $ packer --help
 
 ## M
-- [MPS-YOUTUBE](https://github.com/mps-youtube/mps-youtube)
+- [Mps-youtube](https://github.com/mps-youtube/mps-youtube)
 
-	$ git clone https://github.com/mps-youtube/mps-youtube.git
+        $ git clone https://github.com/mps-youtube/mps-youtube.git
         $ vim  ~/.config/mps-youtube/config.json   # Be sure you are using the right API_KEY
         $ ./mpsyt
-
 
 ## R
 - [Ruby](https://www.ruby-lang.org/en/documentation/installation)
