@@ -12,20 +12,20 @@
     <title>Installation :: Home</title>
 
     
-    <link href="/css/nucleus.css?1623653839" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1623653839" rel="stylesheet">
-    <link href="/css/hybrid.css?1623653839" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1623653839" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1623653839" rel="stylesheet">
-    <link href="/css/auto-complete.css?1623653839" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1623653839" rel="stylesheet">
-    <link href="/css/theme.css?1623653839" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1623653839" rel="stylesheet">
+    <link href="/css/nucleus.css?1623942652" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1623942652" rel="stylesheet">
+    <link href="/css/hybrid.css?1623942652" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1623942652" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1623942652" rel="stylesheet">
+    <link href="/css/auto-complete.css?1623942652" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1623942652" rel="stylesheet">
+    <link href="/css/theme.css?1623942652" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1623942652" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1623653839" rel="stylesheet">
+      <link href="/css/theme-percy.css?1623942652" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1623653839"></script>
+    <script src="/js/jquery-3.3.1.min.js?1623942652"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1623653839"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1623653839"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1623942652"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1623942652"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1623653839"></script>
+<script type="text/javascript" src="/js/search.js?1623942652"></script>
 
     
   </div>
@@ -744,6 +744,27 @@ Percy Perez Aruni
  
   
     
+      <li data-nav-id="/notes/ruby/" title="Ruby" class="dd-item ">
+        <a href="/notes/ruby/">
+        Ruby
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/notes/vim/" title="Vim" class="dd-item ">
         <a href="/notes/vim/">
         Vim
@@ -1346,6 +1367,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
       </ul>
     </li>
     <li><a href="#g">G</a></li>
+    <li><a href="#m">M</a></li>
+    <li><a href="#r">R</a></li>
     <li><a href="#v">V</a></li>
     <li><a href="#z">Z</a></li>
   </ul>
@@ -1390,12 +1413,14 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 </span><span style="color:#e6db74">       </span><span style="color:#66d9ef">$(</span>lsb_release -cs<span style="color:#66d9ef">)</span><span style="color:#e6db74"> stable&#34;</span> | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
     $  sudo apt update
     $  sudo apt-get install docker-ce docker-ce-cli containerd.io
+    $  docker run hello-world   <span style="color:#75715e"># For testing</span>
 </code></pre></div><h4 id="case-1-if-you-have-permissions-errors-such-as">CASE 1: If you have permissions errors, such as:</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker: Got permission denied <span style="color:#66d9ef">while</span> trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create: dial unix /va r/run/docker.sock: connect: permission denied.
 </code></pre></div><p>You could add your $USER as part of the docker group, and re-login or <a href="https://linuxhandbook.com/docker-permission-denied/">restart ubuntu</a> if need it :(</p>
 <pre><code>    $  sudo usermod -aG docker $USER
     $  groups
-    $  newgrp docker    # To login as part of docker group and to avoid restart
+    $  newgrp docker    # To login as part of docker group and to avoid restart. Temporal solution.
+    $  docker run hello-world   # For testing
 </code></pre><h2 id="g">G</h2>
 <ul>
 <li>
@@ -1431,6 +1456,23 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
   $ sudo ln -s `pwd`/bin/packer /usr/local/bin/packer  # &lt;-- Optional 
   $ packer --help
 </code></pre>
+</li>
+</ul>
+<h2 id="m">M</h2>
+<ul>
+<li>
+<p><a href="https://github.com/mps-youtube/mps-youtube">MPS-YOUTUBE</a></p>
+<p>$ git clone <a href="https://github.com/mps-youtube/mps-youtube.git">https://github.com/mps-youtube/mps-youtube.git</a>
+$ vim  ~/.config/mps-youtube/config.json   # Be sure you are using the right API_KEY
+$ ./mpsyt</p>
+</li>
+</ul>
+<h2 id="r">R</h2>
+<ul>
+<li>
+<p><a href="https://www.ruby-lang.org/en/documentation/installation">Ruby</a></p>
+<p>$ sudo apt install ruby-full
+$ ruby -v</p>
 </li>
 </ul>
 <h2 id="v">V</h2>
@@ -2052,6 +2094,22 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2278,19 +2336,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1623653839"></script>
-    <script src="/js/perfect-scrollbar.min.js?1623653839"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1623653839"></script>
-    <script src="/js/jquery.sticky.js?1623653839"></script>
-    <script src="/js/featherlight.min.js?1623653839"></script>
-    <script src="/js/highlight.pack.js?1623653839"></script>
+    <script src="/js/clipboard.min.js?1623942652"></script>
+    <script src="/js/perfect-scrollbar.min.js?1623942652"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1623942652"></script>
+    <script src="/js/jquery.sticky.js?1623942652"></script>
+    <script src="/js/featherlight.min.js?1623942652"></script>
+    <script src="/js/highlight.pack.js?1623942652"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1623653839"></script>
-    <script src="/js/learn.js?1623653839"></script>
-    <script src="/js/hugo-learn.js?1623653839"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1623942652"></script>
+    <script src="/js/learn.js?1623942652"></script>
+    <script src="/js/hugo-learn.js?1623942652"></script>
 
-    <link href="/mermaid/mermaid.css?1623653839" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1623653839"></script>
+    <link href="/mermaid/mermaid.css?1623942652" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1623942652"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

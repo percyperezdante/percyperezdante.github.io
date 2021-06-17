@@ -22,6 +22,7 @@ This page presents suggestions on how to install tools of interest. It is ordere
        $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     $  sudo apt update
     $  sudo apt-get install docker-ce docker-ce-cli containerd.io
+    $  docker run hello-world   # For testing
 ```
 
 #### CASE 1: If you have permissions errors, such as:
@@ -35,7 +36,8 @@ You could add your $USER as part of the docker group, and re-login or [restart u
 ```
     $  sudo usermod -aG docker $USER
     $  groups
-    $  newgrp docker    # To login as part of docker group and to avoid restart
+    $  newgrp docker    # To login as part of docker group and to avoid restart. Temporal solution.
+    $  docker run hello-world   # For testing
 ```	
 
 
@@ -71,6 +73,20 @@ You could add your $USER as part of the docker group, and re-login or [restart u
         $ ./bin/packer version
         $ sudo ln -s `pwd`/bin/packer /usr/local/bin/packer  # <-- Optional 
         $ packer --help
+
+## M
+- [MPS-YOUTUBE](https://github.com/mps-youtube/mps-youtube)
+
+	$ git clone https://github.com/mps-youtube/mps-youtube.git
+        $ vim  ~/.config/mps-youtube/config.json   # Be sure you are using the right API_KEY
+        $ ./mpsyt
+
+
+## R
+- [Ruby](https://www.ruby-lang.org/en/documentation/installation)
+
+	$ sudo apt install ruby-full
+	$ ruby -v
 
 ## V
 - [Vi File Manager](https://github.com/vifm/vifm.git)

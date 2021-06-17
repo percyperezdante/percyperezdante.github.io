@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Ruby</title>
+      <link>http://example.org/notes/ruby/</link>
+      <pubDate>Wed, 16 Jun 2021 13:21:19 +0100</pubDate>
+      
+      <guid>http://example.org/notes/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Vim</title>
       <link>http://example.org/notes/vim/</link>
       <pubDate>Sat, 08 May 2021 18:34:11 +0100</pubDate>

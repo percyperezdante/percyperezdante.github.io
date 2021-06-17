@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>SRE MMR Week1 :: Home</title>
+    <title>Ruby :: Home</title>
 
     
     <link href="/css/nucleus.css?1623942652" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/sre/online/sre-mmr-week1/">
+  <body class="" data-url="/notes/ruby/">
     <nav id="sidebar" class="">
 
 
@@ -457,7 +457,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/sre/" title="SRE" class="dd-item 
-        parent
+        
         
         
         ">
@@ -549,7 +549,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/sre/online/" title="Online resources" class="dd-item 
-        parent
+        
         
         
         ">
@@ -659,7 +659,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/sre/online/sre-mmr-week1/" title="SRE MMR Week1" class="dd-item active">
+      <li data-nav-id="/sre/online/sre-mmr-week1/" title="SRE MMR Week1" class="dd-item ">
         <a href="/sre/online/sre-mmr-week1/">
         SRE MMR Week1
         
@@ -718,7 +718,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/notes/" title="Notes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -744,7 +744,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/notes/ruby/" title="Ruby" class="dd-item ">
+      <li data-nav-id="/notes/ruby/" title="Ruby" class="dd-item active">
         <a href="/notes/ruby/">
         Ruby
         
@@ -1345,13 +1345,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            
-            
-          
-          
-            <a href='/'>Home</a> > <a href='/sre/'>SRE</a> > <a href='/sre/online/'>Online resources</a> > SRE MMR Week1
-          
-         
+            <a href='/'>Home</a> > <a href='/notes/'>Notes</a> > Ruby
           
          
           
@@ -1364,40 +1358,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#how-does-sre-differ-from-devops">How does SRE differ from Devops?</a></li>
-        <li><a href="#what-is-cre">What is CRE?</a></li>
-        <li><a href="#how-can-they-help-you-be-more-reliable">How can they help you be more reliable?</a></li>
-        <li><a href="#why-are-slos-important-for-your-organization">Why Are SLOs Important for Your Organization?</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#promises-promises-slos-vs-slas-happiness-test">Promises, Promises. SLOs vs SLAs. Happiness Test.</a></li>
-        <li><a href="#how-do-we-measure-reliability-edge-cases">How Do We Measure Reliability? Edge Cases</a></li>
-        <li><a href="#how-reliable-should-a-service-be-setting-targets-for-reliability-iterate">How Reliable Should a Service Be? Setting Targets for Reliability. Iterate!</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#introduction-1">Introduction</a></li>
-        <li><a href="#when-do-we-need-to-make-a-service-more-reliable-error-budgets">When Do We Need to Make a Service More Reliable? Error Budgets.</a></li>
-        <li><a href="#trading-off-reliability-against-features">Trading off Reliability Against Features</a></li>
-        <li><a href="#how-do-we-make-a-service-more-reliable">How Do We Make a Service More Reliable?</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1413,7 +1374,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
           
             <h1>
               
-              SRE MMR Week1
+              Ruby
             </h1>
           
 
@@ -1421,44 +1382,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
-<h1 id="introduction-to-sre">Introduction to SRE</h1>
-<h3 id="how-does-sre-differ-from-devops">How does SRE differ from Devops?</h3>
-<p>Devops and SRE point to similar goals, which is break down organizational barriers to deliver software features faster.</p>
-<p>Traditionally, developers are responsable for features and operations for stability. Developers want to move faster to release new features and operations want to move slow to keep all service stable. As a commong results, tension between teams appears during realease times. Devops and SRE practices aim to break downs this tensions.</p>
-<p>In general, Devops approach include the following areas:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Reduce</span> <span style="color:#a6e22e">organizational</span> <span style="color:#a6e22e">silos</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Break</span> <span style="color:#a6e22e">down</span> <span style="color:#a6e22e">tension</span> <span style="color:#a6e22e">promotes</span> <span style="color:#a6e22e">collaboration</span> <span style="color:#a6e22e">between</span> <span style="color:#a6e22e">teams</span>.
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Accept</span> <span style="color:#a6e22e">failure</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">normal</span>
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Implement</span> <span style="color:#a6e22e">gradual</span> <span style="color:#a6e22e">change</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Small</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">incremental</span> <span style="color:#a6e22e">changes</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">easy</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">review</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">maintain</span>.
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Leverage</span> <span style="color:#a6e22e">tooling</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">automation</span>
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Measure</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">much</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span> 
-</code></pre></div><p>On the other side, SRE appraoch to same areas are as following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Reduce</span> <span style="color:#a6e22e">organizational</span> <span style="color:#a6e22e">silos</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Operation</span> <span style="color:#a6e22e">responsability</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">release</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">production</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">shared</span> <span style="color:#a6e22e">with</span> <span style="color:#a6e22e">developers</span>.
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Accept</span> <span style="color:#a6e22e">failure</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">normal</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Blameless</span> <span style="color:#a6e22e">postmordem</span>. <span style="color:#a6e22e">Failure</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">expected</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">it</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">hold</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">an</span> <span style="color:#a6e22e">error</span> <span style="color:#a6e22e">budget</span>.
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Implement</span> <span style="color:#a6e22e">gradual</span> <span style="color:#a6e22e">change</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span> <span style="color:#a6e22e">Small</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">incremental</span> <span style="color:#a6e22e">release</span>, <span style="color:#a6e22e">such</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">Canary</span> <span style="color:#a6e22e">releases</span>.
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Leverage</span> <span style="color:#a6e22e">tooling</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">automation</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span>  <span style="color:#a6e22e">Measure</span> <span style="color:#a6e22e">toil</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">automate</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">minimise</span> <span style="color:#a6e22e">manual</span> <span style="color:#a6e22e">intervention</span>.
-    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">Measure</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">much</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">--&gt;</span>  <span style="color:#a6e22e">Measure</span> <span style="color:#a6e22e">toil</span>, <span style="color:#a6e22e">reliability</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">service</span>.
-</code></pre></div><p>Therefore, one initial conclusion is that:</p>
-<blockquote>
-<p><strong>SRE is a concrete class that implements Devops</strong></p>
-</blockquote>
-<h3 id="what-is-cre">What is CRE?</h3>
-<p>It stands for Customer Reliability Engineering and it is focus on breaking down organizational barries between service prodivers and customers.  In this context, failure is pre-accepted as a conditions to enhance future cases, error budget.This pre-condition helps to minimise panic when a down time happens at the service level. Another important criteria is to implement measurements that can offer to everyone, in both sides, visibility of on how the service performs.</p>
-<h3 id="how-can-they-help-you-be-more-reliable">How can they help you be more reliable?</h3>
-<p>In various cases, customers use provider&rsquo;s services, through APIs.  in different ways that are not expected by the service provider, and providers do not like to breaks the customer expectation. This sceneario is easly visible the number of customers scale up.</p>
-<p>CRE helps to providers to openinly communicate with customers. Clear communication of how your service was designed to behave, indirectly means to expose provider&rsquo;s SRE practices, such is their SLOs, to the customers. By teaching or helping the customers to build their own SRE environment, we are teaching them how to interact correctly with our system or platform. Consequently, the real scope and limitations are presented clearly to the customer, which formilise what the customer can expect as a final result.</p>
-<p>In conclusion, by sharing SRE practices with customers, not only new features can be released faster, it also enhance customer satisfactione.</p>
-<h3 id="why-are-slos-important-for-your-organization">Why Are SLOs Important for Your Organization?</h3>
-<p>Building new features quickly leads to a negative correlation between development velocity and system reliability.  This means that development velocity implies the posibility to break another features that can also affect our customers. Therefore, measuring SLOs gives real indications of possibel effects on the expectation of customers when a new feature is released.You can plan proactively by estimating risks to your reliability from the roll-out of new features in terms of time to detection, time to resolution, and impact percentage. Also, if you have enough error budget you can reduce the effort to cover any potential risk.</p>
-<h1 id="targeting-reliability">Targeting Reliability</h1>
-<h3 id="introduction">Introduction</h3>
-<h3 id="promises-promises-slos-vs-slas-happiness-test">Promises, Promises. SLOs vs SLAs. Happiness Test.</h3>
-<h3 id="how-do-we-measure-reliability-edge-cases">How Do We Measure Reliability? Edge Cases</h3>
-<h3 id="how-reliable-should-a-service-be-setting-targets-for-reliability-iterate">How Reliable Should a Service Be? Setting Targets for Reliability. Iterate!</h3>
-<h1 id="operating-for-reliability">Operating for Reliability</h1>
-<h3 id="introduction-1">Introduction</h3>
-<h3 id="when-do-we-need-to-make-a-service-more-reliable-error-budgets">When Do We Need to Make a Service More Reliable? Error Budgets.</h3>
-<h3 id="trading-off-reliability-against-features">Trading off Reliability Against Features</h3>
-<h3 id="how-do-we-make-a-service-more-reliable">How Do We Make a Service More Reliable?</h3>
 
 
 <footer class="footline">
@@ -1727,7 +1650,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                    
                 
                 
 
@@ -1742,74 +1664,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1867,51 +1721,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                     
 
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
                         
             
             
@@ -1924,6 +1733,9 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                     
                     
 
+                    
+            
+        
                     
                         
             
@@ -1945,6 +1757,110 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -2293,10 +2209,10 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 	 
 	 
 		
-			<a class="nav nav-prev" href="/sre/online/sre-mmr-week2/" title="SRE MMR Week2"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/notes/" title="Notes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/sre/references/" title="References" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/notes/vim/" title="Vim" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
