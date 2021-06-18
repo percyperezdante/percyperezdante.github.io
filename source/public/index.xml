@@ -6,10 +6,24 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Jun 2021 13:21:19 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 18 Jun 2021 07:16:14 +0100</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Regex</title>
+      <link>http://example.org/notes/regex/</link>
+      <pubDate>Fri, 18 Jun 2021 07:16:14 +0100</pubDate>
+      
+      <guid>http://example.org/notes/regex/</guid>
+      <description>Control characters Control sequence Examples Metacharacters   [adb]	Search for places where a or b or c exists
+  [^adb]	Search for places where a or b or c DOES NOT exist
+  [a-f]	Search for places where a,b,c,d,e,f exists
+  [A-z]	Search for places where A-Z,a-z,and all ascii codes between Z-a
+  [9-0]	Invalid. [0-9] is valid.
+  [.?] [.+]	Dot plus quantifier = slow</description>
+    </item>
     
     <item>
       <title>Ruby</title>
