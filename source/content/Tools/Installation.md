@@ -87,6 +87,16 @@ You could add your $USER as part of the docker group, and re-login or [restart u
 	$ sudo apt install ruby-full
 	$ ruby -v
 
+- [Ranger](https://github.com/ranger/ranger.git)
+
+```bash	
+	$ git clone https://github.com/ranger/ranger.git 
+	$ mkdir ~/.local/share/ranger
+	$ touch~/.local/share/ranger/tagged
+	$ ./setup.py build
+	$ ./ranger.py
+```
+
 ## V
 - [Vi File Manager](https://github.com/vifm/vifm.git)
 
