@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>References :: Home</title>
+    <title>Cmd :: Home</title>
 
     
     <link href="/css/nucleus.css?1641829891" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/sre/references/">
+  <body class="" data-url="/notes/cmd/">
     <nav id="sidebar" class="">
 
 
@@ -457,7 +457,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/sre/" title="SRE" class="dd-item 
-        parent
+        
         
         
         ">
@@ -689,7 +689,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/sre/references/" title="References" class="dd-item active">
+      <li data-nav-id="/sre/references/" title="References" class="dd-item ">
         <a href="/sre/references/">
         References
         
@@ -718,7 +718,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/notes/" title="Notes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -744,7 +744,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/notes/cmd/" title="Cmd" class="dd-item ">
+      <li data-nav-id="/notes/cmd/" title="Cmd" class="dd-item active">
         <a href="/notes/cmd/">
         Cmd
         
@@ -1408,7 +1408,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            <a href='/'>Home</a> > <a href='/sre/'>SRE</a> > References
+            <a href='/'>Home</a> > <a href='/notes/'>Notes</a> > Cmd
           
          
           
@@ -1425,9 +1425,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
   <ul>
     <li>
       <ul>
-        <li><a href="#books">Books</a></li>
-        <li><a href="#papers">Papers</a></li>
-        <li><a href="#online-resources">Online resources</a></li>
+        <li><a href="#vim">VIM</a></li>
+        <li><a href="#ctags">CTAGS</a></li>
+        <li><a href="#tmux">TMUX</a></li>
+        <li><a href="#5-ssh-agent">5. SSH AGENT</a></li>
+        <li><a href="#iterm2">iTerm2</a></li>
+        <li><a href="#git">GIT</a></li>
+        <li><a href="#source-graph">Source graph</a></li>
+        <li><a href="#net">net</a></li>
+        <li><a href="#vimium">Vimium</a></li>
+        <li><a href="#jq">jq</a></li>
+        <li><a href="#pdb">pdb</a></li>
+        <li><a href="#python">python</a></li>
+        <li><a href="#new-bluetoooh-keyboard">New bluetoooh keyboard</a></li>
       </ul>
     </li>
   </ul>
@@ -1447,7 +1457,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
           
             <h1>
               
-              References
+              Cmd
             </h1>
           
 
@@ -1455,49 +1465,275 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
-<p>This page present a list of references related to SRE.</p>
-<h3 id="books">Books</h3>
-<ol>
-<li>
-<p>Beyer, B., Jones, C., Petoff, J. and Murphy, N.R., 2016. Site Reliability Engineering: How Google Runs Production Systems. &quot; O&rsquo;Reilly Media, Inc.&quot;.</p>
-<ul>
-<li>A online available version can be read from <a href="https://landing.google.com/sre/sre-book/toc/index.html">here.</a></li>
-</ul>
-</li>
-<li>
-<p>Beyer, B., Murphy, N.R., Rensin, D.K., Kawahara, K. and Thorne, S., 2018. The site reliability workbook: Practical ways to implement SRE. &quot; O&rsquo;Reilly Media, Inc.&quot;.</p>
-<ul>
-<li>Online version of this book can be found in <a href="https://landing.google.com/sre/workbook/toc/">here.</a></li>
-</ul>
-</li>
-<li>
-<p>Jennifer P., JC van W.,Preston Y., Jessie Y., Jesus C., and Myk T.,2020. Training Site Reliability Engineers. &ldquo;O&rsquo;Reilly Media, Inc.&quot;.</p>
-<ul>
-<li>Online version available at <a href="https://static.googleusercontent.com/media/landing.google.com/en//sre/static/pdf/training-sre.pdf">here.</a></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="papers">Papers</h3>
-<ol>
-<li>
-<p>Sloss, B.T., Nukala, S. and Rau, V., 2019. Metrics that matter. Communications of the ACM, 62(4), pp.88-88.</p>
-<ul>
-<li>Online read in <a href="https://dl.acm.org/doi/pdf/10.1145/3303874">here.</a></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="online-resources">Online resources</h3>
-<ol>
-<li>
-<p>Unknown author, unkown year, SLO Workshop Google Cloud, <a href="https://www.usenix.org/sites/default/files/conference/protected-files/srecon18emea_slides_fong-jones.pdf">https://www.usenix.org/sites/default/files/conference/protected-files/srecon18emea_slides_fong-jones.pdf</a>.</p>
-</li>
-<li>
-<p>Google Cloud, unkown year, Site Reliability Engineering: Measuring and Managing Reliability, Coursera online courses. <a href="https://www.coursera.org/learn/site-reliability-engineering-slos/home/info">https://www.coursera.org/learn/site-reliability-engineering-slos/home/info</a></p>
-</li>
-</ol>
+<h3 id="vim">VIM</h3>
+<h5 id="0-help">0. Help</h5>
+<pre><code>-  :help ins-completion
+</code></pre><h5 id="1-completion">1. Completion</h5>
+<pre><code>- Ctrl-n          For  anything specified by 'complete'
+- Ctrl-p          For  anything specified by 'complete'
+- Ctrl-x Ctrl-f   To search files paths. Need start with path, eg. / or ./
+</code></pre><pre><code>- From help ins-completion 
+  - 1. Whole lines						|i_CTRL-X_CTRL-L|
+  - 2. keywords in the current file				|i_CTRL-X_CTRL-N|
+  - 3. keywords in 'dictionary'				|i_CTRL-X_CTRL-K|
+  - 4. keywords in 'thesaurus', thesaurus-style		|i_CTRL-X_CTRL-T|
+  - 5. keywords in the current and included files		|i_CTRL-X_CTRL-I|
+  - 6. tags							|i_CTRL-X_CTRL-]|
+  - 7. file names						|i_CTRL-X_CTRL-F|
+  - 8. definitions or macros				        |i_CTRL-X_CTRL-D|
+  - 9. Vim command-line					|i_CTRL-X_CTRL-V|
+  - 10. User defined completion				|i_CTRL-X_CTRL-U|
+  - 11. omni completion					|i_CTRL-X_CTRL-O|
+  - 12. Spelling suggestions				        |i_CTRL-X_s|
+  - 13. keywords in 'complete'				|i_CTRL-N| |i_CTRL-P|
+</code></pre><h5 id="2--cursor">2.  Cursor</h5>
+<pre><code>- Command-/      Find cursor
+- set cursorline
+- highlight  CursorLine ctermbg=None ctermfg=Red
+- set cursorcolumn
+- highlight  CursorColumn  ctermbg=None ctermfg=Red
+- set nocursorline
+- set nocorsorcolumn 
+- let g:netrw_winsize = 15
+</code></pre><h5 id="3-search">3. Search</h5>
+<pre><code>  - :vim /pattern/ file	  Search for a pattern in files, See results with quickfix
+  - :cope[n]              &quot; Open the quickfix window
+  - :ccl[ose]             &quot; Close the quickfix window
+  - :cn[ext]              &quot; Go to the next error
+  - :cp[revious]          &quot; Go to the previous error
+  - :col[der]             &quot; Go to older error list
+  - :cnew[er]             &quot; Go to newer error list
+</code></pre><h5 id="4-text">4. Text</h5>
+<pre><code>  - d-i-&quot;	delete all between &quot;, i=inner
+  - d-i-w	delete Removes the word
+  - d-i-t	delete Removes the tag inside HTML tags
+  - d-i-p	delete the paragraph
+  - d-i-s	delete Removes the sentence
+  - d-i-{	delete Removes all between {
+  - d-i-X	delete Removes all between X charactes, X=' &quot; { } [ ]
+  
+  - c-f-X	Change until you FIND X. Find forward
+  - c-F-X	Change until you FIND X. Find backwards
+  - +	        To copy selected 'v' text to clipbaord
+  - {count} C-G Show full path of the current file, use count=1 as default
+</code></pre><h5 id="5-terminal">5. Terminal</h5>
+<pre><code>  - Ctrl-B : term     Opens a terminal windows horizontal by default
+  - Ctrl-w N          To scroll up and down, copy, etc. Vim style.
+    - Press i or a    To back to the terminal
+</code></pre><h5 id="6-windows">6. Windows</h5>
+<pre><code>  - C-w &gt;	Increase width
+  - C-w &lt;	Reduce width
+</code></pre><h3 id="ctags">CTAGS</h3>
+<h3 id="tmux">TMUX</h3>
+<h5 id="0-help-1">0. Help</h5>
+<pre><code>  - C-b ?	Help short cuts
+  - C-b t 	Show time
+  - C-b w	Choose windows interactively
+  - C-b :new    New session 
+</code></pre><h5 id="1-panes">1. Panes</h5>
+<pre><code>  - C-d		close pane
+  - C-b z	Full screen pane
+  - C-b o	Focus next pane
+  - C-b OPTION+ARROW KEY 	Resize pane
+  - C-b [	Scroll,    press q to leave
+       Function                     vi              emacs
+       --------                     --              -----
+       Half page down               C-d             M-Down
+       Half page up                 C-u             M-Up
+       Next page                    C-f             Page down
+       Previous page                C-b             Page up
+       Scroll down                  C-Down or C-e   C-Down
+       Scroll up                    C-Up or C-y     C-Up
+       Search again                 n               n
+       Search again in reverse      N               N
+       Search backward              ?               C-r
+       Search forward               /               C-s
 
+  - C-b { 	Move pane unti-clockwise
+  - C-b } 	Move pane clockwise
+  - C-b C-o        rotate window ‘up’ (i.e. move all panes)
+  - C-b M-o        rotate window ‘down’
+  - :move-pane -t &lt;session_name&gt;       Move pane to another session
+  - C-b !          move the current pane into a new separate window (‘break pane’)
+  - C-b SPACE	toogle between layouts
+</code></pre><h5 id="2-windows">2. Windows</h5>
+<pre><code>  - C-b c 	Create new windows
+  - C-b p/n	Go previous/next window
+  - C-b #	Go to windows #
+  - C-b ,	Rename your Windows
+  - C-b $	Rename session
+</code></pre><h5 id="3-attachdettach">3. Attach/Dettach</h5>
+<pre><code>  - C-b d	Dettach
+  - tmux ls     List
+  - tmux attach -t #    Attach
+</code></pre><h5 id="4-copy-paste">4. Copy paste</h5>
+<pre><code>  - Add to ~/.tmux.conf.
+
+     bind P paste-buffer
+     bind-key -t vi-copy 'v' begin-selection
+     bind-key -t vi-copy 'y' copy-selection
+     bind-key -t vi-copy 'r' rectangle-toggle
+
+     Note that for a newer tmux version (&gt;2.4), the last three lines should be replaced with:
+
+     bind-key -T copy-mode-vi v send-keys -X begin-selection
+     bind-key -T copy-mode-vi y send-keys -X copy-selection
+     bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
+
+  - Select  'v'
+  - Copy to clipboard: 'y' ( or the default enter key)
+  - Paste: Ctrl+b  P  ( p is upper case ) 
+</code></pre><h3 id="5-ssh-agent">5. SSH AGENT</h3>
+<pre><code>  - Instead of eval $(ssh-agent -s): 
+    ps aux | grep ssh-agent 
+    export SSH_AGENT_ID=2223
+    ssh-add -k ~/.ssh/id_rsa  
+</code></pre><h3 id="iterm2">iTerm2</h3>
+<ul>
+<li><a href="https://gist.github.com/squarism/ae3613daf5c01a98ba3a">https://gist.github.com/squarism/ae3613daf5c01a98ba3a</a></li>
+</ul>
+<h3 id="git">GIT</h3>
+<pre><code>  - PR CREATE:
+    - gh pr list
+    - gh pr create -t &quot;TITLE &quot; -b &quot;Main body comments&quot;
+
+  - PR ADD REVIEWERS:
+    - gh pr list -A percy
+    - gh pr edit 4048 --add-assignee percy # primary reviewer
+    - gh pr edit 4048 --add-reviewer user1,user2,user3
+
+  - PR REVIEW:
+    - gh pr diff 5049
+    - gh pr view 4048 -c
+    - gh pr comment 4048 -b ' Thanks'
+
+  - PR MERGE:  *only your pR*
+    - gh pr merge 4048
+	? What merge method would you like to use?  [Use arrows to move, type to filter]
+	&gt; Create a merge commit
+	  Rebase and merge
+	  Squash and merge
+    - gh pr merge 4048 -m     
+
+  - PR APPROVE:
+    - gh pr list | grep 4078
+    - gh pr view 4078
+    - gh pr diff 4078
+    - gh pr review 4078 --comment -b &quot;LGTM&quot;
+    - gh pr review 4078 --approve 
+
+  - PR CLOSE:
+    - gh pr close {&lt;number&gt; | &lt;url&gt; | &lt;branch&gt;} [flags]
+
+  - PR atlantis
+    - gh pr comment 4097 -b &quot;please apply&quot;
+    - gh pr comment 3234 -b '!merge'      
+
+  - MISC:
+    - Need to find where is StdCmd defined?
+      $ git grep 'class StdCmd'
+     
+    - Need to find what templates use favicon_iurl ?
+      $ git grep favicon_iurl | grep .tmpl
+     
+    - Who touched the file last?
+      $ git log /file/path
+     
+    - Who touched that line last?
+      $ git blame /file/path
+     
+    - Who probably has the most knowledge of that file?
+      $ whotobug -v /file/path
+      $ git who /file/path
+
+  - Reload/re create
+    -$ git fetch  -a
+    -$ git reset --hard
+
+  - List of branches by year
+   - git branch -a --sort=-committerdate --format='%(refname)%09%(committerdate)' | awk '{ print $1,$6}' | grep 2020  | sed 's/refs\/remotes\/origin\///g' | awk '{ print &quot;git push origin --delete &quot;$1}' &gt; 2020.list
+
+</code></pre><h3 id="source-graph">Source graph</h3>
+<pre><code>  - srcGraph login
+  - srcgraph search 'yatiri'
+</code></pre><h3 id="net">net</h3>
+<pre><code>  - dig www.yahoo.com
+</code></pre><h3 id="vimium">Vimium</h3>
+<pre><code>  - Ref:  
+    - https://github.com/philc/vimium/blob/master/README.md
+
+  - Current page:
+    d       scroll down half a page
+    u       scroll up half a page
+    f       open a link in the current tab
+    F       open a link in a new tab
+    r       reload
+    gs      view source
+    yy      copy the current url to the clipboard
+    yf      copy a link url to the clipboard
+    &gt;&gt;      Move tab to the right
+    &lt;&lt;      Move tab to the left
+ 
+  - Navigation
+    o       Open URL, bookmark, or history entry
+    O       Open URL, bookmark, history entry in a new tab
+    b       Open bookmark
+    B       Open bookmark in a new tab
+
+  - Manipulating tabs:
+    t       create tab
+    yt      duplicate current tab
+    x       close current tab
+    X       restore closed tab (i.e. unwind the 'x' command)
+    T       search through your open tabs
+    W       move current tab to new window
+
+  - Marks:
+    ma, mA  set local mark &quot;a&quot; (global mark &quot;A&quot;)
+    `a, `A  jump to local mark &quot;a&quot; (global mark &quot;A&quot;)
+    ``      jump back to the position before the previous jump
+              -- that is, before the previous gg, G, n, N, / or `a
+
+  - Extra:
+    ]], [[  Follow the link labeled 'next' or '&gt;' ('previous' or '&lt;')
+              - helpful for browsing paginated sites
+    gi      focus the first (or n-th) text input box on the page. Use &lt;tab&gt; to cycle through options.
+    gu      go up one level in the URL hierarchy
+    gU      go up to root of the URL hierarchy
+    ge      edit the current URL
+    gE      edit the current URL and open in a new tab
+</code></pre><h3 id="jq">jq</h3>
+<pre><code>  - jq .ResourceRecordSets[0,4]
+  - jq .ResourceRecordSets[0:4]
+  - Getting keys
+    - jq '.ResourceRecordSets[0] | keys'
+  - Getting lenght
+    - jq '.ResourceRecordSets[0] | length'
+  - Select all XTR entries
+    - jq ' .ResourceRecordSets[] | select (.Type == &quot;XTR&quot;)' a
+  - Reg exp, all names that start with 5
+    -  jq ' .ResourceRecordSets[] | select (.Name |test (&quot;^5&quot;))' a
+</code></pre><h3 id="pdb">pdb</h3>
+<pre><code># https://web.stanford.edu/class/physics91si/2013/handouts/Pdb_Commands.pdf
+  - l    		list
+  - b    		list all break points
+  - b 12 		Set break point at line 12
+  - b myFunction	Set breakpoint to the function called myFunction
+  - p(n) 		print the value of variable n 
+  - cl   		clear all breakpoints 
+  - c 			Continue
+  - python -m pdb main.py -s applicationengine --dry-run
+</code></pre><h3 id="python">python</h3>
+<pre><code>  - venv:
+    - python3 -m venv /path/to/new/virtual/environment
+    - source env/bin/activate
+</code></pre><h3 id="new-bluetoooh-keyboard">New bluetoooh keyboard</h3>
+<pre><code>  - #    OPTION + 3
+  - ~    FN+z
+  - |    SHIFT+|
+  - `    CONTROL+OPTION+ESC
+  - screenshot    CMD+SHIFT+4
+</code></pre>
 
 <footer class="footline">
 	
@@ -1765,7 +2001,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                    
                 
                 
 
@@ -1780,9 +2015,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1928,7 +2160,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                    
                 
                 
 
@@ -1948,8 +2179,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1963,6 +2192,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
                     
                 
                 
@@ -1979,6 +2209,9 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2375,10 +2608,10 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 	 
 	 
 		
-			<a class="nav nav-prev" href="/sre/online/sre-mmr-week1/" title="SRE MMR Week1"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/notes/" title="Notes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/notes/" title="Notes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/notes/regex/" title="Regex" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
