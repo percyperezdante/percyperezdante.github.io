@@ -24,6 +24,17 @@ go build -o hugo
 export PATH=$PATH:$HOME/src/hugo
 hugo -h
 
+# Git config
+# https://git-scm.com/docs/git-credential-store
+# git config username
+# git config email
+# Generate a token from github
+#  git config credential.helper store
+
+# Updating website.
+cd source
+sh publushSite.sh
+
 
 
 
