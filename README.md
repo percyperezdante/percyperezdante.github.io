@@ -46,6 +46,14 @@ $ hugo new <SECTION_NAME>/<PAGE_NAME>.md        # <--Add a new page inside secti
 
 When you edit a page remember to remove ```draft:true``` or replace ```true``` by ```false```.
 
+# How to set up environment
+
+```bash
+$ wget  https://github.com/golang/go.git
+
+
+```
+
 
 ### MY QUEUE
 
