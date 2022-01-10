@@ -23,6 +23,7 @@ cd hugo
 go build -o hugo
 export PATH=$PATH:$HOME/src/hugo
 hugo -h
+hugo server -D
 
 # If above doesnot work properly: sudo apt install hugo
 
