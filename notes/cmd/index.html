@@ -12,20 +12,20 @@
     <title>Cmd :: Home</title>
 
     
-    <link href="/css/nucleus.css?1641829891" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641829891" rel="stylesheet">
-    <link href="/css/hybrid.css?1641829891" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641829891" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641829891" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641829891" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641829891" rel="stylesheet">
-    <link href="/css/theme.css?1641829891" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641829891" rel="stylesheet">
+    <link href="/css/nucleus.css?1641833178" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641833178" rel="stylesheet">
+    <link href="/css/hybrid.css?1641833178" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641833178" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641833178" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641833178" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641833178" rel="stylesheet">
+    <link href="/css/theme.css?1641833178" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641833178" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1641829891" rel="stylesheet">
+      <link href="/css/theme-percy.css?1641833178" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641829891"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641833178"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641829891"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641829891"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641833178"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641833178"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641829891"></script>
+<script type="text/javascript" src="/js/search.js?1641833178"></script>
 
     
   </div>
@@ -1440,6 +1440,11 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         <li><a href="#new-bluetoooh-keyboard">New bluetoooh keyboard</a></li>
       </ul>
     </li>
+    <li><a href="#aws">AWS</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -1733,6 +1738,72 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
   - |    SHIFT+|
   - `    CONTROL+OPTION+ESC
   - screenshot    CMD+SHIFT+4
+</code></pre><h2 id="aws">AWS</h2>
+<ul>
+<li>
+<h4 id="documents">Documents</h4>
+</li>
+</ul>
+<pre><code>  - aws ssm list-documents --query 'DocumentIdentifiers[].Owner' | sort | uniq -c
+  - aws ssm get-document --name CustomRunPuppetUpdateCommand
+</code></pre><ul>
+<li>
+<h4 id="r53">R53</h4>
+</li>
+</ul>
+<pre><code>  - Get hosted zones
+    - aws route53 list-hosted-zones   
+    - Get the most used: check the  ID
+      - To sort:  
+        - aws  route53 list-hosted-zones --query 'sort_by(HostedZones[],&amp;ResourceRecordSetCount)[]'
+    - aws route53 get-hosted-zone --id  /hostedzone/Z234asasdf2342S3
+
+  - List of hosted zones
+    - aws route53 list-hosted-zones
+
+  - List all record names in a specific hosted zone id
+    - aws route53 list-resource-record-sets --hosted-zone-id &quot;/hostedzone/asdfasdf&quot;
+
+  - Show specific record name
+    - aws route53 list-resource-record-sets --hosted-zone-id &quot;/hostedzone/fwfwfw&quot; --query &quot;ResourceRecordSets[?Name == '15.1.133.10.in-addr.arpa.']&quot;
+</code></pre><ul>
+<li>
+<h4 id="load-balancers">Load balancers</h4>
+</li>
+</ul>
+<pre><code>  - aws elb describe-load-balancers
+  - aws elb describe-load-balancers --query 'LoadBalancerDescriptions[0].Instances[]'
+  - aws elb describe-load-balancers --query 'LoadBalancerDescriptions[0].ListenerDescriptions'
+</code></pre><ul>
+<li>
+<h4 id="vpc">VPC</h4>
+</li>
+</ul>
+<pre><code>  - aws ec2 describe-vpcs 
+  - Get subnets:
+    - aws ec2 describe-subnets --query 'Subnets[].[CidrBlock,SubnetId]' --output table
+</code></pre><ul>
+<li>
+<h4 id="rds-db">RDS DB</h4>
+</li>
+</ul>
+<pre><code>  - aws rds describe-db-instances | jq '.DBInstances[] | {DBInstanceIdentifier,DBInstanceArn}'
+</code></pre><ul>
+<li>
+<h4 id="ssm">SSM</h4>
+</li>
+</ul>
+<pre><code>  - Show one specific parameter 
+    aws ssm get-parameter --name &quot;/eks-clusters/prometheus-test/secrets/cloudhealth-restful-key&quot; --profile test
+  - List all paremeters 
+    aws ssm describe-parameters
+</code></pre><ul>
+<li>
+<h4 id="s3">S3</h4>
+</li>
+</ul>
+<pre><code>  - List all content including hideen files .dot
+    $ aws s3 ls tf-resource-test/vpc --recursive
 </code></pre>
 
 <footer class="footline">
@@ -2621,19 +2692,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641829891"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641829891"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641829891"></script>
-    <script src="/js/jquery.sticky.js?1641829891"></script>
-    <script src="/js/featherlight.min.js?1641829891"></script>
-    <script src="/js/highlight.pack.js?1641829891"></script>
+    <script src="/js/clipboard.min.js?1641833178"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641833178"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641833178"></script>
+    <script src="/js/jquery.sticky.js?1641833178"></script>
+    <script src="/js/featherlight.min.js?1641833178"></script>
+    <script src="/js/highlight.pack.js?1641833178"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641829891"></script>
-    <script src="/js/learn.js?1641829891"></script>
-    <script src="/js/hugo-learn.js?1641829891"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641833178"></script>
+    <script src="/js/learn.js?1641833178"></script>
+    <script src="/js/hugo-learn.js?1641833178"></script>
 
-    <link href="/mermaid/mermaid.css?1641829891" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1641829891"></script>
+    <link href="/mermaid/mermaid.css?1641833178" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1641833178"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

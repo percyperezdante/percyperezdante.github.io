@@ -339,3 +339,62 @@ date: 2022-01-10T14:30:13Z
   - `    CONTROL+OPTION+ESC
   - screenshot    CMD+SHIFT+4
 ```
+
+## AWS
+- #### Documents
+```
+  - aws ssm list-documents --query 'DocumentIdentifiers[].Owner' | sort | uniq -c
+  - aws ssm get-document --name CustomRunPuppetUpdateCommand
+```
+
+- #### R53 
+```
+  - Get hosted zones
+    - aws route53 list-hosted-zones   
+    - Get the most used: check the  ID
+      - To sort:  
+        - aws  route53 list-hosted-zones --query 'sort_by(HostedZones[],&ResourceRecordSetCount)[]'
+    - aws route53 get-hosted-zone --id  /hostedzone/Z234asasdf2342S3
+
+  - List of hosted zones
+    - aws route53 list-hosted-zones
+
+  - List all record names in a specific hosted zone id
+    - aws route53 list-resource-record-sets --hosted-zone-id "/hostedzone/asdfasdf"
+
+  - Show specific record name
+    - aws route53 list-resource-record-sets --hosted-zone-id "/hostedzone/fwfwfw" --query "ResourceRecordSets[?Name == '15.1.133.10.in-addr.arpa.']"
+```  
+
+- #### Load balancers
+```
+  - aws elb describe-load-balancers
+  - aws elb describe-load-balancers --query 'LoadBalancerDescriptions[0].Instances[]'
+  - aws elb describe-load-balancers --query 'LoadBalancerDescriptions[0].ListenerDescriptions'
+```
+
+- #### VPC
+```
+  - aws ec2 describe-vpcs 
+  - Get subnets:
+    - aws ec2 describe-subnets --query 'Subnets[].[CidrBlock,SubnetId]' --output table
+```
+
+- #### RDS DB
+```
+  - aws rds describe-db-instances | jq '.DBInstances[] | {DBInstanceIdentifier,DBInstanceArn}'
+```
+
+- #### SSM
+```
+  - Show one specific parameter 
+    aws ssm get-parameter --name "/eks-clusters/prometheus-test/secrets/cloudhealth-restful-key" --profile test
+  - List all paremeters 
+    aws ssm describe-parameters
+```
+
+- #### S3
+```
+  - List all content including hideen files .dot
+    $ aws s3 ls tf-resource-test/vpc --recursive
+```
