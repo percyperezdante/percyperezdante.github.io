@@ -24,6 +24,8 @@ go build -o hugo
 export PATH=$PATH:$HOME/src/hugo
 hugo -h
 
+# If above doesnot work properly: sudo apt install hugo
+
 # Git config
 # https://git-scm.com/docs/git-credential-store
 # git config username
