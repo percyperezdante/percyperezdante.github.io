@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>GCP :: Home</title>
+    <title>Terraform :: Home</title>
 
     
     <link href="/css/nucleus.css?1644237053" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/devops/gcp/">
+  <body class="" data-url="/notes/terraform/">
     <nav id="sidebar" class="">
 
 
@@ -107,7 +107,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/devops/" title="DevOps" class="dd-item 
-        parent
+        
         
         
         ">
@@ -136,8 +136,8 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/devops/gcp/" title="GCP" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/devops/gcp/">
@@ -718,7 +718,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/notes/" title="Notes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -744,7 +744,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/notes/terraform/" title="Terraform" class="dd-item ">
+      <li data-nav-id="/notes/terraform/" title="Terraform" class="dd-item active">
         <a href="/notes/terraform/">
         Terraform
         
@@ -1413,6 +1413,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1427,7 +1429,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            <a href='/'>Home</a> > <a href='/devops/'>DevOps</a> > GCP
+            <a href='/'>Home</a> > <a href='/notes/'>Notes</a> > Terraform
           
          
           
@@ -1438,6 +1440,22 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-terraform-plugin-cachehttpswwwterraformiocliconfigconfig-file">1. <a href="https://www.terraform.io/cli/config/config-file">Terraform plugin cache</a></a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#2-terraformtfstate-file">2. terraform.tfstate file</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1445,30 +1463,98 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Terraform
+            </h1>
           
 
         
 
 
 
+<h2 id="1-terraform-plugin-cachehttpswwwterraformiocliconfigconfig-file">1. <a href="https://www.terraform.io/cli/config/config-file">Terraform plugin cache</a></h2>
+<p>By setting this variable, Terraform allows to cache all provider plugins in a local directory. Note that provider plugins could be large. Therefore, if you do not use this feature, terraform will download these provider plugins in all directories or spaces where you call <em>terraform init</em>. This means it will use more disk space, redundancy of plugins,  and potentially slow compare with caching plugins locally.</p>
+<h4 id="how-to-set">How to set:</h4>
+<pre><code>export TF_PLUGIN_CACHE_DIR=&quot;$HOME/.terraform.d/plugin-cache&quot;
+</code></pre><p>Or create a <em>.terraformrc</em> file in your $HOME folder and add the following</p>
+<pre><code>plugin_cache_dir = &quot;$HOME/.terraform.d/plugin-cache&quot;
+</code></pre><h4 id="example">Example</h4>
+<pre><code>percy@BRIX:uswest2-dev[]$ terraform init
+percy@BRIX:uswest2-dev[]$ terraform plan
+percy@BRIX:uswest2-dev[]$ ls -ltra
+total 28
+drwxrwxr-x 3 percy percy 4096 Jan 31 08:17 ..
+-rw-rw-r-- 1 percy percy  151 Feb  7 07:01 provider.tf
+-rw-r--r-- 1 percy percy 1107 Feb  7 10:50 .terraform.lock.hcl
+-rw-rw-r-- 1 percy percy 4032 Feb  7 11:20 terraform.tfstate
+-rw-rw-r-- 1 percy percy  227 Feb  7 11:21 general.tf
+drwxr-xr-x 3 percy percy 4096 Feb  7 11:22 .terraform
+drwxrwxr-x 3 percy percy 4096 Feb  7 11:29 .
+percy@BRIX:uswest2-dev[]$ tree .terraform
+.terraform
+└── providers
+    └── registry.terraform.io
+        └── hashicorp
+            └── aws
+                └── 3.74.0
+                    └── linux_amd64 -&gt; /home/percy/.terraform.d/plugin-cache/registry.terraform.io/hashicorp/aws/3.74.0/linux_amd64
 
-	<h3 id="googgle-cloud-platform-notes">Googgle Cloud Platform Notes.</h3>
-<p>This section contains notes about different GCP topics.</p>
-<h4 id="google-cloud-platform-fundamentals-core-infrastructurefundamentals"><a href="fundamentals/">Google Cloud Platform Fundamentals: Core Infrastructure</a></h4>
+6 directories, 0 files
+percy@BRIX:uswest2-dev[]$ tree ~/.terraform.d/
+checkpoint_cache      checkpoint_signature  plugin-cache/         
+percy@BRIX:uswest2-dev[]$ tree ~/.terraform.d/plugin-cache/
+/home/percy/.terraform.d/plugin-cache/
+└── registry.terraform.io
+    └── hashicorp
+        └── aws
+            └── 3.74.0
+                └── linux_amd64
+                    └── terraform-provider-aws_v3.74.0_x5
+</code></pre><h4 id="note">Note</h4>
+<p>Using the previous example. You could remove the provider.tf ( content below ), the .terraform.lock.hcl and the .terraform. Then, terraform init/plan still works because it is useing the local cache.</p>
+<pre><code>terraform {
+  required_providers {
+    aws = {
+      source  = &quot;hashicorp/aws&quot;
+      version = &quot;~&gt; 3.27&quot;
+    }
+  }
+
+  required_version = &quot;&gt;= 0.14.9&quot;
+}
+</code></pre><h2 id="2-terraformtfstate-file">2. terraform.tfstate file</h2>
+<p>This file is created, by default in the same folder when terraform is invoqued,  when &ldquo;terraform apply&rdquo; is executed. It contains the last uptodate state of the resources in the provider. For example, if you delete this file, terraform concludes that there resource does not exists and will try to create it.</p>
+<p>Another way to create the terraform.tfstate file is to import from the provider. For example in the case of AWS, the following will import the configuration of the instance i-0001 into a state file called aws_instance.app_server, then you can re-use it in your .tf files of your project.</p>
+<pre><code>$ cat general.tf
+provider &quot;aws&quot; {
+  profile = &quot;default&quot;
+  region  = &quot;us-west-2&quot;
+}
+
+resource &quot;aws_instance&quot; &quot;app_server&quot; {
+  ami           = &quot;ami-xxxx&quot;
+  instance_type = &quot;t2.micro&quot;
+
+  tags = {
+    Name = &quot;2-ExampleAppServerInstance&quot;
+  }
+}
 
 
+$ terraform import aws_instance.app_server i-0001
+$ terraform state list
+aws_instance.app_server
 
 
+</code></pre>
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1519,7 +1605,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                    
                 
                 
 
@@ -1535,7 +1620,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                    
                 
                 
 
@@ -1548,9 +1632,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1914,6 +1995,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                    
                 
                 
 
@@ -1926,6 +2008,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
                     
                 
                 
@@ -1942,6 +2025,9 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2354,10 +2440,10 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 	 
 	 
 		
-			<a class="nav nav-prev" href="/devops/" title="DevOps"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/notes/" title="Notes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/devops/gcp/networking/" title="Networking" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/notes/cmd/" title="Cmd" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2387,3 +2473,4 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
   </body>
 </html>
+

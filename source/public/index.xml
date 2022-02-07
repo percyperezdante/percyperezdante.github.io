@@ -6,10 +6,20 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Jan 2022 14:30:13 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Feb 2022 11:44:22 +0000</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Terraform</title>
+      <link>http://example.org/notes/terraform/</link>
+      <pubDate>Mon, 07 Feb 2022 11:44:22 +0000</pubDate>
+      
+      <guid>http://example.org/notes/terraform/</guid>
+      <description>1. Terraform plugin cache By setting this variable, Terraform allows to cache all provider plugins in a local directory. Note that provider plugins could be large. Therefore, if you do not use this feature, terraform will download these provider plugins in all directories or spaces where you call terraform init. This means it will use more disk space, redundancy of plugins, and potentially slow compare with caching plugins locally.
+How to set: export TF_PLUGIN_CACHE_DIR=&amp;quot;$HOME/.</description>
+    </item>
     
     <item>
       <title>Cmd</title>
