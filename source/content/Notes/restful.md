@@ -44,7 +44,40 @@ URI = http://myserver.com/mypath?query=1#document
         ```
         PUT /cats/2
         ```
+    - Content type: Should be able to support multiple formats: JSON, YAML, XML, or any new future format.
+    
+    - Content Type Header: Use this header to communicate what content type you are sending. 
+      - Also you could use the Accept header to see which content type your receiver is expecting.
 
+    - Versioning:
+      - Add version in the URI
+        ```
+        api.domain.com/v2/resource.
+        ```
+      - Add version in the Content-type header
+        ```
+        Content-­‐type:	application/json+v1	
+        ```
+    - Cache: Communicate that the call is cacheable and able to renew it expires.
+      - Cache-control and expere headers:
+        ```
+        Cache-­‐Contro:lpublic,	 max-­‐age=3600	
+        ```
+        Above setting may appear as:
+        ```
+        Cache-Control: public
+        Expires: Mon, 09 February 2015 17:00:00 GMT
+        ```
+      - Also we can send back the cache-control header with no chace and no store.
+        ```
+        Cache-­‐Control:no-­‐cache, no-­‐store	
+        ```
+      - CRUD suggetions:
+        - GET: To get information of a object/item or collection
+        - POST: To create a object or collection
+        - PUT: To override the whole object or collection
+        - PATCH: To override part of the object or collection
+        - OPTIONS: To get the list of available methods  
 
 
 ###  References
@@ -57,3 +90,4 @@ URI = http://myserver.com/mypath?query=1#document
 - [API Blueprint using Markdown](https://apiblueprint.org/)
 - [RAML Restful API Modeling Language using YAML](https://raml.org/)
 - [Calico project for container base networking](https://www.projectcalico.org/)
+- [Undisturbed REST](https://www.amazon.co.uk/Undisturbed-Rest-Designing-Perfect-Paperback/dp/B0160F4LCG)

@@ -12,20 +12,20 @@
     <title>Restful :: Home</title>
 
     
-    <link href="/css/nucleus.css?1644237052" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1644237052" rel="stylesheet">
-    <link href="/css/hybrid.css?1644237052" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1644237052" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1644237052" rel="stylesheet">
-    <link href="/css/auto-complete.css?1644237052" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1644237052" rel="stylesheet">
-    <link href="/css/theme.css?1644237052" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1644237052" rel="stylesheet">
+    <link href="/css/nucleus.css?1645607753" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1645607753" rel="stylesheet">
+    <link href="/css/hybrid.css?1645607753" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1645607753" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1645607753" rel="stylesheet">
+    <link href="/css/auto-complete.css?1645607753" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1645607753" rel="stylesheet">
+    <link href="/css/theme.css?1645607753" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1645607753" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1644237052" rel="stylesheet">
+      <link href="/css/theme-percy.css?1645607753" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1644237052"></script>
+    <script src="/js/jquery-3.3.1.min.js?1645607753"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1644237052"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1644237052"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1645607753"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1645607753"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1644237052"></script>
+<script type="text/javascript" src="/js/search.js?1645607753"></script>
 
     
   </div>
@@ -1515,6 +1515,49 @@ POST /cats/1/feed?food=fish -&gt;Feed cat 1 a fish
 <p>Store: A source repository.</p>
 <pre><code>PUT /cats/2
 </code></pre></li>
+<li>
+<p>Content type: Should be able to support multiple formats: JSON, YAML, XML, or any new future format.</p>
+</li>
+<li>
+<p>Content Type Header: Use this header to communicate what content type you are sending.</p>
+<ul>
+<li>Also you could use the Accept header to see which content type your receiver is expecting.</li>
+</ul>
+</li>
+<li>
+<p>Versioning:</p>
+<ul>
+<li>Add version in the URI
+<pre><code>api.domain.com/v2/resource.
+</code></pre></li>
+<li>Add version in the Content-type header
+<pre><code>Content-­‐type:	application/json+v1	
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p>Cache: Communicate that the call is cacheable and able to renew it expires.</p>
+<ul>
+<li>Cache-control and expere headers:
+<pre><code>Cache-­‐Contro:lpublic,	 max-­‐age=3600	
+</code></pre><p>Above setting may appear as:</p>
+<pre><code>Cache-Control: public
+Expires: Mon, 09 February 2015 17:00:00 GMT
+</code></pre></li>
+<li>Also we can send back the cache-control header with no chace and no store.
+<pre><code>Cache-­‐Control:no-­‐cache, no-­‐store	
+</code></pre></li>
+<li>CRUD suggetions:
+<ul>
+<li>GET: To get information of a object/item or collection</li>
+<li>POST: To create a object or collection</li>
+<li>PUT: To override the whole object or collection</li>
+<li>PATCH: To override part of the object or collection</li>
+<li>OPTIONS: To get the list of available methods</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1528,6 +1571,7 @@ POST /cats/1/feed?food=fish -&gt;Feed cat 1 a fish
 <li><a href="https://apiblueprint.org/">API Blueprint using Markdown</a></li>
 <li><a href="https://raml.org/">RAML Restful API Modeling Language using YAML</a></li>
 <li><a href="https://www.projectcalico.org/">Calico project for container base networking</a></li>
+<li><a href="https://www.amazon.co.uk/Undisturbed-Rest-Designing-Perfect-Paperback/dp/B0160F4LCG">Undisturbed REST</a></li>
 </ul>
 
 
@@ -2436,19 +2480,19 @@ POST /cats/1/feed?food=fish -&gt;Feed cat 1 a fish
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1644237053"></script>
-    <script src="/js/perfect-scrollbar.min.js?1644237053"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1644237053"></script>
-    <script src="/js/jquery.sticky.js?1644237053"></script>
-    <script src="/js/featherlight.min.js?1644237053"></script>
-    <script src="/js/highlight.pack.js?1644237053"></script>
+    <script src="/js/clipboard.min.js?1645607753"></script>
+    <script src="/js/perfect-scrollbar.min.js?1645607753"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1645607753"></script>
+    <script src="/js/jquery.sticky.js?1645607753"></script>
+    <script src="/js/featherlight.min.js?1645607753"></script>
+    <script src="/js/highlight.pack.js?1645607753"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1644237053"></script>
-    <script src="/js/learn.js?1644237053"></script>
-    <script src="/js/hugo-learn.js?1644237053"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1645607753"></script>
+    <script src="/js/learn.js?1645607753"></script>
+    <script src="/js/hugo-learn.js?1645607753"></script>
 
-    <link href="/mermaid/mermaid.css?1644237053" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1644237053"></script>
+    <link href="/mermaid/mermaid.css?1645607753" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1645607753"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
