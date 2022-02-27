@@ -80,6 +80,15 @@ URI = http://myserver.com/mypath?query=1#document
         - OPTIONS: To get the list of available methods  
 
 
+### General HTTP notes
+
+#### 1 Concepts
+  - URL format
+    ```
+    scheme://user:password@host:port/path?key1=value1&key2=value2#table_of_contents
+    Where key,value pairs = query
+          #  = fragment = subsection of the resource
+    ```
 ###  References
 
 - [RFC 7231: Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content](https://tools.ietf.org/pdf/rfc7231.pdf)
