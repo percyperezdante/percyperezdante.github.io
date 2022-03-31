@@ -100,3 +100,5 @@ URI = http://myserver.com/mypath?query=1#document
 - [RAML Restful API Modeling Language using YAML](https://raml.org/)
 - [Calico project for container base networking](https://www.projectcalico.org/)
 - [Undisturbed REST](https://www.amazon.co.uk/Undisturbed-Rest-Designing-Perfect-Paperback/dp/B0160F4LCG)
+- [IANA](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
+- [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6)

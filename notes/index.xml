@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Puppet</title>
+      <link>http://example.org/notes/puppet/</link>
+      <pubDate>Mon, 28 Mar 2022 19:56:04 +0100</pubDate>
+      
+      <guid>http://example.org/notes/puppet/</guid>
+      <description>1. Genereal  Common commands  $ puppet help $ puppet apply path/file.pp $ puppet resource mailalias postmaster $ facter $ facter | grep version $ facter | grep mb $ facter | grep free $ puppet facts $ puppet facts find $ puppet facts --render-as yaml $ facter --yaml $ puppet facts --render-as json $ facter --json $ puppet module search apache  Variables Start with $, must start with lowercase or underscore, and it only can contain numbers, letter and underscore.</description>
+    </item>
+    
+    <item>
       <title>Terraform</title>
       <link>http://example.org/notes/terraform/</link>
       <pubDate>Mon, 07 Feb 2022 11:44:22 +0000</pubDate>
