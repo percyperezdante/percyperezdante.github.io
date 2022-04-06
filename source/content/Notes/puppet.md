@@ -102,6 +102,16 @@ file { 'testfile':
 }
 ```
 
+### Testing
+- General
+  - Test files usually end in <soemthing>_myvarspec.rb. Underscore_
+  - Tests should be placed inside spec/classes
+  - Definte type test should go inside spec/defines
+  - Hosts tests should go inside spec/hosts
+  - Function tests should go inside spec/functions
+
+
+
 #### References
 -[Puppet Resource Types](https://puppet.com/docs/puppet/7/resource_types.html)
 -[Puppet Forge catalogue of modules](https://forge.puppet.com/)

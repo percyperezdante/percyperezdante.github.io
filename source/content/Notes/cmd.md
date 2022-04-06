@@ -177,6 +177,9 @@ date: 2022-01-10T14:30:13Z
 
 ### GIT
 ```
+  - PR SEARCH
+    - gh pr list -s "Open" -A "testusername"
+
   - PR CREATE:
     - gh pr list
     - gh pr create -t "TITLE " -b "Main body comments"
