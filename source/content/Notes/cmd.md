@@ -401,3 +401,8 @@ date: 2022-01-10T14:30:13Z
   - List all content including hideen files .dot
     $ aws s3 ls tf-resource-test/vpc --recursive
 ```
+ 
+- #### Instance profile
+```
+  - aws iam list-intance-profiles --profile=prod
+```
