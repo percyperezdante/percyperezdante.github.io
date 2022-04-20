@@ -6,10 +6,20 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Mar 2022 19:56:04 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 20 Apr 2022 05:55:42 +0100</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ad</title>
+      <link>http://example.org/notes/ad/</link>
+      <pubDate>Wed, 20 Apr 2022 05:55:42 +0100</pubDate>
+      
+      <guid>http://example.org/notes/ad/</guid>
+      <description>General   The Active Directory logical structure contains two types of objects. Objects can be either container objects or leaf objects. Container objects can be associated with other objects in the logical structure. Leaf objects are the smallest components in the logical structure. They will not have any other child objects associated
+  The first domain will become the forest root domain. A domain tree contains its own root domain.</description>
+    </item>
     
     <item>
       <title>Puppet</title>
