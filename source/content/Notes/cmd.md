@@ -335,6 +335,8 @@ date: 2022-01-10T14:30:13Z
 
   - Virtualenv
     - virtualenv -p python3 nameOfEnv
+    - pip install -r requirements.txt
+    - deactivate
 ```
 
 ### New bluetoooh keyboard
