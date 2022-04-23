@@ -332,6 +332,9 @@ date: 2022-01-10T14:30:13Z
   - venv:
     - python3 -m venv /path/to/new/virtual/environment
     - source env/bin/activate
+
+  - Virtualenv
+    - virtualenv -p python3 nameOfEnv
 ```
 
 ### New bluetoooh keyboard
