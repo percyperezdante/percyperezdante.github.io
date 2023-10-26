@@ -17,8 +17,8 @@
       <pubDate>Wed, 25 Oct 2023 14:32:45 +0000</pubDate>
       
       <guid>http://example.org/notes/git/</guid>
-      <description>1. Git basics
-# To list all commits git log --oneline # To show the changes of one specific commit git show &amp;lt;HASH_ID&amp;gt; git show &amp;lt;HASH_ID&amp;gt; --name-status # To update a branch from remote master git checkout master git pull git checkout mybranch git merge master # This will update your branch from remote master </description>
+      <description>2. Git authentication
+# Generate keys in your local. ssh-keygen -t ed25519 -C &amp;#34;myemail@tmail.com&amp;#34; # Above will generate below two files. Move them to .ssh/ $ ls -ltr .ssh/ total 24 -rw------- 1 ubuntu ubuntu 392 Oct 25 10:33 authorized_keys -rw-r--r-- 1 ubuntu ubuntu 107 Oct 26 10:52 githubkey.pub # create the following entry in .ssh/config $ cat .ssh/config Host github.com IdentityFile ~/.ssh/githubkey # Be sure your repo is using ssh to fetch your repo( git@github.</description>
     </item>
     
     <item>
