@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Git</title>
+      <link>http://example.org/notes/git/</link>
+      <pubDate>Wed, 25 Oct 2023 14:32:45 +0000</pubDate>
+      
+      <guid>http://example.org/notes/git/</guid>
+      <description>1. Git basics
+# To list all commits git log --oneline # To show the changes of one specific commit git show &amp;lt;HASH_ID&amp;gt; git show &amp;lt;HASH_ID&amp;gt; --name-status # To update a branch from remote master git checkout master git pull git checkout mybranch git merge master # This will update your branch from remote master </description>
+    </item>
+    
+    <item>
       <title>Ad</title>
       <link>http://example.org/notes/ad/</link>
       <pubDate>Wed, 20 Apr 2022 05:55:42 +0100</pubDate>

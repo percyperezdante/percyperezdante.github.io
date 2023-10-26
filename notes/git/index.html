@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>CoreServices :: Home</title>
+    <title>Git :: Home</title>
 
     
     <link href="/css/nucleus.css?1698317063" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/devops/aws/cloudpractitioner/coreservices/">
+  <body class="" data-url="/notes/git/">
     <nav id="sidebar" class="">
 
 
@@ -107,7 +107,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/devops/" title="DevOps" class="dd-item 
-        parent
+        
         
         
         ">
@@ -214,7 +214,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/devops/aws/" title="AWS" class="dd-item 
-        parent
+        
         
         
         ">
@@ -243,7 +243,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/devops/aws/cloudpractitioner/" title="CloudPractitioner" class="dd-item 
-        parent
+        
         
         
         ">
@@ -269,7 +269,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/devops/aws/cloudpractitioner/coreservices/" title="CoreServices" class="dd-item active">
+      <li data-nav-id="/devops/aws/cloudpractitioner/coreservices/" title="CoreServices" class="dd-item ">
         <a href="/devops/aws/cloudpractitioner/coreservices/">
         CoreServices
         
@@ -718,7 +718,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/notes/" title="Notes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -744,7 +744,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/notes/git/" title="Git" class="dd-item ">
+      <li data-nav-id="/notes/git/" title="Git" class="dd-item active">
         <a href="/notes/git/">
         Git
         
@@ -1492,19 +1492,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='/'>Home</a> > <a href='/devops/'>DevOps</a> > <a href='/devops/aws/'>AWS</a> > <a href='/devops/aws/cloudpractitioner/'>CloudPractitioner</a> > CoreServices
-          
-         
-          
-         
+            <a href='/'>Home</a> > <a href='/notes/'>Notes</a> > Git
           
          
           
@@ -1517,57 +1505,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#aws-console">AWS console</a></li>
-        <li><a href="#aws-cli">AWS CLI</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#ec2">EC2</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#to-terminate-ec2">to terminate EC2</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#to-launch">To launch</a></li>
-        <li><a href="#to-delete-ebs">To delete ebs</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#scaling-on-amazon-ec2">Scaling on Amazon EC2</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#amazon-s3">Amazon S3</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1583,7 +1521,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
           
             <h1>
               
-              CoreServices
+              Git
             </h1>
           
 
@@ -1591,408 +1529,20 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
-<h1 id="methods-to-interact-to-aws">Methods to interact to AWS</h1>
-<ul>
-<li>
-<p>AWS console</p>
-<ul>
-<li>Includes Mobule app</li>
-<li>Good for testing services or simple tests</li>
-</ul>
-</li>
-<li>
-<p>AWS CLI</p>
-<ul>
-<li>Includes: Java, .net, Node.js, JS, PHP, Python, Ruby, Go, C++</li>
-<li>automation</li>
-</ul>
-</li>
-<li>
-<p>AWS SDK</p>
-<ul>
-<li>automation</li>
-<li>use it when you want to integreat to your app</li>
-</ul>
-</li>
-</ul>
-<h3 id="aws-console">AWS console</h3>
-<ul>
-<li>
-<p>Two types of user: ROOT USRE and IAM user.</p>
-<ul>
-<li>Root has unlimited permissions</li>
-<li>IAM has limited permission</li>
-</ul>
-</li>
-<li>
-<p>Multifactor authenticatoin</p>
-</li>
-<li>
-<p>User infromation:</p>
-<ul>
-<li>My account</li>
-<li>MY org</li>
-<li>My services quota</li>
-<li>My billing dahsboard</li>
-<li>User infromation:
-<ul>
-<li>My account</li>
-<li>MY org</li>
-<li>My services quota</li>
-<li>My billing dahsboar</li>
-<li>Order and invoices</li>
-<li>Security credentials  &lt;=== Set password, and multifactor authentication, access keys</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>AWS region:</p>
-<ul>
-<li>you can select the one you need</li>
-</ul>
-</li>
-<li>
-<p>Services:</p>
-<ul>
-<li>all service by category</li>
-<li>Route 53 is set as &ldquo;GLOBAL&rdquo; for region</li>
-</ul>
-</li>
-</ul>
-<h3 id="aws-cli">AWS CLI</h3>
-<ul>
-<li>Get a key:
-<ul>
-<li>GO to my account -&gt; Your security credentials -&gt; Select Access keys -&gt;  Create new access key
-<ul>
-<li>This will generate a:
-<ul>
-<li>Access key ID</li>
-<li>Secret access key</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>DO NOT</strong> generate ROOT access key</li>
-<li>How to use this credentials
-<pre><code>$ aws --version
+<p><strong>1. Git basics</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># To list all commits</span>
+git log  --oneline
 
-# To config credentials
-$ aws configure --profile myteste
-    AWS access key ID: xxxxddd
-    AWS secret access key; xxxxxx
-    Default region: us-east-1
-    Default output: json
+<span style="color:#75715e"># To show the changes of one specific commit</span>
+git show &lt;HASH_ID&gt;
+git show &lt;HASH_ID&gt; --name-status   
 
-# Now you can execute aws commands
-$ aws s3 ls --profile myteste
-
-</code></pre></li>
-</ul>
-</li>
-</ul>
-<h1 id="computer-services">Computer services</h1>
-<ul>
-<li>EC2</li>
-<li>Elastick beantalk</li>
-<li>Lambda</li>
-</ul>
-<h3 id="ec2">EC2</h3>
-<ul>
-<li>
-<p>EC2 is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale computing easier for developer</p>
-</li>
-<li>
-<p>When to use:</p>
-<ul>
-<li>Web server</li>
-<li>Batch processing</li>
-<li>API server: web server</li>
-<li>Desktop in the cloud</li>
-</ul>
-</li>
-<li>
-<p>Main concetps for EC2:</p>
-<ul>
-<li>
-<p>Instance types</p>
-<ul>
-<li>Defines the processor, memory and storage type</li>
-<li>Cannot change without downtime</li>
-<li>There are different categories:
-<ul>
-<li>General purposes</li>
-<li>Compute, memory and storage optimized</li>
-<li>accelerated computing, e.g. Machine Learning, access to GPU</li>
-</ul>
-</li>
-<li>Prices are based on instance type
-<ul>
-<li>The more resources you use, the more you pay</li>
-</ul>
-</li>
-</ul>
-<p><img src="/devops/aws/cloudpractitioner/ec2instancepricetype.png?width=50pc" alt="EC2 instance price"></p>
-<ul>
-<li>
-<p>Root device type</p>
-<ul>
-<li>Two types:
-<ul>
-<li>Instance store: <strong>ephemeral</strong> sotrage that is physically attached to the host the VM you are running on
-<ul>
-<li>Data in Ephemeral instance just dessapear when you shutdown the EC2 instance</li>
-</ul>
-</li>
-<li>Elastic Block Store (EBS): <strong>Persistent</strong> storage that exists separately from the host the VM you are running on
-<ul>
-<li>Data in persistance, so data will <strong>NOT</strong> dessapear when you shutdown the EC2 instance</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Usually you may use EBS.</li>
-</ul>
-</li>
-<li>
-<p>Amazon Machine Image AMI</p>
-<ul>
-<li>Template for an EC2 instance including config, OS, and data</li>
-<li>AMI can be shared across accounts</li>
-<li>You can custom your AMI</li>
-<li>There are  comercial AIM&rsquo;s available in the AWS marketplace</li>
-</ul>
-</li>
-<li>
-<p>Purchase options/types</p>
-<ul>
-<li>
-<p>On demand</p>
-<ul>
-<li>Pay by the second for the instance you lunched</li>
-<li>If you have inconsistent need for instances that can not be stoped without affecting the job</li>
-</ul>
-</li>
-<li>
-<p>Reserved</p>
-<ul>
-<li>Purchase a discount instance in advance for 1-3 years</li>
-<li>Use reserve instance if your instance requires to be consistent and always needed
-<img src="/devops/aws/cloudpractitioner/reservedcostmodel.png?width=50pc" alt="EC2 instance price">
-<img src="/devops/aws/cloudpractitioner/reserveinstancepricingexample.png?width=50pc" alt="Resernve pricing"></li>
-</ul>
-</li>
-<li>
-<p>Spot</p>
-<ul>
-<li>You can leaverage unused EC2 capacity in a region for a large discount</li>
-<li>If you have batch processing when process can start/stop without affecting the job
-<img src="/devops/aws/cloudpractitioner/spotinstances.png?width=50pc" alt="Spot instances">
-<img src="/devops/aws/cloudpractitioner/spotinstancepricingexample.png?width=50pc" alt="Spot pricing"></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="launching-ec2-instances">Launching EC2 instances</h1>
-<pre><code>- Go to console.aws.amazon.com and search for EC2
-- Select for &quot;launch instance&quot;
-- Select an image of your preference: AWS marketplace, community, your AMIs
-- Select instance type of your preference:
-    - NOTE `12.micro is FREE tiere elegible`
-- Click on `Configure instance details` and you can select the paramteres you need
-    - You can also `enable` the `auto asign public ip`
-- In the section `advance details-&gt; user data`, you can copy the shell command to run in the new EC2 instance.
-    - in the user data you can add shell comamnds such as:
-        ```
-            yum install httpd -y
-            service httpd start
-        ```
-- You can add a tag which is a {ID:value}
-- Configure the security group
-    - For http you need to include SSH from your IP , and HTTP for everyone(0.0.0.0/0)
-
-- Review it and then launch it
-- YOu need to use a ssh key pair: public and private keys to ssh the EC2 instance
-</code></pre>
-<h3 id="to-terminate-ec2">to terminate EC2</h3>
-<pre><code>- Select the EC2 instance 
-- Click Actions and then select instance state and then terminate
-</code></pre>
-<h1 id="ebs-elastic-beanstalk">EBS Elastic Beanstalk</h1>
-<pre><code>- Support specific set of tech
-        ![EBs general elastic beanstalk](/devops/aws/cloudpractitioner/ebsgeneral.png?width=50pc)
-- Feautures:
-    - Monitoring
-    - Deployment
-    - Scaling
-    - EC2 customization
-- When to use:
-        ![EBs use case](/devops/aws/cloudpractitioner/ebsusecases.png?width=50pc)
-</code></pre>
-<h1 id="how-to-laucnh-ebs">How to laucnh EBS</h1>
-<h3 id="to-launch">To launch</h3>
-<pre><code>- Visit the developer page for EBS and select the correct package you want to use
-- Donwload the package
-- Go to EBS console
-- Click get started
-- Type application name
-- Choose the platform 
-- You can upload your code 
-- click Create App
-</code></pre>
-<h3 id="to-delete-ebs">To delete ebs</h3>
-<pre><code>- In the console
-- Click in Actions
-- Select : Termiante environment
-- Enter the name of the app
-- Hit terminate
-</code></pre>
-<h1 id="lambda">Lambda</h1>
-<blockquote>
-<p>Lambda lets you run code without provisioning or manging servers. You pay only for the compute
-time you consume. You can run code for virtually any type of app or backend service - all with  zero admin</p>
-</blockquote>
-<p>In general the main feature of Lambda are:
-<img src="/devops/aws/cloudpractitioner/lambdageneral.png?width=50pc" alt="Lambda general"></p>
-<ul>
-<li>Advantages:
-<ul>
-<li>Reduce maintenance requirements</li>
-<li>Enables fault tolerance</li>
-<li>Scales based on demand</li>
-<li>Pricing is based on usage</li>
-</ul>
-</li>
-</ul>
-<h1 id="scenarios">Scenarios</h1>
-<ul>
-<li>
-<p>Case 1: One workload will leaverage at least for 5 years.</p>
-<ul>
-<li>It could use a all upfront reserved - 3 years</li>
-</ul>
-</li>
-<li>
-<p>Case 2: Developer who does not know about infrastrcuture</p>
-<ul>
-<li>Then EBS could be one option</li>
-</ul>
-</li>
-<li>
-<p>Case 3:  If any workload can be stop and start at anytime</p>
-<ul>
-<li>The best option is SPOT, not reserved</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="virtual-private-cloud-vpc">Virtual Private Cloud VPC</h1>
-<blockquote>
-<p>VPC is a logically isolated section fothe AWS cloud where you can launch AWS resources in a virtual network that you define</p>
-</blockquote>
-<ul>
-<li>It is a virtual network that you define and you can configure</li>
-<li>Support IPV4, IPV6</li>
-<li>You can configure:
-<ul>
-<li>Ip address range</li>
-<li>subnets</li>
-<li>Route tables</li>
-<li>Network gateway</li>
-</ul>
-</li>
-<li>VPC support public and private subnets</li>
-<li>You can use NAT for private subnets</li>
-<li>Enables a connection to your data center</li>
-<li>You can connect VPC each other</li>
-<li>Support private connections to many AWS services</li>
-</ul>
-<h1 id="aws-direct-connect">AWS direct connect</h1>
-<blockquote>
-<p>It is a cloud service solution that makes it easy to establicsk a dedicated network connection from yur data center to AWS.</p>
-</blockquote>
-<h1 id="route-53">Route 53</h1>
-<ul>
-<li>It is Domain Name Service</li>
-<li>It is global AWs service, not regional</li>
-<li>It is highly available</li>
-<li>Enables global resource routing</li>
-<li>Changes are not instantaneous, it requires a couple of hours to be propagated across the world</li>
-</ul>
-<h1 id="elastic-load-balancer">Elastic load balancer</h1>
-<blockquote>
-<p>Elasticity is the ability for the infrastcuture, supporting an app, to grow and contract based on how much it is used at a point in time</p>
-</blockquote>
-<ul>
-<li>Distribute traffic across multiple targets</li>
-<li>Integrates with EC2, ECS and Lambda</li>
-<li>Support one or more Avaialble Zones in a region</li>
-<li>Three types of load balancer:
-<ul>
-<li>Application load balancers ( ALB)</li>
-<li>Network load balancers ( NLB)</li>
-<li>Classic load balancers</li>
-</ul>
-</li>
-</ul>
-<h3 id="scaling-on-amazon-ec2">Scaling on Amazon EC2</h3>
-<ul>
-<li>Vertical scaling, scale up
-<ul>
-<li>You enhance your existing instance to a larger instance with additional resources such as more RAM, more CPUs</li>
-</ul>
-</li>
-<li>Horizontal scaling, scale out
-<ul>
-<li>Add new instances to handle the demand of you application</li>
-</ul>
-</li>
-</ul>
-<h1 id="cloudfront">CloudFront</h1>
-<ul>
-<li>It is a service that allows you CDN</li>
-<li>Your users get content from servers closer to them, which increase performance</li>
-<li>Support static and dynamic content</li>
-<li>It also utilizes the AWS edge location</li>
-<li>Includes security features:
-<ul>
-<li>AWS shield for DDoS</li>
-<li>AWS WAF, Web application firewall</li>
-</ul>
-</li>
-</ul>
-<h1 id="api-gateway">Api gateway</h1>
-<ul>
-<li>Fully managed API management service. You provide webservices that other app can call and you can distribute them through CLoudFront</li>
-<li>Provides monitoring and metrics on API calls</li>
-<li>Support integration with VPC and on-premise  private applications</li>
-</ul>
-<h1 id="scenarions">Scenarions</h1>
-<ul>
-<li>Case 1: If you want your data center to work alongside AWS for specific workload.
-<ul>
-<li>Use Amazon direct connect</li>
-</ul>
-</li>
-<li>Case 2: If you want to optimize performance around the world and leverage CDN?
-<ul>
-<li>Use Amazon Cloud front</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="file-storage-services">File Storage Services</h1>
-<h3 id="amazon-s3">Amazon S3</h3>
-<p>Main features
-<img src="/devops/aws/cloudpractitioner/s3general.png?width=50pc" alt="S3">
-<img src="/devops/aws/cloudpractitioner/s3nonarchival.png?width=50pc" alt="S3 non archival"></p>
-
+<span style="color:#75715e"># To update a branch from remote master</span>
+git checkout master
+git pull
+git checkout mybranch
+git merge master   <span style="color:#75715e"># This will update your branch from remote master</span>
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -2048,7 +1598,6 @@ time you consume. You can run code for virtually any type of app or backend serv
             
                 
                     
-                    
                 
                 
 
@@ -2063,9 +1612,6 @@ time you consume. You can run code for virtually any type of app or backend serv
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2115,7 +1661,6 @@ time you consume. You can run code for virtually any type of app or backend serv
             
                 
                     
-                    
                 
                 
 
@@ -2131,7 +1676,6 @@ time you consume. You can run code for virtually any type of app or backend serv
             
                 
                     
-                    
                 
                 
 
@@ -2144,7 +1688,6 @@ time you consume. You can run code for virtually any type of app or backend serv
             
             
                 
-                    
                     
                 
                 
@@ -2161,9 +1704,6 @@ time you consume. You can run code for virtually any type of app or backend serv
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2448,6 +1988,7 @@ time you consume. You can run code for virtually any type of app or backend serv
             
                 
                     
+                    
                 
                 
 
@@ -2460,6 +2001,7 @@ time you consume. You can run code for virtually any type of app or backend serv
             
             
                 
+                    
                     
                 
                 
@@ -2476,6 +2018,9 @@ time you consume. You can run code for virtually any type of app or backend serv
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2936,10 +2481,10 @@ time you consume. You can run code for virtually any type of app or backend serv
 	 
 	 
 		
-			<a class="nav nav-prev" href="/devops/aws/cloudpractitioner/" title="CloudPractitioner"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/notes/" title="Notes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/devops/aws/cloudpractitioner/fundamentals/" title="Fundamentals" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/notes/ad/" title="Ad" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
