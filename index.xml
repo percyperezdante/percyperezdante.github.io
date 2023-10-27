@@ -6,10 +6,19 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Oct 2023 14:32:45 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Oct 2023 11:59:43 +0000</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tmux</title>
+      <link>http://example.org/notes/tmux/</link>
+      <pubDate>Fri, 27 Oct 2023 11:59:43 +0000</pubDate>
+      
+      <guid>http://example.org/notes/tmux/</guid>
+      <description>General hints Ctrl B + one of the following keys: . Move current window / Describe key binding. Get more info about a key binding ;	Move previous active window in a pane =	Choose a paste bufffer from a list C	Upper case C. Custome options and get information about key binding [	Enter copy mode ] Paste most recent past buffer l	Letter l lowercase, select previous window {	Swap pane above }	Swap pane below M-o	Rotate E	Resize windwos to same size vi	Select all between specific char, i.</description>
+    </item>
     
     <item>
       <title>Git</title>
