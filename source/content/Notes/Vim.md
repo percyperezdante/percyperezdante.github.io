@@ -15,25 +15,36 @@ Type  dw  to delete a word.
 Type  d$  to delete to the end of the line.
 
 Type  w   until the start of the next word, EXCLUDING its first character.
+Type  wy  Copy to buffer one word next to the cursor. You can paste it with p
+Type  b   until start to the PREIVOUS word
 Type  e   to the end of the current word, INCLUDING the last character.
 Type  $   to the end of the line, INCLUDING the last character.
+Type  X   uppper case X to delete the previous char
 
 Type  2w  to move the cursor two words forward.
 Type  3e  to move the cursor to the end of the third word forward.
+Type  2yy Copy to buffer next two lines. Paste them with p
 Type  0   (zero) to move to the start of the line.
+Type  ^   To go at the beginning of a line
+Type  4   To go at the end of a line
 
-Type  d2w to delete the two UPPER CASE words.
-Type  2dd to delete two lines.
+Type  d2w to delete the two next words.
+Type  d2b to delete the two previous words.
+Type  d0  to delete all from current possiont to the beginning of the line
+Type  2dd to delete two lines
+Type  2dw3w  To delete two next words and move cursor three words forward
 
 Press  u  to undo the last commands
 Press  U  to fix(undo) a whole line.
 Press Ctrl-R (keeping CTRL key pressed while hitting R) to redo the commands (undo the undo's).
 
-Type  p   to put/paste previously deleted text after the cursor.
+Type  p   LOWER CASE to put/paste previously deleted text after the cursor.
+Type  P   UPPER CASE to put/paste previously deleted text BEFORE the cursor.
 Type  r   to replace the character at the cursor
 Type  R   to replace more than one character
 Press ce  To change until the end of a word, c=change, e=end
 Type  c$  To change until the end of the line
+Type  z+enter	Keeps your cursor in the current possition and moves the rest of the text up to the screen
 
 ##############################################
 
@@ -87,6 +98,19 @@ Type :r FILENAME         It will insert the content of FILENAME in the cursor lo
 	:help windows
 
 ```
+### Vim help
+```
+:h    			Short for :help
+:h :d + Ctrl D		Autocompletion for everything staring with :d, d could be different letter
+   			Ctrl+D matches the patterns that starts with :d or anything the user is looking for
+:h :d + TAB		Will autocomplete with the next available match. TAB again to get the next match
+:h :d + SHIFT+TAB	Will autocomplete with the PREVIOUS available match. 
+Ctrl ]			To get into the link of the documentation  where the cursor is
+Ctrl o			TO jump to the previous link
+Ctrl i			TO jump to the next link
+:h ^g			To search more options starting with g, Replace g with another pattern
+```
+
 ### Vim with Netwr
 
 ```bash
@@ -99,7 +123,6 @@ augroup ProjectDrawer
   autocmd!
   autocmd VimEnter * :Vexplore
 augroup END
-
 
 ```
 
