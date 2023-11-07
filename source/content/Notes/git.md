@@ -3,7 +3,7 @@ title: "Git"
 date: 2023-10-25T14:32:45Z
 ---
 
-**2. Git authentication**
+**1. Git authentication**
 ```bash
 # Generate keys in your local. 
 ssh-keygen -t ed25519 -C "myemail@tmail.com"
@@ -58,4 +58,30 @@ git checkout master
 git pull
 git checkout mybranch
 git merge master   # This will update your branch from remote master
+
+# To check remotes
+git remote -v     # To list all remote main URLs
+git ls-remote    # To list remote branches
+
+
+# To fetch specific branch
+git fetch origin reomte_branch_name
+
+
+# To checkout and track a remote branch
+git checkout --track origin/remote_branch_name
+
+# Delete files from local or remote repo
+git rm --cached  filename
+git rm filename
+
+
+# Example for .gitignore
+https://github.com/github/gitignore
+
+# Regbase, and chery-pick
+git pull --rebase
+git cherry-pick HASH
+
+
 ```
