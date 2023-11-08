@@ -12,20 +12,20 @@
     <title>Git :: Home</title>
 
     
-    <link href="/css/nucleus.css?1698419895" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1698419895" rel="stylesheet">
-    <link href="/css/hybrid.css?1698419895" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1698419895" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1698419895" rel="stylesheet">
-    <link href="/css/auto-complete.css?1698419895" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1698419895" rel="stylesheet">
-    <link href="/css/theme.css?1698419895" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1698419895" rel="stylesheet">
+    <link href="/css/nucleus.css?1699453358" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1699453358" rel="stylesheet">
+    <link href="/css/hybrid.css?1699453358" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1699453358" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1699453358" rel="stylesheet">
+    <link href="/css/auto-complete.css?1699453358" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1699453358" rel="stylesheet">
+    <link href="/css/theme.css?1699453358" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1699453358" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1698419895" rel="stylesheet">
+      <link href="/css/theme-percy.css?1699453358" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1698419895"></script>
+    <script src="/js/jquery-3.3.1.min.js?1699453358"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1698419895"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1698419895"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1699453358"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1699453358"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1698419895"></script>
+<script type="text/javascript" src="/js/search.js?1699453358"></script>
 
     
   </div>
@@ -1550,7 +1550,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
-<p><strong>2. Git authentication</strong></p>
+<p><strong>1. Git authentication</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Generate keys in your local.</span> 
 ssh-keygen -t ed25519 -C <span style="color:#e6db74">&#34;myemail@tmail.com&#34;</span>
 
@@ -1600,7 +1600,38 @@ git checkout master
 git pull
 git checkout mybranch
 git merge master   <span style="color:#75715e"># This will update your branch from remote master</span>
-</code></pre></div>
+
+<span style="color:#75715e"># To check remotes</span>
+git remote -v     <span style="color:#75715e"># To list all remote main URLs</span>
+git ls-remote    <span style="color:#75715e"># To list remote branches</span>
+
+
+<span style="color:#75715e"># To fetch specific branch</span>
+git fetch origin reomte_branch_name
+
+
+<span style="color:#75715e"># To checkout and track a remote branch</span>
+git checkout --track origin/remote_branch_name
+
+<span style="color:#75715e"># Delete files from local or remote repo</span>
+git rm --cached  filename
+git rm filename
+
+
+<span style="color:#75715e"># Example for .gitignore</span>
+https://github.com/github/gitignore
+
+<span style="color:#75715e"># Regbase, and chery-pick</span>
+git pull --rebase
+git cherry-pick HASH
+
+
+</code></pre></div><p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></li>
+<li><a href="https://git-scm.com/book/en/v2/">https://git-scm.com/book/en/v2/</a></li>
+</ul>
+
 
 <footer class="footline">
 	
@@ -2571,19 +2602,19 @@ git merge master   <span style="color:#75715e"># This will update your branch fr
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1698419895"></script>
-    <script src="/js/perfect-scrollbar.min.js?1698419895"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1698419895"></script>
-    <script src="/js/jquery.sticky.js?1698419895"></script>
-    <script src="/js/featherlight.min.js?1698419895"></script>
-    <script src="/js/highlight.pack.js?1698419895"></script>
+    <script src="/js/clipboard.min.js?1699453358"></script>
+    <script src="/js/perfect-scrollbar.min.js?1699453358"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1699453358"></script>
+    <script src="/js/jquery.sticky.js?1699453358"></script>
+    <script src="/js/featherlight.min.js?1699453358"></script>
+    <script src="/js/highlight.pack.js?1699453358"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1698419895"></script>
-    <script src="/js/learn.js?1698419895"></script>
-    <script src="/js/hugo-learn.js?1698419895"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1699453358"></script>
+    <script src="/js/learn.js?1699453358"></script>
+    <script src="/js/hugo-learn.js?1699453358"></script>
 
-    <link href="/mermaid/mermaid.css?1698419895" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1698419895"></script>
+    <link href="/mermaid/mermaid.css?1699453358" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1699453358"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
