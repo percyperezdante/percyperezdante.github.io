@@ -97,7 +97,7 @@ How to set: export TF_PLUGIN_CACHE_DIR=&amp;quot;$HOME/.</description>
       <pubDate>Sat, 08 May 2021 18:34:11 +0100</pubDate>
       
       <guid>http://example.org/notes/vim/</guid>
-      <description>Vim Normal mode Press A Move to after last character on a line to insert a new character. Press a To insert text just after the cursor Type dw to delete a word. Type d$ to delete to the end of the line. Type w until the start of the next word, EXCLUDING its first character. Type wy Copy to buffer one word next to the cursor. You can paste it with p Type b until start to the PREIVOUS word Type e to the end of the current word, INCLUDING the last character.</description>
+      <description>Vim Normal mode Press A Move to after last character on a line to insert a new character. Press a To insert text just after the cursor Type dw to delete a word. Type d$ to delete to the end of the line. Type w until the start of the next word, EXCLUDING its first character. Type wy Copy to buffer one word next to the cursor. You can paste it with p Type yw Copy to register the word where the cursor is locate.</description>
     </item>
     
     <item>

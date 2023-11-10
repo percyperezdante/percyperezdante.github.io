@@ -16,10 +16,12 @@ Type  d$  to delete to the end of the line.
 
 Type  w   until the start of the next word, EXCLUDING its first character.
 Type  wy  Copy to buffer one word next to the cursor. You can paste it with p
+Type  yw  Copy to register the word where the cursor is locate. You can paste it with p
 Type  b   until start to the PREIVOUS word
 Type  e   to the end of the current word, INCLUDING the last character.
 Type  $   to the end of the line, INCLUDING the last character.
 Type  X   uppper case X to delete the previous char
+Type  x   lower case x to delete the char where the cursor is
 
 Type  2w  to move the cursor two words forward.
 Type  3e  to move the cursor to the end of the third word forward.
@@ -47,8 +49,26 @@ Type  c$  To change until the end of the line
 Type  z+enter	Keeps your cursor in the current possition and moves the rest of the text up to the screen
 
 ##############################################
+Registers
+""   	Holds text from d,c,s,x,y. This is the unknown register
+"0	Holds last yanked text
+"1 	Holds last deleted or changed text
+:reg	list all registers
+:reg d	show the register d
+:reg 3d	show the register d and register 3
+"9p	To paste the content of the regsiter 9
+"_dd 	Deleteea line and put it in the black hole regsiter. You can not undo it or paste it.
+"ayy	Yanks one line to the register a. 29 rgisters in total [a-z]
+"Ayy	A upper case. Appends the line to the existing value in register a.
+
+[register][count]operator	 
+[count][register]operator	 
+"b2p	Copy two times the content of regsiter b
+
+##############################################
 
 Type  %   to find a matching ),], or }
+##############################################
 Type  :s/old/new/g  to substitute 'new' for 'old'
           To change every occurrence of a character string between two lines,
                type   :#,#s/old/new/g    where #,# are the line numbers of the range
