@@ -58,6 +58,7 @@ git checkout master
 git pull
 git checkout mybranch
 git merge master   # This will update your branch from remote master
+git push origin HEAD   # Use this if you want to update your remote branch with new changes. This is to avoid use "Update Branch" from the GIT GUI
 
 # To check remotes
 git remote -v     # To list all remote main URLs
