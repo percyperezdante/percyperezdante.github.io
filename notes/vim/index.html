@@ -12,20 +12,20 @@
     <title>Vim :: Home</title>
 
     
-    <link href="/css/nucleus.css?1700141889" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1700141889" rel="stylesheet">
-    <link href="/css/hybrid.css?1700141889" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1700141889" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1700141889" rel="stylesheet">
-    <link href="/css/auto-complete.css?1700141889" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1700141889" rel="stylesheet">
-    <link href="/css/theme.css?1700141889" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1700141889" rel="stylesheet">
+    <link href="/css/nucleus.css?1700499962" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1700499962" rel="stylesheet">
+    <link href="/css/hybrid.css?1700499962" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1700499962" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1700499962" rel="stylesheet">
+    <link href="/css/auto-complete.css?1700499962" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1700499962" rel="stylesheet">
+    <link href="/css/theme.css?1700499962" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1700499962" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1700141889" rel="stylesheet">
+      <link href="/css/theme-percy.css?1700499962" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1700141889"></script>
+    <script src="/js/jquery-3.3.1.min.js?1700499962"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1700141889"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1700141889"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1700499962"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1700499962"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1700141889"></script>
+<script type="text/javascript" src="/js/search.js?1700499962"></script>
 
     
   </div>
@@ -1532,6 +1532,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
       <ul>
         <li><a href="#vim">Vim</a></li>
         <li><a href="#vim-help">Vim help</a></li>
+        <li><a href="#vim-search-and-back-last-page">Vim search and back last page</a></li>
         <li><a href="#vim-with-netwr">Vim with Netwr</a></li>
         <li><a href="#vim-scripts">Vim scripts</a></li>
       </ul>
@@ -1683,7 +1684,11 @@ Ctrl ]			To get into the link of the documentation  where the cursor is
 Ctrl o			TO jump to the previous link
 Ctrl i			TO jump to the next link
 :h ^g			To search more options starting with g, Replace g with another pattern
-</code></pre><h3 id="vim-with-netwr">Vim with Netwr</h3>
+</code></pre><h3 id="vim-search-and-back-last-page">Vim search and back last page</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:grep -r &lt;cword&gt; /path/to/search 	Search <span style="color:#66d9ef">for</span> the word located under the prompt in all folders and jump to the first one
+:e#					re-open the previous opened file
+
+</code></pre></div><h3 id="vim-with-netwr">Vim with Netwr</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">let g:netrw_banner <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 let g:netrw_liststyle <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
 let g:netrw_browse_split <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
@@ -1751,8 +1756,6 @@ augroup END
   https://catswhocode.com/vim-commands/
  gx   Open URL in default browser
  gt   Next tab
-
-
 
 </code></pre></div><h3 id="vim-scripts">Vim scripts</h3>
 <h1 id="reference">Reference</h1>
@@ -2734,19 +2737,19 @@ augroup END
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1700141889"></script>
-    <script src="/js/perfect-scrollbar.min.js?1700141889"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1700141889"></script>
-    <script src="/js/jquery.sticky.js?1700141889"></script>
-    <script src="/js/featherlight.min.js?1700141889"></script>
-    <script src="/js/highlight.pack.js?1700141889"></script>
+    <script src="/js/clipboard.min.js?1700499962"></script>
+    <script src="/js/perfect-scrollbar.min.js?1700499962"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1700499962"></script>
+    <script src="/js/jquery.sticky.js?1700499962"></script>
+    <script src="/js/featherlight.min.js?1700499962"></script>
+    <script src="/js/highlight.pack.js?1700499962"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1700141889"></script>
-    <script src="/js/learn.js?1700141889"></script>
-    <script src="/js/hugo-learn.js?1700141889"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1700499962"></script>
+    <script src="/js/learn.js?1700499962"></script>
+    <script src="/js/hugo-learn.js?1700499962"></script>
 
-    <link href="/mermaid/mermaid.css?1700141889" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1700141889"></script>
+    <link href="/mermaid/mermaid.css?1700499962" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1700499962"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

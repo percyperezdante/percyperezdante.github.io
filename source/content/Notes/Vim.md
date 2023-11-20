@@ -131,6 +131,13 @@ Ctrl i			TO jump to the next link
 :h ^g			To search more options starting with g, Replace g with another pattern
 ```
 
+### Vim search and back last page
+```bash
+:grep -r <cword> /path/to/search 	Search for the word located under the prompt in all folders and jump to the first one
+:e#					re-open the previous opened file
+
+```
+
 ### Vim with Netwr
 
 ```bash
@@ -209,9 +216,8 @@ augroup END
  gx   Open URL in default browser
  gt   Next tab
 
-
-
 ```
+
 
 ### Vim scripts
 
