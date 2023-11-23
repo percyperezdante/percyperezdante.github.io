@@ -135,7 +135,10 @@ Ctrl i			TO jump to the next link
 ```bash
 :grep -r <cword> /path/to/search 	Search for the word located under the prompt in all folders and jump to the first one
 :e#					re-open the previous opened file
-
+:dt,					delete from the current position until one char before you find a ","
+:dt)					delete from the current position until you find a ")"
+:dT,					same as dt, but search backwards. Deletes from "," until current position
+:dT)					same as dt) but search backwards. Deletes from "," until current position
 ```
 
 ### Vim with Netwr
