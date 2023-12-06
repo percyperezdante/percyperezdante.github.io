@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>SRE MMR Week4 :: Home</title>
+    <title>React :: Home</title>
 
     
     <link href="/css/nucleus.css?1701881025" rel="stylesheet">
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/sre/online/sre-mmr-week4/">
+  <body class="" data-url="/notes/react/">
     <nav id="sidebar" class="">
 
 
@@ -457,7 +457,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/sre/" title="SRE" class="dd-item 
-        parent
+        
         
         
         ">
@@ -549,7 +549,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/sre/online/" title="Online resources" class="dd-item 
-        parent
+        
         
         
         ">
@@ -596,7 +596,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/sre/online/sre-mmr-week4/" title="SRE MMR Week4" class="dd-item active">
+      <li data-nav-id="/sre/online/sre-mmr-week4/" title="SRE MMR Week4" class="dd-item ">
         <a href="/sre/online/sre-mmr-week4/">
         SRE MMR Week4
         
@@ -718,7 +718,7 @@ Percy Perez Aruni
   
     
     <li data-nav-id="/notes/" title="Notes" class="dd-item 
-        
+        parent
         
         
         ">
@@ -744,7 +744,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/notes/react/" title="React" class="dd-item ">
+      <li data-nav-id="/notes/react/" title="React" class="dd-item active">
         <a href="/notes/react/">
         React
         
@@ -1534,13 +1534,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            
-            
-          
-          
-            <a href='/'>Home</a> > <a href='/sre/'>SRE</a> > <a href='/sre/online/'>Online resources</a> > SRE MMR Week4
-          
-         
+            <a href='/'>Home</a> > <a href='/notes/'>Notes</a> > React
           
          
           
@@ -1553,7 +1547,17 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#general-notes">General notes</a></li>
+        <li><a href="#functions">Functions:</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1569,7 +1573,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
           
             <h1>
               
-              SRE MMR Week4
+              React
             </h1>
           
 
@@ -1577,6 +1581,39 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
+<h3 id="general-notes">General notes</h3>
+<ul>
+<li>In Google Chrome: click on view &ndash;&gt; Developer &ndash;&gt; JavaScript Console:
+<ul>
+<li>Type <code>alert('one');</code>  # press SHIFT + Enter</li>
+<li>Then type  <code>alert('two');</code>  # press enter</li>
+</ul>
+</li>
+<li>Another way is:
+<ul>
+<li>to click source &ndash;&gt; click on &ldquo;&raquo;&rdquo; &ndash;&gt; select Snipes &ndash;&gt; &ldquo;New Snipe&rdquo;</li>
+<li>clickk on the botton play button or prees Command + enter</li>
+</ul>
+</li>
+<li>Prompts:
+<ul>
+<li>on the developer tools &ndash;&gt; Console:</li>
+<li><code>var a=prompt(&quot;type a number&quot;);</code></li>
+<li><code>alert(&quot;your number is &quot;+a)</code></li>
+</ul>
+</li>
+<li>Comments &ndash;&gt; use // and /* */</li>
+</ul>
+<h3 id="functions">Functions:</h3>
+<ul>
+<li><code>function name(args) { code; return var; }</code></li>
+<li>typeof(&lsquo;asdf&rsquo;); # will return string</li>
+</ul>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></li>
+<li><a href="https://github.com/rwaldron/idiomatic.js">https://github.com/rwaldron/idiomatic.js</a></li>
+</ul>
 
 
 <footer class="footline">
@@ -1845,7 +1882,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                    
                 
                 
 
@@ -1860,9 +1896,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1912,7 +1945,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
-                    
                 
                 
 
@@ -1925,26 +1957,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1962,8 +1974,21 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -2035,6 +2060,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
                 
                     
+                    
                 
                 
 
@@ -2047,6 +2073,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
                     
                 
                 
@@ -2063,6 +2090,9 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2555,10 +2585,10 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 	 
 	 
 		
-			<a class="nav nav-prev" href="/sre/online/srecon2019/" title="SRECON 2019"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/notes/" title="Notes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/sre/online/sre-mmr-week3/" title="SRE MMR Week3" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/notes/tmux/" title="Tmux" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

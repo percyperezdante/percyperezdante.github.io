@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>React</title>
+      <link>http://example.org/notes/react/</link>
+      <pubDate>Wed, 06 Dec 2023 11:55:39 +0000</pubDate>
+      
+      <guid>http://example.org/notes/react/</guid>
+      <description>General notes  In Google Chrome: click on view &amp;ndash;&amp;gt; Developer &amp;ndash;&amp;gt; JavaScript Console:  Type alert(&#39;one&#39;); # press SHIFT + Enter Then type alert(&#39;two&#39;); # press enter   Another way is:  to click source &amp;ndash;&amp;gt; click on &amp;ldquo;&amp;raquo;&amp;rdquo; &amp;ndash;&amp;gt; select Snipes &amp;ndash;&amp;gt; &amp;ldquo;New Snipe&amp;rdquo; clickk on the botton play button or prees Command + enter   Prompts:  on the developer tools &amp;ndash;&amp;gt; Console: var a=prompt(&amp;quot;type a number&amp;quot;); alert(&amp;quot;your number is &amp;quot;+a)   Comments &amp;ndash;&amp;gt; use // and /* */  Functions:  function name(args) { code; return var; } typeof(&amp;lsquo;asdf&amp;rsquo;); # will return string  References  https://developer.</description>
+    </item>
+    
+    <item>
       <title>Tmux</title>
       <link>http://example.org/notes/tmux/</link>
       <pubDate>Fri, 27 Oct 2023 11:59:43 +0000</pubDate>
