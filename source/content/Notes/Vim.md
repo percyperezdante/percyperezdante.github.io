@@ -221,6 +221,15 @@ augroup END
 
 ```
 
+### Netwr Create
+```bash
+- Create a new file inside a folder:
+  - ":Explore"
+  - Press ESC
+  - Press % ( Shift + 5 )
+  - Write file name and enter
+
+```
 
 ### Vim scripts
 
