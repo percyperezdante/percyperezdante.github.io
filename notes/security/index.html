@@ -12,20 +12,20 @@
     <title>Security :: Home</title>
 
     
-    <link href="/css/nucleus.css?1706787796" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1706787796" rel="stylesheet">
-    <link href="/css/hybrid.css?1706787796" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1706787796" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1706787796" rel="stylesheet">
-    <link href="/css/auto-complete.css?1706787796" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1706787796" rel="stylesheet">
-    <link href="/css/theme.css?1706787796" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1706787796" rel="stylesheet">
+    <link href="/css/nucleus.css?1707389967" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1707389967" rel="stylesheet">
+    <link href="/css/hybrid.css?1707389967" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1707389967" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1707389967" rel="stylesheet">
+    <link href="/css/auto-complete.css?1707389967" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1707389967" rel="stylesheet">
+    <link href="/css/theme.css?1707389967" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1707389967" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1706787796" rel="stylesheet">
+      <link href="/css/theme-percy.css?1707389967" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1706787796"></script>
+    <script src="/js/jquery-3.3.1.min.js?1707389967"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1706787796"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1706787796"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1707389967"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1707389967"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1706787796"></script>
+<script type="text/javascript" src="/js/search.js?1707389967"></script>
 
     
   </div>
@@ -1571,6 +1571,14 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 <nav id="TableOfContents">
   <ul>
     <li><a href="#networking">Networking</a></li>
+    <li><a href="#scheduling">Scheduling</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#filesystem">Filesystem</a></li>
+    <li><a href="#logging">Logging</a>
+      <ul>
+        <li><a href="#privacy">Privacy</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -1626,6 +1634,55 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
   <span style="color:#75715e"># Mapping your own IP</span>
   Open /etc/hosts and map there: 127.0.0.1 myname. Use TABs instead of spaces.
  
+</code></pre></div><h2 id="scheduling">Scheduling</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  at 7:20pm
+  at 7:20pm June <span style="color:#ae81ff">25</span>
+  at  now + <span style="color:#ae81ff">20</span> minutes
+  at  now + <span style="color:#ae81ff">2</span> days
+  at  now + <span style="color:#ae81ff">2</span> weeks
+  at 3:00am 06/25/2023
+
+</code></pre></div><h2 id="process">Process</h2>
+<pre><code class="language-basg" data-lang="basg">  nice:  The nice command is used to start a process with a specified priority. The priority ranges from -20 to 19, where -20 is the highest priority and 19 is the lowest
+  nice priority command
+  nice echo &quot;HI &quot;      # default priority
+  nice -n 10 echo &quot;HI &quot;      # 10 means lower priority, this will allow other processes to get more CPU time.
+  nice -n -15 echo &quot;hi&quot;      # -15 means higher priority. This process is allow to take more resources.
+
+  renice : The renice command is used to alter the priority of an already running process. It allows you to increase or decrease the priority of a process.
+  renice priority -p PID
+  renice priority -g process_group
+  renice +5 -p 12345     # the priority of the process with PID 12345 is increased by 5.
+
+
+  fg;   is used to bring a background process into the foreground, allowing it to receive input from the terminal.
+  
+  bg: command is used to start a suspended (stopped) process in the background. It allows the process to continue running but not receive input from the terminal.
+
+  jobs; view a list of jobs and their status
+</code></pre><h2 id="filesystem">Filesystem</h2>
+<ul>
+<li>Directories</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    /dev  devices, 
+          sda1,sda2,sda3, sdb, sdb1 are the hard drives.
+    Type of device: Use ls -lte /dev
+          Character devices:  device which permission start with <span style="color:#e6db74">&#34;c&#34;</span>, linked to external devices that collects character by character information, such as keyboards, and mice.
+          Block devices:  Permissions start with <span style="color:#e6db74">&#34;b&#34;</span>. linked to devices that required higher speed data throughtput such as harddrives, DVD drives
+
+    Mounting:
+          Mounting points: /mount and /media
+
+    Checking errors:
+          fsck: Unmount the device before running this file checks.   
+          fsck -p /dev/sdb1      will check and automatically repair any problems with the device
+</code></pre></div><h2 id="logging">Logging</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+
+</code></pre></div><h3 id="privacy">Privacy</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+
+
 </code></pre></div>
 
 <footer class="footline">
@@ -2626,19 +2683,19 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1706787796"></script>
-    <script src="/js/perfect-scrollbar.min.js?1706787796"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1706787796"></script>
-    <script src="/js/jquery.sticky.js?1706787796"></script>
-    <script src="/js/featherlight.min.js?1706787796"></script>
-    <script src="/js/highlight.pack.js?1706787796"></script>
+    <script src="/js/clipboard.min.js?1707389967"></script>
+    <script src="/js/perfect-scrollbar.min.js?1707389967"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1707389967"></script>
+    <script src="/js/jquery.sticky.js?1707389967"></script>
+    <script src="/js/featherlight.min.js?1707389967"></script>
+    <script src="/js/highlight.pack.js?1707389967"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1706787796"></script>
-    <script src="/js/learn.js?1706787796"></script>
-    <script src="/js/hugo-learn.js?1706787796"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1707389967"></script>
+    <script src="/js/learn.js?1707389967"></script>
+    <script src="/js/hugo-learn.js?1707389967"></script>
 
-    <link href="/mermaid/mermaid.css?1706787796" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1706787796"></script>
+    <link href="/mermaid/mermaid.css?1707389967" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1707389967"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
