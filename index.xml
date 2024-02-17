@@ -6,10 +6,21 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Feb 2024 10:58:09 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Feb 2024 22:26:44 +0000</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pop_os</title>
+      <link>http://example.org/notes/pop_os/</link>
+      <pubDate>Sat, 17 Feb 2024 22:26:44 +0000</pubDate>
+      
+      <guid>http://example.org/notes/pop_os/</guid>
+      <description>My config The following steps are notes I executed after installing Pop OS in my dell XPS 13
+ Wifi adapter  sudo apt update sudo apt upgrade sudo apt install bcmwl-kernel-source Then my drivers appear and I was able to connect to my wifi router
+In my settings:   Disable bluetooth Privacy &amp;ndash;&amp;gt; Connectivity Checking &amp;ndash;&amp;gt; disabled File history &amp;amp; waste bin &amp;ndash;&amp;gt; disabled  Additional packages  sudo apt install mpv vim openssh-server Nice tools    Command line</description>
+    </item>
     
     <item>
       <title>Security</title>

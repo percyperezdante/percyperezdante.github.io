@@ -9,23 +9,23 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Ansible :: Home</title>
+    <title>Pop_os :: Home</title>
 
     
-    <link href="/css/nucleus.css?1708214048" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1708214048" rel="stylesheet">
-    <link href="/css/hybrid.css?1708214048" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1708214048" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1708214048" rel="stylesheet">
-    <link href="/css/auto-complete.css?1708214048" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1708214048" rel="stylesheet">
-    <link href="/css/theme.css?1708214048" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1708214048" rel="stylesheet">
+    <link href="/css/nucleus.css?1708214049" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1708214049" rel="stylesheet">
+    <link href="/css/hybrid.css?1708214049" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1708214049" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1708214049" rel="stylesheet">
+    <link href="/css/auto-complete.css?1708214049" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1708214049" rel="stylesheet">
+    <link href="/css/theme.css?1708214049" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1708214049" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1708214048" rel="stylesheet">
+      <link href="/css/theme-percy.css?1708214049" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1708214048"></script>
+    <script src="/js/jquery-3.3.1.min.js?1708214049"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     
 
   </head>
-  <body class="" data-url="/notes/ansible/">
+  <body class="" data-url="/notes/pop_os/">
     <nav id="sidebar" class="">
 
 
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1708214048"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1708214048"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1708214049"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1708214049"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1708214048"></script>
+<script type="text/javascript" src="/js/search.js?1708214049"></script>
 
     
   </div>
@@ -744,7 +744,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/notes/pop_os/" title="Pop_os" class="dd-item ">
+      <li data-nav-id="/notes/pop_os/" title="Pop_os" class="dd-item active">
         <a href="/notes/pop_os/">
         Pop_os
         
@@ -1017,7 +1017,7 @@ Percy Perez Aruni
  
   
     
-      <li data-nav-id="/notes/ansible/" title="Ansible" class="dd-item active">
+      <li data-nav-id="/notes/ansible/" title="Ansible" class="dd-item ">
         <a href="/notes/ansible/">
         Ansible
         
@@ -1576,7 +1576,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
             
           
           
-            <a href='/'>Home</a> > <a href='/notes/'>Notes</a> > Ansible
+            <a href='/'>Home</a> > <a href='/notes/'>Notes</a> > Pop_os
           
          
           
@@ -1589,7 +1589,11 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#my-config">My config</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1605,7 +1609,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
           
             <h1>
               
-              Ansible
+              Pop_os
             </h1>
           
 
@@ -1613,133 +1617,53 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
-<h1 id="general">General</h1>
-<p>Ansible cnetralizes model:</p>
-<p><img src="/notes/ansiblegeneraldiagram.png" alt="ansible general diagram"></p>
+<h2 id="my-config">My config</h2>
+<p>The following steps are notes I executed after installing Pop OS in my dell XPS 13</p>
+<ol>
+<li>Wifi adapter</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
+sudo apt upgrade
+sudo apt install bcmwl-kernel-source
+</code></pre></div><p>Then my drivers appear and I was able to connect to my wifi router</p>
+<ol start="2">
+<li>In my settings:</li>
+</ol>
 <ul>
-<li>
-<p>Adhoc example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible -m copy -a <span style="color:#e6db74">&#34;src=orignalFile.txt dest=finalFile.txt&#34;</span> --check --diff localhost
-
-</code></pre></div><p>Where</p>
-<ul>
-<li>Check = to run in dry mode</li>
-<li>Diff  = Shows the difference before and after apply ansible</li>
-<li>&ldquo;copy&rdquo; is a module, list of <a href="https://docs.ansible.com/ansible/2.8/modules/list_of_all_modules.html">all ansible modules in here</a></li>
-<li>&ldquo;m&rdquo; module name</li>
-<li>&ldquo;a&rdquo; arguments</li>
+<li>Disable bluetooth</li>
+<li>Privacy &ndash;&gt; Connectivity Checking &ndash;&gt; disabled</li>
+<li>File history &amp; waste bin &ndash;&gt; disabled</li>
 </ul>
-<p>More examples
-<img src="/notes/ansibleadhocexamples.png" alt="ansible examples adhoc"></p>
-</li>
-</ul>
-<h1 id="playbook">Playbook</h1>
+<ol start="3">
+<li>Additional packages</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install mpv vim openssh-server  
+</code></pre></div><ol start="4">
+<li>Nice tools</li>
+</ol>
 <ul>
 <li>
-<p>A <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks.html">playbook</a> uses a <a href="https://yaml.org/">Yaml</a> file as main place to read from.</p>
-</li>
-<li>
-<p>A task can be visualise as:</p>
-</li>
-</ul>
-<p><img src="/notes/ansibletaskstructure.png" alt="tasks components"></p>
+<p>Command line</p>
 <ul>
-<li>
-<p>To run playbook:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansile-playbook playbookFile.yml
-</code></pre></div></li>
-<li>
-<p>Ansible-playbook calls the &ldquo;setup&rdquo; module, which is mask as &ldquo;Gathering facts &quot; in the logs, and it can be executed manually as:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible -m setup localhost
-</code></pre></div><p>This helps to understand the current state of an environment.</p>
-<p>NOTE:</p>
-<p>You can disable this feature &ldquo;gathering facts&rdquo; in the playbook, see below. It will speed up the run.</p>
-<p><img src="/notes/ansibleremovegatherfacts.png" alt="setting false gathering facts"></p>
-</li>
-<li>
-<p>More output lines</p>
-<p>You can add more verbose, &ldquo;-v&rdquo;,  to the output:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible-playbook playbook.yml -v
-$ ansible-playbook playbook.yml -vv
-$ ansible-playbook playbook.yml -vvv
-$ ansible-playbook playbook.yml -vvvv
-</code></pre></div></li>
-<li>
-<p>Output meaning:</p>
-<p>To understand the output logs, you can refer to the documentation of the module you are working on, or
-you can use <code>ansible-doc</code> to get information about a module from command line</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible-doc copy
-</code></pre></div></li>
-<li>
-<p>Another example
-<img src="/notes/ansibleindentationexample.png" alt="indentataion ansible"></p>
-</li>
-</ul>
-<h1 id="inventory">Inventory</h1>
-<ul>
-<li>
-<p>Ansible ignore the following extensions:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible-config --list
-
-...
-INVENTORY_IGNORE_EXTS:
-  default: <span style="color:#e6db74">&#39;{{(BLACKLIST_EXTS + (&#39;&#39;.orig&#39;&#39;, &#39;&#39;.ini&#39;&#39;, &#39;&#39;.cfg&#39;&#39;, &#39;&#39;.retry&#39;&#39;))}}&#39;</span>
-  description: List of extensions to ignore when using a directory as an inventory
-    source
-...
-
-</code></pre></div></li>
-<li>
-<p>Ansible does not recommend to use &ldquo;.&rdquo;  as part of the name of a hosts or group of hosts</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Not replacing invalid character<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;{&#39;.&#39;}&#34;</span> in group name <span style="color:#f92672">(</span>new_group_jenkins_agents.ol7<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span>: Invalid characters were found in group names but not replaced, use -vvvv to see details
-Not replacing invalid character<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;{&#39;.&#39;}&#34;</span> in group name <span style="color:#f92672">(</span>newgroup_jenkins_agents.ol7<span style="color:#f92672">)</span>
-Not replacing invalid character<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;{&#39;.&#39;}&#34;</span> in group name <span style="color:#f92672">(</span>oldgroup_jenkins_agents.olh6<span style="color:#f92672">)</span>
-
-</code></pre></div></li>
-<li>
-<p>Ansible graph  presents hosts in different format:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible-inventory --graph
-<span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span>: Invalid characters were found in group names but not replaced, use -vvvv to see details
-@all:
-  |--@backup_coordinator_group.ol7:
-  |  |--hostonw.dcnet
-  |--@bitbucketgroup.ol6:
-  |  |--host2.dcnet
-  |  |--host2b.dcnet
-  |--@bitbucketgroup.ol6:
-  |  |--host3.cdnet
-  |--@health_checker_group.ol7:
-  |  |--host4.dcnet
-
-</code></pre></div></li>
-<li>
-<p>To run on any of this groups:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible -m command -a <span style="color:#e6db74">&#34;ls -ltr &#34;</span> bitbucketgroup
-$ ansible -m command -a <span style="color:#e6db74">&#34;ls -ltr &#34;</span> host4.dcnet
-
-</code></pre></div></li>
-<li>
-<p>Some useful links</p>
-<ul>
-<li><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_error_handling.html"> Ansible error handling </a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html"> Ansible use of varibles </a></li>
+<li>Vim</li>
+<li>git</li>
+<li>teminator
+<a href="https://gnome-terminator.org">https://gnome-terminator.org</a></li>
+<li>tmux</li>
 </ul>
 </li>
 <li>
-<p>Steps to consider to use inventories:</p>
+<p>GUI</p>
 <ul>
-<li>Config ansible using &ldquo;ansible.cfg&rdquo;
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>default<span style="color:#f92672">]</span>
-<span style="color:#75715e"># disale host_key_chkcings</span>
-<span style="color:#75715e"># https://docs.ansible.com/ansible/latest/user_guide/connection_details.html</span>
-host_key_checking <span style="color:#f92672">=</span> False
-      
-inventory<span style="color:#f92672">=</span>myDirectory
-<span style="color:#75715e"># export ANSIBLE_INVENTORY = /path/directory/inventory</span>
-<span style="color:#75715e"># FYI : &#34;vagrant ssh-config &#34; is a great guide for configuring ansible to</span>
-<span style="color:#75715e"># connect directly to VMs created by vagrant</span>
-</code></pre></div></li>
+<li>brave</li>
+<li>duckduckgo</li>
+</ul>
+</li>
+<li>
+<p>Music</p>
+<ul>
+<li>mpv</li>
+<li>youtube-dl</li>
 </ul>
 </li>
 </ul>
@@ -2203,6 +2127,23 @@ inventory<span style="color:#f92672">=</span>myDirectory
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                         
                         
                     
@@ -2413,26 +2354,6 @@ inventory<span style="color:#f92672">=</span>myDirectory
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -2749,10 +2670,10 @@ inventory<span style="color:#f92672">=</span>myDirectory
 	 
 	 
 		
-			<a class="nav nav-prev" href="/notes/mytools/" title="MyTools"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/notes/" title="Notes"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/notes/restful/" title="Restful" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/notes/security/" title="Security" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2762,19 +2683,19 @@ inventory<span style="color:#f92672">=</span>myDirectory
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1708214048"></script>
-    <script src="/js/perfect-scrollbar.min.js?1708214048"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1708214048"></script>
-    <script src="/js/jquery.sticky.js?1708214048"></script>
-    <script src="/js/featherlight.min.js?1708214048"></script>
-    <script src="/js/highlight.pack.js?1708214048"></script>
+    <script src="/js/clipboard.min.js?1708214049"></script>
+    <script src="/js/perfect-scrollbar.min.js?1708214049"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1708214049"></script>
+    <script src="/js/jquery.sticky.js?1708214049"></script>
+    <script src="/js/featherlight.min.js?1708214049"></script>
+    <script src="/js/highlight.pack.js?1708214049"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1708214048"></script>
-    <script src="/js/learn.js?1708214048"></script>
-    <script src="/js/hugo-learn.js?1708214048"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1708214049"></script>
+    <script src="/js/learn.js?1708214049"></script>
+    <script src="/js/hugo-learn.js?1708214049"></script>
 
-    <link href="/mermaid/mermaid.css?1708214048" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1708214048"></script>
+    <link href="/mermaid/mermaid.css?1708214049" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1708214049"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
