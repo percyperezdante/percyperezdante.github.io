@@ -5,6 +5,11 @@ date: 2021-05-08T18:34:11+01:00
 
 ### Vim
 
+#### Windows
+```bash
+Ctrl+w |     full zoom of a splitted windows
+
+```
 #### Normal mode
 ```bash
 
