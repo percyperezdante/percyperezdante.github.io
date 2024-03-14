@@ -126,7 +126,7 @@ How to set: export TF_PLUGIN_CACHE_DIR=&amp;quot;$HOME/.</description>
       <pubDate>Sat, 08 May 2021 18:34:11 +0100</pubDate>
       
       <guid>http://example.org/notes/vim/</guid>
-      <description>Vim Windows Ctrl+w | full zoom of a splitted windows Normal mode Press A Move to after last character on a line to insert a new character. Press a To insert text just after the cursor Type dw to delete a word. Type d$ to delete to the end of the line. Type w until the start of the next word, EXCLUDING its first character. Type wy Copy to buffer one word next to the cursor.</description>
+      <description>Vim Windows arrangement Ctrl+w | full zoom of a splitted windows Moving inside a file Crtl + y Scroll up without moving cursor Crtl + e Scroll down without moving cursor Normal mode Press A Move to after last character on a line to insert a new character. Press a To insert text just after the cursor Type dw to delete a word. Type d$ to delete to the end of the line.</description>
     </item>
     
     <item>

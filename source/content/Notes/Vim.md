@@ -5,9 +5,16 @@ date: 2021-05-08T18:34:11+01:00
 
 ### Vim
 
-#### Windows
+#### Windows arrangement
 ```bash
 Ctrl+w |     full zoom of a splitted windows
+
+```
+
+#### Moving inside a file
+```bash
+Crtl + y    Scroll up without moving cursor
+Crtl + e    Scroll down without moving cursor
 
 ```
 #### Normal mode
