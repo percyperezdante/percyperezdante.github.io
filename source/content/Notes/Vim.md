@@ -10,7 +10,21 @@ date: 2021-05-08T18:34:11+01:00
 Ctrl+w |     full zoom of a splitted windows
 
 ```
+#### Editing Text
+```bash
+2di"	Two times + delete + all inside "
+2da"	Two times + delete + all inside " including "
+2ca"	Two times + change + all inside " including " + set in insert mode
+va"    	Visual mode + around(all inside) "   --> selects all inside "
 
+``` 
+#### Moving inside a Text
+```bash
+[{	Search for the next {}
+[(	Search for the next ()
+
+
+```
 #### Moving inside a file
 ```bash
 Crtl + y    Scroll up without moving cursor
