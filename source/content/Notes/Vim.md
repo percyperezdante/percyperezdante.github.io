@@ -23,6 +23,9 @@ va"    	Visual mode + around(all inside) "   --> selects all inside "
 [{	Search for the next {}
 [(	Search for the next ()
 
+zfat	zf=fold a=around t=tab --> To fold a HTML tag
+l       to unfold HTML tag
+
 
 ```
 #### Moving inside a file
