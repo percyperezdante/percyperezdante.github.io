@@ -12,7 +12,7 @@ cd vim/src
             --enable-python3interp=yes \
             --with-python3-command=python3 \
             --enable-cscope \
-            --prefix=~/tools/vim
+            --prefix=/home/pal/tools/vim
 make
 make install
 
