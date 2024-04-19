@@ -4,7 +4,19 @@ date: 2021-05-08T18:34:11+01:00
 ---
 
 ### Vim
+```bash
+git clone https://github.com/vim/vim.git
+cd vim/src
+./configure --with-features=huge \
+            --enable-multibyte \
+            --enable-python3interp=yes \
+            --with-python3-command=python3 \
+            --enable-cscope \
+            --prefix=~/tools/vim
+make
+make install
 
+```
 #### Windows arrangement
 ```bash
 Ctrl+w |     full zoom of a splitted windows
