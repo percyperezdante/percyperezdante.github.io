@@ -12,20 +12,20 @@
     <title>Vim :: Home</title>
 
     
-    <link href="/css/nucleus.css?1713808992" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713808992" rel="stylesheet">
-    <link href="/css/hybrid.css?1713808992" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713808992" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713808992" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713808992" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713808992" rel="stylesheet">
-    <link href="/css/theme.css?1713808992" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713808992" rel="stylesheet">
+    <link href="/css/nucleus.css?1713825233" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713825233" rel="stylesheet">
+    <link href="/css/hybrid.css?1713825233" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713825233" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713825233" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713825233" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713825233" rel="stylesheet">
+    <link href="/css/theme.css?1713825233" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713825233" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1713808992" rel="stylesheet">
+      <link href="/css/theme-percy.css?1713825233" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713808992"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713825233"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713808992"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713808992"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713825233"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713825233"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713808992"></script>
+<script type="text/javascript" src="/js/search.js?1713825233"></script>
 
     
   </div>
@@ -1634,7 +1634,14 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 :messages       --&gt; show echom messages only, echo messages are not saved.
 
 $MYVIMRC   --&gt; special variable that points to ~/.vimrc
+&lt;esc&gt;      --&gt; exit mode to enter normal mode, same as &lt;c-c&gt; or &lt;c-<span style="color:#f92672">[</span>&gt;
 
+:nnoremap          &lt;leader&gt;d dd    --|
+:nnoremap &lt;buffer&gt; &lt;leader&gt;x dd    ---&gt; The &lt;buffer&gt; in the second nnoremap command told Vim to only consider that mapping when we<span style="color:#960050;background-color:#1e0010">&#39;</span>re in the buffer where we defined it.
+
+
+:nnoremap &lt;buffer&gt; Q x    --|
+:nnoremap          Q dd   ---&gt; When you press Q, Vim will run the first mapping, not the second, because the first mapping is more specific than the second.
 </code></pre></div><ol start="2">
 <li>Setting</li>
 </ol>
@@ -1666,6 +1673,7 @@ $MYVIMRC   --&gt; special variable that points to ~/.vimrc
 :imap &lt;c-d&gt; &lt;esc&gt;dd    ---&gt; Press Ctrl+d, Vim will exit insert mode and delete a line. Then you are in normal mode
 :imap &lt;c-d&gt; &lt;esc&gt;ddi   ---&gt; Press Ctrl+d, Vim will exit insert mode and delete a line. Then back to insert mode
 :inoremap <span style="color:#ae81ff">\ </span>x   ---&gt; it insert an x when you press <span style="color:#ae81ff">\.</span> 
+:inoremap &lt;esc&gt; &lt;nop&gt;   ---&gt; DISABLE escape in insert mode
 
 </code></pre></div><ul>
 <li>3.3 Visual mode: vmap</li>
@@ -2954,19 +2962,19 @@ augroup END
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713808992"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713808992"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713808992"></script>
-    <script src="/js/jquery.sticky.js?1713808992"></script>
-    <script src="/js/featherlight.min.js?1713808992"></script>
-    <script src="/js/highlight.pack.js?1713808992"></script>
+    <script src="/js/clipboard.min.js?1713825234"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713825234"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713825234"></script>
+    <script src="/js/jquery.sticky.js?1713825234"></script>
+    <script src="/js/featherlight.min.js?1713825234"></script>
+    <script src="/js/highlight.pack.js?1713825234"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713808992"></script>
-    <script src="/js/learn.js?1713808992"></script>
-    <script src="/js/hugo-learn.js?1713808992"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713825234"></script>
+    <script src="/js/learn.js?1713825234"></script>
+    <script src="/js/hugo-learn.js?1713825234"></script>
 
-    <link href="/mermaid/mermaid.css?1713808992" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713808992"></script>
+    <link href="/mermaid/mermaid.css?1713825234" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713825234"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

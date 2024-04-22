@@ -126,7 +126,7 @@ How to set: export TF_PLUGIN_CACHE_DIR=&amp;quot;$HOME/.</description>
       <pubDate>Sat, 08 May 2021 18:34:11 +0100</pubDate>
       
       <guid>http://example.org/notes/vim/</guid>
-      <description>VimScript  Debugging  :echom &amp;#34;this is breakpoint&amp;#34; :messages --&amp;gt; show echom messages only, echo messages are not saved. $MYVIMRC --&amp;gt; special variable that points to ~/.vimrc Setting  :set &amp;lt;name&amp;gt;:&amp;lt;value&amp;gt; :set number! ---&amp;gt; This to unset numbers :set matchtime? ---&amp;gt; Use ? to check options :set number numberwidth=4 ---&amp;gt; many settings in one line Mapping   3.1 Normal mode: map or nmap  :map - x ---&amp;gt; Put cursor somewhere and press - to delete a character :map - dd ---&amp;gt; Press - and it will delete the line :map &amp;lt;space&amp;gt; viw ---&amp;gt; Press space and Vim selects the word :map &amp;lt;c-d&amp;gt; dd ---&amp;gt; Press Ctrl+d to delete a line :nunmap - ---&amp;gt; Remove a nmap linked to - :nmap dd 0&amp;lt;esc&amp;gt;jddk --&amp;gt; this is in infinite recursive loop it calls dd just after the j.</description>
+      <description>VimScript  Debugging  :echom &amp;#34;this is breakpoint&amp;#34; :messages --&amp;gt; show echom messages only, echo messages are not saved. $MYVIMRC --&amp;gt; special variable that points to ~/.vimrc &amp;lt;esc&amp;gt; --&amp;gt; exit mode to enter normal mode, same as &amp;lt;c-c&amp;gt; or &amp;lt;c-[&amp;gt; :nnoremap &amp;lt;leader&amp;gt;d dd --| :nnoremap &amp;lt;buffer&amp;gt; &amp;lt;leader&amp;gt;x dd ---&amp;gt; The &amp;lt;buffer&amp;gt; in the second nnoremap command told Vim to only consider that mapping when we&amp;#39;re in the buffer where we defined it.</description>
     </item>
     
     <item>

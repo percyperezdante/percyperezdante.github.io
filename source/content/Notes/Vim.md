@@ -10,7 +10,14 @@ date: 2021-05-08T18:34:11+01:00
 :messages       --> show echom messages only, echo messages are not saved.
 
 $MYVIMRC   --> special variable that points to ~/.vimrc
+<esc>      --> exit mode to enter normal mode, same as <c-c> or <c-[>
 
+:nnoremap          <leader>d dd    --|
+:nnoremap <buffer> <leader>x dd    ---> The <buffer> in the second nnoremap command told Vim to only consider that mapping when we're in the buffer where we defined it.
+
+
+:nnoremap <buffer> Q x    --|
+:nnoremap          Q dd   ---> When you press Q, Vim will run the first mapping, not the second, because the first mapping is more specific than the second.
 ```
 
 2. Setting
@@ -43,6 +50,7 @@ $MYVIMRC   --> special variable that points to ~/.vimrc
 :imap <c-d> <esc>dd    ---> Press Ctrl+d, Vim will exit insert mode and delete a line. Then you are in normal mode
 :imap <c-d> <esc>ddi   ---> Press Ctrl+d, Vim will exit insert mode and delete a line. Then back to insert mode
 :inoremap \ x   ---> it insert an x when you press \. 
+:inoremap <esc> <nop>   ---> DISABLE escape in insert mode
 
 ```
 
