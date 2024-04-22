@@ -3,6 +3,72 @@ title: "Vim"
 date: 2021-05-08T18:34:11+01:00
 ---
 
+## VimScript
+1. Debugging
+```bash
+:echom "this is breakpoint"  
+:messages       --> show echom messages only, echo messages are not saved.
+
+$MYVIMRC   --> special variable that points to ~/.vimrc
+
+```
+
+2. Setting
+```bash
+:set <name>:<value>
+:set number!     ---> This to unset numbers
+:set matchtime?  ---> Use ? to check options
+:set number numberwidth=4  ---> many settings in one line
+```
+3. Mapping
+- 3.1 Normal mode: map or nmap
+```bash
+:map - x    ---> Put cursor somewhere and press  - to delete a character
+:map - dd   ---> Press - and it will delete the line
+:map <space> viw   ---> Press space and Vim selects the word
+:map <c-d> dd   ---> Press Ctrl+d to delete a line
+:nunmap -      ---> Remove a nmap linked to -
+:nmap dd 0<esc>jddk   --> this is in infinite recursive loop it calls dd just after the j.
+:nunnap dd   ---> To remove dd mapping
+:nmap x dd   --|
+:nnoremap \ x ---> This is a NON Recursive map. When press \, Vim does not map x to dd, it just delete a character, which is normal for x in normal mode
+                   I usually use non recursive maps
+
+```
+
+
+- 3.2 Insert mode: imap
+```bash
+:imap <c-d> dd    ---> Press Ctrl+d, Vim will insert two d
+:imap <c-d> <esc>dd    ---> Press Ctrl+d, Vim will exit insert mode and delete a line. Then you are in normal mode
+:imap <c-d> <esc>ddi   ---> Press Ctrl+d, Vim will exit insert mode and delete a line. Then back to insert mode
+:inoremap \ x   ---> it insert an x when you press \. 
+
+```
+
+- 3.3 Visual mode: vmap
+```bash
+:vnoremap \ x    --> Press \, Vim remove a char 
+
+```
+4. Leader and localleader
+```bash
+:let mapleader=","     ---> Set , as the key leader
+:nnoremap <leader>d dd  ---> Press ,d and Vim will delete a line
+
+:let maplocalleader = ","    ---> set localleader to ,
+:nnoremap <localleader>f :echo "This is a local leader mapping"<CR>   ---> Press ,f and vim will print a message
+:nnoremap <leader>t :vsplit $MYVIMRC<cr>    ---> Press leader+t and Vim will open .vimrc in split windows
+:nnoremap <leader>sv :source $MYVIMRC<cr>    ---> Press leader+sv and Vim will source .vimrc
+:nnoremap <leader>ev :wq<cr>    ---> Press leader+ev and Vim will save file and close split
+:nnoremap <leader>" viw<esc>a"<esc>b"<esc>lel    ---> Press leader " and Vim will surround the word with double quotes
+
+```
+5. Abbreviations: for insert, replace and command modes
+```bash
+:iabbrev adn and   --> in insert mode, after typing adn and space, vim will replace adn by and
+```
+
 ### Vim
 ```bash
 git clone https://github.com/vim/vim.git
