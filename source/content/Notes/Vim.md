@@ -77,6 +77,66 @@ $MYVIMRC   --> special variable that points to ~/.vimrc
 :iabbrev adn and   --> in insert mode, after typing adn and space, vim will replace adn by and
 ```
 
+6. Autocommands: autocmd or au 
+```bash
+:autocmd BufNewFile * :write
+         ^          ^ ^
+         |          | |
+         |          | The command to run.
+         |          |
+         |          A "pattern" to filter the event.
+         |
+         The "event" to watch for.
+
+
+For more help
+:h autocmd
+```
+here some examples:
+```bash
+#  If you :edit foo and the :q  --> the foo file is created   
+:autocmd BufNewFile * :write
+
+# if you edit an html file and :w --> Vim reindent all tags and save the file
+:autocmd BufWritePre *.html :normal gg=G
+
+# press localleader+c and comment the line
+:autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+:autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
+```
+
+6. Status line
+```bash
+:set statusline=%f         " Path to the file
+:set statusline+=\ -\      " Separator
+:set statusline+=FileType: " Label
+:set statusline+=%y        " Filetype of the file
+
+For more help
+:h statusline
+```
+
+7. Grouping and folding
+```bash
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
+
+and then
+
+:setlocal foldmethod=marker
+
+And when you are located inside a text like below, press za to fold and za to unfold
+" Vimscript file settings ---------------------- {{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+```
+
 ### Vim
 ```bash
 git clone https://github.com/vim/vim.git

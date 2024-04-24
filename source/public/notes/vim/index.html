@@ -12,20 +12,20 @@
     <title>Vim :: Home</title>
 
     
-    <link href="/css/nucleus.css?1713825233" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713825233" rel="stylesheet">
-    <link href="/css/hybrid.css?1713825233" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713825233" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713825233" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713825233" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713825233" rel="stylesheet">
-    <link href="/css/theme.css?1713825233" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713825233" rel="stylesheet">
+    <link href="/css/nucleus.css?1713997735" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713997735" rel="stylesheet">
+    <link href="/css/hybrid.css?1713997735" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713997735" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713997735" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713997735" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713997735" rel="stylesheet">
+    <link href="/css/theme.css?1713997735" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713997735" rel="stylesheet">
     
-      <link href="/css/theme-percy.css?1713825233" rel="stylesheet">
+      <link href="/css/theme-percy.css?1713997735" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713825233"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713997735"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@ Percy Perez Aruni
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713825233"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713825233"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713997735"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713997735"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713825233"></script>
+<script type="text/javascript" src="/js/search.js?1713997735"></script>
 
     
   </div>
@@ -1697,6 +1697,61 @@ $MYVIMRC   --&gt; special variable that points to ~/.vimrc
 <li>Abbreviations: for insert, replace and command modes</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:iabbrev adn and   --&gt; in insert mode, after typing adn and space, vim will replace adn by and
+</code></pre></div><ol start="6">
+<li>Autocommands: autocmd or au</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:autocmd BufNewFile * :write
+         ^          ^ ^
+         |          | |
+         |          | The command to run.
+         |          |
+         |          A <span style="color:#e6db74">&#34;pattern&#34;</span> to filter the event.
+         |
+         The <span style="color:#e6db74">&#34;event&#34;</span> to watch <span style="color:#66d9ef">for</span>.
+
+
+For more help
+:h autocmd
+</code></pre></div><p>here some examples:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#  If you :edit foo and the :q  --&gt; the foo file is created</span>   
+:autocmd BufNewFile * :write
+
+<span style="color:#75715e"># if you edit an html file and :w --&gt; Vim reindent all tags and save the file</span>
+:autocmd BufWritePre *.html :normal gg<span style="color:#f92672">=</span>G
+
+<span style="color:#75715e"># press localleader+c and comment the line</span>
+:autocmd FileType javascript nnoremap &lt;buffer&gt; &lt;localleader&gt;c I//&lt;esc&gt;
+:autocmd FileType python     nnoremap &lt;buffer&gt; &lt;localleader&gt;c I#&lt;esc&gt;
+</code></pre></div><ol start="6">
+<li>Status line</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:set statusline<span style="color:#f92672">=</span>%f         <span style="color:#e6db74">&#34; Path to the file
+</span><span style="color:#e6db74">:set statusline+=\ -\      &#34;</span> Separator
+:set statusline<span style="color:#f92672">+=</span>FileType: <span style="color:#e6db74">&#34; Label
+</span><span style="color:#e6db74">:set statusline+=%y        &#34;</span> Filetype of the file
+
+For more help
+:h statusline
+</code></pre></div><ol start="7">
+<li>Grouping and folding</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod<span style="color:#f92672">=</span>marker
+augroup END
+
+
+and <span style="color:#66d9ef">then</span>
+
+:setlocal foldmethod<span style="color:#f92672">=</span>marker
+
+And when you are located inside a text like below, press za to fold and za to unfold
+<span style="color:#e6db74">&#34; Vimscript file settings ---------------------- {{{
+</span><span style="color:#e6db74">augroup filetype_vim
+</span><span style="color:#e6db74">    autocmd!
+</span><span style="color:#e6db74">    autocmd FileType vim setlocal foldmethod=marker
+</span><span style="color:#e6db74">augroup END
+</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">}}}</span>
 </code></pre></div><h3 id="vim">Vim</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/vim/vim.git
 cd vim/src
@@ -2962,19 +3017,19 @@ augroup END
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713825234"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713825234"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713825234"></script>
-    <script src="/js/jquery.sticky.js?1713825234"></script>
-    <script src="/js/featherlight.min.js?1713825234"></script>
-    <script src="/js/highlight.pack.js?1713825234"></script>
+    <script src="/js/clipboard.min.js?1713997735"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713997735"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713997735"></script>
+    <script src="/js/jquery.sticky.js?1713997735"></script>
+    <script src="/js/featherlight.min.js?1713997735"></script>
+    <script src="/js/highlight.pack.js?1713997735"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713825234"></script>
-    <script src="/js/learn.js?1713825234"></script>
-    <script src="/js/hugo-learn.js?1713825234"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713997735"></script>
+    <script src="/js/learn.js?1713997735"></script>
+    <script src="/js/hugo-learn.js?1713997735"></script>
 
-    <link href="/mermaid/mermaid.css?1713825234" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713825234"></script>
+    <link href="/mermaid/mermaid.css?1713997735" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713997735"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
